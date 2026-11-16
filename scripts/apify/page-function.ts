@@ -16,6 +16,17 @@ export const PAGE_FUNCTION = `async function pageFunction(context) {
   const base = request.loadedUrl || request.url;
   const abs = (href) => { try { return new URL(href, base).href.split('#')[0]; } catch (e) { return null; } };
   const fold = (s) => s.normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase();
+  // Texte d'un bloc avec une espace entre chaque élément (.text() colle « Di2 » et « 3 200 € »).
+  const textOf = (node) => (node.html() || '')
+    .replace(/<(script|style)[\\s\\S]*?<\\/\\1>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCharCode(parseInt(h, 16)))
+    .replace(/&#(\\d+);/g, (_, d) => String.fromCharCode(Number(d)))
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&euro;/g, '€')
+    .replace(/&amp;/g, '&')
+    .replace(/\\s+/g, ' ')
+    .trim();
 
   if (!request.userData || request.userData.label !== 'DETAIL') {
     const pattern = new RegExp(customData.linkPattern);
@@ -26,9 +37,9 @@ export const PAGE_FUNCTION = `async function pageFunction(context) {
       if (!url || !pattern.test(new URL(url).pathname)) return;
       // Texte de la vignette : on remonte jusqu'au bloc qui contient le prix.
       let node = $(a);
-      let text = node.text();
-      for (let i = 0; i < 5 && !/\\d\\s?€/.test(text); i++) { node = node.parent(); text = node.text(); }
-      text = text.replace(/\\s+/g, ' ').trim().slice(0, 600);
+      let text = textOf(node);
+      for (let i = 0; i < 5 && !/\\d\\s?€/.test(text); i++) { node = node.parent(); text = textOf(node); }
+      text = text.slice(0, 600);
       if (!cards.has(url) || cards.get(url).length < text.length) cards.set(url, text);
     });
     let kept = Array.from(cards.entries()).filter(([, text]) => {
