@@ -13,7 +13,7 @@
       "Saint-Nazaire et Loire-Atlantique (120 km autour de Saint-Nazaire)"
     ]
   },
-  "count": 100,
+  "count": 102,
   "retained": 24,
   "listings": [
     {
@@ -5933,6 +5933,103 @@
       "rejection": "Taille 53 incompatible"
     },
     {
+      "id": "lbc-3311030776",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3311030776",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/67/92/16/679216d6722b32d7fc147c9bdf418ca8c127470a.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/c8/ef/62/c8ef6208b8ee921fd25aad2dc108125f9e765d2b.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "Scott Addict 50 taille M",
+      "brand": "Scott",
+      "model": "Addict 50",
+      "year": 2026,
+      "type": "route",
+      "size": "M",
+      "price": 2100,
+      "description": "Vélo de route endurance Scott Addict 50, neuf millésime 2026, taille M. \n\nCadre et fourche carbone, \nFreins à disque hydrauliques : un vélo confortable pour rouler longtemps, compatible garde-boue. Monté et réglé par notre atelier.\nCadre et fourche Addict HMF carbone, géométrie endurance, câbles internes\nTransmission Shimano 105 2x12 vitesses, plateaux 50/34, cassette 11-34\nFreins Shimano 105 à disque hydrauliques\nRoues Syncros RP2.0 Disc, pneus Schwalbe ONE 700x32\nColoris gris \nGarantie constructeur Scott. \nEssai possible en magasin : Bobiclou Vincennes, 8 rue Robert Giraudineau, 94300 Vincennes",
+      "city": "Vincennes",
+      "coords": {
+        "lat": 48.845,
+        "lon": 2.435
+      },
+      "shipping": true,
+      "publishedAt": "2026-11-16T20:14:11.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "toVerify": [
+        "Matériau du cadre non précisé"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 54,
+      "zone": "Région parisienne",
+      "distanceKm": 6,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 mécanique",
+          "points": 3,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "6 km de Paris, zone Région parisienne, livraison possible",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "État neuf, modèle 2026",
+          "points": 8,
+          "max": 8
+        }
+      ],
+      "rejection": "Groupe non retenu (105 mécanique)"
+    },
+    {
       "id": "lbc-3267264204",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3267264204",
@@ -8178,6 +8275,106 @@
         }
       ],
       "rejection": "Groupe non retenu (105 mécanique)"
+    },
+    {
+      "id": "lbc-3310947783",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3310947783",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/47/99/82/4799827e90fd22deb68a9bbdd8fb1ba9503fc191.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/61/ad/a1/61ada1aa59357c3133c92aa59b577c9bc386f02d.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "Vélo gravel Cannondale",
+      "brand": "Cannondale",
+      "model": "gravel",
+      "year": 0,
+      "type": "gravel",
+      "size": "M",
+      "price": 1680,
+      "description": "Je vends ce vélo gravel Cannondale en vert Olive, conçu pour l'aventure sur tous les terrains avec sa cassette 11/36.\nVélo taille M convient pour une personne mesurant entre 1m70 et 1m80\n\nLe confort se fait ressentir avec la suspension kingpin\nÉquipé et vendu avec pédale semi automatique (valeur 90€)\nVélo disponible immédiatement \nPhotos à la demande \nPossibilité de venir le voir et essayer sur place \n\nVélo ayant - 1500km à ce jour \nToujours entretenu, pneu d'origine comme neuf tubless ready fournis",
+      "city": "Breuillet",
+      "coords": {
+        "lat": 48.565,
+        "lon": 2.17
+      },
+      "shipping": false,
+      "publishedAt": "2026-11-16T18:13:48.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "autre",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "km": 1500,
+      "batch": 0,
+      "toVerify": [
+        "Matériau du cadre non précisé",
+        "Type de freins non précisé",
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 49,
+      "zone": "Région parisienne",
+      "distanceKm": 35,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Autre groupe",
+          "points": 3,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "35 km de Paris, zone Région parisienne",
+          "points": 8,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, année non précisée",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": "Type hors critères (Gravel)"
     },
     {
       "id": "lbc-3288947794",

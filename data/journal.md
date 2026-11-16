@@ -2,6 +2,33 @@
 
 ## Lundi 16 novembre 2026
 
+- Crédit Apify consommé ce mois-ci avant la collecte : 0,12 $ sur 5,00 $.
+- Leboncoin : 60 annonces lues autour de Paris et de Saint-Nazaire (30 au plus par zone).
+
+2 nouvelles annonces analysées : 0 pertinente, 2 écartées.
+
+Écartées :
+
+- [Scott Addict 50 taille M](https://www.leboncoin.fr/ad/velos/3311030776), 2 100 € : Groupe non retenu (105 mécanique)
+- [Vélo gravel Cannondale](https://www.leboncoin.fr/ad/velos/3310947783), 1 680 € : Type hors critères (Gravel)
+
+Avertissements :
+
+- Troc-Vélo non lu. lecture directe : lecture directe impossible (HTTP 403) ; Cheerio Scraper d’Apify : Apify 400 : {
+  "error": {
+    "type": "invalid-input",
+    "message": "Input is not valid: Field input.proxyConfiguration is required. Please provide custom proxy URLs or use Apify Proxy."
+  }
+}.
+- Decathlon Occasion non lu. lecture directe : lecture directe impossible (HTTP 403) ; Cheerio Scraper d’Apify : Apify 400 : {
+  "error": {
+    "type": "invalid-input",
+    "message": "Input is not valid: Field input.proxyConfiguration is required. Please provide custom proxy URLs or use Apify Proxy."
+  }
+}.
+
+## Lundi 16 novembre 2026
+
 - Crédit Apify consommé ce mois-ci avant la collecte : 0,04 $ sur 5,00 $.
 - Leboncoin : 100 annonces lues autour de Paris et de Saint-Nazaire (50 au plus par zone).
 
