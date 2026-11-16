@@ -88,8 +88,18 @@ export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
   if (!request.userData || request.userData.label !== 'DETAIL') {
     // Les annonces sont injectées par le JavaScript du site : on leur laisse le temps d'apparaître.
     await page.waitForSelector('a[href*="/annonce/"]', { timeout: 45000 }).catch(() => null);
-    await page.evaluate(() => window.scrollBy(0, document.body.scrollHeight)).catch(() => null);
-    await new Promise((r) => setTimeout(r, 2500));
+    // La liste s'affiche par morceaux : on fait défiler et on attend que le nombre d'annonces
+    // ne bouge plus (3 relevés identiques de suite, 25 secondes au plus) avant de lire.
+    const countAds = () => page.evaluate(() => new Set(Array.from(document.querySelectorAll('a[href*="/annonce/"]')).map((a) => a.getAttribute('href'))).size).catch(() => 0);
+    let last = -1;
+    let stable = 0;
+    for (let i = 0; i < 30 && stable < 3; i++) {
+      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight)).catch(() => null);
+      await new Promise((r) => setTimeout(r, 800));
+      const n = await countAds();
+      stable = n === last && n > 0 ? stable + 1 : 0;
+      last = n;
+    }
     const data = await page.evaluate((cd) => {
       const fold = (s) => s.normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase();
       const pattern = new RegExp(cd.linkPattern);
