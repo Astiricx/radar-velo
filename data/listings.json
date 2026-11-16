@@ -13,6 +13,772 @@
       "Saint-Nazaire et Loire-Atlantique (120 km autour de Saint-Nazaire)"
     ]
   },
-  "count": 0,
-  "listings": []
+  "count": 8,
+  "listings": [
+    {
+      "id": "lbc-3310818575",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3310818575",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/73/7c/bd/737cbdc74d2ec7a8bebadfba3acf2e136745ba06.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/9a/12/24/9a1224ad5a47799e46f2ff0e712e715ca2a4d443.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "BH Aerolight – Moins de 1 000 km – pédales capteur de puissance",
+      "brand": "BH",
+      "model": "Aerolight – Moins de 1 000 km – pédales capteur de puissance",
+      "year": 2026,
+      "type": "route",
+      "size": "M",
+      "price": 4500,
+      "description": "BH Aerolight – Moins de 1 000 km – Montage mai 2026\n\nBonjour,\n\nJe mets en vente mon BH Aerolight, qui totalise moins de 1 000 km. Le vélo a été monté en mai 2026.\n\nJe m’en sépare tout simplement car je n’ai malheureusement plus suffisamment de temps pour en profiter à la hauteur de son potentiel.\n\nComposition du vélo :\n\n* Kit cadre BH Aerolight – acheté 1 999 €\n* Paire de roues Basalt Wheels HAWK : 50 mm à l’avant et 60 mm à l’arrière – achetées 1 450 €\n * Roulements céramique\n * Roues équilibrées\n* Groupe Shimano Ultegra R8170 Di2 – 12 vitesses – acheté 1 277 €\n * Manivelles de 165 mm\n * Plateaux : 52/36\n * Cassette : 11-30\n* Selle NEAT avec structure en nid d’abeilles\n* Cintre intégré Vision Metron 5D ACR 3K\n * Potence de 120 mm\n * Largeur de cintre : 400 mm\n * Acheté 581 €\n* Porte-compteur Garmin Aero\n* Paire de pédales avec capteur de puissance Favero Assioma Duo, d’une génération précédente, fournie avec le vélo.\n\nPrix d’achat des principaux composants :\n\n* Kit cadre : 1 999 €\n* Roues : 1 450 €\n* Groupe : 1 277 €\n* Cintre : 581 €\n\nSoit déjà 5 307 € pour ces quatre éléments uniquement, hors pédales avec capteur de puissance et autres équipements.\n\nVélo en excellent état, très peu roulé et monté en mai 2026.\n\nN’hésitez pas à me contacter pour toute question ou renseignement complémentaire.",
+      "city": "Saint-Cyr-l'École",
+      "coords": {
+        "lat": 48.799,
+        "lon": 2.067
+      },
+      "shipping": false,
+      "publishedAt": "2026-11-16T15:32:47.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": true,
+      "powerMeter": true,
+      "wheelDepth": 50,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "toVerify": [
+        "Matériau du cadre non précisé"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 73,
+      "zone": "Région parisienne",
+      "distanceKm": 22,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Entre l'idéal et le maximum de 4 500 €",
+          "points": 10,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Inclus",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 50 mm",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "22 km de Paris, zone Région parisienne",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "État neuf, modèle 2026",
+          "points": 8,
+          "max": 8
+        }
+      ]
+    },
+    {
+      "id": "lbc-3310527198",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3310527198",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/f7/62/ca/f762ca55e4d3bb500d74ccaab886c030bce6a241.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/20/fe/3c/20fe3c8e1e225cf3cd96aea90e82a3b881d42970.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "Cube Agree C:62 SL carbone, Ultegra Di2, capteur de puissance, freins à disque, taille M",
+      "brand": "Cube",
+      "model": "Agree C:62 SL carbone, Ultegra Di2, capteur de puissance, fr",
+      "year": 2018,
+      "type": "route",
+      "size": "M",
+      "price": 1540,
+      "description": "Vends vélo de route Cube Agree C:62 SL (2018), cadre et fourche 100 % carbone, taille M (convient idéalement pour un cycliste entre 1m72 et 1m80).\n​Vélo très bien équipé, léger et nerveux, toujours entretenu avec soin et stocké à l'abri.\n​\nÉquipement complet :\n-​Transmission : Groupe électrique Shimano Ultegra Di2 11 vitesses (passages fluides et précis, chargeur fourni)\n-​Pédalier : Shimano Ultegra avec capteur de puissance intégré (wattmètre double/simple face selon ton modèle)\n-​Freinage : Freins à disque hydrauliques avec étriers et disques haut de gamme Shimano Dura-Ace\n-​Roues : Shimano RS montées avec pneus Continental Grand Prix 5000\n-​Périphériques : Cintre et tige de selle carbone Newmen\n-​Selle : Selle carbone Prologo\n\n​État et modalités :\n​Cadre en excellent état structurel (aucune chute, aucune fissure).\n​Transmission et réglages impeccables, vélo prêt à rouler.\n​Remise en main propre uniquement à Meudon / Clamart (92), essai possible sur place. Pas d'envoi.",
+      "city": "Clamart",
+      "coords": {
+        "lat": 48.807,
+        "lon": 2.272
+      },
+      "shipping": true,
+      "publishedAt": "2026-11-16T07:50:18.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": true,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 70,
+      "zone": "Région parisienne",
+      "distanceKm": 8,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Inclus",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "8 km de Paris, zone Région parisienne, livraison possible",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2018",
+          "points": 4,
+          "max": 8
+        }
+      ]
+    },
+    {
+      "id": "lbc-3309656939",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3309656939",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/6b/77/13/6b77134bd791a752990d6fd2f05ad55cc840b4ba.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/b0/e6/76/b0e676d717ae113395efac0fd1edc80ef5f1baed.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "Vélo BH chrono aerolight",
+      "brand": "BH",
+      "model": "chrono aerolight",
+      "year": 2018,
+      "type": "route",
+      "size": "M",
+      "price": 1650,
+      "description": "Vélo BH chrono aerolight TT\n\nCadre carbone taille M \nAnnée 2018 \nCockpit carbone Métron  Vision Trimax \nPédalier carbone Metron Vision (54/42) \nTransmission shimano ultegra Di2 \nFrein TRP \nRoues carbone Roval CLX 50",
+      "city": "Saint-Nazaire",
+      "coords": {
+        "lat": 47.274,
+        "lon": -2.213
+      },
+      "shipping": false,
+      "publishedAt": "2026-11-15T08:51:19.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 54,
+      "extensions": "inconnu",
+      "condition": "bon",
+      "batch": 0,
+      "toVerify": [
+        "Type de freins non précisé"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 67,
+      "zone": "Saint-Nazaire et Loire-Atlantique",
+      "distanceKm": 0,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 54 mm",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "0 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Bon état, modèle 2018",
+          "points": 3,
+          "max": 8
+        }
+      ]
+    },
+    {
+      "id": "lbc-3291738536",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3291738536",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/gh/fb/2b/ghfb2ba06890ccdb66506eea3fd16289b4046823.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/25/17/a2/2517a244f8a8e77e4d9709b00a03c72e31cdc1af.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "Cannondale systemsix hi-mod di2 ultegra 2022 taille 56",
+      "brand": "Cannondale",
+      "model": "systemsix hi-mod di2 ultegra",
+      "year": 2022,
+      "type": "route",
+      "size": "56",
+      "price": 2500,
+      "description": "Je vends ce vélo de route Cannondale SystemSix Hi-Mod équipé d'un groupe Shimano Di2 Ultegra en taille 56.\n- Marque : Cannondale\n- Modèle : SystemSix Hi-Mod 2022\n- Taille du cadre : M (taille 56)\n- Couleur : Gris et rouge\n- Transmission : Shimano Di2 Ultegra\nBon état\nTraces d’usure entre le cadre et le pédalier (sauts de chaîne)\nNégociations dans la mesure du raisonnable\nPhotos additionnelles disponibles",
+      "city": "Paris",
+      "coords": {
+        "lat": 48.883,
+        "lon": 2.318
+      },
+      "shipping": true,
+      "publishedAt": "2026-10-20T10:40:20.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": true,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "bon",
+      "batch": 0,
+      "toVerify": [
+        "Matériau du cadre non précisé",
+        "Type de freins non précisé"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 66,
+      "zone": "Région parisienne",
+      "distanceKm": 4,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "4 km de Paris, zone Région parisienne, livraison possible",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Bon état, modèle 2022",
+          "points": 4,
+          "max": 8
+        }
+      ]
+    },
+    {
+      "id": "lbc-3288707948",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3288707948",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/9a/44/c9/9a44c964a751ae9ff886bb14b7082086b6bac1a9.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/1b/cf/20/1bcf200fe6db6fe6a0fb78bd80ce8cc6b4128c4d.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "Giant TCR",
+      "brand": "Giant",
+      "model": "TCR",
+      "year": 2023,
+      "type": "route",
+      "size": "M",
+      "price": 1600,
+      "newPrice": 2023,
+      "description": "Bonjour, je vends mon vélo de route GIANT TCR Advanced Pro Team Disc ML Carbon.\n\nJ’ai acheté ce vélo en 2023 dans un magasin de vélos. J’en suis le deuxième propriétaire.\n\nLe vélo est en très bon état. La transmission a été remplacée en juin, ainsi que les roulements du moyeu arrière.\n\nÉquipements et entretien :\n\n-Groupe Shimano Ultegra mécanique 11 vitesses\n-Cassette 11-30\n-Double plateau 36/52\n-Capteur de puissance sur les deux manivelles\n\nLe vélo compte actuellement 12300km depuis 2023\n\nNégociable dans la limite du raisonable (devant le vélo)\n\nToutes les factures sont disponibles si besoin.\n\nN’hésitez pas à me contacter pour plus d’informations ou de photos.",
+      "city": "Trilport",
+      "coords": {
+        "lat": 48.957,
+        "lon": 2.95
+      },
+      "shipping": false,
+      "publishedAt": "2026-10-15T11:26:06.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra",
+      "aero": false,
+      "powerMeter": true,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "km": 12300,
+      "batch": 0,
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 64,
+      "zone": "Région parisienne",
+      "distanceKm": 45,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "21 % sous le prix neuf (2 023 €)",
+          "points": 4.7,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra mécanique",
+          "points": 6,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Inclus",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "45 km de Paris, zone Région parisienne",
+          "points": 8,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2023",
+          "points": 6,
+          "max": 8
+        }
+      ]
+    },
+    {
+      "id": "lbc-3310229067",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3310229067",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/c6/28/30/c62830096d2edd936fbe5eb90373370ad8177298.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/85/a0/fa/85a0fa020941b3f67f19a5a04b9e746b8b5ce07d.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "LOOK 795 Blade RS — Ultegra Di2 · Roues carbone DT Swiss ARC 1400",
+      "brand": "Look",
+      "model": "795 Blade RS — Ultegra Di2 · Roues carbone DT Swiss ARC 1400",
+      "year": 0,
+      "type": "route",
+      "size": "M",
+      "price": 3850,
+      "description": "Je vends mon LOOK 795 Blade RS, un vélo de route haut de gamme, performant et soigneusement entretenu. Prêt à rouler, pour l’entraînement comme pour la compétition.\n\nÉquipement\n\n• Groupe Shimano Ultegra Di2 — chargeur inclus\n• Roues carbone DT Swiss ARC 1400\n• Pédalier ROTOR, plateaux 54/39 — roulements neufs\n• Pédales incluses si souhaité\n\nÉtat et entretien\n\nVélo en très bon état général, sans défaut particulier à signaler. Entretenu après chaque sortie, avec une chaîne régulièrement waxée et des révisions suivies chez Cycle Ghidini à Chaville.\n\nLe petit adhésif noir visible sur le cadre sert uniquement à protéger la peinture du frottement de la puce de chronométrage en course. Il ne masque aucun défaut ni aucune réparation.\n\nPrix ferme.\n\nVisible sur rendez-vous, avec possibilité d’essai pour un acheteur sérieux. Photos supplémentaires et précisions sur demande.\n\nDisponible dès ce week-end.",
+      "city": "Sèvres",
+      "coords": {
+        "lat": 48.827,
+        "lon": 2.201
+      },
+      "shipping": false,
+      "publishedAt": "2026-11-15T17:46:28.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 54,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "toVerify": [
+        "Matériau du cadre non précisé",
+        "Type de freins non précisé",
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 64,
+      "zone": "Région parisienne",
+      "distanceKm": 12,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Entre l'idéal et le maximum de 4 500 €",
+          "points": 19.8,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 54 mm",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "12 km de Paris, zone Région parisienne",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, année non précisée",
+          "points": 5,
+          "max": 8
+        }
+      ]
+    },
+    {
+      "id": "lbc-3310284760",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3310284760",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/0d/b4/56/0db4569c94e44811cf60245c73a5886e0422b79d.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/be/a8/ce/bea8cecb1e7dc32f396ad1e6dad4d288eea562ae.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "Velo route scott",
+      "brand": "Scott",
+      "model": "Velo route scott",
+      "year": 0,
+      "type": "route",
+      "size": "M",
+      "price": 2550,
+      "description": "Je vends ce vélo de route Scott,\n- Taille du cadre : M équipé Shimano 105 di2 frein à disque vélo vendu avec roue carbone zipp montage tubless ou chambre hauteur jante 45mm \nTrès bon état\nPrêt à rouler, il n'attend plus que son nouveau propriétaire. Aucune frais a prévoir velo révisé",
+      "city": "La Gacilly",
+      "coords": {
+        "lat": 47.765,
+        "lon": -2.131
+      },
+      "shipping": false,
+      "publishedAt": "2026-11-15T18:31:20.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 45,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "toVerify": [
+        "Matériau du cadre non précisé",
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 63,
+      "zone": "Saint-Nazaire et Loire-Atlantique",
+      "distanceKm": 55,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 45 mm",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "55 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique",
+          "points": 8,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, année non précisée",
+          "points": 5,
+          "max": 8
+        }
+      ]
+    },
+    {
+      "id": "lbc-3249910648",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3249910648",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/91/5e/7b/915e7bd62c5b97280763ba0fded387f68655709a.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/b3/bc/38/b3bc382b77ab6f44330365b95cd84d21edfe6d96.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "Vélo Carbone | TREK Emonda SL6 Taille M | Garantie 2 ans",
+      "brand": "Trek",
+      "model": "Carbone | Emonda SL6 | Garantie 2 ans",
+      "year": 2023,
+      "type": "route",
+      "size": "M",
+      "price": 3200,
+      "description": "Vélo Route Carbone | Trek Emonda SL6 | Taille M/52 | Garantie de 2 ans \n\nCARACTÉRISTIQUES\n - Origine : Reprise/Retour client/ancien modèle d’expo\n - Etat : Excellent\n - Date : 2023\n - Taille : M / 52 (1m62 à 1m70)\n - Poids : 8,5 kg\n - Cadre : Carbone OCLV\n - Position : Cintre Bontreager Elite\n - Transmission : Shimano 105 R71000 Di2 2x12 | Pédalier 50/34 | Cassette 11/34\n - Freinage : Shimano 105 Hydraulique\n - Roues : Bontrager Aeolus Elite 35 Carbone\n - Pneus : Bontrager R2 700x28c\n\nProduit SECONDE VIE DECATHLON Atlantis St-Herblain\nAchat uniquement en magasin (Place Océane, 44800 Saint-Herblain) | Pas de livraison possible\nGaranti 2 ans | Retours et échanges selon les conditions sur notre site decathlon.\nProduit contrôlé et fonctionnel.",
+      "city": "Saint-Herblain",
+      "coords": {
+        "lat": 47.212,
+        "lon": -1.654
+      },
+      "shipping": false,
+      "publishedAt": "2026-10-26T10:36:57.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 35,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 61,
+      "zone": "Saint-Nazaire et Loire-Atlantique",
+      "distanceKm": 43,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 35 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "43 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique",
+          "points": 8,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2023",
+          "points": 6,
+          "max": 8
+        }
+      ]
+    }
+  ]
 }
