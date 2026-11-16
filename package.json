@@ -1,0 +1,30 @@
+{
+  "name": "radar-velo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Veille de vélos de route d'occasion : annonces filtrées et notées, suivi jusqu'à l'achat. Zones : région parisienne et Saint-Nazaire.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.0"
+  }
+}

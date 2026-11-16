@@ -1,0 +1,22 @@
+# Dépendances et build
+node_modules
+dist
+
+# Vercel
+.vercel
+
+# Variables d'environnement
+.env
+.env.*
+!.env.example
+
+# Journaux et fichiers système
+npm-debug.log*
+*.log
+.DS_Store
+Thumbs.db
+
+# Éditeurs
+.vscode/*
+!.vscode/extensions.json
+.idea

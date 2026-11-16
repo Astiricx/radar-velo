@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+/* Le mode sombre est piloté par la classe .dark posée sur <html> (voir hooks/useTheme.ts). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Mise en page : une feuille de course. En-tête, critères, puis la liste de départ
+   (cartes, tableau ou pipeline). Le score est un dossard, la vignette une planche technique. */
+:root {
+  --bg: #eef1f3;
+  --surface: #ffffff;
+  --raised: #f4f6f8;
+  --ink: #15202a;
+  --muted: #5b6875;
+  --line: #d5dce2;
+  --accent: #0d6672;
+  --accent-soft: #d8ecee;
+  --on-accent: #ffffff;
+  --gold: #a86a12;
+  --gold-soft: #f6ead2;
+  --good: #1f7a45;
+  --good-soft: #dcefe3;
+  --warn: #8a5d00;
+  --warn-soft: #f5ecd2;
+  --bad: #a63a2f;
+  --bad-soft: #f6dedb;
+  --violet: #5b4bb3;
+  --violet-soft: #e6e2f7;
+  --plate: #e3e8ec;
+  --plate-ink: #27323c;
+}
+
+.dark {
+  --bg: #0f151a;
+  --surface: #172028;
+  --raised: #1e2933;
+  --ink: #e3e9ee;
+  --muted: #93a1ad;
+  --line: #2a3641;
+  --accent: #5cc0cc;
+  --accent-soft: #163940;
+  --on-accent: #06262b;
+  --gold: #e3b25c;
+  --gold-soft: #3a2f18;
+  --good: #6fcf97;
+  --good-soft: #163527;
+  --warn: #e2bd5a;
+  --warn-soft: #3a3115;
+  --bad: #f08a7e;
+  --bad-soft: #3d1f1b;
+  --violet: #b3a6f2;
+  --violet-soft: #2a2550;
+  --plate: #22303b;
+  --plate-ink: #c9d3db;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-good: var(--good);
+  --color-good-soft: var(--good-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-bad: var(--bad);
+  --color-bad-soft: var(--bad-soft);
+  --color-violet: var(--violet);
+  --color-violet-soft: var(--violet-soft);
+  --color-plate: var(--plate);
+  --color-plate-ink: var(--plate-ink);
+  --font-sans: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  button,
+  select,
+  summary {
+    cursor: pointer;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .gutter {
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-line bg-surface px-3 py-2 text-sm font-medium text-ink transition-colors hover:bg-raised disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply border-accent bg-accent text-on-accent hover:bg-accent/90;
+  }
+  .btn-quiet {
+    @apply border-transparent bg-transparent hover:bg-raised;
+  }
+  .field {
+    @apply w-full rounded-md border border-line bg-surface px-3 py-2 text-sm text-ink placeholder:text-muted/70;
+  }
+  .label {
+    @apply mb-1 block text-xs font-medium text-muted;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium whitespace-nowrap;
+  }
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
