@@ -13,7 +13,7 @@
       "Saint-Nazaire et Loire-Atlantique (120 km autour de Saint-Nazaire)"
     ]
   },
-  "count": 107,
+  "count": 108,
   "retained": 24,
   "listings": [
     {
@@ -7681,6 +7681,102 @@
       "rejection": "Groupe non retenu (Autre groupe)"
     },
     {
+      "id": "tv-4301162",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/wilier-triestina-granturismo-slr-shimano-ultegra-di2-12v-excellent-etat-4301162",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/162/1162/4301162/4301162-wilier-triestina-granturismo-slr-shimano-ultegra-di2-12v-excellent-etat-4301162-1792828825.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/zoom/main/bikeAds/162/1162/4301162/4301162-wilier-triestina-granturismo-slr-shimano-ultegra-di2-12v-excellent-etat-4301162-1792828825.jpg",
+      "imageKind": "annonce",
+      "title": "Wilier Triestina GranTurismo SLR – Shimano Ultegra Di2 12v – Excellent état",
+      "brand": "Wilier",
+      "model": "Triestina GranTurismo SLR – Shimano Ultegra Di2 12v – Excell",
+      "year": 0,
+      "type": "route",
+      "size": "?",
+      "price": 3490,
+      "description": "Wilier Triestina GranTurismo SLR – Shimano Ultegra Di2 12v – Excellent état, WILIER - Très bon état - Vélos et Cadres Route Course / CLM / Triathlon \n\nAnnonce géolocalisée à : 64120 Saint Palais \n\nTroc Vélo est le N°1 des annonces vélo et outdoor, bénéficiez du paiement sécurisé et de la livraison pour tous vos achats. \n\nWilier Triestina GranTurismo SLR – Shimano Ultegra Di2 12v – Excellent état 3490 €8500 € Acheter Accueil / Vélos et Cadres / Route / Course / CLM / Triathlon ... / Route / Course / CLM / Triathlon 1 / 1 À la une Voir les",
+      "city": "Lieu non précisé",
+      "shipping": false,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "toVerify": [
+        "Matériau du cadre non précisé",
+        "Type de freins non précisé",
+        "Taille non précisée",
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 51,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Aucune zone active",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, année non précisée",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": "Taille ? incompatible"
+    },
+    {
       "id": "lbc-3299242605",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3299242605",
@@ -9048,99 +9144,6 @@
       "rejection": "Type hors critères (Gravel)"
     },
     {
-      "id": "tv-4314711",
-      "source": "troc-velo",
-      "url": "https://www.troc-velo.com/fr-fr/annonce/wilier-cento-10-sl-105-di2-4314711",
-      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/711/14711/4314711/4314711-wilier-cento-10-sl-105-di2-4314711-1794860374.jpg",
-      "fallbackImage": "https://media-cdn.troc-velo.com/zoom/main/bikeAds/711/14711/4314711/4314711-wilier-cento-10-sl-105-di2-4314711-1794860374.jpg",
-      "imageKind": "annonce",
-      "title": "Wilier cento 10 sl 105 di2",
-      "brand": "Wilier",
-      "model": "cento 10 sl 105 di2",
-      "year": 2025,
-      "type": "gravel",
-      "size": "?",
-      "price": 3000,
-      "description": "Wilier cento 10 sl 105 di2, WILIER - Comme neuf - Vélos et Cadres Route Course / CLM / Triathlon \n\nAnnonce géolocalisée à : 31240 L UNION \n\nTroc Vélo est le N°1 des annonces vélo et outdoor, bénéficiez du paiement sécurisé et de la livraison pour tous vos achats. \n\nWilier cento 10 sl 105 di2 3000 € Réserver Accueil / Vélos et Cadres / Route / Course / CLM / Triathlon ... / Route / Course / CLM / Triathlon 1 / 7 Date de publication Aujourd'hui, 21h19 Vente Wilier cento 10 sl 105 di2 3000 €Prix ferme 5 vues 0 contact 0 favori Paiement sécurisé Réserver Réserver Signaler l'annonce Date de publication Aujourd'hui, 21h19 Remise en main propre avec paiement sécurisé Profitez d’une transaction sécurisée Un processus d’achat simple et guidé Comment ça marche ? Modes de remise Voir les options Vous pourrez sélectionner votre livraison au moment du paiement Synthesamoth Dernière connexion : il y a quelques secondes L UNION Contacter Remise en main propre avec paiement sécurisé Profitez d’une transaction sécurisée Un processus d’achat simple et guidé Comment ça marche ? Description Je vends ce vélo de route Wilier Cento 10 SL équipé d'un groupe Shimano Di2 105. - Type de vélo : Vélo de route - Univers : Homme - Marque : Wilier - Modèle : Cento 10 SL - Taille du cadre : XL - Couleur : Rouge - Transmission : Shimano Di2 105 - Freins : Disques -roues shimano aluminium État neuf Le vélo date de septembre 2025. Je suis le premier propriétaire, facture disponible de chez bouticycle a roufiac…",
-      "city": "Lieu non précisé",
-      "shipping": false,
-      "publishedAt": "2026-11-16T08:00:00.000Z",
-      "frame": "aluminium",
-      "brakes": "disque",
-      "groupset": "105-di2",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "tres-bon",
-      "batch": 0,
-      "toVerify": [
-        "Taille non précisée"
-      ],
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 49,
-      "zone": null,
-      "distanceKm": null,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "105 Di2",
-          "points": 9,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "Aucune zone active",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Très bon état, modèle 2025",
-          "points": 7,
-          "max": 8
-        }
-      ],
-      "rejection": "Type hors critères (Gravel)"
-    },
-    {
       "id": "lbc-3307124600",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3307124600",
@@ -10117,6 +10120,102 @@
         {
           "label": "État et âge",
           "detail": "Bon état, modèle 2023",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": "Taille ? incompatible"
+    },
+    {
+      "id": "tv-4314711",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/wilier-cento-10-sl-105-di2-4314711",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/711/14711/4314711/4314711-wilier-cento-10-sl-105-di2-4314711-1794860374.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/zoom/main/bikeAds/711/14711/4314711/4314711-wilier-cento-10-sl-105-di2-4314711-1794860374.jpg",
+      "imageKind": "annonce",
+      "title": "Wilier cento 10 sl 105 di2",
+      "brand": "Wilier",
+      "model": "cento 10 sl 105 di2",
+      "year": 0,
+      "type": "route",
+      "size": "?",
+      "price": 3000,
+      "description": "Wilier cento 10 sl 105 di2, WILIER - Comme neuf - Vélos et Cadres Route Course / CLM / Triathlon \n\nAnnonce géolocalisée à : 31240 L UNION \n\nTroc Vélo est le N°1 des annonces vélo et outdoor, bénéficiez du paiement sécurisé et de la livraison pour tous vos achats. \n\nWilier cento 10 sl 105 di2 3000 € Réserver Accueil / Vélos et Cadres / Route / Course / CLM / Triathlon ... / Route / Course / CLM / Triathlon 1 / 7 Voir les",
+      "city": "Lieu non précisé",
+      "shipping": false,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "toVerify": [
+        "Matériau du cadre non précisé",
+        "Type de freins non précisé",
+        "Taille non précisée",
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 47,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Aucune zone active",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, année non précisée",
           "points": 5,
           "max": 8
         }
