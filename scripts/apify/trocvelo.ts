@@ -10,8 +10,6 @@
  * Troc-Vélo ne donne que le code postal du vendeur : la distance est calculée depuis
  * la préfecture du département, et signalée comme approximative.
  */
-import { mkdirSync, writeFileSync } from 'node:fs'
-import { resolve } from 'node:path'
 import { BROWSER_PAGE_FUNCTION, PRE_NAVIGATION_HOOKS } from './browser-page-function'
 import type { ActorRunner } from './client'
 import { PREFILTER, SEARCH, TROCVELO, TROCVELO_PROXY } from './config'
@@ -53,21 +51,6 @@ export async function fetchTrocVelo(run: ActorRunner): Promise<{ ads: RawAd[]; s
     },
     { memoryMbytes: 2048, timeoutSecs: 290 },
   )
-  // Échantillon brut des fiches (data/debug/troc-velo.json) pour ajuster la lecture au format réel du site.
-  if (!process.env.APIFY_FIXTURES) {
-    try {
-      const sample = items
-        .filter((i) => (i as { kind?: string }).kind === 'ad')
-        .slice(0, 3)
-        .map((i) => ({ ...(i as object), text: String((i as { text?: string }).text ?? '').slice(0, 4000) }))
-      if (sample.length > 0) {
-        mkdirSync(resolve('data/debug'), { recursive: true })
-        writeFileSync(resolve('data/debug/troc-velo.json'), `${JSON.stringify(sample, null, 2)}\n`)
-      }
-    } catch {
-      // Échantillon facultatif.
-    }
-  }
   let listed: number | null = null
   const pages: ListPage[] = []
   let skipped = 0
@@ -152,6 +135,37 @@ export const toNumber = (v: unknown) => {
   return Number.isFinite(n) && n > 0 ? n : null
 }
 
+/** Libellés du bloc « Caractéristiques » des fiches Troc-Vélo (collés à leur valeur dans le texte). */
+const CHARACTERISTICS = [
+  'Groupe électrique (AXS, Di2, eTap, ..)',
+  'Localisation de l\'article',
+  'Couleurs principales',
+  'Matière principale',
+  'Nombres de vitesses',
+  'Type de freinage',
+  'Taille du cadre',
+  'Diametre roues',
+  'Pratique',
+  'Marque',
+  'Année',
+  'Groupe',
+  'État',
+]
+
+/** « Marque WILIER Année2024 ÉtatTrès bon état … » → { marque: 'WILIER', annee: '2024', etat: 'Très bon état', … } (clés sans accents). */
+export function parseCharacteristics(block: string): Record<string, string> {
+  const escaped = CHARACTERISTICS.map((l) => l.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+  const re = new RegExp(`(${escaped.join('|')})\\s*:?\\s*`, 'g')
+  const marks = [...block.matchAll(re)]
+  const out: Record<string, string> = {}
+  marks.forEach((m, i) => {
+    const key = fold(m[1])
+    const value = block.slice(m.index! + m[0].length, i + 1 < marks.length ? marks[i + 1].index : undefined).trim()
+    if (value && !(key in out)) out[key] = value.slice(0, 120)
+  })
+  return out
+}
+
 export function normalizeTrocVelo(raw: unknown): RawAd | null {
   if (!isObj(raw) || raw.kind !== 'ad') return null
   const url = String(raw.url ?? '').split('?')[0]
@@ -160,48 +174,72 @@ export function normalizeTrocVelo(raw: unknown): RawAd | null {
 
   const product = productOf(raw.jsonLd)
   const offers = product && (Array.isArray(product.offers) ? product.offers[0] : product.offers)
-  // Texte de la page sans les suggestions d'autres annonces, qui fausseraient l'analyse.
-  const text = String(raw.text ?? '')
-    .split(/annonces similaires|vous aimerez aussi|ces annonces (?:pourraient|peuvent)|derni[eè]res annonces|voir aussi/i)[0]
-    .slice(0, 3000)
-  const rawTitle = String(raw.title || raw.ogTitle || product?.name || '').trim()
-  if (!rawTitle) return null
+  const full = String(raw.text ?? '')
+  // La fiche se lit en trois morceaux : en-tête (prix, livraison), description, caractéristiques.
+  // Tout ce qui suit (« Annonces similaires », « Les annonces de … ») concerne d'autres vélos.
+  // (« Voir les annonces similaires » en haut de page n'est qu'un lien : on cherche la fin après la description.)
+  const descStart = full.search(/\bDescription\b/)
+  const tail = full.slice(Math.max(descStart, 0)).search(/(?<!voir les )annonces similaires|les annonces de |vous aimerez aussi|ces annonces (?:pourraient|peuvent)|derni[eè]res annonces/i)
+  const end = tail >= 0 ? Math.max(descStart, 0) + tail : -1
+  const page = end > 0 ? full.slice(0, end) : full.slice(0, 4000)
+  const descAt = page.search(/\bDescription\b/)
+  const header = descAt > 0 ? page.slice(0, descAt) : page.slice(0, 600)
+  const [descriptionText, characteristicsText = ''] = (descAt > 0 ? page.slice(descAt + 'Description'.length) : page).split(/\bCaractéristiques\b/)
+  const characteristics = parseCharacteristics(characteristicsText)
 
-  // Titres de la forme « Modèle - MARQUE - 44600 » : on garde le modèle et la marque, on lit le code postal.
-  const parts = rawTitle.split(/\s+-\s+/)
-  const postalField = raw.postalCode !== undefined && raw.postalCode !== null ? String(raw.postalCode).trim() : ''
-  const postal = /^\d{4,5}$/.test(postalField)
-    ? postalField
-    : parts.length > 1 && /^\d{4,5}$/.test(parts[parts.length - 1]) ? parts.pop()! : text.match(/\b(\d{5})\b(?=[^\d]{0,30}(?:remise|livraison|france))/i)?.[1]
-  // « … - CERVELO » répète la marque déjà présente dans le titre.
+  const ogTitle = String(raw.ogTitle ?? '')
+  const rawTitle = String(raw.title || ogTitle || product?.name || '').trim()
+  if (!rawTitle) return null
+  // Titres de la forme « Modèle - MARQUE - 44600 » : on garde le modèle, on lit le code postal.
+  const parts = rawTitle.replace(/\s+-\s+Troc V[ée]lo\s*$/i, '').split(/\s+-\s+/)
+  const postalFromTitle = parts.length > 1 && /^\d{4,5}$/.test(parts[parts.length - 1]) ? parts.pop()! : undefined
   if (parts.length > 1 && fold(parts[0]).includes(fold(parts[parts.length - 1]))) parts.pop()
   const title = parts.join(' - ')
 
+  // Lieu : « Localisation de l'article : Saint Palais (64120) », sinon le titre Open Graph ou la description.
+  const located = (characteristics["localisation de l'article"] ?? '').match(/^(.*?)\s*\((\d{4,5})\)/)
+  const postalField = raw.postalCode !== undefined && raw.postalCode !== null ? String(raw.postalCode).trim() : ''
+  const postal =
+    located?.[2] ??
+    (/^\d{4,5}$/.test(postalField) ? postalField : undefined) ??
+    postalFromTitle ??
+    ogTitle.match(/-\s(\d{4,5})\s-\sTroc V[ée]lo/i)?.[1] ??
+    String(raw.description ?? '').match(/g[ée]olocalis[ée]e [àa] : (\d{4,5})/i)?.[1]
+  const placeName = located?.[1]?.trim() || String(raw.description ?? '').match(/g[ée]olocalis[ée]e [àa] : \d{4,5} ([^\n]+)/i)?.[1]?.trim()
+
+  // Prix : premier montant de l'en-tête ; le second, s'il existe, est le prix neuf.
+  const amounts = [...header.slice(Math.min(title.length, 200)).matchAll(/(\d{1,2}[\s\u202f.]?\d{3}|\d{3,5})(?:[.,]\d{1,2})?\s?€/g)].map((m) => Number(m[1].replace(/[\s\u202f.]/g, '')))
   const price =
     toNumber(isObj(offers) ? offers.price : undefined) ??
-    toNumber(text.match(/(\d{1,2}[\s .]?\d{3}(?:[.,]\d{1,2})?)\s?€/)?.[1]?.replace(/[\s .](?=\d{3})/g, ''))
+    (amounts[0] || null) ??
+    toNumber(full.match(/(\d{1,2}[\s\u202f.]?\d{3}(?:[.,]\d{1,2})?)\s?€/)?.[1]?.replace(/[\s\u202f.](?=\d{3})/g, ''))
   if (!price) return null
+  const newPrice = amounts[1] && amounts[1] > price ? amounts[1] : undefined
 
   const toVerify: string[] = []
-  let city = 'Lieu non précisé'
+  let city = placeName ? placeName : 'Lieu non précisé'
   let coords: RawAd['coords']
   if (postal && postal.length === 5) {
     const dept = DEPARTMENTS[postal.slice(0, 2)]
-    city = dept ? `${postal}, ${dept[0]}` : postal
+    city = placeName ? `${placeName} (${postal})` : dept ? `${postal}, ${dept[0]}` : postal
     if (dept) {
       coords = { lat: dept[1], lon: dept[2] }
-      toVerify.push('Lieu approximatif : seul le code postal est connu')
+      toVerify.push('Lieu approximatif : distance calculée depuis le chef-lieu du département')
     }
   } else if (postal) {
-    city = `${postal}, hors de France`
+    city = `${placeName ?? postal}, hors de France`
   }
 
+  // Photos de cette annonce seulement (la page affiche aussi celles d'autres annonces).
   const images = [String(raw.image ?? ''), ...(Array.isArray(raw.images) ? raw.images.map(String) : [])]
   if (product?.image) images.unshift(...(Array.isArray(product.image) ? product.image.map(String) : [String(product.image)]))
-  const attributes: Record<string, string> = {}
-  if (isObj(raw.attributes)) for (const [k, v] of Object.entries(raw.attributes)) attributes[k.toLowerCase()] = String(v)
+  const ownImages = images.filter((src) => /^https?:\/\//.test(src) && (!/bikeAds\//.test(src) || src.includes(`/${id}/`)))
 
-  const description = [String(raw.description ?? product?.description ?? ''), text].filter(Boolean).join('\n\n')
+  const attributes: Record<string, string> = { ...characteristics }
+  if (isObj(raw.attributes)) for (const [k, v] of Object.entries(raw.attributes)) attributes[fold(k)] ??= String(v)
+  delete attributes["localisation de l'article"]
+
+  const description = descAt > 0 ? descriptionText.trim() : [String(raw.description ?? product?.description ?? ''), page].filter(Boolean).join('\n\n')
   return {
     source: 'troc-velo',
     id: `tv-${id}`,
@@ -209,11 +247,14 @@ export function normalizeTrocVelo(raw: unknown): RawAd | null {
     title,
     description,
     price,
-    images: [...new Set(images.filter((s) => /^https?:\/\//.test(s)))],
+    newPrice,
+    // Même photo en plusieurs tailles (zoom, full, list) : une seule fois chacune.
+    images: [...new Map(ownImages.map((src) => [src.split('/').pop()!, src])).values()],
     city,
     coords,
     attributes,
-    shipping: /mondial relay|colissimo|livraison (possible|disponible)|envoi possible|exp[ée]dition/i.test(text),
+    // « Livraison par transporteur » dans l'en-tête : le vendeur accepte d'expédier.
+    shipping: /livraison par transporteur|mondial relay|colissimo|livraison (possible|disponible)|envoi possible/i.test(header + (descAt > 0 ? '' : page)),
     toVerify,
   }
 }

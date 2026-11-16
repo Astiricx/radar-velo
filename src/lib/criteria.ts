@@ -68,7 +68,7 @@ export function rejectionReason(l: Listing, c: Criteria, zone: ZoneMatch): strin
   if (!c.groupsets.includes(l.groupset)) return `Groupe non retenu (${GROUPSET_LABELS[l.groupset]})`
   const deliverable = l.shipping && c.acceptShipping
   if (!zone.inside && !deliverable) {
-    if (!zone.nearest) return 'Aucune zone de recherche active'
+    if (!zone.nearest) return c.zones.some((z) => z.enabled) ? 'Lieu inconnu ou trop éloigné, sans livraison' : 'Aucune zone de recherche active'
     return Number.isFinite(zone.distance)
       ? `Hors de tes zones (${zone.distance} km de ${zone.nearest.center}), sans livraison`
       : 'Lieu inconnu, sans livraison'

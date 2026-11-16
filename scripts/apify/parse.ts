@@ -146,6 +146,9 @@ function detectBrakes(t: string): { brakes: Brakes; doubt?: string } {
 
 function detectType(t: string, typeAttr: string): BikeType {
   const a = fold(typeAttr)
+  // La pratique déclarée par le vendeur prime sur le texte (« je passe au gravel » ne fait pas un gravel).
+  if (/route|course|endurance|clm|triathlon/.test(a)) return 'route'
+  if (/gravel/.test(a)) return 'gravel'
   if (/electri|vae|assistance/.test(a) || /\bvae\b|\bassistance electrique\b/.test(t)) return 'vae'
   if (/vtt|vtc|ville|enfant|bmx/.test(a)) return 'urbain'
   if (/\bgravel\b/.test(t)) return 'gravel'
@@ -154,10 +157,10 @@ function detectType(t: string, typeAttr: string): BikeType {
 
 function detectSize(title: string, t: string, sizeAttr: string): string | null {
   const explicit = (s: string) =>
-    s.match(/\b(?:taille|size)\s*:?\s*(xxs|xs|s|m\/l|m|l|xl|xxl|\d{2})\b/)?.[1] ?? s.match(/\bt\.?\s?(4[6-9]|5\d|6[0-4])\b/)?.[1]
+    s.match(/\b(?:taille|size)\s*:?\s*(xxs|xs|s\/m|m\/l|l\/xl|s|m|l|xl|xxl|\d{2})\b/)?.[1] ?? s.match(/\bt\.?\s?(4[6-9]|5\d|6[0-4])\b/)?.[1]
   const found = explicit(fold(title)) ?? explicit(t)
   if (found) return found.toUpperCase()
-  const attr = fold(sizeAttr).match(/\b(xxs|xs|s|m|l|xl|xxl|\d{2})\b/)?.[1]
+  const attr = fold(sizeAttr).match(/\b(xxs|xs|s\/m|m\/l|l\/xl|s|m|l|xl|xxl|\d{2})\b/)?.[1]
   if (attr) return attr.toUpperCase()
   // Dernier recours : une taille en majuscules isolée dans le titre (« Esker 8.0 GRX XL Carbon »).
   return title.match(/(?:^|\s)(XXS|XS|S|M|L|XL|XXL)(?=\s|$|,)/)?.[1] ?? null
@@ -255,7 +258,7 @@ export function toListing(raw: RawAd, today: string): Listing {
     brand: brand ?? 'Vélo de route',
     model: modelFrom(raw.title, brand),
     year,
-    type: detectType(t, attrs.bicycle_type ?? attrs['type de velo'] ?? attrs.type ?? ''),
+    type: detectType(t, attrs.bicycle_type ?? attrs['type de velo'] ?? attrs.pratique ?? attrs.type ?? ''),
     size: size ?? '?',
     price: Math.round(raw.price),
     newPrice: raw.newPrice ?? newPrice(t, raw.price),
