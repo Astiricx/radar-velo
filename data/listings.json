@@ -13,7 +13,7 @@
       "Saint-Nazaire et Loire-Atlantique (120 km autour de Saint-Nazaire)"
     ]
   },
-  "count": 766,
+  "count": 767,
   "retained": 206,
   "listings": [
     {
@@ -33646,6 +33646,107 @@
         }
       ],
       "rejection": "Taille 53 incompatible"
+    },
+    {
+      "id": "bc-64962",
+      "source": "buycycle",
+      "url": "https://buycycle.com/fr-fr/product/madone-sl-6-gen-8-2026-64962",
+      "image": "https://d1mgeijqpfaspl.cloudfront.net/uploads/bike/media/2877346/a7d85aec-7321-43e3-a2a2-68e342d46708.webp",
+      "fallbackImage": "https://d1mgeijqpfaspl.cloudfront.net/uploads/bike/media/2877346/a83da696-48cd-42b7-9cc5-24db32265203.webp",
+      "imageKind": "annonce",
+      "title": "Trek Madone SL 6 Gen 8 2026",
+      "brand": "Trek",
+      "model": "Madone SL 6 Gen 8",
+      "year": 2026,
+      "type": "route",
+      "size": "M",
+      "price": 2870,
+      "newPrice": 4799,
+      "description": "Bici perfetta \nnessun difetto\nvendo per inutilizzo\n\nPrix vendeur 2800 €, 2870 € avec la protection acheteur buycycle (hors frais de port).",
+      "city": "Scerni, Italy (livraison buycycle)",
+      "shipping": true,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105",
+      "aero": true,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "toVerify": [
+        "Frais de port buycycle à vérifier"
+      ],
+      "firstSeen": "2026-11-16",
+      "priceHistory": [
+        {
+          "d": "2026-11-16",
+          "p": 2870
+        }
+      ],
+      "lastSeen": "2026-11-16",
+      "parser": 5,
+      "score": 61,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "40 % sous le prix neuf (4 799 €)",
+          "points": 8.9,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 mécanique",
+          "points": 3,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Aucune zone active, livraison possible",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2026",
+          "points": 7,
+          "max": 8
+        }
+      ],
+      "rejection": "Groupe non retenu (105 mécanique)"
     },
     {
       "id": "bc-62245",

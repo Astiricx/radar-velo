@@ -2,6 +2,21 @@
 
 ## Lundi 16 novembre 2026
 
+- Crédit Apify consommé ce mois-ci avant la collecte : 1,96 $ sur 5,00 $.
+- Leboncoin : 60 annonces lues sur toute la France, les plus récentes (60 au plus).
+- buycycle : 120 annonces lues (route, carbone, disques, tailles M et L, 120 au plus).
+- Troc-Vélo : appels JSON relevés sur la page de liste (piste d'API interne) : https://api.troc-velo.com/api/category_product_counters (200), https://collector.appconsent.io/hello (200), https://api.troc-velo.com/api/category_product_counters, https://www.troc-velo.com/fr-fr?_rsc=eOPycq5ES9Tk-Ef7, https://www.troc-velo.com/fr-fr?_rsc=98k9ImSaZn-7AJ0l.
+- Troc-Vélo (navigateur Puppeteer Scraper d’Apify) : 59 annonces sur la liste (2 pages), 0 fiche ouverte. Tri de la liste : 12 déjà analysées, 32 hors budget, 12 d'une autre taille, 3 sans taille ni groupe cité, 0 trop loin sans livraison, 0 à ouvrir (1 annonces « à la une » répétées d'une page à l'autre, comptées une fois).
+- Decathlon Occasion (Cheerio Scraper d’Apify) : 42 annonces sur la liste, 0 fiche ouverte.
+
+1 nouvelle annonce analysée : 0 pertinente, 1 écartée.
+
+Écartées :
+
+- [Trek Madone SL 6 Gen 8 2026](https://buycycle.com/fr-fr/product/madone-sl-6-gen-8-2026-64962), 2 870 € : Groupe non retenu (105 mécanique)
+
+## Lundi 16 novembre 2026
+
 - Crédit Apify consommé ce mois-ci avant la collecte : 1,83 $ sur 5,00 $.
 - Leboncoin : 60 annonces lues sur toute la France, les plus récentes (60 au plus).
 - buycycle : 120 annonces lues (route, carbone, disques, tailles M et L, 120 au plus).
