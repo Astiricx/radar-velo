@@ -216,6 +216,7 @@ export function normalizeTrocVelo(raw: unknown): RawAd | null {
     toVerify.push(APPROXIMATE_PLACE)
   } else if (postal) {
     city = `${placeName ?? postal} (${postal}), hors de France métropolitaine`
+    toVerify.push('Annonce hors de France métropolitaine : vérifier la livraison et les frais')
   } else {
     toVerify.push('Lieu non précisé dans l’annonce')
   }

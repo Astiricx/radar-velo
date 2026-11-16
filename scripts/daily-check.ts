@@ -32,6 +32,7 @@ import { scoreListing } from '../src/lib/scoring'
 import { matchZone } from '../src/lib/zones'
 import type { Listing, ScoreResult, ZoneMatch } from '../src/types'
 import { collectFromApify } from './apify'
+import { PARSER_VERSION } from './apify/parse'
 import { simulateDay } from './simulation'
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
@@ -71,6 +72,8 @@ type SavedListing = Listing & {
   scoreDetail: ScoreResult['parts']
   /** Motif d'exclusion selon les critères par défaut, ou null si retenue. */
   rejection: string | null
+  /** Version des règles de lecture qui ont produit cette fiche. */
+  parser?: number
 }
 
 interface Analysed {
@@ -219,6 +222,7 @@ function toSaved(a: Analysed, firstSeen: string): SavedListing {
     ...a.listing,
     firstSeen,
     lastSeen: date,
+    parser: PARSER_VERSION,
     score: a.score.total,
     zone: a.zone.inside && a.zone.nearest ? a.zone.nearest.label : null,
     distanceKm: Number.isFinite(a.zone.distance) ? a.zone.distance : null,
@@ -239,6 +243,13 @@ async function main() {
   const warnings: string[] = []
   const state = readJson<State>(FILES.state, { lastRun: null, seen: {} })
   state.seen ??= {}
+
+  // Fiches Troc-Vélo et Decathlon lues avec d'anciennes règles : on les oublie pour qu'elles
+  // soient rouvertes et relues (elles ne sont rouvertes que si elles ne sont plus « déjà vues »).
+  const saved = readJson<{ listings?: SavedListing[] }>(FILES.listings, {}).listings ?? []
+  const outdated = new Set(saved.filter((s) => s.source !== 'leboncoin' && s.parser !== PARSER_VERSION).map((s) => s.id))
+  for (const id of outdated) delete state.seen[id]
+  if (outdated.size > 0) console.log(`${outdated.size} fiche(s) lue(s) avec d'anciennes règles : à relire.`)
 
   // En réanalyse complète, on rouvre aussi les fiches déjà vues.
   const collected = await collectFromApify(date, warnings, rescan ? [] : Object.keys(state.seen))
@@ -268,9 +279,8 @@ async function main() {
 
   // Annonces publiées sur le site : vraies annonces avec un lien direct, retenues ou écartées
   // (le site affiche les écartées avec leur motif).
-  const previous = readJson<{ listings?: SavedListing[] }>(FILES.listings, {}).listings ?? []
   const byId = new Map(
-    previous.filter((s) => !(s as { simulated?: boolean }).simulated && s.frame && isDirectAdUrl(s.url)).map((s) => [s.id, s]),
+    saved.filter((s) => !(s as { simulated?: boolean }).simulated && s.frame && isDirectAdUrl(s.url) && !outdated.has(s.id)).map((s) => [s.id, s]),
   )
   for (const a of analysed) {
     if (a.simulated || !isDirectAdUrl(a.listing.url)) continue

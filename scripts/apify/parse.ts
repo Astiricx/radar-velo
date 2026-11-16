@@ -9,6 +9,12 @@
 import { DEFAULT_CRITERIA } from '../../src/lib/criteria'
 import type { BikeType, Brakes, Condition, ExtensionFit, Frame, Groupset, Listing, SourceId } from '../../src/types'
 
+/**
+ * Version des règles de lecture. À augmenter quand elles changent : les fiches Troc-Vélo et
+ * Decathlon lues avec une version plus ancienne sont alors relues à la veille suivante.
+ */
+export const PARSER_VERSION = 4
+
 /** Annonce telle que lue sur la plateforme, avant analyse. */
 export interface RawAd {
   source: SourceId
