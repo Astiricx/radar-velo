@@ -26,6 +26,11 @@ export interface RawAd {
   shipping?: boolean
   publishedAt?: string
   newPrice?: number
+  /** Code postal et nom de commune lus sur l'annonce, pour calculer la position exacte. */
+  postalCode?: string
+  placeName?: string
+  /** Extraits bruts de la page (prix de l'en-tête, caractéristiques), pour le journal de contrôle. */
+  debug?: string
   /** Points déjà connus comme incertains (lieu approximatif…). */
   toVerify?: string[]
 }

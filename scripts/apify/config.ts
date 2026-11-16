@@ -51,6 +51,8 @@ export const TROCVELO = {
   startUrl: text(process.env.TROCVELO_SEARCH_URL, 'https://www.troc-velo.com/fr-fr/categorie/velos-complets/route'),
   /** Annonces ouvertes au plus à chaque exécution. */
   maxListings: Math.max(1, Math.round(num(process.env.TROCVELO_MAX_ITEMS, 8))),
+  /** Pages de liste lues (30 annonces chacune, les plus récentes d'abord). */
+  maxListPages: Math.max(1, Math.round(num(process.env.TROCVELO_LIST_PAGES, 2))),
 }
 
 export const DECATHLON = {

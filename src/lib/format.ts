@@ -39,8 +39,8 @@ export function distanceLabel(km: number, center: string | undefined): string {
   return `à ${km} km de ${center}`
 }
 
-/** « 2023 », ou « année ? » quand l'annonce ne la donne pas. */
-export const yearLabel = (year: number) => (year > 0 ? String(year) : 'année ?')
+/** « 2023 », ou « année non précisée » quand le vendeur ne l'a pas indiquée. */
+export const yearLabel = (year: number) => (year > 0 ? String(year) : 'année non précisée')
 
 export function discountPct(price: number, newPrice?: number): number | null {
   if (!newPrice || newPrice <= price) return null

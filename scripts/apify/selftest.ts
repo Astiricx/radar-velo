@@ -159,7 +159,7 @@ test('Troc-Vélo : Look à patins dans les Pyrénées, écarté', () => {
   const l = toListing(tv[2]!, today)
   assert.equal(l.price, 2150)
   assert.equal(l.brakes, 'patins')
-  assert.equal(l.city, '65250')
+  assert.equal(l.city, '65250, Hautes-Pyrénées')
   assert.ok(verdict(l))
 })
 
@@ -179,6 +179,49 @@ test('Decathlon Occasion : Van Rysel RCR-F livré, retenu ; page de liste ignor�
   assert.equal(l.shipping, true)
   assert.equal(isDirectAdUrl(l.url), true)
   assert.equal(verdict(l), null)
+})
+
+// Code postal → position : commune exacte, secours par département, code postal étranger.
+{
+  const { mkdtempSync, writeFileSync } = await import('node:fs')
+  const { tmpdir } = await import('node:os')
+  const { Geocoder } = await import('../geo')
+  const { DEPARTMENTS, departmentCode, departmentsNear } = await import('./departments')
+  const file = resolve(mkdtempSync(resolve(tmpdir(), 'geo-')), 'cache.json')
+  writeFileSync(
+    file,
+    JSON.stringify({
+      '64420': [
+        { nom: 'Andoins', centre: { coordinates: [-0.2258, 43.3008] } },
+        { nom: 'Soumoulou', centre: { coordinates: [-0.1869, 43.2647] } },
+      ],
+      '08227': [],
+    }),
+  )
+  const geo = new Geocoder(file, true)
+  const soumoulou = await geo.locate('64420', 'SOUMOULOU')
+  const foreign = await geo.locate('08227', 'Terrassa, Barcelone')
+  const fallback = await geo.locate('59800', 'Lille')
+  test('code postal → position : commune exacte, département en secours, étranger reconnu', () => {
+    assert.deepEqual(soumoulou, { lat: 43.2647, lon: -0.1869, name: 'Soumoulou', exact: true })
+    assert.equal(foreign, 'unknown')
+    assert.deepEqual(fallback, { lat: 50.6292, lon: 3.0573, name: 'Nord', exact: false })
+    assert.equal(Object.keys(DEPARTMENTS).length, 96)
+    assert.equal(departmentCode('20000'), '2A')
+    assert.equal(departmentCode('20200'), '2B')
+    assert.equal(departmentCode('97400'), null)
+    const near = departmentsNear(DEFAULT_CRITERIA.zones)
+    for (const d of ['75', '93', '44', '35', '56', '85', '59']) assert.ok(near.includes(d), d)
+    for (const d of ['64', '31', '13', '69', '68']) assert.ok(!near.includes(d), d)
+  })
+}
+
+test('Troc-Vélo : le vendeur qui refuse l’envoi n’est pas compté comme livrable', () => {
+  const raw = structuredClone(fixture('apify~puppeteer-scraper.json')[3]) as { text: string }
+  raw.text = raw.text.replace('Je passe au gravel.', 'Je passe au gravel. Pas d\'envoi, remise en main propre uniquement.')
+  const l = toListing(normalizeTrocVelo(raw)!, today)
+  assert.equal(l.shipping, false)
+  assert.equal(l.type, 'route')
 })
 
 test('les fonctions de page (Cheerio et navigateur) sont du JavaScript valide', () => {

@@ -18,6 +18,10 @@ on:
         description: Réanalyser aussi les annonces déjà vues (après un changement de règles)
         type: boolean
         default: false
+      debug:
+        description: Journal détaillé (extraits bruts des fiches, décision par vignette)
+        type: boolean
+        default: false
       max_items:
         description: Annonces Leboncoin lues par zone pour cette exécution (vide = réglage habituel)
         type: string
@@ -56,6 +60,8 @@ jobs:
           APIFY_BUDGET_USD: ${{ vars.APIFY_BUDGET_USD }}
           APIFY_MAX_ITEMS: ${{ inputs.max_items || vars.APIFY_MAX_ITEMS }}
           VEILLE_RESCAN: ${{ inputs.rescan && 'true' || 'false' }}
+          VEILLE_DEBUG: ${{ inputs.debug && 'true' || 'false' }}
+          TROCVELO_LIST_PAGES: ${{ vars.TROCVELO_LIST_PAGES }}
           APIFY_PROXY_GROUPS: ${{ vars.APIFY_PROXY_GROUPS || secrets.APIFY_PROXY_GROUPS }}
           DECATHLON_ENABLED: ${{ vars.DECATHLON_ENABLED }}
           DECATHLON_MAX_ITEMS: ${{ vars.DECATHLON_MAX_ITEMS }}

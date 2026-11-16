@@ -112,8 +112,10 @@ export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
       // déjà analysées (cd.skipIds) ne sont pas rouvertes : on ne paie que les nouvelles.
       const skip = new Set(cd.skipIds || []);
       const sizes = (cd.sizes || []).map((s) => fold(String(s)).replace(/\\s|cm/g, ''));
-      const stats = { known: 0, price: 0, size: 0, group: 0 };
+      const stats = { known: 0, price: 0, size: 0, group: 0, far: 0 };
       const decided = [];
+      const decisions = [];
+      const departments = cd.departments || [];
       for (const [url, text] of cards.entries()) {
         const t = fold(text);
         const id = (url.match(/-(\\d+)\\/?$/) || [])[1];
@@ -128,8 +130,35 @@ export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
         else if (price !== null && (price < cd.priceMin || price > cd.priceMax)) { why = 'price'; }
         else if (sized && sizes.length && !sizes.includes(sized)) { why = 'size'; }
         else if (!sized && !group) { why = 'group'; }
+        // Lieu de la vignette : « Livraison LIMOUX (11300) ». Hors des départements à portée et sans
+        // livraison, l'annonce serait écartée de toute façon : inutile de payer pour l'ouvrir.
+        const cp = ((text.match(/\\((\\d{5})\\)/g) || []).pop() || '').replace(/\\D/g, '');
+        const shipping = /\\blivraison\\b/.test(t);
+        if (!why && cp && !shipping && departments.length && !departments.includes(cp.slice(0, 2))) why = 'far';
         if (why) stats[why]++;
         else decided.push({ url, group, sized: !!sized });
+        // Décision par vignette, sans le pseudonyme du vendeur, pour le journal de contrôle.
+        decisions.push((why || 'ouvrir') + ' | ' + text.replace(/^.*?(?:Pas encore d.évaluation|\\d+ avis)\\s*(?:Pro\\s*)?(?:À la une\\s*)?/, '').slice(0, 150));
+      }
+      // Page suivante de la même liste (lien rel="next", ?page=2, /page/2 ou /2).
+      const here = new URL(location.href);
+      const strip = (p) => p.replace(/\\/(?:page[\\/-])?\\d{1,3}\\/?$/, '').replace(/\\/$/, '');
+      const pageNo = (u) => {
+        const q = u.searchParams.get('page') || u.searchParams.get('p');
+        if (q && /^\\d+$/.test(q)) return Number(q);
+        const m = u.pathname.match(/\\/(?:page[\\/-])?(\\d{1,3})\\/?$/);
+        return m ? Number(m[1]) : null;
+      };
+      const current = pageNo(here) || 1;
+      let next = null;
+      const rel = document.querySelector('a[rel="next"], link[rel="next"]');
+      if (rel && rel.getAttribute('href')) { try { next = new URL(rel.getAttribute('href'), location.href).href.split('#')[0]; } catch (e) {} }
+      if (!next) {
+        for (const a of document.querySelectorAll('a[href]')) {
+          let u;
+          try { u = new URL(a.getAttribute('href'), location.href); } catch (e) { continue; }
+          if (u.host === here.host && strip(u.pathname) === strip(here.pathname) && pageNo(u) === current + 1) { next = u.href.split('#')[0]; break; }
+        }
       }
       // Les plus prometteuses d'abord : taille connue et groupe cité, puis taille seule, puis groupe seul.
       decided.sort((a, b) => (Number(b.group) + Number(b.sized)) - (Number(a.group) + Number(a.sized)));
@@ -148,6 +177,8 @@ export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
         samples: Array.from(cards.values()).slice(0, 3).map((t) => t.slice(0, 140)),
         stats,
         candidates: decided.length,
+        decisions: decisions.slice(0, 40),
+        next,
         apis,
       };
     }, customData);
@@ -155,7 +186,12 @@ export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
     const captured = page.__radarJson || [];
     const apis = Array.from(new Set(captured.map((c) => c.url + ' (' + c.status + ')').concat(data.apis))).slice(0, 15);
     const status = context.response && typeof context.response.status === 'function' ? context.response.status() : null;
-    const list = { kind: 'list', url: base, status, found: data.found, kept: data.kept.length, pageTitle: data.pageTitle, size: data.size, samples: data.samples, apis, stats: data.stats, candidates: data.candidates };
+    const pageIndex = (request.userData && request.userData.page) || 1;
+    const list = { kind: 'list', url: base, status, found: data.found, kept: data.kept.length, pageTitle: data.pageTitle, size: data.size, samples: data.samples, apis, stats: data.stats, candidates: data.candidates, decisions: data.decisions, next: data.next, page: pageIndex };
+    // Page suivante de la liste, dans la limite de customData.maxListPages.
+    if (data.next && data.found > 0 && pageIndex < (customData.maxListPages || 1)) {
+      await context.enqueueRequest({ url: data.next, userData: { label: 'LIST', page: pageIndex + 1 } });
+    }
     if (data.found === 0) {
       // Page vide : les annonces sont peut-être seulement dans les réponses JSON du site.
       const ads = fromJson(captured, customData).slice(0, 30);

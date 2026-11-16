@@ -11,7 +11,8 @@ import { fetchDecathlon } from './decathlon'
 import { directRunner } from './direct'
 import { fetchLeboncoin } from './leboncoin'
 import { toListing } from './parse'
-import { fetchTrocVelo } from './trocvelo'
+import { Geocoder } from '../geo'
+import { APPROXIMATE_PLACE, fetchTrocVelo } from './trocvelo'
 
 export interface Collected {
   listings: Listing[]
@@ -30,6 +31,9 @@ function fixtureRunner(dir: string): ActorRunner {
   }
 }
 
+/** VEILLE_DEBUG=true : extraits bruts des fiches et décision prise pour chaque vignette. */
+const DEBUG = (process.env.VEILLE_DEBUG ?? 'false').toLowerCase() === 'true'
+
 const usd = (n: number) => `${n.toFixed(2).replace('.', ',')} $`
 
 /**
@@ -45,6 +49,8 @@ export async function collectFromApify(today: string, warnings: string[], seenId
     return { listings, notes }
   }
   const run = fixtures ? fixtureRunner(fixtures) : apifyRunner(APIFY.token)
+  // Hors ligne pendant les tests : la position reste celle de la préfecture.
+  const geocoder = new Geocoder(resolve('data/geocache.json'), Boolean(fixtures))
 
   // Garde-fou : on ne lance rien si le crédit du mois est presque consommé.
   if (!fixtures) {
@@ -140,28 +146,43 @@ export async function collectFromApify(today: string, warnings: string[], seenId
           const title = pages[0]?.pageTitle ? ` (titre de la page : « ${pages[0].pageTitle} »)` : ''
           throw new Error(`aucune annonce trouvée sur ${s.page}${title}`)
         }
+        // Position exacte de la commune à partir du code postal lu sur l'annonce.
+        for (const ad of ads) {
+          if (!ad.postalCode) continue
+          const place = await geocoder.locate(ad.postalCode, ad.placeName)
+          if (place === 'unknown') {
+            ad.coords = undefined
+            ad.toVerify = [...(ad.toVerify ?? []).filter((v) => v !== APPROXIMATE_PLACE), 'Code postal inconnu en France : lieu à vérifier']
+          } else if (place?.exact) {
+            ad.coords = { lat: place.lat, lon: place.lon }
+            ad.toVerify = (ad.toVerify ?? []).filter((v) => v !== APPROXIMATE_PLACE)
+          }
+        }
         const read = ads.map((ad) => toListing(ad, today))
         listings.push(...read)
         // Ce que le robot a lu sur chaque fiche, pour contrôle dans le journal de l'exécution.
-        for (const l of read) {
-          const { title, price, newPrice, size, year, groupset, frame, brakes, type, city, shipping, condition, km, toVerify, url } = l
-          console.log(`    Fiche ${s.label} : ${JSON.stringify({ title, price, newPrice, size, year, groupset, frame, brakes, type, city, shipping, condition, km, toVerify, url })}`)
-        }
+        read.forEach((l, n) => {
+          const { title, price, newPrice, size, year, groupset, frame, brakes, type, city, coords, shipping, condition, km, toVerify, url } = l
+          console.log(`    Fiche ${s.label} : ${JSON.stringify({ title, price, newPrice, size, year, groupset, frame, brakes, type, city, coords, shipping, condition, km, toVerify, url })}`)
+          if (DEBUG && ads[n].debug) console.log(`      brut : ${ads[n].debug}`)
+        })
+        if (DEBUG) for (const p of pages) for (const d of p.decisions ?? []) console.log(`      vignette p.${p.page ?? 1} : ${d}`)
         const st = pages.reduce(
           (acc, p) => ({
             known: acc.known + (p.stats?.known ?? 0),
             price: acc.price + (p.stats?.price ?? 0),
             size: acc.size + (p.stats?.size ?? 0),
             group: acc.group + (p.stats?.group ?? 0),
+            far: acc.far + (p.stats?.far ?? 0),
             candidates: acc.candidates + (p.candidates ?? 0),
           }),
-          { known: 0, price: 0, size: 0, group: 0, candidates: 0 },
+          { known: 0, price: 0, size: 0, group: 0, far: 0, candidates: 0 },
         )
         const sorted = pages.some((p) => p.stats)
-          ? ` Tri de la liste : ${st.known} déjà analysées, ${st.price} hors budget, ${st.size} d'une autre taille, ${st.group} sans taille ni groupe cité, ${st.candidates} à ouvrir.`
+          ? ` Tri de la liste : ${st.known} déjà analysées, ${st.price} hors budget, ${st.size} d'une autre taille, ${st.group} sans taille ni groupe cité, ${st.far} trop loin sans livraison, ${st.candidates} à ouvrir.`
           : ''
         notes.push(
-          `${s.label} (${how}) : ${plural(listed ?? ads.length, 'annonce sur la liste', 'annonces sur la liste')}, ` +
+          `${s.label} (${how}) : ${plural(listed ?? ads.length, 'annonce sur la liste', 'annonces sur la liste')}${pages.length > 1 ? ` (${pages.length} pages)` : ''}, ` +
             `${plural(ads.length, 'fiche ouverte', 'fiches ouvertes')}${skipped ? `, ${plural(skipped, 'page illisible', 'pages illisibles')}` : ''}.${sorted}`,
         )
         failures.length = 0
@@ -188,5 +209,6 @@ export async function collectFromApify(today: string, warnings: string[], seenId
     }
   }
 
+  geocoder.save()
   return { listings, notes }
 }

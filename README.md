@@ -148,6 +148,23 @@ lit directement dans ces réponses (titre, prix, lien, photo, code postal). Le
 journal affiche les appels relevés (« appels JSON relevés ») : si une API de
 recherche apparaît, on pourra l'interroger sans navigateur, pour presque rien.
 
+**Tri de la liste Troc-Vélo.** La liste est nationale, 30 annonces par page, les
+plus récentes d'abord. Deux pages sont lues (`TROCVELO_LIST_PAGES`). Chaque
+vignette donne le prix, la taille, la ville et la livraison : ne sont ouvertes
+que les annonces dans le budget, à la bonne taille, et situées dans un
+département à portée de tes zones ou livrables. Les annonces déjà analysées ne
+sont pas rouvertes. Le journal donne le décompte de chaque motif.
+
+**Lieu et distance.** Le code postal lu sur la fiche est converti en position
+par la base officielle des communes (geo.api.gouv.fr, gratuite), gardée en cache
+dans `data/geocache.json`. Si elle ne répond pas, la distance part de la
+préfecture du département et le lieu est marqué « approximatif ». Un code postal
+inconnu en France (annonce de l'étranger) est signalé.
+
+**Journal détaillé.** En lançant la veille à la main avec la case « Journal
+détaillé », l'exécution affiche les extraits bruts de chaque fiche (en-tête,
+caractéristiques, description) et la décision prise pour chaque vignette.
+
 **Diagnostic.** Quand une page de liste n'est pas lue, la veille récupère les
 lignes d'erreur du journal de l'exécution Apify (code HTTP, blocage, délai) et
 les recopie dans son propre journal, avec le proxy réellement utilisé.
@@ -167,6 +184,7 @@ Variables) :
 | `TROCVELO_PROXY_GROUPS` | comme ci-dessus | Proxy pour Troc-Vélo seulement, par exemple `RESIDENTIAL` |
 | `DECATHLON_ENABLED`   | `true`     | `false` : ne plus lire Decathlon Occasion |
 | `TROCVELO_MAX_ITEMS`  | `8`        | Annonces Troc-Vélo ouvertes par jour |
+| `TROCVELO_LIST_PAGES` | `2`        | Pages de liste Troc-Vélo lues (30 annonces chacune) |
 | `TROCVELO_SEARCH_URL` | catégorie route | Page de liste Troc-Vélo (copie l'adresse après avoir posé tes filtres) |
 | `TROCVELO_ENABLED`    | `true`     | `false` : ne plus lire Troc-Vélo |
 | `COMMIT_RESULTS`      | `true`     | `false` : simple exécution de contrôle, rien n'est commité |
