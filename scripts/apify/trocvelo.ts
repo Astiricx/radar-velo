@@ -1,27 +1,27 @@
 /**
- * Troc-Vélo via l'acteur gratuit apify/cheerio-scraper.
+ * Troc-Vélo via l'acteur générique apify/puppeteer-scraper (Chrome sans écran).
  *
- * Il n'existe pas d'acteur Troc-Vélo dans l'Apify Store. Le Cheerio Scraper lit le
- * HTML sans navigateur : c'est le moins cher (quelques secondes de calcul). Il ouvre
- * une page de liste, puis au plus TROCVELO.maxListings annonces.
+ * Il n'existe pas d'acteur Troc-Vélo dans l'Apify Store, et le site refuse les
+ * requêtes sans navigateur (Cheerio Scraper, lecture directe : erreur 403). Un vrai
+ * navigateur exécute son JavaScript. Pour limiter le coût : ni images ni CSS
+ * téléchargés, une seule page de liste, au plus TROCVELO.maxListings annonces ouvertes,
+ * celles dont la vignette cite un groupe retenu et un prix dans le budget.
  *
  * Troc-Vélo ne donne que le code postal du vendeur : la distance est calculée depuis
  * la préfecture du département, et signalée comme approximative.
  */
+import { BROWSER_PAGE_FUNCTION } from './browser-page-function'
 import type { ActorRunner } from './client'
+import { PREFILTER, SEARCH, TROCVELO, TROCVELO_PROXY } from './config'
 import type { ListPage } from './page-function'
-import { PREFILTER, PROXY, SEARCH, TROCVELO } from './config'
-import { PAGE_FUNCTION } from './page-function'
 import { fold, type RawAd } from './parse'
-
-export { PAGE_FUNCTION }
 
 export async function fetchTrocVelo(run: ActorRunner): Promise<{ ads: RawAd[]; skipped: number; listed: number | null; pages: ListPage[] }> {
   const items = await run(
     TROCVELO.actor,
     {
       startUrls: [{ url: TROCVELO.startUrl }],
-      pageFunction: PAGE_FUNCTION,
+      pageFunction: BROWSER_PAGE_FUNCTION,
       customData: {
         label: 'Troc-Vélo',
         linkPattern: '/annonce/.+-\\d+/?$',
@@ -30,13 +30,23 @@ export async function fetchTrocVelo(run: ActorRunner): Promise<{ ads: RawAd[]; s
         priceMin: SEARCH.priceMin,
         priceMax: SEARCH.priceMax,
       },
+      // Champ obligatoire. Proxy Apify ; TROCVELO_PROXY_GROUPS=RESIDENTIAL si le site bloque encore.
+      proxyConfiguration: TROCVELO_PROXY,
+      maxPagesPerCrawl: TROCVELO.maxListings + 1,
       maxRequestsPerCrawl: TROCVELO.maxListings + 1,
-      maxConcurrency: 3,
-      maxRequestRetries: 1,
-      // Obligatoire pour le Cheerio Scraper : proxy Apify (voir PROXY dans config.ts).
-      proxyConfiguration: PROXY,
+      maxConcurrency: 2,
+      maxRequestRetries: 2,
+      // Économie de temps et de bande passante (le proxy résidentiel est facturé au volume).
+      downloadMedia: false,
+      downloadCss: false,
+      closeCookieModals: true,
+      headless: true,
+      useChrome: false,
+      waitUntil: ['domcontentloaded'],
+      pageLoadTimeoutSecs: 60,
+      pageFunctionTimeoutSecs: 60,
     },
-    { memoryMbytes: 1024, timeoutSecs: 180 },
+    { memoryMbytes: 2048, timeoutSecs: 280 },
   )
   let listed: number | null = null
   const pages: ListPage[] = []

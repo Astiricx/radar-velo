@@ -72,16 +72,40 @@ export async function collectFromApify(today: string, warnings: string[]): Promi
     }
   }
 
-  // Troc-Vélo et Decathlon : lecture directe depuis GitHub (gratuite), puis Cheerio Scraper d'Apify si le site bloque.
+  // Decathlon : lecture directe depuis GitHub (gratuite), puis Cheerio Scraper d'Apify si le site bloque.
+  // Troc-Vélo : uniquement Puppeteer Scraper d'Apify (le site exige un vrai navigateur).
   const scrapers = [
-    { label: 'Troc-Vélo', enabled: TROCVELO.enabled, fetch: fetchTrocVelo, page: TROCVELO.startUrl, variable: 'TROCVELO_SEARCH_URL' },
-    { label: 'Decathlon Occasion', enabled: DECATHLON.enabled, fetch: fetchDecathlon, page: DECATHLON.startUrls[0], variable: null },
+    {
+      label: 'Troc-Vélo',
+      enabled: TROCVELO.enabled,
+      fetch: fetchTrocVelo,
+      page: TROCVELO.startUrl,
+      variable: 'TROCVELO_SEARCH_URL',
+      direct: false,
+      apifyHow: 'navigateur Puppeteer Scraper d’Apify',
+    },
+    {
+      label: 'Decathlon Occasion',
+      enabled: DECATHLON.enabled,
+      fetch: fetchDecathlon,
+      page: DECATHLON.startUrls[0],
+      variable: null,
+      direct: true,
+      apifyHow: 'Cheerio Scraper d’Apify',
+    },
   ]
   for (const s of scrapers) {
     if (!s.enabled) continue
     const attempts: { how: string; runner: ActorRunner }[] = fixtures
       ? [{ how: 'exemples', runner: run }]
-      : [{ how: 'lecture directe', runner: directRunner() }, ...(APIFY.token ? [{ how: 'Cheerio Scraper d’Apify', runner: run }] : [])]
+      : [
+          ...(s.direct ? [{ how: 'lecture directe', runner: directRunner() }] : []),
+          ...(APIFY.token ? [{ how: s.apifyHow, runner: run }] : []),
+        ]
+    if (attempts.length === 0) {
+      notes.push(`${s.label} non lu : il faut le secret APIFY_TOKEN.`)
+      continue
+    }
     const failures: string[] = []
     for (const { how, runner } of attempts) {
       try {
@@ -89,7 +113,13 @@ export async function collectFromApify(today: string, warnings: string[]): Promi
         for (const p of pages) {
           console.log(`    ${s.label} ${p.url} : « ${p.pageTitle ?? '?'} », ${p.size ?? '?'} caractères, ${p.found} annonces, ${p.kept} retenues`)
           for (const sample of p.samples ?? []) console.log(`      ${sample}`)
+          if (p.apis?.length) {
+            console.log(`      Appels JSON du site (pistes d'API interne) :`)
+            for (const api of p.apis) console.log(`        ${api}`)
+          }
         }
+        const apis = [...new Set(pages.flatMap((p) => p.apis ?? []))]
+        if (apis.length > 0) notes.push(`${s.label} : appels JSON relevés sur la page de liste (piste d'API interne) : ${apis.slice(0, 5).join(', ')}.`)
         if (listed === null) throw new Error(`page de liste non lue (bloquée ou injoignable) : ${s.page}`)
         if (listed === 0 && ads.length === 0) {
           const title = pages[0]?.pageTitle ? ` (titre de la page : « ${pages[0].pageTitle} »)` : ''

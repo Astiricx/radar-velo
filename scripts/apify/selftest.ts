@@ -14,6 +14,7 @@ import { LEBONCOIN_ZONES } from './config'
 import { normalizeLeboncoin, searchUrl } from './leboncoin'
 import { toListing } from './parse'
 import { normalizeDecathlon } from './decathlon'
+import { BROWSER_PAGE_FUNCTION } from './browser-page-function'
 import { PAGE_FUNCTION } from './page-function'
 import { normalizeTrocVelo } from './trocvelo'
 
@@ -111,7 +112,7 @@ test('Leboncoin : cadre alu avec roues carbone écarté', () => {
   assert.ok(verdict(l))
 })
 
-const tv = fixture('apify~cheerio-scraper.json').map(normalizeTrocVelo)
+const tv = fixture('apify~puppeteer-scraper.json').map(normalizeTrocVelo)
 
 test('Troc-Vélo : Cervélo S5 près de Guérande, retenu, suggestions ignorées', () => {
   assert.equal(tv[0], null)
@@ -157,9 +158,9 @@ test('Decathlon Occasion : Van Rysel RCR-F livré, retenu ; page de liste ignor�
   assert.equal(verdict(l), null)
 })
 
-test('la fonction de page est du JavaScript valide', () => {
-  const fn = new Function(`return (${PAGE_FUNCTION})`)()
-  assert.equal(typeof fn, 'function')
+test('les fonctions de page (Cheerio et navigateur) sont du JavaScript valide', () => {
+  assert.equal(typeof new Function(`return (${PAGE_FUNCTION})`)(), 'function')
+  assert.equal(typeof new Function(`return (${BROWSER_PAGE_FUNCTION})`)(), 'function')
 })
 
 // Lecture directe (sans Apify) sur de petites pages servies en local. Demande la

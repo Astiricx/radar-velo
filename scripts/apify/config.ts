@@ -4,10 +4,12 @@
  * Coût estimé par jour, avec les valeurs par défaut :
  *   - Leboncoin : 2 recherches × 30 annonces au plus, à 0,79 $ les 1 000 annonces
  *     (acteur memo23/leboncoin-scraper)            → 0,05 $ au plus, ~1,40 $ par mois ;
- *   - Troc-Vélo : 1 page de liste + 12 annonces au plus, et
+ *   - Troc-Vélo : 1 page de liste + 8 annonces au plus, dans un Chrome sans écran
+ *     (apify/puppeteer-scraper, 2 Go pendant 2 à 4 minutes) → ~0,04 $, ~1,20 $ par mois,
+ *     plus le proxy résidentiel s'il est activé ;
  *   - Decathlon Occasion : 4 pages de liste + 12 annonces au plus, avec l'acteur
- *     gratuit apify/cheerio-scraper (temps de calcul seul) → ~0,02 $, ~0,60 $ par mois.
- * Soit environ 2 $ par mois au maximum. Un garde-fou arrête la collecte si la
+ *     apify/cheerio-scraper (temps de calcul seul) → ~0,01 $, ~0,30 $ par mois.
+ * Soit environ 3 $ par mois au maximum. Un garde-fou arrête la collecte si la
  * consommation du mois atteint APIFY_BUDGET_USD.
  *
  * Toutes les valeurs se règlent sans toucher au code, par des variables du dépôt
@@ -40,12 +42,15 @@ export const LEBONCOIN = {
 
 export const TROCVELO = {
   enabled: text(process.env.TROCVELO_ENABLED, 'true') !== 'false',
-  /** Scraper générique gratuit d'Apify : on ne paie que quelques secondes de calcul. */
-  actor: 'apify/cheerio-scraper',
+  /**
+   * Scraper générique d'Apify avec un vrai Chrome sans écran : Troc-Vélo affiche ses
+   * annonces en JavaScript et refuse les requêtes sans navigateur. On paie le temps de calcul.
+   */
+  actor: text(process.env.TROCVELO_ACTOR, 'apify/puppeteer-scraper'),
   /** Page de liste à lire. Pour la changer, copie l'adresse de Troc-Vélo après avoir posé tes filtres. */
   startUrl: text(process.env.TROCVELO_SEARCH_URL, 'https://www.troc-velo.com/fr-fr/categorie/velos-complets/route'),
   /** Annonces ouvertes au plus à chaque exécution. */
-  maxListings: Math.max(1, Math.round(num(process.env.TROCVELO_MAX_ITEMS, 12))),
+  maxListings: Math.max(1, Math.round(num(process.env.TROCVELO_MAX_ITEMS, 8))),
 }
 
 export const DECATHLON = {
@@ -62,14 +67,18 @@ export const DECATHLON = {
  * variable APIFY_PROXY_GROUPS à RESIDENTIAL : IP résidentielles françaises, facturées au volume
  * (quelques centimes par mois pour ces petites pages).
  */
-const proxyGroups = text(process.env.APIFY_PROXY_GROUPS, '')
-  .split(',')
-  .map((g) => g.trim().toUpperCase())
-  .filter(Boolean)
-export const PROXY =
-  proxyGroups.length > 0
-    ? { useApifyProxy: true, apifyProxyGroups: proxyGroups, ...(proxyGroups.includes('RESIDENTIAL') ? { apifyProxyCountry: 'FR' } : {}) }
+function proxyFor(groupsText: string) {
+  const groups = groupsText
+    .split(',')
+    .map((g) => g.trim().toUpperCase())
+    .filter(Boolean)
+  return groups.length > 0
+    ? { useApifyProxy: true, apifyProxyGroups: groups, ...(groups.includes('RESIDENTIAL') ? { apifyProxyCountry: 'FR' } : {}) }
     : { useApifyProxy: true }
+}
+export const PROXY = proxyFor(text(process.env.APIFY_PROXY_GROUPS, ''))
+/** Proxy propre à Troc-Vélo (TROCVELO_PROXY_GROUPS), sinon le réglage général. */
+export const TROCVELO_PROXY = proxyFor(text(process.env.TROCVELO_PROXY_GROUPS, text(process.env.APIFY_PROXY_GROUPS, '')))
 
 /**
  * Pré-filtre des pages de liste Troc-Vélo et Decathlon (texte sans accents, en minuscules) :

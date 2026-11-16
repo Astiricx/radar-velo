@@ -20,6 +20,8 @@ export interface ListPage {
   pageTitle?: string
   size?: number
   samples?: string[]
+  /** Appels JSON relevés par le navigateur (Puppeteer Scraper seulement). */
+  apis?: string[]
 }
 
 export const PAGE_FUNCTION = `async function pageFunction(context) {

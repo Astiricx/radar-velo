@@ -1,5 +1,5 @@
-# Veille quotidienne : collecte Leboncoin (Apify), Troc-Vélo et Decathlon Occasion (lecture directe,
-# Cheerio Scraper d'Apify en secours), analyse, enregistre data/ et republie le site.
+# Veille quotidienne : collecte Leboncoin (Apify), Troc-Vélo (Puppeteer Scraper d'Apify, vrai navigateur)
+# et Decathlon Occasion (lecture directe, Cheerio Scraper en secours), analyse, enregistre data/ et republie le site.
 name: Veille quotidienne
 
 on:
@@ -63,6 +63,8 @@ jobs:
           TROCVELO_ENABLED: ${{ vars.TROCVELO_ENABLED }}
           TROCVELO_SEARCH_URL: ${{ vars.TROCVELO_SEARCH_URL }}
           TROCVELO_MAX_ITEMS: ${{ vars.TROCVELO_MAX_ITEMS }}
+          TROCVELO_PROXY_GROUPS: ${{ vars.TROCVELO_PROXY_GROUPS }}
+          TROCVELO_ACTOR: ${{ vars.TROCVELO_ACTOR }}
           VEILLE_SIMULATION: ${{ github.event_name == 'workflow_dispatch' && format('{0}', inputs.simulation) || vars.VEILLE_SIMULATION || 'false' }}
 
       - name: Enregistrer les résultats sur main
