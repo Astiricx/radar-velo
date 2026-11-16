@@ -13,8 +13,8 @@
       "Saint-Nazaire et Loire-Atlantique (120 km autour de Saint-Nazaire)"
     ]
   },
-  "count": 116,
-  "retained": 38,
+  "count": 108,
+  "retained": 35,
   "listings": [
     {
       "id": "lbc-3309937771",
@@ -53,6 +53,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 86,
       "zone": "Région parisienne",
       "distanceKm": 2,
@@ -150,6 +151,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 73,
       "zone": "Région parisienne",
       "distanceKm": 22,
@@ -212,104 +214,6 @@
       "rejection": null
     },
     {
-      "id": "tv-4314679",
-      "source": "troc-velo",
-      "url": "https://www.troc-velo.com/fr-fr/annonce/wilier-cento-10-sl-4314679",
-      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/679/14679/4314679/4314679-wilier-cento-10-sl-4314679-1794856497.jpg",
-      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/679/14679/4314679/4314679-wilier-cento-10-sl-4314679-1794856498.jpg",
-      "imageKind": "annonce",
-      "title": "Wilier Cento 10 sl",
-      "brand": "Wilier",
-      "model": "Cento 10 sl",
-      "year": 2023,
-      "type": "route",
-      "size": "M",
-      "price": 2250,
-      "newPrice": 5000,
-      "description": "Je vends mon Wilier Cento 10 SL, acheté neuf en mai 2023. Premier propriétaire, vélo entretenu avec soin. factures d’achat sont disponibles. Acheter 4800 *Vélo vendu avec roue wilier 38 carbone Le vélo est en parfait état de fonctionnement et prêt à rouler. Équipement : Cadre Wilier Cento 10 SL carbone Taille 54 (M) Groupe Shimano Ultegra R8000 mécanique 11 vitesses cassette 11/28 plateau 52/36 Pédalier capteur de puissance Freins à disque hydrauliques À noter : quelques éclats de peinture et rayures liés à une utilisation normale, uniquement esthétique. Vélo performant, rigide et confortable, idéal pour les longues sorties comme pour la compétition. Facture d'origine : Oui Retour : Non Référence de l'annonce : 4314679",
-      "city": "Saint-gilles (35590)",
-      "coords": {
-        "lat": 48.1517,
-        "lon": -1.85
-      },
-      "shipping": true,
-      "publishedAt": "2026-11-16T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "ultegra",
-      "aero": false,
-      "powerMeter": true,
-      "wheelDepth": 38,
-      "extensions": "inconnu",
-      "condition": "bon",
-      "batch": 0,
-      "toVerify": [
-        "Taille à confirmer : M déclarée, 54 dans la description"
-      ],
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 72,
-      "zone": "Saint-Nazaire et Loire-Atlantique",
-      "distanceKm": 101,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "55 % sous le prix neuf (5 000 €)",
-          "points": 10,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "Ultegra mécanique",
-          "points": 6,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Inclus",
-          "points": 10,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Carbone, jantes de 38 mm",
-          "points": 5,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "101 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique, livraison possible",
-          "points": 7,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Bon état, modèle 2023",
-          "points": 5,
-          "max": 8
-        }
-      ],
-      "rejection": null
-    },
-    {
       "id": "tv-4314720",
       "source": "troc-velo",
       "url": "https://www.troc-velo.com/fr-fr/annonce/bmc-slr-01-4314720",
@@ -346,6 +250,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 72,
       "zone": null,
       "distanceKm": 473,
@@ -444,6 +349,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 71,
       "zone": "Région parisienne",
       "distanceKm": 24,
@@ -538,6 +444,7 @@
       "batch": 0,
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 70,
       "zone": "Région parisienne",
       "distanceKm": 8,
@@ -637,6 +544,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 69,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 58,
@@ -734,6 +642,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 68,
       "zone": "Région parisienne",
       "distanceKm": 24,
@@ -930,6 +839,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 67,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 0,
@@ -1028,6 +938,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 66,
       "zone": "Région parisienne",
       "distanceKm": 4,
@@ -1223,6 +1134,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 66,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 50,
@@ -1419,6 +1331,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 66,
       "zone": "Région parisienne",
       "distanceKm": 25,
@@ -1517,6 +1430,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 66,
       "zone": "Région parisienne",
       "distanceKm": 3,
@@ -1614,6 +1528,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 65,
       "zone": "Région parisienne",
       "distanceKm": 41,
@@ -1808,6 +1723,7 @@
       "batch": 0,
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 64,
       "zone": "Région parisienne",
       "distanceKm": 45,
@@ -2001,6 +1917,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 64,
       "zone": "Région parisienne",
       "distanceKm": 12,
@@ -2099,6 +2016,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 63,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 55,
@@ -2392,6 +2310,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 61,
       "zone": "Région parisienne",
       "distanceKm": 29,
@@ -2489,6 +2408,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 61,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 50,
@@ -2583,6 +2503,7 @@
       "batch": 0,
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 61,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 43,
@@ -2742,100 +2663,6 @@
       "rejection": null
     },
     {
-      "id": "tv-4314667",
-      "source": "troc-velo",
-      "url": "https://www.troc-velo.com/fr-fr/annonce/specialized-tarmac-sl7-pro-4314667",
-      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/667/14667/4314667/4314667-specialized-tarmac-sl7-pro-4314667-1794853784.jpg",
-      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/667/14667/4314667/4314667-specialized-tarmac-sl7-pro-4314667-1794853786.jpg",
-      "imageKind": "annonce",
-      "title": "Specialized tarmac SL7 pro",
-      "brand": "Specialized",
-      "model": "tarmac SL7 pro",
-      "year": 2021,
-      "type": "route",
-      "size": "56",
-      "price": 3500,
-      "description": "Bonjour à tous, je me sépare de mon tarmac sl7 pro taille 56, de 2021 Voici les caractéristiques : Vélo en excellent état Groupe ultegra Di2 11 vitesses Roues roval alpinist CL montées en 11-34 Pneu continental GP 5000 avec TPU (non tubeless), en 28mm, très bon état Disques 160/140 Dura ace Potence 110 S-works, cintre rapide 420 mm Selle Sworks Romin mirror Guidoline neuve, embout des cocottes neuf Révision récente avec changement de chaine, changement du jeux de direction, changement des durites et purge des freins Vendu avec : Plateaux 50/34 (montés), 52/36, 52/39 Cassette 11/30 Ultegra Porte compteur (compatible Garmin) Porte radar garmin Porte bidon si besoin Disponible si besoin d'autres informations ! Sportivement, Facture d'origine : Non Retour : Non Référence de l'annonce : 4314667",
-      "city": "Lille (59800)",
-      "coords": {
-        "lat": 50.6311,
-        "lon": 3.0468
-      },
-      "shipping": false,
-      "publishedAt": "2026-11-16T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "ultegra-di2",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 34,
-      "extensions": "inconnu",
-      "condition": "bon",
-      "batch": 0,
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 59,
-      "zone": "Région parisienne",
-      "distanceKm": 204,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "Ultegra Di2",
-          "points": 13,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Carbone, jantes de 34 mm",
-          "points": 5,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "204 km de Paris, zone Région parisienne",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Bon état, modèle 2021",
-          "points": 4,
-          "max": 8
-        }
-      ],
-      "rejection": null
-    },
-    {
       "id": "lbc-3311084474",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3311084474",
@@ -2868,6 +2695,7 @@
       "batch": 0,
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 58,
       "zone": "Région parisienne",
       "distanceKm": 4,
@@ -2967,6 +2795,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 57,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 23,
@@ -3064,6 +2893,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 56,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 50,
@@ -3224,97 +3054,6 @@
       "rejection": null
     },
     {
-      "id": "tv-4302875",
-      "source": "troc-velo",
-      "url": "https://www.troc-velo.com/fr-fr/annonce/velo-course-ktm-alto-4302875",
-      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/875/2875/4302875/4302875-velo-course-ktm-alto-4302875-1793082610.jpeg",
-      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/875/2875/4302875/4302875-velo-course-ktm-alto-4302875-1793082611.jpeg",
-      "imageKind": "annonce",
-      "title": "Vélo course KTM Alto",
-      "brand": "KTM",
-      "model": "Alto",
-      "year": 2024,
-      "type": "route",
-      "size": "57",
-      "price": 2400,
-      "description": "Je vend mon ktm Alto pro en 105 Di2 taille 57 . 1500 km max cassette 105 neuve, chaîne kmc hotwax , pneus Vittoria corsa pro 28 et 30 de large . Vélo en parfait état et possibilité de facture et garantie Facture d'origine : Oui Retour : Non Référence de l'annonce : 4302875",
-      "city": "Ixelles (1050), hors de France métropolitaine",
-      "shipping": true,
-      "publishedAt": "2026-10-27T07:30:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "105-di2",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "tres-bon",
-      "km": 1500,
-      "batch": 0,
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 55,
-      "zone": null,
-      "distanceKm": null,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "105 Di2",
-          "points": 9,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "Aucune zone active, livraison possible",
-          "points": 7,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Très bon état, modèle 2024",
-          "points": 6,
-          "max": 8
-        }
-      ],
-      "rejection": null
-    },
-    {
       "id": "lbc-3242973325",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3242973325",
@@ -3451,6 +3190,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 49,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 55,
@@ -3545,6 +3285,7 @@
       "batch": 0,
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 46,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 45,
@@ -3737,6 +3478,7 @@
       "batch": 0,
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 74,
       "zone": "Région parisienne",
       "distanceKm": 1,
@@ -3834,6 +3576,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 72,
       "zone": "Région parisienne",
       "distanceKm": 48,
@@ -3994,101 +3737,6 @@
       "rejection": "Type hors critères (Gravel)"
     },
     {
-      "id": "tv-4304229",
-      "source": "troc-velo",
-      "url": "https://www.troc-velo.com/fr-fr/annonce/cannondale-supersix-evo-2-4304229",
-      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/229/4229/4304229/4304229-cannondale-supersix-evo-2-4304229-1793279649.jpg",
-      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/229/4229/4304229/4304229-cannondale-supersix-evo-2-4304229-1793279650.jpg",
-      "imageKind": "annonce",
-      "title": "Cannondale Supersix evo 2",
-      "brand": "Cannondale",
-      "model": "Supersix evo 2",
-      "year": 2025,
-      "type": "route",
-      "size": "54",
-      "price": 4500,
-      "newPrice": 6300,
-      "description": "Je vend mon Cannondale supersix evo2 full carbone couleur bleu comète T54/M Acheter en 2025 et très peu servi pour cause de blessure. A fait moins de 4000km Equiper en : Shimano ultegra Di2 Cassettes 12V 20/11 Pédalier 50/34 Capteur de puissance Favero assioma duo-shi. Prix neuf 500€ Pédales shimano spd-sl Roues carbones Hollowgram R45 Prix neuf 600€ Ceintre Vision trimax aéro carbone prix neuf 400€ Vélo acheter neuf à 6300€ Toujours entretenue et suivi chez un mécanicien. Purge, plaquette et liquide de frein seront changer pour la vente. La guidoline peut elle aussi être changer. Prix négociable dans la limite du raisonnable Disponible sur Nantes et Caen Facture d'origine : Non Retour : Non Référence de l'annonce : 4304229",
-      "city": "Orvault (44700)",
-      "coords": {
-        "lat": 47.2745,
-        "lon": -1.6195
-      },
-      "shipping": false,
-      "publishedAt": "2026-10-29T14:14:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "ultegra-di2",
-      "aero": true,
-      "powerMeter": true,
-      "wheelDepth": 45,
-      "extensions": "inconnu",
-      "condition": "tres-bon",
-      "batch": 0,
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 72,
-      "zone": "Saint-Nazaire et Loire-Atlantique",
-      "distanceKm": 45,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Entre l'idéal et le maximum de 4 500 €",
-          "points": 10,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "29 % sous le prix neuf (6 300 €)",
-          "points": 6.4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "Ultegra Di2",
-          "points": 13,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre et cintre profilés",
-          "points": 8,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Inclus",
-          "points": 10,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Carbone, jantes de 45 mm",
-          "points": 8,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "45 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique",
-          "points": 8,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Très bon état, modèle 2025",
-          "points": 7,
-          "max": 8
-        }
-      ],
-      "rejection": "Taille 54 incompatible"
-    },
-    {
       "id": "lbc-3303649266",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3303649266",
@@ -4126,6 +3774,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 69,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 0,
@@ -4413,6 +4062,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 66,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 46,
@@ -4705,6 +4355,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 64,
       "zone": "Région parisienne",
       "distanceKm": 7,
@@ -4896,6 +4547,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 63,
       "zone": "Région parisienne",
       "distanceKm": 27,
@@ -5153,26 +4805,30 @@
       "rejection": "Groupe non retenu (SRAM AXS)"
     },
     {
-      "id": "tv-4314479",
+      "id": "tv-4306762",
       "source": "troc-velo",
-      "url": "https://www.troc-velo.com/fr-fr/annonce/specialized-s-works-tarmac-sl6-ultegra-di2-56-trek-pinarello-scott-canyon-giant-colnago-ridley-4314479",
-      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/479/14479/4314479/4314479-specialized-s-works-tarmac-sl6-ultegra-di2-56-trek-pinarello-scott-canyon-giant-colnago-ridley-4314479-1794838958.jpg",
-      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/479/14479/4314479/4314479-specialized-s-works-tarmac-sl6-ultegra-di2-56-trek-pinarello-scott-canyon-giant-colnago-ridley-4314479-1794838971.jpg",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/trek-domane-5-9-carbone-ultegra-di2-11v-tres-bon-etat-4306762",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/762/6762/4306762/4306762-trek-domane-5-9-carbone-ultegra-di2-11v-tres-bon-etat-4306762-1793647352.jpeg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/762/6762/4306762/4306762-trek-domane-5-9-carbone-ultegra-di2-11v-tres-bon-etat-4306762-1793647353.jpeg",
       "imageKind": "annonce",
-      "title": "🔥Specialized S-Works Tarmac SL6 Ultegra Di2 56🔥trek pinarello scott canyon giant colnago ridley",
-      "brand": "Specialized",
-      "model": "🔥 S-Works Tarmac SL6 Ultegra Di2 56🔥trek pinarello scott c",
+      "title": "Trek Domane 5.9 Carbone - Ultegra Di2 11V - Très bon état",
+      "brand": "Trek",
+      "model": "Domane 5.9 Carbone - Ultegra Di2 11V - Très bon état",
       "year": 0,
       "type": "route",
-      "size": "56",
-      "price": 1899,
-      "newPrice": 9000,
-      "description": "A réserver avec un petit acompte de 150 euros seulement Nous avons revu et amélioré notre technologie Rider-First Engineered™ pour rendre le nouveau Tarmac encore plus léger et qu'il soit rigide ou souple exactement là où il faut. Des séquences de laminage et matériaux revus et modifiés aux fourches visiblement différentes, nous avons étudié le moindre aspect du nouveau Tarmac pour vous offrir le vélo idéal. En nous appuyant sur un nombre incalculable de points de données Retül et les retours de coureurs professionnels, nous avons mis au point une géométrie performance route qui parfait la combinaison avant réactif / empattement court pour offrir une réponse instantanée et un transfert optimal de la puissance. SH SPORT vous propose ce superbe et très haut de gamme Specialized S-Works Tarmac SL6 , équipé en Shimano Ultegra Di2 Disque et en taille 56 Très beau et haut de gamme Tarmac dans sa version la plus haut de gamme, S-Works il est équipé en shimano Ultegra DI2 disque,potence S-Works SL, tige de selle S-Works carbon et selle Power ! Superbe coloris Quickstep, coloris noir carbon apparent, inscriptions blanches et détails bleu Le Tarmac SL6 est une référence absolue en terme de polyvalence, l'un des meilleurs vélos de route sur le marché ! Très bel état, très peu de traces d'utilisation ! Valeur à neuf 9.000 euros Vendu 1899 euros avec roues alu ou possibilité de roues carbon sans nom 40mm +299 euros (pas les Dt Swiss de la photo) Vendu avec facture et garantie à votre nom…",
-      "city": "BAUDOUR (7331), hors de France métropolitaine",
+      "size": "M",
+      "price": 1550,
+      "newPrice": 3900,
+      "description": "Je mets en vente mon vélo de route Trek Domane 5.9 (taille 54), en très bon état et fonctionnant parfaitement. C’est un vélo en carbone léger, reconnu pour son confort exceptionnel grâce à la technologie IsoSpeed. Changement pour un nouveau TREK. Il est équipé d'une transmission haut de gamme Shimano Ultegra Di2 (électronique) qui garantit des passages de vitesses d'une fluidité et d'une réactivité incomparables. Les freins à patins Ultegra permettent de conserver un poids contenu tout en assurant un freinage puissant et efficace en toutes circonstances. Valeur à neuf (sans les roues carbone) : 3 999 €. Caractéristiques techniques : - Cadre : Carbone OCLV Série 500, technologie IsoSpeed - Transmission : Shimano Ultegra Di2 (électronique) 2x11 Vitesses. Plateaux 50-34 et cassette 11-32 (braquet idéal pour passer partout, même en montagne). - Roues : Vendu avec un lot de 4 roues ! Un montage carbone aérodynamique (Bontrager Aeolus Pro 5 à l'arrière / Voodooz Wheels à l'avant) + les 2 roues Bontrager d'origine en aluminium. - Périphériques : Tige de selle, cintre et potence Bontrager - Selle : Prologo (Le chargeur de la batterie Di2 est bien évidemment fourni avec le vélo). Conditions de vente : Prix ferme Remise en main propre uniquement sur place, pas d'envoi ni de livraison. Possède la facture d'origine. Facture d'origine : Oui Retour : Non Référence de l'annonce : 4306762",
+      "city": "GIREFONTAINE (70210)",
+      "coords": {
+        "lat": 47.8946,
+        "lon": 6.1688
+      },
       "shipping": false,
-      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "publishedAt": "2026-11-02T20:22:00.000Z",
       "frame": "carbone",
-      "brakes": "disque",
+      "brakes": "patins",
       "groupset": "ultegra-di2",
       "aero": false,
       "powerMeter": false,
@@ -5181,13 +4837,15 @@
       "condition": "tres-bon",
       "batch": 0,
       "toVerify": [
+        "Taille à confirmer : M déclarée, 54 dans la description",
         "Année non précisée"
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 62,
       "zone": null,
-      "distanceKm": null,
+      "distanceKm": 301,
       "scoreDetail": [
         {
           "label": "Prix",
@@ -5197,7 +4855,7 @@
         },
         {
           "label": "Décote",
-          "detail": "79 % sous le prix neuf (9 000 €)",
+          "detail": "60 % sous le prix neuf (3 900 €)",
           "points": 10,
           "max": 10
         },
@@ -5233,7 +4891,7 @@
         },
         {
           "label": "Distance",
-          "detail": "Aucune zone active",
+          "detail": "301 km de Paris, hors zone",
           "points": 0,
           "max": 10
         },
@@ -5244,7 +4902,7 @@
           "max": 8
         }
       ],
-      "rejection": "Lieu inconnu ou trop éloigné, sans livraison"
+      "rejection": "Freins à patins"
     },
     {
       "id": "lbc-3305754230",
@@ -5481,6 +5139,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 61,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 53,
@@ -5679,6 +5338,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 59,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 59,
@@ -5877,6 +5537,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 58,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 0,
@@ -6070,6 +5731,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 58,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 54,
@@ -6813,102 +6475,6 @@
       "rejection": "Taille 53 incompatible"
     },
     {
-      "id": "tv-4314710",
-      "source": "troc-velo",
-      "url": "https://www.troc-velo.com/fr-fr/annonce/trek-emonda-sl6-pro-di2-2023-4314710",
-      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/710/14710/4314710/4314710-trek-emonda-sl6-pro-di2-2023-4314710-1794859983.jpg",
-      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/710/14710/4314710/4314710-trek-emonda-sl6-pro-di2-2023-4314710-1794859985.jpg",
-      "imageKind": "annonce",
-      "title": "Trek Emonda SL6 Pro Di2 (2023)",
-      "brand": "Trek",
-      "model": "Emonda SL6 Pro Di2 ( )",
-      "year": 2023,
-      "type": "route",
-      "size": "58",
-      "price": 2699,
-      "newPrice": 4000,
-      "description": "Bonjour, Vends Trek Emonda SL6 Pro Di2 (modèle 2023) en bon état : Acheté en 2024 (11.500 km) Couleur Quicksilver / Radioactive Red Taille 58 (je mesure 1m83) Cadre et roues carbone Bontrager 35 mm Transmission Shimano 105 Di2 Plateaux 50/36, cassette 11/34 Nettoyage et dégraissage hebdomadaire Révision annuelle par un vélociste Toutes les factures sont disponibles Chaîne : remplacée 08-2026 Roue arrière : remplacée 01-2026 Boîtier de pédalier : remplacé 01-2026 À vendre 2.699 EUR (prix neuf 4.000 EUR) Photos sur demande Vélo visible dans le Haut-Rhin, pas d’envoi Facture d'origine : Oui Retour : Non Référence de l'annonce : 4314710",
-      "city": "Durlinsdorf (68480)",
-      "shipping": false,
-      "publishedAt": "2026-11-16T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "105-di2",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 35,
-      "extensions": "inconnu",
-      "condition": "bon",
-      "km": 11500,
-      "batch": 0,
-      "toVerify": [
-        "Matériau du cadre non précisé",
-        "Type de freins non précisé"
-      ],
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 55,
-      "zone": null,
-      "distanceKm": null,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "33 % sous le prix neuf (4 000 €)",
-          "points": 7.3,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "105 Di2",
-          "points": 9,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Carbone, jantes de 35 mm",
-          "points": 5,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "Aucune zone active",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Bon état, modèle 2023",
-          "points": 5,
-          "max": 8
-        }
-      ],
-      "rejection": "Taille 58 incompatible"
-    },
-    {
       "id": "lbc-3310184291",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3310184291",
@@ -6947,6 +6513,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 54,
       "zone": "Région parisienne",
       "distanceKm": 7,
@@ -7009,103 +6576,6 @@
       "rejection": "Taille 52 incompatible"
     },
     {
-      "id": "tv-4314660",
-      "source": "troc-velo",
-      "url": "https://www.troc-velo.com/fr-fr/annonce/kuota-kom-carbone-optimized-lateral-stiffness-tres-peu-kilometre-suite-a-un-accident-de-voiture-4314660",
-      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/660/14660/4314660/4314660-kuota-kom-carbone-optimized-lateral-stiffness-tres-peu-kilometre-suite-a-un-accident-de-voiture-4314660-1794853139.jpg",
-      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/660/14660/4314660/4314660-kuota-kom-carbone-optimized-lateral-stiffness-tres-peu-kilometre-suite-a-un-accident-de-voiture-4314660-1794853140.jpg",
-      "imageKind": "annonce",
-      "title": "Kuota kom carbone (optimized lateral stiffness) très peu kilométré suite à un accident de voiture",
-      "brand": "Kuota",
-      "model": "kom carbone (optimized lateral stiffness) très peu kilométré",
-      "year": 2022,
-      "type": "route",
-      "size": "M",
-      "price": 1700,
-      "description": "dérailleur AR- SRAM force neuf changé- vendu avec derailleur ex Shimano Durace neuf- chaine neuve-cassette 11x21 - fourche HSD- direction FSA- pédales Durace 7810- freins Shimano Durace - selle Rione carbone- tige de selle Kuota carbone- roues American Classic - cintre Steath pro -poignées SRAM force changées avec cables passés dans guidon (nouvelle configuration, vendu avec les anciennes poignées Durace sortie latérale - mis en nouvelle configuration 2024 Facture d'origine : Non Retour : Non Référence de l'annonce : 4314660",
-      "city": "AUBERVILLIERS (93300)",
-      "coords": {
-        "lat": 48.9128,
-        "lon": 2.3886
-      },
-      "shipping": false,
-      "publishedAt": "2026-11-16T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "patins",
-      "groupset": "ultegra",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "tres-bon",
-      "batch": 0,
-      "toVerify": [
-        "Groupe Dura-Ace mécanique, classé avec l’Ultegra mécanique"
-      ],
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 54,
-      "zone": "Région parisienne",
-      "distanceKm": 7,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "Ultegra mécanique",
-          "points": 6,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "7 km de Paris, zone Région parisienne",
-          "points": 10,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Très bon état, modèle 2022",
-          "points": 5,
-          "max": 8
-        }
-      ],
-      "rejection": "Freins à patins"
-    },
-    {
       "id": "lbc-3311030776",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3311030776",
@@ -7138,6 +6608,7 @@
       "batch": 0,
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 54,
       "zone": "Région parisienne",
       "distanceKm": 6,
@@ -7430,6 +6901,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 54,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 5,
@@ -7531,6 +7003,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 54,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 39,
@@ -7722,6 +7195,7 @@
       "batch": 0,
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 52,
       "zone": "Région parisienne",
       "distanceKm": 2,
@@ -7821,6 +7295,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 52,
       "zone": "Région parisienne",
       "distanceKm": 1,
@@ -7915,6 +7390,7 @@
       "batch": 0,
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 51,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 13,
@@ -8013,6 +7489,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 51,
       "zone": "Région parisienne",
       "distanceKm": 8,
@@ -8209,6 +7686,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 51,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 65,
@@ -8308,6 +7786,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 51,
       "zone": "Région parisienne",
       "distanceKm": 19,
@@ -8501,6 +7980,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 51,
       "zone": "Région parisienne",
       "distanceKm": 19,
@@ -8599,6 +8079,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 51,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 19,
@@ -8761,100 +8242,6 @@
       "rejection": "Type hors critères (Gravel)"
     },
     {
-      "id": "tv-4307123",
-      "source": "troc-velo",
-      "url": "https://www.troc-velo.com/fr-fr/annonce/cube-aerium-c-68-slt-taille-m-low-sram-red-axs-prolongateurs-ascalon-4307123",
-      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/123/7123/4307123/4307123-cube-aerium-c-68-slt-taille-m-low-sram-red-axs-prolongateurs-ascalon-4307123-1793717461.HEIC",
-      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/123/7123/4307123/4307123-cube-aerium-c-68-slt-taille-m-low-sram-red-axs-prolongateurs-ascalon-4307123-1793717462.HEIC",
-      "imageKind": "annonce",
-      "title": "Cube Aerium C:68 SLT (Taille M / Low) - SRAM Red AXS - Prolongateurs Ascalon",
-      "brand": "Cube",
-      "model": "Aerium C:68 SLT ( / Low) - SRAM Red AXS - Prolongateurs Asca",
-      "year": 2021,
-      "type": "clm",
-      "size": "M",
-      "price": 4000,
-      "description": "Vélo de triathlon haut de gamme Cube Aerium C:68 SLT (version Low), modèle 2021 en taille M. Le vélo est vendu complet dans sa configuration d'origine, avec des optimisations majeures pour le confort sur longue distance et la polyvalence. Ce cadre en taille M convient parfaitement pour un athlète mesurant entre 1m75 et 1m85 (je mesure 1m86 et ça me convient dans une configuration agressive). Le vélo a bénéficié de deux améliorations : • Remplacement des prolongateurs d’origine par des Aerocoach Ascalon. Ils apportent un gain aérodynamique net et un confort incomparable pour les formats L et Full Ironman grâce à leur forme enveloppante au niveau des repose-bras et des possibilités d'un réglage précis de la position (prix neuf 1.086€). • Transmission adaptée aux parcours vallonnés : Montage d'une cassette SRAM Force en 10-30 (au lieu de la 10-26 d'origine). Cette modification offre plus de souplesse et de polyvalence dans les bosses sans sacrifier l'étagement très serré sur le plat. Caractéristiques techniques : • Cadre : Aerium C:68 Monocoque Advanced Twin Mold Technology (Géométrie Low) • Groupe de transmission : SRAM Red eTap AXS électronique sans fil • Prolongateurs : Aerocoach Ascalon • Cassette : SRAM Force 10-30T • Roues : DT Swiss ARC 1100 DICUT Carbon 80 • Accessoires d'origine inclus (système d'hydratation intégré à l'avant, nutrition box sur le cadre, chargeur SRAM etap, les différentes cales pour le réglage des prolongateurs). Le vélo a été rigoureusement entretenu…",
-      "city": "Strasbourg (67000)",
-      "coords": {
-        "lat": 48.5691,
-        "lon": 7.7621
-      },
-      "shipping": true,
-      "publishedAt": "2026-11-03T15:51:00.000Z",
-      "frame": "carbone",
-      "brakes": "patins",
-      "groupset": "sram-axs",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 80,
-      "extensions": "kit",
-      "condition": "tres-bon",
-      "batch": 0,
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 51,
-      "zone": null,
-      "distanceKm": 398,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Entre l'idéal et le maximum de 4 500 €",
-          "points": 17.5,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "SRAM AXS",
-          "points": 3,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Carbone, jantes de 80 mm",
-          "points": 8,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : kit tiers",
-          "points": 4,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "398 km de Paris, hors zone, livraison possible",
-          "points": 7,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Très bon état, modèle 2021",
-          "points": 5,
-          "max": 8
-        }
-      ],
-      "rejection": "Type hors critères (Contre-la-montre / triathlon)"
-    },
-    {
       "id": "lbc-3287194983",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3287194983",
@@ -8989,6 +8376,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 50,
       "zone": "Région parisienne",
       "distanceKm": 31,
@@ -9083,6 +8471,7 @@
       "batch": 0,
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 50,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 50,
@@ -9279,6 +8668,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 50,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 66,
@@ -9376,6 +8766,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 50,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 53,
@@ -9476,6 +8867,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 50,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 49,
@@ -9675,6 +9067,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 49,
       "zone": "Région parisienne",
       "distanceKm": 35,
@@ -9773,6 +9166,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 49,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 48,
@@ -9872,6 +9266,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 49,
       "zone": "Région parisienne",
       "distanceKm": 20,
@@ -9970,6 +9365,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 49,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 50,
@@ -10064,6 +9460,7 @@
       "batch": 0,
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 49,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 45,
@@ -10260,6 +9657,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 49,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 53,
@@ -10556,6 +9954,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 48,
       "zone": "Saint-Nazaire et Loire-Atlantique",
       "distanceKm": 59,
@@ -10656,6 +10055,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 48,
       "zone": "Région parisienne",
       "distanceKm": 31,
@@ -10916,103 +10316,6 @@
       "rejection": "Groupe non retenu (105 mécanique)"
     },
     {
-      "id": "tv-4314520",
-      "source": "troc-velo",
-      "url": "https://www.troc-velo.com/fr-fr/annonce/giant-propel-taille-m-4314520",
-      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/520/14520/4314520/4314520-giant-propel-taille-m-4314520-1794842988.jpg",
-      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/520/14520/4314520/4314520-giant-propel-taille-m-4314520-1794842989.jpg",
-      "imageKind": "annonce",
-      "title": "Giant propel taille M",
-      "brand": "Giant",
-      "model": "propel",
-      "year": 0,
-      "type": "route",
-      "size": "M",
-      "price": 2750,
-      "description": "Giant propel sl Groupe sram force axs ,potence carbone, cintre carbone aéro, selle rail carbone Roues alu dt swiss 1600 Vendu avec chargeur et les 2 batteries de dérailleurs Facture d'origine : Non Retour : Non Référence de l'annonce : 4314520",
-      "city": "PLABENNEC (29860)",
-      "coords": {
-        "lat": 48.5012,
-        "lon": -4.4254
-      },
-      "shipping": false,
-      "publishedAt": "2026-11-16T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "sram-axs",
-      "aero": true,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "bon",
-      "batch": 0,
-      "toVerify": [
-        "Année non précisée"
-      ],
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 46,
-      "zone": null,
-      "distanceKm": 214,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "SRAM AXS",
-          "points": 3,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre et cintre profilés",
-          "points": 8,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "214 km de Saint-Nazaire, hors zone",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Bon état, année non précisée",
-          "points": 4,
-          "max": 8
-        }
-      ],
-      "rejection": "Groupe non retenu (SRAM AXS)"
-    },
-    {
       "id": "lbc-3297832594",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3297832594",
@@ -11050,6 +10353,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 45,
       "zone": "Région parisienne",
       "distanceKm": 67,
@@ -11149,6 +10453,7 @@
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
+      "parser": 4,
       "score": 39,
       "zone": "Région parisienne",
       "distanceKm": 53,

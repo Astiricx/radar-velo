@@ -2,6 +2,28 @@
 
 ## Lundi 16 novembre 2026
 
+- Crédit Apify consommé ce mois-ci avant la collecte : 1,13 $ sur 5,00 $.
+- Leboncoin : 60 annonces lues autour de Paris et de Saint-Nazaire (30 au plus par zone).
+- Troc-Vélo : appels JSON relevés sur la page de liste (piste d'API interne) : https://api.troc-velo.com/api/products/promoted?category=c8 (200), https://api.troc-velo.com/api/products?category=c8&sorting=relevance%3Adesc&itemsPerPage=30 (200), https://api.troc-velo.com/api/category_product_counters (200), https://api.troc-velo.com/api/products/with-aggregations?category=c8&sorting=relevance%3Adesc&itemsPerPage=1 (200), https://cdn.api.btloader.com/device?orgid=5094764668518400&platformVersion=6.8.0&fullVersionList=%5B%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22141.0.7390.54%22%7D%2C%7B%22brand%22%3A%22Not%3FA_Brand%22%2C%22version%22%3A%228.0.0.0%22%7D%5D&upapi=true (200).
+- Troc-Vélo (navigateur Puppeteer Scraper d’Apify) : 32 annonces sur la liste (2 pages), 2 fiches ouvertes. Tri de la liste : 0 déjà analysées, 15 hors budget, 10 d'une autre taille, 1 sans taille ni groupe cité, 4 trop loin sans livraison, 2 à ouvrir.
+- Decathlon Occasion (Cheerio Scraper d’Apify) : 42 annonces sur la liste, 0 fiche ouverte.
+
+2 nouvelles annonces analysées : 1 pertinente, 1 écartée.
+
+| Score | Annonce | Prix | Taille | Transmission | Zone | Lieu | Source |
+| ---: | --- | ---: | --- | --- | --- | --- | --- |
+| **72** | [Bmc slr 01](https://www.troc-velo.com/fr-fr/annonce/bmc-slr-01-4314720) | 2 400 € | M | Ultegra Di2 | Hors zone | SOUMOULOU (64420) (473 km de Saint-Nazaire, livraison) | Troc-Vélo |
+
+À vérifier avant de contacter le vendeur :
+
+- Bmc slr 01 : taille à confirmer : m déclarée, 54 dans la description ; année non précisée
+
+Écartées :
+
+- [Trek Domane 5.9 Carbone - Ultegra Di2 11V - Très bon état](https://www.troc-velo.com/fr-fr/annonce/trek-domane-5-9-carbone-ultegra-di2-11v-tres-bon-etat-4306762), 1 550 € : Freins à patins
+
+## Lundi 16 novembre 2026
+
 - Crédit Apify consommé ce mois-ci avant la collecte : 1,02 $ sur 5,00 $.
 - Leboncoin : 60 annonces lues autour de Paris et de Saint-Nazaire (30 au plus par zone).
 - Troc-Vélo (navigateur Puppeteer Scraper d’Apify) : 54 annonces sur la liste (2 pages), 8 fiches ouvertes. Tri de la liste : 0 déjà analysées, 25 hors budget, 15 d'une autre taille, 2 sans taille ni groupe cité, 2 trop loin sans livraison, 10 à ouvrir (6 annonces « à la une » répétées d'une page à l'autre, comptées une fois).
