@@ -39,6 +39,8 @@ export async function fetchTrocVelo(run: ActorRunner, options: { skipIds?: strin
         // Départements à portée de tes zones : ailleurs, seules les annonces avec livraison sont ouvertes.
         departments: departmentsNear(DEFAULT_CRITERIA.zones, DEFAULT_CRITERIA.train),
         maxListPages: TROCVELO.maxListPages,
+        // API de recherche relevée sur le site, interrogée une fois pour en connaître le format.
+        apiProbe: 'https://api.troc-velo.com/api/products?category=c8&sorting=relevance%3Adesc&itemsPerPage=30',
       },
       // Champ obligatoire. Proxy Apify ; TROCVELO_PROXY_GROUPS=RESIDENTIAL si le site bloque encore.
       proxyConfiguration: TROCVELO_PROXY,

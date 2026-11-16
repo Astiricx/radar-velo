@@ -208,7 +208,18 @@ export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
     // Échantillon de la réponse de recherche du site (clés et premier élément), pour pouvoir
     // l'interroger directement ensuite. Rien de personnel : la fiche d'un vélo en vente.
     let apiSample = null;
-    const search = captured.find((c) => /\\/api\\/products\\?/.test(c.url) && !/promoted|aggregations/.test(c.url));
+    let search = captured.find((c) => /\\/api\\/products\\?/.test(c.url) && !/promoted|aggregations/.test(c.url));
+    // La page n'appelle pas toujours son API : on l'interroge nous-mêmes depuis la page (mêmes
+    // cookies que le site), une seule fois, sur la première page de liste.
+    if (!search && customData.apiProbe && ((request.userData && request.userData.page) || 1) === 1) {
+      search = await page.evaluate(async (apiUrl) => {
+        try {
+          const r = await fetch(apiUrl, { credentials: 'include', headers: { Accept: 'application/ld+json, application/json' } });
+          return { url: apiUrl, status: r.status, body: (await r.text()).slice(0, 500000) };
+        } catch (e) { return { url: apiUrl, status: 0, body: String(e) }; }
+      }, customData.apiProbe).catch(() => null);
+      if (search && search.status !== 200) { apiSample = { url: search.url, status: search.status, error: String(search.body).slice(0, 300) }; search = null; }
+    }
     if (search) {
       try {
         const body = JSON.parse(search.body);
