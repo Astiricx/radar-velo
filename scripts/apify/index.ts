@@ -186,6 +186,7 @@ export async function collectFromApify(today: string, warnings: string[], seenId
           if (DEBUG && ads[n].debug) console.log(`      brut : ${ads[n].debug}`)
         })
         if (DEBUG) for (const p of pages) for (const d of p.decisions ?? []) console.log(`      vignette p.${p.page ?? 1} : ${d}`)
+        if (DEBUG) for (const p of pages) if (p.apiSample) console.log(`      API de recherche : ${JSON.stringify(p.apiSample)}`)
         const st = pages.reduce(
           (acc, p) => ({
             known: acc.known + (p.stats?.known ?? 0),

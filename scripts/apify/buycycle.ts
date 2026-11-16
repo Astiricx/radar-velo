@@ -27,7 +27,8 @@ export function buycycleInput() {
     frameset: 'complete',
     minPrice: SEARCH.priceMin,
     maxPrice: SEARCH.priceMax,
-    sortBy: 'newest',
+    // Valeurs admises par l'acteur : relevance, new, lowest-price, highest-price.
+    sortBy: 'new',
     includeFullSpecs: true,
     maxResults: BUYCYCLE.maxItems,
   }

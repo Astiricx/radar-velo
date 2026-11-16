@@ -205,9 +205,29 @@ export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
     log.info(customData.label + ' : ' + data.found + ' annonces sur la page, ' + data.kept.length + ' prometteuses ouvertes');
     const captured = page.__radarJson || [];
     const apis = Array.from(new Set(captured.map((c) => c.url + ' (' + c.status + ')').concat(data.apis))).slice(0, 15);
+    // Échantillon de la réponse de recherche du site (clés et premier élément), pour pouvoir
+    // l'interroger directement ensuite. Rien de personnel : la fiche d'un vélo en vente.
+    let apiSample = null;
+    const search = captured.find((c) => /\\/api\\/products\\?/.test(c.url) && !/promoted|aggregations/.test(c.url));
+    if (search) {
+      try {
+        const body = JSON.parse(search.body);
+        const list = Array.isArray(body) ? body : (body['hydra:member'] || body.member || body.items || body.data || body.products || []);
+        const first = Array.isArray(list) && list[0] ? list[0] : null;
+        const scrub = (o) => { if (o && typeof o === 'object') { for (const k of Object.keys(o)) { if (/user|seller|vendeur|pseudo|email|phone|firstname|lastname|nickname/i.test(k)) o[k] = '[retiré]'; else scrub(o[k]); } } return o; };
+        apiSample = {
+          url: search.url,
+          topKeys: Array.isArray(body) ? ['(liste)'] : Object.keys(body),
+          total: body['hydra:totalItems'] || body.totalItems || body.total || null,
+          view: body['hydra:view'] || body.view || null,
+          search: body['hydra:search'] ? JSON.stringify(body['hydra:search']).slice(0, 2500) : null,
+          first: first ? JSON.stringify(scrub(first)).slice(0, 4000) : null,
+        };
+      } catch (e) {}
+    }
     const status = context.response && typeof context.response.status === 'function' ? context.response.status() : null;
     const pageIndex = (request.userData && request.userData.page) || 1;
-    const list = { kind: 'list', url: base, status, found: data.found, kept: data.kept.length, pageTitle: data.pageTitle, size: data.size, samples: data.samples, apis, stats: data.stats, candidates: data.candidates, decisions: data.decisions, next: data.next, page: pageIndex };
+    const list = { kind: 'list', url: base, status, apiSample, found: data.found, kept: data.kept.length, pageTitle: data.pageTitle, size: data.size, samples: data.samples, apis, stats: data.stats, candidates: data.candidates, decisions: data.decisions, next: data.next, page: pageIndex };
     // Page suivante de la liste, dans la limite de customData.maxListPages.
     if (data.next && data.found > 0 && pageIndex < (customData.maxListPages || 1)) {
       await context.enqueueRequest({ url: data.next, userData: { label: 'LIST', page: pageIndex + 1, listed: ((request.userData && request.userData.listed) || []).concat(data.ids) } });

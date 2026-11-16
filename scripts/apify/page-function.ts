@@ -33,6 +33,8 @@ export interface ListPage {
   /** Adresse de la page suivante de la liste, si elle a été trouvée. */
   next?: string | null
   page?: number
+  /** Échantillon de la réponse de l'API de recherche du site (navigateur). */
+  apiSample?: Record<string, unknown> | null
   /** Vignettes qui passaient le tri (au plus `kept` sont ouvertes). */
   candidates?: number
 }
