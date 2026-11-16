@@ -208,18 +208,7 @@ export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
     // Échantillon de la réponse de recherche du site (clés et premier élément), pour pouvoir
     // l'interroger directement ensuite. Rien de personnel : la fiche d'un vélo en vente.
     let apiSample = null;
-    let search = captured.find((c) => /\\/api\\/products\\?/.test(c.url) && !/promoted|aggregations/.test(c.url));
-    // La page n'appelle pas toujours son API : on l'interroge nous-mêmes depuis la page (mêmes
-    // cookies que le site), une seule fois, sur la première page de liste.
-    if (!search && customData.apiProbe && ((request.userData && request.userData.page) || 1) === 1) {
-      search = await page.evaluate(async (apiUrl) => {
-        try {
-          const r = await fetch(apiUrl, { credentials: 'include', headers: { Accept: 'application/ld+json, application/json' } });
-          return { url: apiUrl, status: r.status, body: (await r.text()).slice(0, 500000) };
-        } catch (e) { return { url: apiUrl, status: 0, body: String(e) }; }
-      }, customData.apiProbe).catch(() => null);
-      if (search && search.status !== 200) { apiSample = { url: search.url, status: search.status, error: String(search.body).slice(0, 300) }; search = null; }
-    }
+    const search = captured.find((c) => /\\/api\\/products\\?/.test(c.url) && !/promoted|aggregations/.test(c.url));
     if (search) {
       try {
         const body = JSON.parse(search.body);
@@ -249,7 +238,54 @@ export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
       log.info(customData.label + ' : aucune annonce dans la page, ' + ads.length + ' trouvées dans ' + captured.length + ' réponses JSON');
       return [Object.assign(list, { found: ads.length, kept: ads.length, fromJson: true })].concat(ads);
     }
-    for (const url of data.kept) await context.enqueueRequest({ url, userData: { label: 'DETAIL' } });
+    // API de recherche du site (customData.apiBase), interrogée depuis la page avec ses cookies :
+    // 30 annonces par appel, les plus récentes d'abord, avec prix, description et livraison, mais
+    // sans le lieu. On n'ouvre ensuite que les fiches prometteuses (lieu, caractéristiques).
+    let apiUrls = [];
+    let apiStats = null;
+    if (customData.apiBase && pageIndex === 1 && (customData.apiPages || 0) > 0) {
+      const products = await page.evaluate(async (args) => {
+        const out = [];
+        for (let p = 1; p <= args.pages; p++) {
+          try {
+            const r = await fetch(args.base + '&page=' + p, { credentials: 'include', headers: { Accept: 'application/ld+json, application/json' } });
+            if (r.status !== 200) break;
+            const j = await r.json();
+            for (const x of (j['hydra:member'] || [])) {
+              out.push({ id: String(x.id), slug: x.slug, title: x.title || '', price: Number(x.price) / 100, ship: !!x.hasExpedition, brand: x.brandName || '', content: String(x.content || '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\\s+/g, ' ').slice(0, 800) });
+            }
+            if (!j['hydra:view'] || !j['hydra:view']['hydra:next']) break;
+          } catch (e) { break; }
+        }
+        return out;
+      }, { base: customData.apiBase, pages: customData.apiPages }).catch(() => []);
+      const norm = (v) => String(v).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+      const skip = new Set(customData.skipIds || []);
+      const sizes = (customData.sizes || []).map((v) => norm(v).replace(/\\s|cm/g, ''));
+      const group = customData.prefilter ? new RegExp(customData.prefilter) : null;
+      const seen = new Set(data.ids || []);
+      apiStats = { read: products.length, known: 0, onPage: 0, price: 0, size: 0, group: 0, candidates: 0 };
+      const picked = [];
+      for (const x of products) {
+        if (seen.has(x.id)) { apiStats.onPage++; continue; }
+        if (skip.has(x.id)) { apiStats.known++; continue; }
+        if (!(x.price >= customData.priceMin && x.price <= customData.priceMax)) { apiStats.price++; continue; }
+        const t = norm(x.title + ' ' + x.brand + ' ' + x.content);
+        const m = t.match(/\\btaille\\s*(?:du cadre\\s*)?:?\\s*(xxs|xs|s\\/m|m\\/l|l\\/xl|s|m|l|xl|xxl|\\d{2})\\b/) || t.match(/\\bt\\s?(4[6-9]|5\\d|6[0-4])\\b/);
+        const sized = m ? m[1] : null;
+        if (sized && sizes.length && !sizes.includes(sized)) { apiStats.size++; continue; }
+        if (group && !group.test(t)) { apiStats.group++; continue; }
+        picked.push({ url: 'https://www.troc-velo.com/fr-fr/annonce/' + x.slug, rank: (sized ? 2 : 0) + (x.ship ? 1 : 0) });
+      }
+      picked.sort((a, b) => b.rank - a.rank);
+      apiStats.candidates = picked.length;
+      apiUrls = picked.map((x) => x.url);
+    }
+    // Vignettes de la page d'abord (taille et ville déjà vérifiées), puis les trouvailles de l'API.
+    const toOpen = Array.from(new Set(data.kept.concat(apiUrls))).slice(0, customData.maxListings);
+    list.api = apiStats;
+    list.kept = toOpen.length;
+    for (const url of toOpen) await context.enqueueRequest({ url, userData: { label: 'DETAIL' } });
     return list;
   }
 

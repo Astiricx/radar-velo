@@ -35,6 +35,8 @@ export interface ListPage {
   page?: number
   /** Échantillon de la réponse de l'API de recherche du site (navigateur). */
   apiSample?: Record<string, unknown> | null
+  /** Balayage par l'API de recherche : annonces lues et motifs d'exclusion. */
+  api?: { read: number; known: number; onPage: number; price: number; size: number; group: number; candidates: number } | null
   /** Vignettes qui passaient le tri (au plus `kept` sont ouvertes). */
   candidates?: number
 }

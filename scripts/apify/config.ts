@@ -58,9 +58,12 @@ export const TROCVELO = {
   /** Page de liste à lire. Pour la changer, copie l'adresse de Troc-Vélo après avoir posé tes filtres. */
   startUrl: text(process.env.TROCVELO_SEARCH_URL, 'https://www.troc-velo.com/fr-fr/categorie/velos-complets/route'),
   /** Annonces ouvertes au plus à chaque exécution. */
-  maxListings: Math.max(1, Math.round(num(process.env.TROCVELO_MAX_ITEMS, 8))),
+  maxListings: Math.max(1, Math.round(num(process.env.TROCVELO_MAX_ITEMS, 10))),
   /** Pages de liste lues (30 annonces chacune, les plus récentes d'abord). */
   maxListPages: Math.max(1, Math.round(num(process.env.TROCVELO_LIST_PAGES, 2))),
+  /** Pages de 30 annonces lues par l'API de recherche du site (les plus récentes d'abord). */
+  apiPages: Math.max(0, Math.round(num(process.env.TROCVELO_API_PAGES, 10))),
+  /** Fiches ouvertes au plus : c'est ce qui coûte (navigateur et proxy résidentiel). */
 }
 
 export const BUYCYCLE = {

@@ -199,8 +199,12 @@ export async function collectFromApify(today: string, warnings: string[], seenId
           }),
           { known: 0, price: 0, size: 0, group: 0, far: 0, repeat: 0, candidates: 0 },
         )
+        const api = pages.find((p) => p.api)?.api
+        const viaApi = api
+          ? ` API de recherche : ${api.read} annonces récentes lues, ${api.onPage} déjà sur la page, ${api.known} déjà analysées, ${api.price} hors budget, ${api.size} d'une autre taille, ${api.group} sans groupe retenu cité, ${api.candidates} candidates.`
+          : ''
         const sorted = pages.some((p) => p.stats)
-          ? ` Tri de la liste : ${st.known} déjà analysées, ${st.price} hors budget, ${st.size} d'une autre taille, ${st.group} sans taille ni groupe cité, ${st.far} trop loin sans livraison, ${st.candidates} à ouvrir${st.repeat ? ` (${st.repeat} annonces « à la une » répétées d'une page à l'autre, comptées une fois)` : ''}.`
+          ? ` Tri de la liste : ${st.known} déjà analysées, ${st.price} hors budget, ${st.size} d'une autre taille, ${st.group} sans taille ni groupe cité, ${st.far} trop loin sans livraison, ${st.candidates} à ouvrir${st.repeat ? ` (${st.repeat} annonces « à la une » répétées d'une page à l'autre, comptées une fois)` : ''}.${viaApi}`
           : ''
         notes.push(
           `${s.label} (${how}) : ${plural((listed ?? ads.length) - st.repeat, 'annonce sur la liste', 'annonces sur la liste')}${pages.length > 1 ? ` (${pages.length} pages)` : ''}, ` +

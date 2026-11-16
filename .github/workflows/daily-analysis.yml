@@ -69,13 +69,14 @@ jobs:
           VEILLE_RESCAN: ${{ inputs.rescan && 'true' || 'false' }}
           VEILLE_DEBUG: ${{ inputs.debug && 'true' || 'false' }}
           TROCVELO_LIST_PAGES: ${{ (inputs.backfill && '3') || vars.TROCVELO_LIST_PAGES }}
+          TROCVELO_API_PAGES: ${{ vars.TROCVELO_API_PAGES }}
+          TROCVELO_MAX_ITEMS: ${{ (inputs.backfill && '20') || vars.TROCVELO_MAX_ITEMS }}
           APIFY_PROXY_GROUPS: ${{ vars.APIFY_PROXY_GROUPS || secrets.APIFY_PROXY_GROUPS }}
           DECATHLON_ENABLED: ${{ vars.DECATHLON_ENABLED }}
           DECATHLON_MAX_ITEMS: ${{ vars.DECATHLON_MAX_ITEMS }}
           APIFY_LEBONCOIN_ACTOR: ${{ vars.APIFY_LEBONCOIN_ACTOR }}
           TROCVELO_ENABLED: ${{ vars.TROCVELO_ENABLED }}
           TROCVELO_SEARCH_URL: ${{ vars.TROCVELO_SEARCH_URL }}
-          TROCVELO_MAX_ITEMS: ${{ vars.TROCVELO_MAX_ITEMS }}
           # Variable de dépôt, ou secret du même nom s'il a été créé comme secret.
           TROCVELO_PROXY_GROUPS: ${{ vars.TROCVELO_PROXY_GROUPS || secrets.TROCVELO_PROXY_GROUPS }}
           TROCVELO_ACTOR: ${{ vars.TROCVELO_ACTOR }}

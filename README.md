@@ -129,7 +129,7 @@ Sans ce secret, la veille tourne quand même mais ne collecte rien.
 | ---------- | ------- | ----------------- | -------------------- |
 | Leboncoin  | Acteur `memo23/leboncoin-scraper` (0,79 $ / 1 000 annonces), recherche sur toute la France | 60 annonces, les plus récentes | ~1,40 $ |
 | buycycle   | Acteur `solidcode/buycycle-scraper` (~0,10 $ / 1 000 annonces) : route, carbone, disques, tailles M et L | 120 annonces | ~0,50 $ |
-| Troc-Vélo  | `apify/puppeteer-scraper` : Chrome sans écran, proxy résidentiel | 2 pages de liste + 8 fiches | ~1,50 $ |
+| Troc-Vélo  | `apify/puppeteer-scraper` : Chrome sans écran, proxy résidentiel ; l'API de recherche du site est lue depuis la page | 2 pages de liste + 300 annonces récentes par l'API + 10 fiches | ~1,50 $ |
 | Decathlon Occasion | Lecture directe, `apify/cheerio-scraper` en secours (bloqué pour l'instant) | 4 pages + 12 fiches | ~0 $ |
 
 Sur Troc-Vélo et Decathlon, seules les annonces dont la vignette cite un groupe
@@ -198,8 +198,9 @@ Variables) :
 | `APIFY_PROXY_GROUPS`  | vide (proxy automatique) | `RESIDENTIAL` : proxy résidentiel français pour les scrapers génériques, si un site bloque le proxy par défaut (facturé au volume) |
 | `TROCVELO_PROXY_GROUPS` | comme ci-dessus | Proxy pour Troc-Vélo seulement, par exemple `RESIDENTIAL` |
 | `DECATHLON_ENABLED`   | `true`     | `false` : ne plus lire Decathlon Occasion |
-| `TROCVELO_MAX_ITEMS`  | `8`        | Annonces Troc-Vélo ouvertes par jour |
+| `TROCVELO_MAX_ITEMS`  | `10`       | Fiches Troc-Vélo ouvertes par jour |
 | `TROCVELO_LIST_PAGES` | `2`        | Pages de liste Troc-Vélo lues (30 annonces chacune) |
+| `TROCVELO_API_PAGES`  | `10`       | Pages de 30 annonces lues par l'API de recherche Troc-Vélo |
 | `TROCVELO_SEARCH_URL` | catégorie route | Page de liste Troc-Vélo (copie l'adresse après avoir posé tes filtres) |
 | `TROCVELO_ENABLED`    | `true`     | `false` : ne plus lire Troc-Vélo |
 | `COMMIT_RESULTS`      | `true`     | `false` : simple exécution de contrôle, rien n'est commité |
