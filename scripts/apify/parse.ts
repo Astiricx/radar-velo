@@ -130,6 +130,8 @@ function detectGroupset(t: string): { groupset: Groupset; doubt?: string } {
 const NOT_FRAME = /(roues?|jantes?|cintre|tige de selle|tige|potence|selle|fourche|manivelles?|pedalier|guidon|wheels?|handlebar|seatpost|fork)\s+(?:\w+\s+){0,3}?(en\s+)?carbone?\b/g
 
 function detectFrame(t: string): { frame: Frame; doubt?: string } {
+  // « Cadre et roues carbone », « cadre en carbone » : le cadre est nommé, pas de doute.
+  if (/\bcadre\b[^.;\n]{0,25}\bcarbone?\b/.test(t)) return { frame: 'carbone' }
   const frameOnly = t.replace(NOT_FRAME, ' ')
   if (/\bcarbone?\b|\bcf\b|\bfull carbon/.test(frameOnly)) return { frame: 'carbone' }
   if (/\balu(minium)?\b/.test(frameOnly)) return { frame: 'aluminium' }
