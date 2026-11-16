@@ -13,7 +13,7 @@ import type { BikeType, Brakes, Condition, ExtensionFit, Frame, Groupset, Listin
  * Version des règles de lecture. À augmenter quand elles changent : les fiches Troc-Vélo et
  * Decathlon lues avec une version plus ancienne sont alors relues à la veille suivante.
  */
-export const PARSER_VERSION = 4
+export const PARSER_VERSION = 5
 
 /** Annonce telle que lue sur la plateforme, avant analyse. */
 export interface RawAd {
@@ -184,8 +184,10 @@ const TIME_TRIAL = /\b(aerium|speedmax|shiv|plasma|trinity|speed ?concept|p-?ser
 function detectType(t: string, typeAttr: string): BikeType {
   const a = fold(typeAttr)
   if (TIME_TRIAL.test(t)) return 'clm'
+  // Catégorie déclarée « Triathlon » ou « CLM » seule (buycycle) : vélo de contre-la-montre.
+  if (/triathlon|\bclm\b|contre[- ]la[- ]montre|time ?trial/.test(a) && !/route|road|course/.test(a)) return 'clm'
   // La pratique déclarée par le vendeur prime sur le texte (« je passe au gravel » ne fait pas un gravel).
-  if (/route|course|endurance|clm|triathlon/.test(a)) return 'route'
+  if (/route|road|course|endurance|clm|triathlon/.test(a)) return 'route'
   if (/gravel/.test(a)) return 'gravel'
   if (/electri|vae|assistance/.test(a) || /\bvae\b|\bassistance electrique\b/.test(t)) return 'vae'
   if (/vtt|vtc|ville|enfant|bmx/.test(a)) return 'urbain'

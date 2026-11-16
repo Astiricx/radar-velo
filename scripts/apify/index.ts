@@ -6,7 +6,8 @@ import { resolve } from 'node:path'
 import { plural } from '../../src/lib/format'
 import type { Listing } from '../../src/types'
 import { apifyRunner, lastRunLog, monthlyUsage, type ActorRunner } from './client'
-import { APIFY, DECATHLON, LEBONCOIN, PROXY, TROCVELO, TROCVELO_PROXY } from './config'
+import { fetchBuycycle } from './buycycle'
+import { APIFY, BUYCYCLE, DECATHLON, LEBONCOIN, PROXY, TROCVELO, TROCVELO_PROXY } from './config'
 import { fetchDecathlon } from './decathlon'
 import { directRunner } from './direct'
 import { fetchLeboncoin } from './leboncoin'
@@ -73,11 +74,27 @@ export async function collectFromApify(today: string, warnings: string[], seenId
       const { ads, skipped } = await fetchLeboncoin(run)
       listings.push(...ads.map((ad) => toListing(ad, today)))
       notes.push(
-        `Leboncoin : ${plural(ads.length, 'annonce lue', 'annonces lues')} autour de Paris et de Saint-Nazaire (${LEBONCOIN.maxItemsPerSearch} au plus par zone)` +
+        `Leboncoin : ${plural(ads.length, 'annonce lue', 'annonces lues')} ${LEBONCOIN.scope === 'zones' ? `autour de Paris et de Saint-Nazaire (${LEBONCOIN.maxItemsPerSearch} au plus par zone)` : `sur toute la France, les plus récentes (${LEBONCOIN.maxItemsPerSearch} au plus)`}` +
           `${skipped ? `, ${plural(skipped, 'ligne ignorée', 'lignes ignorées')} (pas une annonce exploitable)` : ''}.`,
       )
     } catch (error) {
       warnings.push(`Leboncoin : ${(error as Error).message}`)
+    }
+  }
+
+  if (BUYCYCLE.enabled) {
+    try {
+      const { ads, skipped, mode } = await fetchBuycycle(run)
+      const read = ads.map((ad) => toListing(ad, today))
+      listings.push(...read)
+      notes.push(
+        `buycycle : ${plural(ads.length, 'annonce lue', 'annonces lues')} (route, carbone, disques, tailles M et L, ${BUYCYCLE.maxItems} au plus` +
+          `${mode === 'catalogue' ? ', lues dans le catalogue faute de filtres reconnus' : ''})` +
+          `${skipped ? `, ${plural(skipped, 'ligne ignorée', 'lignes ignorées')}` : ''}.`,
+      )
+      if (DEBUG) for (const l of read.slice(0, 5)) console.log(`    Fiche buycycle : ${JSON.stringify({ title: l.title, price: l.price, size: l.size, year: l.year, groupset: l.groupset, frame: l.frame, brakes: l.brakes, type: l.type, city: l.city, url: l.url })}`)
+    } catch (error) {
+      warnings.push(`buycycle : ${(error as Error).message}`)
     }
   }
 

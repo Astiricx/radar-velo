@@ -6,7 +6,8 @@
  * approximative. Sert aussi à savoir quels départements sont à portée de tes zones.
  */
 import { CITIES, distanceBetween } from '../../src/data/cities'
-import type { Zone } from '../../src/types'
+import { STATION_REACH_KM, STATIONS } from '../../src/data/stations'
+import type { TrainReach, Zone } from '../../src/types'
 
 export const DEPARTMENTS: Record<string, [name: string, lat: number, lon: number]> = {
   '01': ['Ain', 46.2052, 5.2255],
@@ -119,9 +120,15 @@ export function departmentCode(postal: string): string | null {
  * Départements dont la préfecture est à moins de (rayon de la zone + marge) du centre d'une
  * zone active. La marge couvre les communes d'un département voisin situées dans le rayon.
  */
-export function departmentsNear(zones: Zone[], marginKm = 80): string[] {
+export function departmentsNear(zones: Zone[], train?: TrainReach, marginKm = 80): string[] {
   const active = zones.filter((z) => z.enabled && CITIES[z.center])
+  // Gares d'où le vendeur reste à portée : train + marge de 10 min sous le temps maximal.
+  const stations = train?.enabled ? STATIONS.filter((s) => s.fromParis + 10 <= train.maxHours * 60) : []
   return Object.entries(DEPARTMENTS)
-    .filter(([, [, lat, lon]]) => active.some((z) => distanceBetween(CITIES[z.center], { lat, lon }) <= z.radiusKm + marginKm))
+    .filter(
+      ([, [, lat, lon]]) =>
+        active.some((z) => distanceBetween(CITIES[z.center], { lat, lon }) <= z.radiusKm + marginKm) ||
+        stations.some((s) => distanceBetween(s, { lat, lon }) <= STATION_REACH_KM + 50),
+    )
     .map(([code]) => code)
 }

@@ -1,4 +1,4 @@
-# Veille quotidienne : collecte Leboncoin (Apify), Troc-Vélo (Puppeteer Scraper d'Apify, vrai navigateur)
+# Veille quotidienne : collecte Leboncoin et buycycle (Apify), Troc-Vélo (Puppeteer Scraper d'Apify, vrai navigateur)
 # et Decathlon Occasion (lecture directe, Cheerio Scraper en secours), analyse, enregistre data/ et republie le site.
 name: Veille quotidienne
 
@@ -16,6 +16,10 @@ on:
         default: false
       rescan:
         description: Réanalyser aussi les annonces déjà vues (après un changement de règles)
+        type: boolean
+        default: false
+      backfill:
+        description: Collecte de rattrapage (Leboncoin 150, buycycle 400, Troc-Vélo 3 pages ; ~0,25 $)
         type: boolean
         default: false
       debug:
@@ -58,10 +62,13 @@ jobs:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
           # Réglages facultatifs (variables de dépôt), valeurs par défaut dans scripts/apify/config.ts.
           APIFY_BUDGET_USD: ${{ vars.APIFY_BUDGET_USD }}
-          APIFY_MAX_ITEMS: ${{ inputs.max_items || vars.APIFY_MAX_ITEMS }}
+          APIFY_MAX_ITEMS: ${{ inputs.max_items || (inputs.backfill && '150') || vars.APIFY_MAX_ITEMS }}
+          BUYCYCLE_MAX_ITEMS: ${{ (inputs.backfill && '400') || vars.BUYCYCLE_MAX_ITEMS }}
+          BUYCYCLE_ENABLED: ${{ vars.BUYCYCLE_ENABLED }}
+          LEBONCOIN_SCOPE: ${{ vars.LEBONCOIN_SCOPE }}
           VEILLE_RESCAN: ${{ inputs.rescan && 'true' || 'false' }}
           VEILLE_DEBUG: ${{ inputs.debug && 'true' || 'false' }}
-          TROCVELO_LIST_PAGES: ${{ vars.TROCVELO_LIST_PAGES }}
+          TROCVELO_LIST_PAGES: ${{ (inputs.backfill && '3') || vars.TROCVELO_LIST_PAGES }}
           APIFY_PROXY_GROUPS: ${{ vars.APIFY_PROXY_GROUPS || secrets.APIFY_PROXY_GROUPS }}
           DECATHLON_ENABLED: ${{ vars.DECATHLON_ENABLED }}
           DECATHLON_MAX_ITEMS: ${{ vars.DECATHLON_MAX_ITEMS }}

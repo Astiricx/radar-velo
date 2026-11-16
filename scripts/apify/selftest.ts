@@ -8,10 +8,11 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { DEFAULT_CRITERIA, rejectionReason } from '../../src/lib/criteria'
 import { isDirectAdUrl } from '../../src/lib/links'
-import { matchZone } from '../../src/lib/zones'
+import { locate } from '../../src/lib/zones'
 import type { Listing } from '../../src/types'
 import { LEBONCOIN_ZONES } from './config'
-import { normalizeLeboncoin, searchUrl } from './leboncoin'
+import { normalizeLeboncoin, searchUrl, searchUrls } from './leboncoin'
+import { buycycleInput, normalizeBuycycle } from './buycycle'
 import { toListing } from './parse'
 import { normalizeDecathlon } from './decathlon'
 import { BROWSER_PAGE_FUNCTION } from './browser-page-function'
@@ -27,7 +28,7 @@ const test = (name: string, fn: () => void) => {
   passed++
   console.log(`  ✓ ${name}`)
 }
-const verdict = (l: Listing) => rejectionReason(l, DEFAULT_CRITERIA, matchZone(l, DEFAULT_CRITERIA.zones))
+const verdict = (l: Listing) => rejectionReason(l, DEFAULT_CRITERIA, locate(l, DEFAULT_CRITERIA))
 
 test('les liens de recherche ne sont jamais des liens directs', () => {
   assert.equal(isDirectAdUrl('https://www.leboncoin.fr/ad/velos/3310839472'), true)
@@ -39,17 +40,24 @@ test('les liens de recherche ne sont jamais des liens directs', () => {
   assert.equal(isDirectAdUrl(''), false)
 })
 
-test('recherches Leboncoin ciblées : vélos de route, taille M, prix, zone, plus récentes d’abord', () => {
-  const urls = LEBONCOIN_ZONES.map(searchUrl)
-  assert.equal(urls.length, 2)
-  const paris = new URL(urls[0])
+test('recherche Leboncoin : toute la France par défaut, vélos de route, taille M, prix, plus récentes d’abord', () => {
+  const urls = searchUrls()
+  assert.equal(urls.length, 1)
+  const france = new URL(urls[0])
+  assert.equal(france.searchParams.get('locations'), null)
+  assert.equal(france.searchParams.get('bicycle_size'), 'M')
+  assert.equal(france.searchParams.get('sort'), 'time')
+  // Recherche par zone, si LEBONCOIN_SCOPE=zones.
+  const zoned = LEBONCOIN_ZONES.map((z) => searchUrl(z))
+  assert.equal(zoned.length, 2)
+  const paris = new URL(zoned[0])
   assert.equal(paris.searchParams.get('category'), '55')
   assert.equal(paris.searchParams.get('bicycle_type'), 'course')
   assert.equal(paris.searchParams.get('bicycle_size'), 'M')
   assert.equal(paris.searchParams.get('price'), '1500-4500')
   assert.equal(paris.searchParams.get('sort'), 'time')
   assert.match(paris.searchParams.get('locations')!, /^Paris_75000__48\.85661_2\.35222_10000_60000$/)
-  assert.match(new URL(urls[1]).searchParams.get('locations')!, /^Saint-Nazaire_44600__47\.27346_-2\.21386_10000_60000$/)
+  assert.match(new URL(zoned[1]).searchParams.get('locations')!, /^Saint-Nazaire_44600__47\.27346_-2\.21386_10000_60000$/)
 })
 
 const lbc = fixture('memo23~leboncoin-scraper.json').map(normalizeLeboncoin)
@@ -91,7 +99,7 @@ test('Leboncoin (autre format) : Tarmac 105 Di2 taille 56 à Pornichet, retenu, 
   assert.equal(l.newPrice, 5200)
   assert.equal(l.wheelDepth, 38)
   assert.ok(l.toVerify?.includes('Type de freins non précisé'))
-  const zone = matchZone(l, DEFAULT_CRITERIA.zones)
+  const zone = locate(l, DEFAULT_CRITERIA)
   assert.equal(zone.nearest?.id, 'saint-nazaire')
   assert.ok(zone.distance < 15)
   assert.equal(verdict(l), null)
@@ -262,6 +270,10 @@ test('Decathlon Occasion : Van Rysel RCR-F livré, retenu ; page de liste ignor�
     const near = departmentsNear(DEFAULT_CRITERIA.zones)
     for (const d of ['75', '93', '44', '35', '56', '85', '59']) assert.ok(near.includes(d), d)
     for (const d of ['64', '31', '13', '69', '68']) assert.ok(!near.includes(d), d)
+    // Avec le train : Lyon (69) et Marseille (13) deviennent à portée, Toulouse (31) non.
+    const reach = departmentsNear(DEFAULT_CRITERIA.zones, DEFAULT_CRITERIA.train)
+    for (const d of ['69', '86', '33', '67', '13']) assert.ok(reach.includes(d), d)
+    for (const d of ['31', '64', '66', '06']) assert.ok(!reach.includes(d), d)
   })
 }
 
@@ -271,6 +283,55 @@ test('Troc-Vélo : le vendeur qui refuse l’envoi n’est pas compté comme liv
   const l = toListing(normalizeTrocVelo(raw)!, today)
   assert.equal(l.shipping, false)
   assert.equal(l.type, 'route')
+})
+
+test('buycycle : prix avec protection, taille chiffrée, groupe, livraison, triathlon écarté', () => {
+  const ads = fixture('solidcode~buycycle-scraper.json').map(normalizeBuycycle)
+  assert.equal(ads[4], null) // équipement, pas un vélo
+  const [aeroad, tarmac, propel, speedmax] = ads.map((a) => (a ? toListing(a, today) : null))
+  assert.equal(aeroad!.id, 'bc-21966')
+  assert.equal(aeroad!.url, 'https://buycycle.com/fr-fr/product/aeroad-cf-slx-8-di2-2023-21966')
+  assert.equal(isDirectAdUrl(aeroad!.url), true)
+  assert.equal(aeroad!.source, 'buycycle')
+  assert.equal(aeroad!.title, 'Canyon Aeroad CF SLX 8 Di2 2023')
+  assert.equal(aeroad!.price, 3783)
+  assert.equal(aeroad!.newPrice, 6500)
+  assert.equal(aeroad!.size, 'M')
+  assert.equal(aeroad!.groupset, 'ultegra-di2')
+  assert.equal(aeroad!.condition, 'tres-bon')
+  assert.equal(aeroad!.shipping, true)
+  assert.equal(aeroad!.aero, true)
+  assert.equal(aeroad!.wheelDepth, 62)
+  assert.equal(aeroad!.city, 'Eybens, France (livraison buycycle)')
+  assert.equal(verdict(aeroad!), null)
+  assert.equal(tarmac!.price, 2425)
+  assert.equal(tarmac!.size, '54')
+  assert.equal(tarmac!.groupset, 'ultegra')
+  assert.match(verdict(tarmac!)!, /Taille 54/)
+  assert.equal(propel!.size, '56')
+  assert.equal(propel!.groupset, 'ultegra-di2')
+  assert.equal(verdict(propel!), null)
+  assert.equal(speedmax!.type, 'clm')
+  assert.ok(verdict(speedmax!))
+  const input = buycycleInput()
+  assert.deepEqual(input.frameSizes, ['m', 'l'])
+  assert.equal(input.country, 'fr')
+  assert.equal(input.maxPrice, 4500)
+})
+
+test('accès en train : Poitiers et Lyon retenus, Toulouse non, Paris reste en zone', () => {
+  const at = (lat: number, lon: number) => locate({ ...toListing(tv[3]!, today), coords: { lat, lon } }, DEFAULT_CRITERIA)
+  const lussac = at(46.4045, 0.7253) // Lussac-les-Châteaux, 35 km de Poitiers
+  assert.equal(lussac.inside, true)
+  assert.equal(lussac.train?.station, 'Poitiers')
+  assert.ok(lussac.train!.minutes > 100 && lussac.train!.minutes < 140, String(lussac.train?.minutes))
+  assert.equal(at(45.764, 4.8357).train?.station, 'Lyon')
+  assert.equal(at(43.6047, 1.4442).inside, false) // Toulouse : 4 h 20 de train
+  const paris = at(48.8566, 2.3522)
+  assert.equal(paris.train, undefined)
+  assert.equal(paris.nearest?.id, 'paris')
+  // Désactivé dans les critères : Lyon redevient hors zone.
+  assert.equal(locate({ ...toListing(tv[3]!, today), coords: { lat: 45.764, lon: 4.8357 } }, { ...DEFAULT_CRITERIA, train: { enabled: false, maxHours: 3 } }).inside, false)
 })
 
 test('les fonctions de page (Cheerio et navigateur) sont du JavaScript valide', () => {

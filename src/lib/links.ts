@@ -19,6 +19,7 @@ const AD_PAGES: Record<string, RegExp> = {
   'leboncoin.fr': /^\/(ad\/[^/]+\/\d+|vi\/\d+|[a-z_]+\/\d+\.htm)/i,
   'troc-velo.com': /\/annonce\/.+-\d+\/?$/i,
   'decathlon.fr': /^\/p\//i,
+  'buycycle.com': /^\/[a-z]{2}-[a-z]{2}\/product\/.+-\d+\/?$/i,
 }
 
 /** Vrai si `url` ouvre une annonce précise. */

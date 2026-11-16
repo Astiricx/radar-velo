@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { CITY_NAMES } from '../data/cities'
 import { GROUPSET_LABELS, TYPE_LABELS } from '../lib/criteria'
+import { DEFAULT_TRAIN } from '../lib/zones'
 import type { BikeType, Criteria, Groupset, Zone } from '../types'
 import { Modal } from './Modal'
 
@@ -27,6 +28,7 @@ export function CriteriaPanel({ criteria: c, onChange, onResetCriteria, onResetA
   const setZone = (id: string, patch: Partial<Zone>) =>
     set({ zones: c.zones.map((z) => (z.id === id ? { ...z, ...patch } : z)) })
   const [sizesText, setSizesText] = useState(c.sizes.join(', '))
+  const train = { ...DEFAULT_TRAIN, ...c.train }
   const [confirmReset, setConfirmReset] = useState(false)
 
   const check = (id: string, label: string, checked: boolean, onToggle: () => void) => (
@@ -102,6 +104,16 @@ export function CriteriaPanel({ criteria: c, onChange, onResetCriteria, onResetA
               </div>
             </div>
           ))}
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+            {check('c-train', 'Accepter aussi les annonces accessibles en train depuis Paris, en moins de', train.enabled, () => set({ train: { ...train, enabled: !train.enabled } }))}
+            <label htmlFor="c-train-hours" className="sr-only">Temps de trajet maximal, en heures</label>
+            <select id="c-train-hours" className="field w-24" value={train.maxHours} disabled={!train.enabled} onChange={(e) => set({ train: { ...train, maxHours: Number(e.target.value) } })}>
+              {[1.5, 2, 2.5, 3, 3.5, 4].map((h) => (
+                <option key={h} value={h}>{String(h).replace('.', ',')} h</option>
+              ))}
+            </select>
+          </div>
+          <p className="text-xs text-muted">Porte à porte estimé : meilleur train direct depuis Paris, puis la route depuis la gare (45 km au plus).</p>
           {check('c-shipping', 'Accepter aussi les annonces hors zones avec livraison', c.acceptShipping, () => set({ acceptShipping: !c.acceptShipping }))}
         </fieldset>
 

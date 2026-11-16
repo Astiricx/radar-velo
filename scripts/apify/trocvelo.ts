@@ -37,7 +37,7 @@ export async function fetchTrocVelo(run: ActorRunner, options: { skipIds?: strin
         // Annonces déjà analysées : inutile de payer pour les rouvrir.
         skipIds: (options.skipIds ?? []).slice(-400),
         // Départements à portée de tes zones : ailleurs, seules les annonces avec livraison sont ouvertes.
-        departments: departmentsNear(DEFAULT_CRITERIA.zones),
+        departments: departmentsNear(DEFAULT_CRITERIA.zones, DEFAULT_CRITERIA.train),
         maxListPages: TROCVELO.maxListPages,
       },
       // Champ obligatoire. Proxy Apify ; TROCVELO_PROXY_GROUPS=RESIDENTIAL si le site bloque encore.

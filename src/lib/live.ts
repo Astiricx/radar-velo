@@ -13,7 +13,7 @@ export interface LiveData {
   updatedAt: string | null
 }
 
-const SOURCES = new Set(['leboncoin', 'troc-velo', 'decathlon'])
+const SOURCES = new Set(['leboncoin', 'troc-velo', 'buycycle', 'decathlon'])
 
 /** Garde les entrées complètes : un fichier abîmé ne doit pas casser l'application. */
 function isListing(x: unknown): x is Listing {

@@ -1,5 +1,5 @@
 export type BikeType = 'route' | 'gravel' | 'urbain' | 'vae' | 'clm'
-export type SourceId = 'leboncoin' | 'troc-velo' | 'decathlon'
+export type SourceId = 'leboncoin' | 'troc-velo' | 'buycycle' | 'decathlon'
 export type Groupset =
   | 'dura-ace-di2'
   | 'ultegra-di2'
@@ -65,6 +65,8 @@ export interface Listing {
   toVerify?: string[]
   /** Date (AAAA-MM-JJ) à laquelle la veille quotidienne a trouvé l'annonce. */
   firstSeen?: string
+  /** Prix relevés par la veille, du plus ancien au plus récent. */
+  priceHistory?: { d: string; p: number }[]
 }
 
 /** Une zone de recherche : une ville centre et un rayon. */
@@ -78,12 +80,21 @@ export interface Zone {
   enabled: boolean
 }
 
+/** Annonces hors zones mais accessibles en train depuis Paris (gare desservie en direct). */
+export interface TrainReach {
+  enabled: boolean
+  /** Temps de porte à porte maximal, en heures. */
+  maxHours: number
+}
+
 export interface Criteria {
   types: BikeType[]
   sizes: string[]
   budgetIdeal: number
   budgetMax: number
   zones: Zone[]
+  /** Annonces accessibles en train hors zones (absent des critères enregistrés avant son ajout). */
+  train?: TrainReach
   acceptShipping: boolean
   requireCarbon: boolean
   requireDisc: boolean
@@ -129,8 +140,10 @@ export interface ZoneMatch {
   nearest: Zone | null
   /** Distance au centre de la zone la plus proche, en km. */
   distance: number
-  /** Vrai si l'annonce est dans le rayon de cette zone. */
+  /** Vrai si l'annonce est dans le rayon de cette zone, ou accessible en train. */
   inside: boolean
+  /** Accès en train : gare la plus pratique et temps de porte à porte estimé depuis Paris. */
+  train?: { station: string; minutes: number }
 }
 
 /** Une annonce enrichie : zone, score, motif d'exclusion et suivi. */

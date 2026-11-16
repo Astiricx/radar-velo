@@ -2,8 +2,10 @@
  * Réglages de la collecte Apify, pensés pour le plan gratuit (5 $ de crédit par mois).
  *
  * Coût estimé par jour, avec les valeurs par défaut :
- *   - Leboncoin : 2 recherches × 30 annonces au plus, à 0,79 $ les 1 000 annonces
- *     (acteur memo23/leboncoin-scraper)            → 0,05 $ au plus, ~1,40 $ par mois ;
+ *   - Leboncoin : 1 recherche sur toute la France × 60 annonces au plus, à 0,79 $ les
+ *     1 000 annonces (acteur memo23/leboncoin-scraper)  → 0,05 $ au plus, ~1,40 $ par mois ;
+ *   - buycycle : 120 annonces au plus, à ~0,10 $ les 1 000 (acteur solidcode/buycycle-scraper)
+ *     → ~0,02 $ avec les frais de lancement, ~0,50 $ par mois ;
  *   - Troc-Vélo : 1 page de liste + 8 annonces au plus, dans un Chrome sans écran
  *     (apify/puppeteer-scraper, 2 Go pendant 2 à 4 minutes) → ~0,04 $, ~1,20 $ par mois,
  *     plus le proxy résidentiel s'il est activé ;
@@ -35,9 +37,15 @@ export const LEBONCOIN = {
   /** Acteur payé à l'annonce, sans frais de plateforme, proxy résidentiel inclus. */
   actor: text(process.env.APIFY_LEBONCOIN_ACTOR, 'memo23/leboncoin-scraper'),
   /** Annonces lues au plus par recherche (une recherche par zone), les plus récentes d'abord. */
-  maxItemsPerSearch: Math.max(1, Math.round(num(process.env.APIFY_MAX_ITEMS, 30))),
+  maxItemsPerSearch: Math.max(1, Math.round(num(process.env.APIFY_MAX_ITEMS, 60))),
+  /**
+   * « france » (par défaut) : une recherche nationale, comme la veille hebdomadaire, car tes
+   * critères acceptent ce qui est à 2 ou 3 h de train de Paris. « zones » : une recherche par
+   * zone (rayons LEBONCOIN_ZONES), moins d'annonces, moins chère.
+   */
+  scope: text(process.env.LEBONCOIN_SCOPE, 'france') === 'zones' ? 'zones' : 'france',
   /** Plafond de dépense d'une exécution, en dollars : Apify arrête l'acteur au-delà. */
-  maxChargeUsd: num(process.env.APIFY_MAX_CHARGE_USD, 0.1),
+  maxChargeUsd: num(process.env.APIFY_MAX_CHARGE_USD, 0.25),
 }
 
 export const TROCVELO = {
@@ -53,6 +61,17 @@ export const TROCVELO = {
   maxListings: Math.max(1, Math.round(num(process.env.TROCVELO_MAX_ITEMS, 8))),
   /** Pages de liste lues (30 annonces chacune, les plus récentes d'abord). */
   maxListPages: Math.max(1, Math.round(num(process.env.TROCVELO_LIST_PAGES, 2))),
+}
+
+export const BUYCYCLE = {
+  enabled: text(process.env.BUYCYCLE_ENABLED, 'true') !== 'false',
+  /** Acteur payé au résultat (~0,10 $ les 1 000), qui interroge buycycle avec ses propres filtres. */
+  actor: text(process.env.BUYCYCLE_ACTOR, 'solidcode/buycycle-scraper'),
+  /** Vitrine française : prix en euros, vélos livrables en France. */
+  country: 'fr',
+  /** Annonces lues au plus par exécution, les plus récentes d'abord. */
+  maxItems: Math.max(1, Math.round(num(process.env.BUYCYCLE_MAX_ITEMS, 120))),
+  maxChargeUsd: num(process.env.BUYCYCLE_MAX_CHARGE_USD, 0.1),
 }
 
 export const DECATHLON = {

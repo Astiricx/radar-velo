@@ -1,5 +1,5 @@
 import type { Criteria, ZoneMatch } from '../types'
-import { ZONE_TONES } from '../lib/zones'
+import { TRAIN_TONE, ZONE_TONES } from '../lib/zones'
 
 interface Props {
   zone: ZoneMatch
@@ -11,6 +11,13 @@ interface Props {
 
 /** Pastille de zone : « Région parisienne », « Saint-Nazaire et Loire-Atlantique » ou « Hors zone, livraison ». */
 export function ZoneBadge({ zone, criteria, shipping, short = false }: Props) {
+  if (zone.train) {
+    return (
+      <span className={`chip ${TRAIN_TONE}`} title={`Gare de ${zone.train.station}`}>
+        {short ? `Train, ${zone.train.station}` : `En train, via ${zone.train.station}`}
+      </span>
+    )
+  }
   if (zone.inside && zone.nearest) {
     const index = criteria.zones.findIndex((z) => z.id === zone.nearest!.id)
     return (

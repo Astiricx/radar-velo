@@ -1,3 +1,4 @@
+import { durationLabel } from '../data/stations'
 import type { Criteria, Listing, ScorePart, ScoreResult, ZoneMatch } from '../types'
 import { CONDITION_LABELS, EXTENSION_LABELS, GROUPSET_LABELS } from './criteria'
 import { discountPct, eur } from './format'
@@ -61,10 +62,15 @@ export function scoreListing(l: Listing, c: Criteria, zone: ZoneMatch): ScoreRes
   // Distance : mesurée depuis le centre de la zone la plus proche (Paris ou Saint-Nazaire).
   const deliverable = l.shipping && c.acceptShipping
   const d = zone.distance
-  const byRoad = !zone.inside ? 0 : d <= 30 ? 10 : d <= 80 ? 8 : d <= 150 ? 6 : 4
-  const where = zone.nearest
-    ? `${Number.isFinite(d) ? `${d} km de ${zone.nearest.center}` : 'Lieu inconnu'}${zone.inside ? `, zone ${zone.nearest.label}` : ', hors zone'}`
-    : 'Aucune zone active'
+  // En zone : selon la route. Accessible en train : selon le temps de trajet depuis Paris.
+  const byRoad = zone.train
+    ? zone.train.minutes <= 90 ? 8 : zone.train.minutes <= 150 ? 6 : 5
+    : !zone.inside ? 0 : d <= 30 ? 10 : d <= 80 ? 8 : d <= 150 ? 6 : 4
+  const where = zone.train
+    ? `≈ ${durationLabel(zone.train.minutes)} de Paris en train (gare de ${zone.train.station} à ${d} km)`
+    : zone.nearest
+      ? `${Number.isFinite(d) ? `${d} km de ${zone.nearest.center}` : 'Lieu inconnu'}${zone.inside ? `, zone ${zone.nearest.label}` : ', hors zone'}`
+      : 'Aucune zone active'
   parts.push({
     label: 'Distance',
     detail: `${where}${deliverable ? ', livraison possible' : ''}`,

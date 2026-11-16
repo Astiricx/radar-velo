@@ -44,6 +44,7 @@ export function Toolbar(p: Props) {
             {p.zones.filter((z) => z.enabled).map((z) => (
               <option key={z.id} value={z.id}>{z.label}</option>
             ))}
+            <option value="train">Accessible en train</option>
             <option value="livraison">Hors zone, avec livraison</option>
           </select>
         </div>

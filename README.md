@@ -127,9 +127,10 @@ Sans ce secret, la veille tourne quand même mais ne collecte rien.
 
 | Plateforme | Comment | Par jour, au plus | Coût estimé par mois |
 | ---------- | ------- | ----------------- | -------------------- |
-| Leboncoin  | Acteur `memo23/leboncoin-scraper` (0,79 $ / 1 000 annonces) | 2 recherches × 30 annonces | ~1,40 $ |
-| Troc-Vélo  | `apify/puppeteer-scraper` : Chrome sans écran (le site exige un vrai navigateur), ni images ni CSS | 1 page de liste + 8 annonces | ~1,20 $ (+ proxy résidentiel s'il est activé) |
-| Decathlon Occasion | Idem, page « Vélo route occasion » | 4 pages de liste + 12 annonces | 0 à ~0,30 $ |
+| Leboncoin  | Acteur `memo23/leboncoin-scraper` (0,79 $ / 1 000 annonces), recherche sur toute la France | 60 annonces, les plus récentes | ~1,40 $ |
+| buycycle   | Acteur `solidcode/buycycle-scraper` (~0,10 $ / 1 000 annonces) : route, carbone, disques, tailles M et L | 120 annonces | ~0,50 $ |
+| Troc-Vélo  | `apify/puppeteer-scraper` : Chrome sans écran, proxy résidentiel | 2 pages de liste + 8 fiches | ~1,50 $ |
+| Decathlon Occasion | Lecture directe, `apify/cheerio-scraper` en secours (bloqué pour l'instant) | 4 pages + 12 fiches | ~0 $ |
 
 Sur Troc-Vélo et Decathlon, seules les annonces dont la vignette cite un groupe
 Shimano retenu et un prix dans le budget sont ouvertes. Leboncoin est filtré à la
@@ -172,13 +173,27 @@ les recopie dans son propre journal, avec le proxy réellement utilisé.
 `TROCVELO_PROXY_GROUPS` et `APIFY_PROXY_GROUPS` sont lus comme variables de dépôt
 ou, à défaut, comme secrets du même nom.
 
+**Accès en train.** Comme la veille hebdomadaire, le site retient aussi les annonces
+hors de tes deux zones mais à moins de 3 h de Paris en train (réglable dans
+« Critères ») : gare desservie en direct à moins de 45 km du vendeur, temps de
+porte à porte estimé (`src/data/stations.ts`). C'est pourquoi Leboncoin est
+interrogé sur toute la France. buycycle livre toujours : ses annonces passent
+par la règle « livraison acceptée ».
+
+**Collecte de rattrapage.** Actions → « Veille quotidienne » → Run workflow,
+case « Collecte de rattrapage » : Leboncoin 150 annonces, buycycle 400,
+Troc-Vélo 3 pages, pour environ 0,25 $. Utile au démarrage ou après une pause.
+
 **Réglages facultatifs** (Settings → Secrets and variables → Actions → onglet
 Variables) :
 
 | Variable              | Par défaut | Effet |
 | --------------------- | ---------- | ----- |
 | `APIFY_BUDGET_USD`    | `4`        | Consommation du mois au-delà de laquelle la collecte est sautée |
-| `APIFY_MAX_ITEMS`     | `30`       | Annonces Leboncoin lues par zone et par jour |
+| `APIFY_MAX_ITEMS`     | `60`       | Annonces Leboncoin lues par jour (toute la France) |
+| `LEBONCOIN_SCOPE`     | `france`   | `zones` : une recherche par zone (60 km), moins d'annonces |
+| `BUYCYCLE_MAX_ITEMS`  | `120`      | Annonces buycycle lues par jour |
+| `BUYCYCLE_ENABLED`    | `true`     | `false` : ne plus lire buycycle |
 | `DECATHLON_MAX_ITEMS` | `12`       | Annonces Decathlon Occasion ouvertes par jour |
 | `APIFY_PROXY_GROUPS`  | vide (proxy automatique) | `RESIDENTIAL` : proxy résidentiel français pour les scrapers génériques, si un site bloque le proxy par défaut (facturé au volume) |
 | `TROCVELO_PROXY_GROUPS` | comme ci-dessus | Proxy pour Troc-Vélo seulement, par exemple `RESIDENTIAL` |
@@ -214,8 +229,12 @@ complète sans appeler Apify.
   est rattachée à la zone la plus proche ; celles hors zones restent retenues si
   elles sont livrables. Rayon, ville centre et nom de chaque zone se règlent dans
   « Critères », et chaque zone peut être désactivée.
-- **Vraies annonces.** Celles retenues par la veille quotidienne, avec leur lien
-  direct et la photo du vendeur. Les nouvelles du jour sont marquées « Nouveau » ;
+- **Vraies annonces.** Leboncoin, buycycle et Troc-Vélo, avec leur lien direct et
+  la photo du vendeur ; les écartées restent consultables avec leur motif.
+- **Podium.** Les trois meilleures annonces selon les filtres en cours, avec les
+  critères qui leur rapportent des points et ceux qui leur en coûtent.
+- **Baisses de prix.** Chaque prix relevé par la veille est gardé ; une baisse
+  s'affiche sur la carte et le podium. Les nouvelles du jour sont marquées « Nouveau » ;
   « Actualiser » recharge le dernier résultat.
 - **Filtre automatique.** Toute annonce hors budget maximum, hors type, hors taille,
   sans cadre carbone ou freins à disque, avec une transmission non retenue, ou hors

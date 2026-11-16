@@ -40,7 +40,7 @@ export function DetailDrawer({ row, criteria, onClose, onStatus, onPatch, onDele
     ['État', CONDITION_LABELS[l.condition]],
     ['Kilométrage', l.km ? `${l.km.toLocaleString('fr-FR')} km` : 'Non précisé'],
     ['Cadre', `${l.frame}, freins à ${l.brakes}`],
-    ['Lieu', `${l.city}, ${distanceLabel(zone.distance, zone.nearest?.center)}`],
+    ['Lieu', `${l.city}, ${distanceLabel(zone.distance, zone.nearest?.center, zone.train)}`],
     ['Livraison', l.shipping ? 'Possible' : 'Remise en main propre'],
     ['Publiée', `${shortDate(l.publishedAt)} (${relativeDay(l.publishedAt)})`],
     ['Source', SOURCES[l.source].label],
@@ -116,7 +116,7 @@ export function DetailDrawer({ row, criteria, onClose, onStatus, onPatch, onDele
               {score.parts.map((p) => (
                 <li key={p.label} className="grid grid-cols-[1fr_auto] gap-x-3 text-sm">
                   <span className="font-medium">{p.label}</span>
-                  <span className="tnum text-muted">{p.points.toLocaleString('fr-FR')} / {p.max}</span>
+                  <span className="tnum text-muted">{(Math.round(p.points * 10) / 10).toLocaleString('fr-FR')} / {p.max}</span>
                   <span className="col-span-2 text-xs text-muted">{p.detail}</span>
                   <span className="col-span-2 mt-1 h-1.5 overflow-hidden rounded-full bg-raised">
                     <span className="block h-full rounded-full bg-accent" style={{ width: `${(p.points / p.max) * 100}%` }} />

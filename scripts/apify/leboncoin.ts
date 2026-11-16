@@ -1,9 +1,10 @@
 /**
  * Leboncoin via l'acteur Apify memo23/leboncoin-scraper.
  *
- * Une recherche par zone, déjà filtrée côté Leboncoin (vélos de route, taille M,
- * prix, rayon autour de Paris et de Saint-Nazaire), triée de la plus récente à la
- * plus ancienne : on ne paie que les annonces les plus susceptibles de convenir.
+ * Une recherche déjà filtrée côté Leboncoin (vélos de route, taille M, prix), sur toute
+ * la France (ou par zone, LEBONCOIN_SCOPE=zones), triée de la plus récente à la plus
+ * ancienne : on ne paie que les annonces les plus susceptibles de convenir. La distance
+ * (zone, train, livraison) est jugée ensuite par l'analyse.
  *
  * La normalisation accepte aussi le format d'autres acteurs Leboncoin du Store
  * (piotrv1001, dz_omar, 123webdata), si tu changes APIFY_LEBONCOIN_ACTOR.
@@ -15,22 +16,26 @@ import type { RawAd } from './parse'
 /** Catégorie « Vélos » de Leboncoin. */
 const CATEGORY_VELOS = '55'
 
-export function searchUrl(zone: (typeof LEBONCOIN_ZONES)[number]): string {
+/** Recherche Leboncoin filtrée ; sans zone, sur toute la France. */
+export function searchUrl(zone?: (typeof LEBONCOIN_ZONES)[number]): string {
   const params = new URLSearchParams({
     category: CATEGORY_VELOS,
     bicycle_type: SEARCH.bicycleType,
     bicycle_size: SEARCH.bicycleSize,
     price: `${SEARCH.priceMin}-${SEARCH.priceMax}`,
-    // Format Leboncoin : Ville_CodePostal__lat_lon_rayonParDéfaut_rayon (mètres).
-    locations: `${zone.city}_${zone.zipcode}__${zone.lat}_${zone.lon}_10000_${Math.round(zone.radiusKm * 1000)}`,
-    sort: 'time',
-    order: 'desc',
   })
+  // Format Leboncoin : Ville_CodePostal__lat_lon_rayonParDéfaut_rayon (mètres).
+  if (zone) params.set('locations', `${zone.city}_${zone.zipcode}__${zone.lat}_${zone.lon}_10000_${Math.round(zone.radiusKm * 1000)}`)
+  params.set('sort', 'time')
+  params.set('order', 'desc')
   return `https://www.leboncoin.fr/recherche?${params}`
 }
 
+/** Adresses des recherches de l'exécution, selon LEBONCOIN.scope. */
+export const searchUrls = () => (LEBONCOIN.scope === 'zones' ? LEBONCOIN_ZONES.map(searchUrl) : [searchUrl()])
+
 export async function fetchLeboncoin(run: ActorRunner): Promise<{ ads: RawAd[]; skipped: number; urls: string[] }> {
-  const urls = LEBONCOIN_ZONES.map(searchUrl)
+  const urls = searchUrls()
   const items = await run(
     LEBONCOIN.actor,
     {

@@ -5,6 +5,7 @@ import { DetailDrawer } from './components/DetailDrawer'
 import { Header } from './components/Header'
 import { KanbanBoard } from './components/KanbanBoard'
 import { ListingCard } from './components/ListingCard'
+import { Podium } from './components/Podium'
 import { ListingTable } from './components/ListingTable'
 import { Reminders } from './components/Reminders'
 import { Summary } from './components/Summary'
@@ -17,7 +18,7 @@ import { useLiveListings } from './lib/live'
 import { EMPTY_TRACKING } from './lib/pipeline'
 import { scoreListing } from './lib/scoring'
 import { clearAllStorage, useLocalStorage } from './lib/storage'
-import { matchZone } from './lib/zones'
+import { locate } from './lib/zones'
 import type { Criteria, Filters, Listing, Row, SortKey, Status, SyncState, Tracking, ViewMode } from './types'
 
 const NO_FILTERS: Filters = { query: '', zone: 'all', type: 'all', source: 'all', status: 'all', priceMin: '', priceMax: '' }
@@ -55,7 +56,7 @@ export default function App() {
   const rows = useMemo<Row[]>(() => {
     const found = demoMode ? listingsUpTo(sync.batch) : live.listings
     return [...custom, ...found].map((listing) => {
-      const zone = matchZone(listing, criteria.zones)
+      const zone = locate(listing, criteria)
       return {
         listing,
         zone,
@@ -119,7 +120,7 @@ export default function App() {
     setSearching(true)
     const next = sync.batch + 1
     const found = await runSearch(next, (source) => setMessage(`Recherche sur ${source.label}…`))
-    const out = found.filter((l) => rejectionReason(l, criteria, matchZone(l, criteria.zones))).length
+    const out = found.filter((l) => rejectionReason(l, criteria, locate(l, criteria))).length
     setSync({ batch: next, lastRun: new Date().toISOString(), newIds: found.map((l) => l.id) })
     setMessage(
       `${found.length} nouvelles annonces trouvées` + (out > 0 ? `, dont ${out} ${out > 1 ? 'écartées' : 'écartée'} par tes critères.` : '.'),
@@ -138,7 +139,7 @@ export default function App() {
   const status =
     message ||
     (!demoMode
-      ? `Veille du ${live.updatedAt ? shortDate(`${live.updatedAt}T12:00:00Z`) : '?'}, Leboncoin et Troc-Vélo, ${zoneNames}`
+      ? `Veille du ${live.updatedAt ? shortDate(`${live.updatedAt}T12:00:00Z`) : '?'}, Leboncoin, buycycle et Troc-Vélo, ${zoneNames}${criteria.train?.enabled === false ? '' : `, ${String(criteria.train?.maxHours ?? 3).replace('.', ',')} h de train`}`
       : sync.lastRun
         ? `Démonstration, dernière recherche ${relativeDay(sync.lastRun)}, ${zoneNames}`
         : `Démonstration, ${zoneNames}`)
@@ -188,6 +189,8 @@ export default function App() {
           total={kept.length}
         />
 
+        {view !== 'pipeline' && <Podium rows={visible} onOpen={setOpenId} />}
+
         {visible.length === 0 ? (
           <p className="rounded-lg border border-dashed border-line bg-surface px-6 py-12 text-center text-muted">
             {kept.length === 0
@@ -209,7 +212,7 @@ export default function App() {
         <footer className="border-t border-line pt-4 text-xs text-muted">
           {demoMode
             ? "Les annonces de démonstration sont inventées : elles n'ont pas de lien et leur photo montre un vélo comparable (Unsplash). "
-            : "Les annonces viennent de la veille quotidienne (Leboncoin et Troc-Vélo, via Apify) : chaque lien ouvre l'annonce elle-même, avec la photo du vendeur. "}
+            : "Les annonces viennent de la veille quotidienne (Leboncoin, buycycle et Troc-Vélo, via Apify) : chaque lien ouvre l'annonce elle-même, avec la photo du vendeur. Les écartées restent consultables avec leur motif. "}
           Tes statuts, notes, critères et annonces ajoutées restent dans ce navigateur.
         </footer>
       </main>

@@ -29,7 +29,7 @@ import { DEFAULT_CRITERIA, GROUPSET_LABELS, rejectionReason } from '../src/lib/c
 import { eur, plural } from '../src/lib/format'
 import { isDirectAdUrl } from '../src/lib/links'
 import { scoreListing } from '../src/lib/scoring'
-import { matchZone } from '../src/lib/zones'
+import { locate } from '../src/lib/zones'
 import type { Listing, ScoreResult, ZoneMatch } from '../src/types'
 import { collectFromApify } from './apify'
 import { PARSER_VERSION } from './apify/parse'
@@ -217,9 +217,13 @@ function journalEntry(relevant: Analysed[], rejected: Analysed[], notes: string[
   return lines.join('\n')
 }
 
-function toSaved(a: Analysed, firstSeen: string): SavedListing {
+function toSaved(a: Analysed, firstSeen: string, previous?: SavedListing): SavedListing {
+  // Historique des prix : un point par changement, pour repérer les baisses.
+  const history = [...(previous?.priceHistory ?? [{ d: previous?.firstSeen ?? firstSeen, p: previous?.price ?? a.listing.price }])]
+  if (history[history.length - 1].p !== a.listing.price) history.push({ d: date, p: a.listing.price })
   return {
     ...a.listing,
+    priceHistory: history.slice(-12),
     firstSeen,
     lastSeen: date,
     parser: PARSER_VERSION,
@@ -232,7 +236,7 @@ function toSaved(a: Analysed, firstSeen: string): SavedListing {
 }
 
 function analyse(listing: Listing, simulated: boolean): Analysed {
-  const zone = matchZone(listing, criteria.zones)
+  const zone = locate(listing, criteria)
   return { listing, simulated, zone, rejection: rejectionReason(listing, criteria, zone), score: scoreListing(listing, criteria, zone) }
 }
 
@@ -284,14 +288,15 @@ async function main() {
   )
   for (const a of analysed) {
     if (a.simulated || !isDirectAdUrl(a.listing.url)) continue
-    byId.set(a.listing.id, toSaved(a, byId.get(a.listing.id)?.firstSeen ?? date))
+    const before = byId.get(a.listing.id)
+    byId.set(a.listing.id, toSaved(a, before?.firstSeen ?? date, before))
   }
   // Annonce déjà retenue et toujours en ligne : prix, photos et texte du jour.
   let refreshed = 0
   for (const { listing } of real) {
     const saved = byId.get(listing.id)
     if (!saved || fresh.some((f) => f.listing.id === listing.id)) continue
-    byId.set(listing.id, toSaved(analyse({ ...listing, firstSeen: saved.firstSeen }, false), saved.firstSeen))
+    byId.set(listing.id, toSaved(analyse({ ...listing, firstSeen: saved.firstSeen }, false), saved.firstSeen, saved))
     refreshed++
   }
   const kept = [...byId.values()]

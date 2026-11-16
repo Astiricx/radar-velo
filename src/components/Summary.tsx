@@ -1,7 +1,7 @@
-import { Ban, MapPin } from 'lucide-react'
+import { Ban, MapPin, TrainFront } from 'lucide-react'
 import { GROUPSET_LABELS, TYPE_LABELS } from '../lib/criteria'
 import { eur, plural } from '../lib/format'
-import { ZONE_TONES } from '../lib/zones'
+import { DEFAULT_TRAIN, TRAIN_TONE, TRAIN_ZONE_ID, ZONE_TONES } from '../lib/zones'
 import type { Criteria, Row, ZoneFilter } from '../types'
 import { BikeThumb } from './BikeThumb'
 
@@ -20,10 +20,13 @@ export function Summary({ criteria: c, kept, rejected, zoneFilter, onZone, onOpe
   const zones = c.zones.filter((z) => z.enabled)
   const countIn = (id: string) => kept.filter((r) => r.zone.inside && r.zone.nearest?.id === id).length
   const shippedOnly = kept.filter((r) => !r.zone.inside).length
+  const byTrain = kept.filter((r) => r.zone.train).length
+  const train = { ...DEFAULT_TRAIN, ...c.train }
   const lines = [
     c.types.map((t) => TYPE_LABELS[t]).join(', ') || 'Aucun type',
     `Taille ${c.sizes.join(', ') || 'indifférente'}`,
     `Idéal ${eur(c.budgetIdeal)}, maximum ${eur(c.budgetMax)}`,
+    train.enabled ? `Train depuis Paris, moins de ${String(train.maxHours).replace('.', ',')} h` : '',
     c.acceptShipping ? 'Livraison acceptée hors zones' : 'Remise en main propre uniquement',
     [c.requireCarbon && 'Cadre carbone', c.requireDisc && 'Freins à disque'].filter(Boolean).join(', '),
     c.groupsets.map((g) => GROUPSET_LABELS[g]).join(', '),
@@ -68,6 +71,24 @@ export function Summary({ criteria: c, kept, rejected, zoneFilter, onZone, onOpe
             </button>
           )
         })}
+        {train.enabled && (
+          <button
+            type="button"
+            aria-pressed={zoneFilter === TRAIN_ZONE_ID}
+            onClick={() => onZone(zoneFilter === TRAIN_ZONE_ID ? 'all' : TRAIN_ZONE_ID)}
+            className={`inline-flex items-center gap-2 rounded-md border px-3 py-2 text-left text-sm ${zoneFilter === TRAIN_ZONE_ID ? 'border-ink' : 'border-line hover:bg-raised'}`}
+          >
+            <span className={`grid h-7 w-7 place-items-center rounded ${TRAIN_TONE}`}>
+              <TrainFront size={15} aria-hidden />
+            </span>
+            <span>
+              <span className="block font-semibold leading-tight">Accessible en train</span>
+              <span className="block text-xs text-muted">
+                <span className="tnum">{plural(byTrain, 'annonce', 'annonces')}</span>, moins de {String(train.maxHours).replace('.', ',')} h depuis Paris
+              </span>
+            </span>
+          </button>
+        )}
         {c.acceptShipping && shippedOnly > 0 && (
           <button
             type="button"

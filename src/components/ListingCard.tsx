@@ -1,6 +1,6 @@
-import { Calendar, ExternalLink, MapPin, Ruler, Truck } from 'lucide-react'
+import { Calendar, ExternalLink, MapPin, Ruler, TrendingDown, Truck } from 'lucide-react'
 import { SOURCES } from '../data/sources'
-import { discountPct, distanceLabel, eur, relativeDay, yearLabel } from '../lib/format'
+import { discountPct, distanceLabel, eur, priceDrop, relativeDay, shortDate, yearLabel } from '../lib/format'
 import { directUrl } from '../lib/links'
 import type { Criteria, Row, Status } from '../types'
 import { AttributeChips } from './AttributeChips'
@@ -20,6 +20,7 @@ export function ListingCard({ row, criteria, onOpen, onStatus }: Props) {
   const { listing: l, score, zone, tracking, isNew } = row
   const discount = discountPct(l.price, l.newPrice)
   const href = directUrl(l)
+  const drop = priceDrop(l)
 
   return (
     <article className="flex min-w-0 flex-col overflow-hidden rounded-lg border border-line bg-surface">
@@ -46,6 +47,11 @@ export function ListingCard({ row, criteria, onOpen, onStatus }: Props) {
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <span className="tnum font-display text-3xl font-bold leading-none">{eur(l.price)}</span>
           {discount !== null && <span className="text-sm text-muted">{discount} % sous le prix neuf</span>}
+          {drop && (
+            <span className="inline-flex items-center gap-1 text-sm font-medium text-good" title={`Prix relevé le ${shortDate(`${drop.since}T12:00:00Z`)}`}>
+              <TrendingDown size={14} aria-hidden /> −{eur(drop.amount)}
+            </span>
+          )}
         </div>
 
         <dl className="grid grid-cols-2 gap-x-3 gap-y-1 text-sm text-muted">
@@ -65,7 +71,7 @@ export function ListingCard({ row, criteria, onOpen, onStatus }: Props) {
             <MapPin size={14} aria-hidden className="shrink-0" />
             <dt className="sr-only">Lieu</dt>
             <dd className="min-w-0 truncate">
-              {l.city}, {distanceLabel(zone.distance, zone.nearest?.center)}
+              {l.city}, {distanceLabel(zone.distance, zone.nearest?.center, zone.train)}
             </dd>
           </div>
           <div className="col-span-2 flex flex-wrap items-center gap-1.5">

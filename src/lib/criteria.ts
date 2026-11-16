@@ -47,6 +47,8 @@ export const DEFAULT_CRITERIA: Criteria = {
     { id: 'paris', label: 'Région parisienne', center: 'Paris', radiusKm: 220, enabled: true },
     { id: 'saint-nazaire', label: 'Saint-Nazaire et Loire-Atlantique', center: 'Saint-Nazaire', radiusKm: 120, enabled: true },
   ],
+  // 2 à 3 h de train depuis Paris, comme convenu au départ.
+  train: { enabled: true, maxHours: 3 },
   acceptShipping: true,
   requireCarbon: true,
   requireDisc: true,
@@ -71,7 +73,7 @@ export function rejectionReason(l: Listing, c: Criteria, zone: ZoneMatch): strin
   if (!zone.inside && !deliverable) {
     if (!zone.nearest) return c.zones.some((z) => z.enabled) ? 'Lieu inconnu ou trop éloigné, sans livraison' : 'Aucune zone de recherche active'
     return Number.isFinite(zone.distance)
-      ? `Hors de tes zones (${zone.distance} km de ${zone.nearest.center}), sans livraison`
+      ? `${c.train?.enabled === false ? 'Hors de tes zones' : `Hors de tes zones et à plus de ${c.train?.maxHours ?? 3} h de train`} (${zone.distance} km de ${zone.nearest.center}), sans livraison`
       : 'Lieu inconnu, sans livraison'
   }
   return null

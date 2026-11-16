@@ -14,6 +14,7 @@ export interface SourceMeta {
 export const SOURCES: Record<SourceId, SourceMeta> = {
   leboncoin: { id: 'leboncoin', label: 'Leboncoin', badge: 'bg-[#c2410c] text-white' },
   'troc-velo': { id: 'troc-velo', label: 'Troc-Vélo', badge: 'bg-[#15803d] text-white' },
+  buycycle: { id: 'buycycle', label: 'buycycle', badge: 'bg-[#334155] text-white' },
   decathlon: { id: 'decathlon', label: 'Decathlon Occasion', badge: 'bg-[#1d4ed8] text-white' },
 }
 
