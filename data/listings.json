@@ -13,7 +13,7 @@
       "Saint-Nazaire et Loire-Atlantique (120 km autour de Saint-Nazaire)"
     ]
   },
-  "count": 102,
+  "count": 103,
   "retained": 24,
   "listings": [
     {
@@ -6709,6 +6709,100 @@
         }
       ],
       "rejection": "Groupe non retenu (SRAM AXS)"
+    },
+    {
+      "id": "lbc-3311054914",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3311054914",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/c1/dc/5f/c1dc5fb596a87550b8d15cd018e95a92fffa4410.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/c1/dc/5f/c1dc5fb596a87550b8d15cd018e95a92fffa4410.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "Vélo Gravel Giant TCX",
+      "brand": "Giant",
+      "model": "Gravel TCX",
+      "year": 2022,
+      "type": "gravel",
+      "size": "M",
+      "price": 1500,
+      "description": "Vends Vélo Gravel ou Cyclocross Giant TCX Advanced Pro 2 - taille M - Couleur \"Amber Glow\"\nAnnée : 09/2022\nCadre / Fourche / Tige de selle : carbone\nGroupe Shimano GRX , 1x11 vitesses, cassette 11-32, plateaux 40T\nFreins à disque - Roues Giant \n\nNeuf 3100 - prix 1500\nTrès bon état\nPrêt à rouler, aucun frais à prévoir.",
+      "city": "La Baule-Escoublac",
+      "coords": {
+        "lat": 47.281,
+        "lon": -2.391
+      },
+      "shipping": false,
+      "publishedAt": "2026-11-16T20:59:02.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "grx",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 51,
+      "zone": "Saint-Nazaire et Loire-Atlantique",
+      "distanceKm": 13,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Shimano GRX",
+          "points": 3,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "13 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2022",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": "Type hors critères (Gravel)"
     },
     {
       "id": "lbc-3310184291",

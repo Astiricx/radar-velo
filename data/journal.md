@@ -2,6 +2,22 @@
 
 ## Lundi 16 novembre 2026
 
+- Crédit Apify consommé ce mois-ci avant la collecte : 0,29 $ sur 5,00 $.
+- Leboncoin : 60 annonces lues autour de Paris et de Saint-Nazaire (30 au plus par zone).
+
+1 nouvelle annonce analysée : 0 pertinente, 1 écartée.
+
+Écartées :
+
+- [Vélo Gravel Giant TCX](https://www.leboncoin.fr/ad/velos/3311054914), 1 500 € : Type hors critères (Gravel)
+
+Avertissements :
+
+- Troc-Vélo non lu. navigateur Puppeteer Scraper d’Apify : Apify demande d'autoriser une fois cet acteur dans ton compte : ouvre https://console.apify.com/actors/YJCnS9qogi9XxDgLB?approvePermissions=true puis clique sur « Approve ».
+- Decathlon Occasion non lu. lecture directe : lecture directe impossible (HTTP 403) ; Cheerio Scraper d’Apify : page de liste non lue (bloquée ou injoignable) : https://www.decathlon.fr/occasion/velo-route-occasion?from=0&size=40.
+
+## Lundi 16 novembre 2026
+
 - Crédit Apify consommé ce mois-ci avant la collecte : 0,23 $ sur 5,00 $.
 - Leboncoin : 60 annonces lues autour de Paris et de Saint-Nazaire (30 au plus par zone).
 - Decathlon Occasion (Cheerio Scraper d’Apify) : 42 annonces sur la liste, 0 prometteuse ouverte.
