@@ -2,6 +2,23 @@
 
 ## Lundi 16 novembre 2026
 
+- Crédit Apify consommé ce mois-ci avant la collecte : 0,66 $ sur 5,00 $.
+- Leboncoin : 60 annonces lues autour de Paris et de Saint-Nazaire (30 au plus par zone).
+- Troc-Vélo : appels JSON relevés sur la page de liste (piste d'API interne) : https://api.troc-velo.com/api/category_product_counters (200), https://collector.appconsent.io/hello (200), https://api.btloader.com/country?o=5094764668518400 (200), https://api.troc-velo.com/api/category_product_counters, https://www.troc-velo.com/fr-fr?_rsc=eOPycq5ES9Tk-Ef7.
+- Troc-Vélo (navigateur Puppeteer Scraper d’Apify) : 30 annonces sur la liste, 3 prometteuses ouvertes.
+
+1 nouvelle annonce analysée : 0 pertinente, 1 écartée.
+
+Écartées :
+
+- [Canyon Speedmax CF 8.0 LTD - Shimano Ultegra Di2 - Taille S](https://www.troc-velo.com/fr-fr/annonce/canyon-speedmax-cf-8-0-ltd-shimano-ultegra-di2-taille-s-4309841), 1 600 € : Taille S incompatible
+
+Avertissements :
+
+- Decathlon Occasion non lu. lecture directe (sans proxy) : lecture directe impossible (HTTP 403) ; Cheerio Scraper d’Apify (proxy Apify automatique) : page de liste non lue (bloquée ou injoignable) : https://www.decathlon.fr/occasion/velo-route-occasion?from=0&size=40. Journal Apify : Last Error Message: Error: Request blocked - received 403 status code. / INFO  CheerioCrawler: Error analysis: {"totalErrors":4,"uniqueErrors":1,"mostCommonErrors":["4x: Request blocked - received 403 status code. (/usr/src/app/node_modules/@crawlee/basic/internals/basic-crawler.js:954:19)"]}.
+
+## Lundi 16 novembre 2026
+
 - Crédit Apify consommé ce mois-ci avant la collecte : 0,57 $ sur 5,00 $.
 - Leboncoin : 60 annonces lues autour de Paris et de Saint-Nazaire (30 au plus par zone).
 - Troc-Vélo : appels JSON relevés sur la page de liste (piste d'API interne) : https://api.troc-velo.com/api/category_product_counters (200), https://cdn.api.btloader.com/device?orgid=5094764668518400&platformVersion=6.14.0&fullVersionList=%5B%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22140.0.0.0%22%7D%2C%7B%22brand%22%3A%22Not%3DA%3FBrand%22%2C%22version%22%3A%2224.0.0.0%22%7D%2C%7B%22brand%22%3A%22Brave%22%2C%22version%22%3A%22140.0.0.0%22%7D%5D&upapi=true (200), https://collector.appconsent.io/hello (200), https://api.troc-velo.com/api/category_product_counters, https://www.troc-velo.com/fr-fr?_rsc=eOPycq5ES9Tk-Ef7.

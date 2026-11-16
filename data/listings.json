@@ -13,7 +13,7 @@
       "Saint-Nazaire et Loire-Atlantique (120 km autour de Saint-Nazaire)"
     ]
   },
-  "count": 109,
+  "count": 110,
   "retained": 24,
   "listings": [
     {
@@ -4570,6 +4570,103 @@
         }
       ],
       "rejection": "Groupe non retenu (SRAM AXS)"
+    },
+    {
+      "id": "tv-4309841",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/canyon-speedmax-cf-8-0-ltd-shimano-ultegra-di2-taille-s-4309841",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/841/9841/4309841/4309841-canyon-speedmax-cf-8-0-ltd-shimano-ultegra-di2-taille-s-4309841-1794137651.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/841/9841/4309841/4309841-canyon-speedmax-cf-8-0-ltd-shimano-ultegra-di2-taille-s-4309841-1794137652.jpg",
+      "imageKind": "annonce",
+      "title": "Canyon Speedmax CF 8.0 LTD - Shimano Ultegra Di2 - Taille S",
+      "brand": "Canyon",
+      "model": "Speedmax CF 8.0 LTD - Shimano Ultegra Di2",
+      "year": 2018,
+      "type": "route",
+      "size": "S",
+      "price": 1600,
+      "description": "Canyon Speedmax CF 8.0 LTD - Shimano Ultegra Di2 - Taille S - 1.800€ (compris pedales LOOK) Facture d'origine : Oui Retour : Non Référence de l'annonce : 4309841",
+      "city": "Paris (75007)",
+      "coords": {
+        "lat": 48.8566,
+        "lon": 2.3522
+      },
+      "shipping": false,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "patins",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "toVerify": [
+        "Lieu approximatif : distance calculée depuis le chef-lieu du département"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 60,
+      "zone": "Région parisienne",
+      "distanceKm": 0,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "0 km de Paris, zone Région parisienne",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2018",
+          "points": 4,
+          "max": 8
+        }
+      ],
+      "rejection": "Taille S incompatible"
     },
     {
       "id": "tv-4272219",
