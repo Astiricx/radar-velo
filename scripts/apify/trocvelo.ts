@@ -10,6 +10,8 @@
  * Troc-Vélo ne donne que le code postal du vendeur : la distance est calculée depuis
  * la préfecture du département, et signalée comme approximative.
  */
+import { mkdirSync, writeFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 import { BROWSER_PAGE_FUNCTION, PRE_NAVIGATION_HOOKS } from './browser-page-function'
 import type { ActorRunner } from './client'
 import { PREFILTER, SEARCH, TROCVELO, TROCVELO_PROXY } from './config'
@@ -51,6 +53,21 @@ export async function fetchTrocVelo(run: ActorRunner): Promise<{ ads: RawAd[]; s
     },
     { memoryMbytes: 2048, timeoutSecs: 290 },
   )
+  // Échantillon brut des fiches (data/debug/troc-velo.json) pour ajuster la lecture au format réel du site.
+  if (!process.env.APIFY_FIXTURES) {
+    try {
+      const sample = items
+        .filter((i) => (i as { kind?: string }).kind === 'ad')
+        .slice(0, 3)
+        .map((i) => ({ ...(i as object), text: String((i as { text?: string }).text ?? '').slice(0, 4000) }))
+      if (sample.length > 0) {
+        mkdirSync(resolve('data/debug'), { recursive: true })
+        writeFileSync(resolve('data/debug/troc-velo.json'), `${JSON.stringify(sample, null, 2)}\n`)
+      }
+    } catch {
+      // Échantillon facultatif.
+    }
+  }
   let listed: number | null = null
   const pages: ListPage[] = []
   let skipped = 0
