@@ -11,6 +11,17 @@
  *
  * Écrite en JavaScript simple : elle est envoyée telle quelle à Apify.
  */
+/** Résultat d'une page de liste. */
+export interface ListPage {
+  kind: 'list'
+  url: string
+  found: number
+  kept: number
+  pageTitle?: string
+  size?: number
+  samples?: string[]
+}
+
 export const PAGE_FUNCTION = `async function pageFunction(context) {
   const { $, request, enqueueRequest, customData, log } = context;
   const base = request.loadedUrl || request.url;
@@ -52,7 +63,9 @@ export const PAGE_FUNCTION = `async function pageFunction(context) {
     kept = kept.slice(0, customData.maxListings);
     log.info(customData.label + ' : ' + cards.size + ' annonces sur la page, ' + kept.length + ' prometteuses ouvertes');
     for (const url of kept) await enqueueRequest({ url, userData: { label: 'DETAIL' } });
-    return { kind: 'list', url: base, found: cards.size, kept: kept.length };
+    // Diagnostic : titre de la page et premières vignettes lues, affichés dans le journal de GitHub.
+    const samples = Array.from(cards.values()).slice(0, 3).map((t) => t.slice(0, 140));
+    return { kind: 'list', url: base, found: cards.size, kept: kept.length, pageTitle: $('title').first().text().trim().slice(0, 120), size: ($.html() || '').length, samples };
   }
 
   const meta = (name) => $('meta[property="' + name + '"]').attr('content') || $('meta[name="' + name + '"]').attr('content') || '';

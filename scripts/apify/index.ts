@@ -85,8 +85,16 @@ export async function collectFromApify(today: string, warnings: string[]): Promi
     const failures: string[] = []
     for (const { how, runner } of attempts) {
       try {
-        const { ads, skipped, listed } = await s.fetch(runner)
-        if (listed === 0 && ads.length === 0) throw new Error(`aucune annonce trouvée sur ${s.page}`)
+        const { ads, skipped, listed, pages } = await s.fetch(runner)
+        for (const p of pages) {
+          console.log(`    ${s.label} ${p.url} : « ${p.pageTitle ?? '?'} », ${p.size ?? '?'} caractères, ${p.found} annonces, ${p.kept} retenues`)
+          for (const sample of p.samples ?? []) console.log(`      ${sample}`)
+        }
+        if (listed === null) throw new Error(`page de liste non lue (bloquée ou injoignable) : ${s.page}`)
+        if (listed === 0 && ads.length === 0) {
+          const title = pages[0]?.pageTitle ? ` (titre de la page : « ${pages[0].pageTitle} »)` : ''
+          throw new Error(`aucune annonce trouvée sur ${s.page}${title}`)
+        }
         listings.push(...ads.map((ad) => toListing(ad, today)))
         notes.push(
           `${s.label} (${how}) : ${plural(listed ?? ads.length, 'annonce sur la liste', 'annonces sur la liste')}, ` +

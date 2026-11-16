@@ -9,13 +9,14 @@
  * la préfecture du département, et signalée comme approximative.
  */
 import type { ActorRunner } from './client'
+import type { ListPage } from './page-function'
 import { PREFILTER, PROXY, SEARCH, TROCVELO } from './config'
 import { PAGE_FUNCTION } from './page-function'
 import { fold, type RawAd } from './parse'
 
 export { PAGE_FUNCTION }
 
-export async function fetchTrocVelo(run: ActorRunner): Promise<{ ads: RawAd[]; skipped: number; listed: number | null }> {
+export async function fetchTrocVelo(run: ActorRunner): Promise<{ ads: RawAd[]; skipped: number; listed: number | null; pages: ListPage[] }> {
   const items = await run(
     TROCVELO.actor,
     {
@@ -38,19 +39,21 @@ export async function fetchTrocVelo(run: ActorRunner): Promise<{ ads: RawAd[]; s
     { memoryMbytes: 1024, timeoutSecs: 180 },
   )
   let listed: number | null = null
+  const pages: ListPage[] = []
   let skipped = 0
   const ads: RawAd[] = []
   for (const item of items) {
     const record = item as { kind?: string; found?: number }
     if (record.kind === 'list') {
       listed = (listed ?? 0) + Number(record.found ?? 0)
+      pages.push(item as ListPage)
       continue
     }
     const ad = normalizeTrocVelo(item)
     if (ad) ads.push(ad)
     else skipped++
   }
-  return { ads, skipped, listed }
+  return { ads, skipped, pages, listed }
 }
 
 // ───────────── Normalisation ─────────────

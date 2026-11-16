@@ -6,12 +6,13 @@
  * vélos sont livrés, ce que tes critères acceptent hors zones.
  */
 import type { ActorRunner } from './client'
+import type { ListPage } from './page-function'
 import { DECATHLON, PREFILTER, PROXY, SEARCH } from './config'
 import { PAGE_FUNCTION } from './page-function'
 import type { RawAd } from './parse'
 import { productOf, toNumber } from './trocvelo'
 
-export async function fetchDecathlon(run: ActorRunner): Promise<{ ads: RawAd[]; skipped: number; listed: number | null; kept: number }> {
+export async function fetchDecathlon(run: ActorRunner): Promise<{ ads: RawAd[]; skipped: number; listed: number | null; pages: ListPage[]; kept: number }> {
   const items = await run(
     DECATHLON.actor,
     {
@@ -35,6 +36,7 @@ export async function fetchDecathlon(run: ActorRunner): Promise<{ ads: RawAd[]; 
     { memoryMbytes: 1024, timeoutSecs: 240 },
   )
   let listed: number | null = null
+  const pages: ListPage[] = []
   let kept = 0
   let skipped = 0
   const ads: RawAd[] = []
@@ -42,6 +44,7 @@ export async function fetchDecathlon(run: ActorRunner): Promise<{ ads: RawAd[]; 
     const record = item as { kind?: string; found?: number; kept?: number }
     if (record.kind === 'list') {
       listed = (listed ?? 0) + Number(record.found ?? 0)
+      pages.push(item as ListPage)
       kept += Number(record.kept ?? 0)
       continue
     }
@@ -49,7 +52,7 @@ export async function fetchDecathlon(run: ActorRunner): Promise<{ ads: RawAd[]; 
     if (ad) ads.push(ad)
     else skipped++
   }
-  return { ads, skipped, listed, kept }
+  return { ads, skipped, pages, listed, kept }
 }
 
 type Obj = Record<string, unknown>
