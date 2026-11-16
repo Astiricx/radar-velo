@@ -26,6 +26,10 @@ export interface ListPage {
   status?: number | null
   /** Annonces lues dans les réponses JSON du site plutôt que dans la page. */
   fromJson?: boolean
+  /** Vignettes écartées sur la liste : déjà analysées, hors budget, taille incompatible, ni taille ni groupe. */
+  stats?: { known: number; price: number; size: number; group: number }
+  /** Vignettes qui passaient le tri (au plus `kept` sont ouvertes). */
+  candidates?: number
 }
 
 export const PAGE_FUNCTION = `async function pageFunction(context) {

@@ -32,7 +32,10 @@ function fixtureRunner(dir: string): ActorRunner {
 
 const usd = (n: number) => `${n.toFixed(2).replace('.', ',')} $`
 
-export async function collectFromApify(today: string, warnings: string[]): Promise<Collected> {
+/**
+ * @param seenIds identifiants déjà analysés (« tv-123 »…) : leurs fiches ne sont pas rouvertes.
+ */
+export async function collectFromApify(today: string, warnings: string[], seenIds: string[] = []): Promise<Collected> {
   const notes: string[] = []
   const listings: Listing[] = []
   const fixtures = process.env.APIFY_FIXTURES
@@ -117,7 +120,8 @@ export async function collectFromApify(today: string, warnings: string[]): Promi
       const viaApify = runner === run && !fixtures
       if (viaApify) console.log(`  ${s.label} : ${how}, ${proxyLabel(s.proxy)}`)
       try {
-        const { ads, skipped, listed, pages } = await s.fetch(runner)
+        const skipIds = seenIds.filter((id) => id.startsWith('tv-')).map((id) => id.slice(3))
+        const { ads, skipped, listed, pages } = await s.fetch(runner, { skipIds })
         for (const p of pages) {
           console.log(
             `    ${s.label} ${p.url}${p.status ? ` (HTTP ${p.status})` : ''} : « ${p.pageTitle ?? '?'} », ${p.size ?? '?'} caractères, ` +
@@ -136,10 +140,29 @@ export async function collectFromApify(today: string, warnings: string[]): Promi
           const title = pages[0]?.pageTitle ? ` (titre de la page : « ${pages[0].pageTitle} »)` : ''
           throw new Error(`aucune annonce trouvée sur ${s.page}${title}`)
         }
-        listings.push(...ads.map((ad) => toListing(ad, today)))
+        const read = ads.map((ad) => toListing(ad, today))
+        listings.push(...read)
+        // Ce que le robot a lu sur chaque fiche, pour contrôle dans le journal de l'exécution.
+        for (const l of read) {
+          const { title, price, newPrice, size, year, groupset, frame, brakes, type, city, shipping, condition, km, toVerify, url } = l
+          console.log(`    Fiche ${s.label} : ${JSON.stringify({ title, price, newPrice, size, year, groupset, frame, brakes, type, city, shipping, condition, km, toVerify, url })}`)
+        }
+        const st = pages.reduce(
+          (acc, p) => ({
+            known: acc.known + (p.stats?.known ?? 0),
+            price: acc.price + (p.stats?.price ?? 0),
+            size: acc.size + (p.stats?.size ?? 0),
+            group: acc.group + (p.stats?.group ?? 0),
+            candidates: acc.candidates + (p.candidates ?? 0),
+          }),
+          { known: 0, price: 0, size: 0, group: 0, candidates: 0 },
+        )
+        const sorted = pages.some((p) => p.stats)
+          ? ` Tri de la liste : ${st.known} déjà analysées, ${st.price} hors budget, ${st.size} d'une autre taille, ${st.group} sans taille ni groupe cité, ${st.candidates} à ouvrir.`
+          : ''
         notes.push(
           `${s.label} (${how}) : ${plural(listed ?? ads.length, 'annonce sur la liste', 'annonces sur la liste')}, ` +
-            `${plural(ads.length, 'prometteuse ouverte', 'prometteuses ouvertes')}${skipped ? `, ${plural(skipped, 'page illisible', 'pages illisibles')}` : ''}.`,
+            `${plural(ads.length, 'fiche ouverte', 'fiches ouvertes')}${skipped ? `, ${plural(skipped, 'page illisible', 'pages illisibles')}` : ''}.${sorted}`,
         )
         failures.length = 0
         break

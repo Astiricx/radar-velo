@@ -107,13 +107,33 @@ export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
         text = text.replace(/\\s+/g, ' ').trim().slice(0, 600);
         if (!cards.has(href) || cards.get(href).length < text.length) cards.set(href, text);
       }
-      const kept = Array.from(cards.entries()).filter(([, text]) => {
+      // Tri des vignettes « MARQUE • taille • état 3900 € » : prix dans le budget, puis taille
+      // compatible (ou, si la taille manque, un groupe retenu cité dans le titre). Les annonces
+      // déjà analysées (cd.skipIds) ne sont pas rouvertes : on ne paie que les nouvelles.
+      const skip = new Set(cd.skipIds || []);
+      const sizes = (cd.sizes || []).map((s) => fold(String(s)).replace(/\\s|cm/g, ''));
+      const stats = { known: 0, price: 0, size: 0, group: 0 };
+      const decided = [];
+      for (const [url, text] of cards.entries()) {
         const t = fold(text);
-        if (prefilter && !prefilter.test(t)) return false;
-        const m = t.match(/(\\d{1,2}[\\s\\u202f.]?\\d{3})(?:[.,]\\d{2})?\\s?€/);
+        const id = (url.match(/-(\\d+)\\/?$/) || [])[1];
+        const m = t.match(/(\\d{1,2}[\\s\\u202f.]?\\d{3}|\\d{2,3})(?:[.,]\\d{2})?\\s?€/);
         const price = m ? Number(m[1].replace(/[\\s\\u202f.]/g, '')) : null;
-        return price === null || (price >= cd.priceMin && price <= cd.priceMax);
-      }).map(([url]) => url).slice(0, cd.maxListings);
+        const field = (t.match(/•\\s*([^•€]{1,12}?)\\s*•/) || [])[1];
+        const size = field ? field.replace(/\\s|cm/g, '') : null;
+        const sized = size && /^(xxs|xs|s|m|l|xl|xxl|s\\/m|m\\/l|l\\/xl|\\d{2})$/.test(size) ? size : null;
+        const group = prefilter ? prefilter.test(t) : true;
+        let why = null;
+        if (id && skip.has(id)) { why = 'known'; }
+        else if (price !== null && (price < cd.priceMin || price > cd.priceMax)) { why = 'price'; }
+        else if (sized && sizes.length && !sizes.includes(sized)) { why = 'size'; }
+        else if (!sized && !group) { why = 'group'; }
+        if (why) stats[why]++;
+        else decided.push({ url, group, sized: !!sized });
+      }
+      // Les plus prometteuses d'abord : taille connue et groupe cité, puis taille seule, puis groupe seul.
+      decided.sort((a, b) => (Number(b.group) + Number(b.sized)) - (Number(a.group) + Number(a.sized)));
+      const kept = decided.map((d) => d.url).slice(0, cd.maxListings);
       // Appels JSON du site pendant le chargement : piste pour une API de recherche interne.
       const apis = Array.from(new Set(performance.getEntriesByType('resource')
         .filter((e) => e.initiatorType === 'fetch' || e.initiatorType === 'xmlhttprequest')
@@ -126,6 +146,8 @@ export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
         pageTitle: document.title.slice(0, 120),
         size: document.documentElement.outerHTML.length,
         samples: Array.from(cards.values()).slice(0, 3).map((t) => t.slice(0, 140)),
+        stats,
+        candidates: decided.length,
         apis,
       };
     }, customData);
@@ -133,7 +155,7 @@ export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
     const captured = page.__radarJson || [];
     const apis = Array.from(new Set(captured.map((c) => c.url + ' (' + c.status + ')').concat(data.apis))).slice(0, 15);
     const status = context.response && typeof context.response.status === 'function' ? context.response.status() : null;
-    const list = { kind: 'list', url: base, status, found: data.found, kept: data.kept.length, pageTitle: data.pageTitle, size: data.size, samples: data.samples, apis };
+    const list = { kind: 'list', url: base, status, found: data.found, kept: data.kept.length, pageTitle: data.pageTitle, size: data.size, samples: data.samples, apis, stats: data.stats, candidates: data.candidates };
     if (data.found === 0) {
       // Page vide : les annonces sont peut-être seulement dans les réponses JSON du site.
       const ads = fromJson(captured, customData).slice(0, 30);

@@ -12,7 +12,7 @@ import { PAGE_FUNCTION } from './page-function'
 import type { RawAd } from './parse'
 import { productOf, toNumber } from './trocvelo'
 
-export async function fetchDecathlon(run: ActorRunner): Promise<{ ads: RawAd[]; skipped: number; listed: number | null; pages: ListPage[]; kept: number }> {
+export async function fetchDecathlon(run: ActorRunner, _options: { skipIds?: string[] } = {}): Promise<{ ads: RawAd[]; skipped: number; listed: number | null; pages: ListPage[]; kept: number }> {
   const items = await run(
     DECATHLON.actor,
     {

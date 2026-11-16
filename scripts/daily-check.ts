@@ -240,7 +240,8 @@ async function main() {
   const state = readJson<State>(FILES.state, { lastRun: null, seen: {} })
   state.seen ??= {}
 
-  const collected = await collectFromApify(date, warnings)
+  // En réanalyse complète, on rouvre aussi les fiches déjà vues.
+  const collected = await collectFromApify(date, warnings, rescan ? [] : Object.keys(state.seen))
   const inbox = readInbox(warnings)
   const real = [...collected.listings, ...inbox].map((listing) => ({ listing, simulated: false }))
   const simulated = simulation ? simulateDay(date).map((listing) => ({ listing, simulated: true })) : []
@@ -255,6 +256,7 @@ async function main() {
   console.log(`Veille du ${date}${simulation ? ' — avec simulation' : ''}`)
   for (const n of collected.notes) console.log(`  · ${n}`)
   console.log(`Candidates : ${candidates.length} (dont ${inbox.length} de data/inbox.json), nouvelles : ${fresh.length}`)
+  for (const { listing } of candidates) if (!fresh.some((f) => f.listing.id === listing.id) && listing.source !== 'leboncoin') console.log(`  = déjà analysée, mise à jour : ${listing.title}  ${listing.url}`)
   for (const a of relevant) console.log(`  ✓ ${a.score.total}/100  ${a.listing.title}  ${eur(a.listing.price)}  ${a.listing.city}  ${a.listing.url}`)
   for (const a of rejected) console.log(`  ✗ ${a.listing.title} : ${a.rejection}`)
   for (const w of warnings) console.warn(`  ! ${w}`)

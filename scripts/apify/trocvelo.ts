@@ -11,12 +11,13 @@
  * la préfecture du département, et signalée comme approximative.
  */
 import { BROWSER_PAGE_FUNCTION, PRE_NAVIGATION_HOOKS } from './browser-page-function'
+import { DEFAULT_CRITERIA } from '../../src/lib/criteria'
 import type { ActorRunner } from './client'
 import { PREFILTER, SEARCH, TROCVELO, TROCVELO_PROXY } from './config'
 import type { ListPage } from './page-function'
 import { fold, type RawAd } from './parse'
 
-export async function fetchTrocVelo(run: ActorRunner): Promise<{ ads: RawAd[]; skipped: number; listed: number | null; pages: ListPage[] }> {
+export async function fetchTrocVelo(run: ActorRunner, options: { skipIds?: string[] } = {}): Promise<{ ads: RawAd[]; skipped: number; listed: number | null; pages: ListPage[] }> {
   const items = await run(
     TROCVELO.actor,
     {
@@ -31,6 +32,9 @@ export async function fetchTrocVelo(run: ActorRunner): Promise<{ ads: RawAd[]; s
         prefilter: PREFILTER,
         priceMin: SEARCH.priceMin,
         priceMax: SEARCH.priceMax,
+        sizes: DEFAULT_CRITERIA.sizes,
+        // Annonces déjà analysées : inutile de payer pour les rouvrir.
+        skipIds: (options.skipIds ?? []).slice(-400),
       },
       // Champ obligatoire. Proxy Apify ; TROCVELO_PROXY_GROUPS=RESIDENTIAL si le site bloque encore.
       proxyConfiguration: TROCVELO_PROXY,
