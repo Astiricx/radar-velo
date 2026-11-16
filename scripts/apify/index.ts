@@ -95,11 +95,12 @@ export async function collectFromApify(today: string, warnings: string[]): Promi
         failures.length = 0
         break
       } catch (error) {
-        failures.push(`${how} : ${(error as Error).message}`)
+        failures.push(`${how} : ${(error as Error).message.replace(/[.\s]+$/, '')}`)
       }
     }
     if (failures.length > 0) {
-      const hint = s.variable ? ` Si la page a changé, indique la bonne adresse dans la variable ${s.variable} du dépôt.` : ''
+      const empty = failures.some((f) => f.includes('aucune annonce trouvée'))
+      const hint = s.variable && empty ? ` Si la page a changé, indique la bonne adresse dans la variable ${s.variable} du dépôt.` : ''
       warnings.push(`${s.label} non lu. ${failures.join(' ; ')}.${hint}`)
     }
   }
