@@ -8,6 +8,8 @@ selon tes critères, score de pertinence, et suivi de chaque annonce jusqu'à l'
 React 19, TypeScript, Vite 6, Tailwind CSS 4, icônes Lucide. Aucune base de données :
 tout est enregistré dans le `localStorage` du navigateur.
 
+Site en ligne : https://astiricx.github.io/radar-velo/
+
 ## Lancer le projet en local
 
 Il faut [Node.js](https://nodejs.org) 20 ou plus récent (22 recommandé, voir `.nvmrc`).
@@ -69,34 +71,27 @@ git push
 À chaque push, le workflow `.github/workflows/ci.yml` vérifie les types et lance un
 build (onglet **Actions** du dépôt).
 
-## Héberger sur Vercel
+## Site en ligne (GitHub Pages)
 
-### Par l'interface (recommandé)
+L'application est publiée sur **https://astiricx.github.io/radar-velo/**.
 
-1. Va sur https://vercel.com/new et connecte-toi avec ton compte GitHub.
-2. **Import Git Repository** → choisis `radar-velo`. Si le dépôt n'apparaît pas,
-   clique sur **Adjust GitHub App Permissions** et donne accès à ce dépôt.
-3. Vercel détecte Vite tout seul. Vérifie seulement :
-   - Framework Preset : **Vite**
-   - Build Command : `npm run build`
-   - Output Directory : `dist`
-   - Aucune variable d'environnement n'est nécessaire.
-4. **Deploy**. L'application est en ligne en une minute environ, à une adresse du
-   type `radar-velo-xxxx.vercel.app`.
+Le workflow `.github/workflows/pages.yml` (« Site ») la reconstruit et la republie à
+chaque push sur `main`. Les commits de la veille quotidienne, qui ne touchent que
+`data/`, ne la republient pas. On peut aussi la relancer à la main depuis l'onglet
+**Actions** → **Site** → **Run workflow**.
 
-Ensuite, chaque `git push` sur `main` met à jour le site, et chaque pull request
-reçoit sa propre adresse de prévisualisation.
-
-### En ligne de commande
-
-```bash
-npx vercel          # première fois : relie le dossier à un projet Vercel
-npx vercel --prod   # déploie en production
-```
+Si GitHub Pages n'est pas encore activé sur le dépôt : **Settings** → **Pages** →
+**Source : GitHub Actions**, puis relancer le workflow « Site ».
 
 > Les statuts, notes et critères sont enregistrés dans le navigateur. Ils ne se
 > partagent pas entre ton ordinateur et ton téléphone, ni entre `localhost` et
-> l'adresse Vercel.
+> le site en ligne.
+
+### Autre hébergeur (Vercel, Netlify…)
+
+Importe le dépôt, garde les réglages détectés pour Vite (build `npm run build`,
+dossier `dist`). Aucune variable d'environnement n'est nécessaire : sans
+`BASE_PATH`, le site est servi à la racine.
 
 ## Veille quotidienne automatique (GitHub Actions)
 
