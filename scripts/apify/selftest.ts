@@ -123,7 +123,7 @@ test('Troc-Vélo : Cervélo S5 près de Guérande, retenu, suggestions ignorées
   assert.equal(l.price, 3990)
   assert.equal(l.brand, 'Cervélo')
   assert.equal(l.groupset, 'ultegra-di2')
-  assert.equal(l.size, 'M')
+  assert.equal(l.size, '56')
   assert.equal(l.city, '44350, Loire-Atlantique')
   assert.equal(l.shipping, true)
   assert.equal(l.wheelDepth, 52)
@@ -153,6 +153,55 @@ test('Troc-Vélo (format réel) : caractéristiques, lieu, prix neuf, livraison 
   assert.equal(l.fallbackImage, 'https://media-cdn.troc-velo.com/full/main/bikeAds/001/20001/4320001/4320001-canyon-4320001-2.jpg')
   assert.ok(!l.description.includes('Pinarello'))
   assert.equal(verdict(l), null)
+})
+
+// Cas relevés sur de vraies fiches Troc-Vélo (contenu abrégé).
+const fiche = (slug: string, title: string, head: string, desc: string, carac: string) =>
+  toListing(
+    normalizeTrocVelo({
+      kind: 'ad',
+      url: `https://www.troc-velo.com/fr-fr/annonce/${slug}`,
+      title,
+      jsonLd: [],
+      attributes: {},
+      images: [],
+      text: `${title} ${head} Accueil / Route 1 / 5 Voir les annonces similaires Date de publication Aujourd'hui, 21h44 Description ${desc} Référence de l'annonce : 1 Caractéristiques ${carac} Annonces similaires Pinarello Dura-Ace Di2 9000 €`,
+    })!,
+    today,
+  )
+
+test('Troc-Vélo : taille déclarée M et « 54 » dans la description → retenue, taille à confirmer', () => {
+  const a = fiche('supersix-1', 'Cannondale Supersix evo 2', '4500 €6300 € Réserver', 'Supersix evo2 full carbone T54/M. Shimano ultegra Di2.', "Marque CANNONDALE Année2025 GroupeShimano Ultegra Di2 Taille du cadreM Matière principaleCarbone Type de freinageDisques PratiqueRoute Localisation de l'article : Orvault (44700)")
+  const b = fiche('slr-2', 'Bmc slr 01', '2400 € Acheter', 'Taille du cadre : M (54) - Taille des roues : 700c - Étrier Freins : Shimano Dura-Ace', "Marque BMC GroupeShimano Ultegra Di2 Taille du cadreM Matière principaleCarbone Type de freinageDisques PratiqueRoute Localisation de l'article : SOUMOULOU (64420)")
+  for (const l of [a, b]) {
+    assert.equal(l.size, 'M')
+    assert.ok(l.toVerify?.includes('Taille à confirmer : M déclarée, 54 dans la description'))
+  }
+  assert.equal(a.year, 2025)
+  assert.equal(b.year, 0)
+  assert.equal(b.groupset, 'ultegra-di2')
+  // Un écart net garde la taille chiffrée : M déclarée, 52 écrite → écartée.
+  const c = fiche('petit-3', 'Trek Emonda', '2400 € Acheter', 'Taille 52, Ultegra Di2.', 'Marque TREK GroupeShimano Ultegra Di2 Taille du cadreM Matière principaleCarbone Type de freinageDisques PratiqueRoute')
+  assert.equal(c.size, '52')
+  assert.match(verdict(c)!, /Taille 52/)
+})
+
+test('Troc-Vélo : le champ « Groupe » prime sur une pièce citée dans la description', () => {
+  const l = fiche('kom-4', 'Kuota kom carbone', '1700 € Réserver', 'dérailleur AR SRAM force neuf - freins Shimano Durace - poignées SRAM force', "Marque KUOTA Année2022 GroupeShimano Dura Ace Taille du cadreM Matière principaleCarbone Type de freinagePatins PratiqueRoute Nombres de vitesses10 vitesses Localisation de l'article : AUBERVILLIERS (93300)")
+  assert.equal(l.groupset, 'ultegra')
+  assert.equal(l.brakes, 'patins')
+  assert.equal(verdict(l), 'Freins à patins')
+  const m = fiche('cento-5', 'Wilier Cento 10 sl', '2250 € Acheter', 'Di2 possible en option chez le revendeur.', 'Marque WILIER GroupeShimano Ultegra Taille du cadreM Matière principaleCarbone Type de freinageDisques PratiqueRoute Groupe électrique (AXS, Di2, eTap, ..)Non')
+  assert.equal(m.groupset, 'ultegra')
+})
+
+test('Troc-Vélo : « Caractéristiques techniques » dans la description, vélo de triathlon écarté', () => {
+  const l = fiche('aerium-6', 'Cube Aerium C:68 SLT (Taille M / Low) - SRAM Red AXS', '4000 € Acheter', 'Vélo de triathlon Cube Aerium, modèle 2021 en taille M. Caractéristiques techniques : • Cadre : Aerium C:68 • Groupe : SRAM Red eTap AXS', "Marque CUBE Année2021 GroupeSRAM Red AXS Taille du cadreM Matière principaleCarbone Type de freinageDisques PratiqueRoute Localisation de l'article : Strasbourg (67000)")
+  assert.equal(l.city, 'Strasbourg (67000)')
+  assert.equal(l.year, 2021)
+  assert.equal(l.type, 'clm')
+  assert.equal(l.toVerify?.some((v) => /Matériau|freins/.test(v)) ?? false, false)
+  assert.match(verdict(l)!, /Contre-la-montre/)
 })
 
 test('Troc-Vélo : Look à patins dans les Pyrénées, écarté', () => {

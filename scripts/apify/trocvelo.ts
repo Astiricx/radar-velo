@@ -165,7 +165,13 @@ export function normalizeTrocVelo(raw: unknown): RawAd | null {
   const page = end > 0 ? full.slice(0, end) : full.slice(0, 4000)
   const descAt = page.search(/\bDescription\b/)
   const header = descAt > 0 ? page.slice(0, descAt) : page.slice(0, 600)
-  const [descriptionText, characteristicsText = ''] = (descAt > 0 ? page.slice(descAt + 'Description'.length) : page).split(/\bCaractéristiques\b/)
+  // Le bloc du site commence par « Caractéristiques Marque … ». Un vendeur peut écrire
+  // « Caractéristiques techniques : » dans sa description : on coupe donc au dernier titre.
+  const body = descAt > 0 ? page.slice(descAt + 'Description'.length) : page
+  const blockAt = Math.max(body.lastIndexOf('Caractéristiques Marque'), body.search(/Caractéristiques\s+(?:Marque|Année|État)\b(?![\s\S]*Caractéristiques\s+(?:Marque|Année|État)\b)/))
+  const cut = blockAt >= 0 ? blockAt : body.lastIndexOf('Caractéristiques')
+  const descriptionText = cut >= 0 ? body.slice(0, cut) : body
+  const characteristicsText = cut >= 0 ? body.slice(cut + 'Caractéristiques'.length) : ''
   const characteristics = parseCharacteristics(characteristicsText)
 
   const ogTitle = String(raw.ogTitle ?? '')

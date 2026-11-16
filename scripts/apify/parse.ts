@@ -6,6 +6,7 @@
  * on suppose la valeur la plus probable et on l'inscrit dans `toVerify`, que
  * l'application affiche (« À vérifier auprès du vendeur »).
  */
+import { DEFAULT_CRITERIA } from '../../src/lib/criteria'
 import type { BikeType, Brakes, Condition, ExtensionFit, Frame, Groupset, Listing, SourceId } from '../../src/types'
 
 /** Annonce telle que lue sur la plateforme, avant analyse. */
@@ -128,7 +129,27 @@ function detectGroupset(t: string): { groupset: Groupset; doubt?: string } {
   if (/\bgrx\b/.test(t)) return { groupset: 'grx' }
   if (/\bultegra\b|\br8[01][02]0\b|\br6800\b/.test(t)) return { groupset: 'ultegra' }
   if (/\b105\b(?!\s?(?:km|€|eur|kg|mm|cm))|\br7[01][02]0\b|\b5800\b/.test(t)) return { groupset: '105' }
+  // Dura-Ace mécanique : au-dessus de l'Ultegra mécanique, que tes critères acceptent.
+  if (/\bdura[\s-]?ace\b/.test(t)) return { groupset: 'ultegra', doubt: 'Groupe Dura-Ace mécanique, classé avec l’Ultegra mécanique' }
   return { groupset: 'autre' }
+}
+
+/**
+ * Groupe : le champ « Groupe » rempli par le vendeur prime sur le texte libre, où une pièce
+ * isolée (« dérailleur SRAM », « étriers Dura-Ace ») fausserait la lecture.
+ */
+function groupsetFrom(attrs: Record<string, string>, t: string): { groupset: Groupset; doubt?: string } {
+  const fromText = detectGroupset(t)
+  let declared = fold(attrs.groupe ?? attrs.groupset ?? '')
+  if (!declared) return fromText
+  const electric = fold(Object.entries(attrs).find(([k]) => k.startsWith('groupe electrique'))?.[1] ?? '')
+  if (/^oui/.test(electric) && /shimano|ultegra|dura|105/.test(declared) && !/di2/.test(declared)) declared += ' di2'
+  if (/^non/.test(electric)) declared = declared.replace(/\bdi2\b/g, ' ')
+  const fromField = detectGroupset(declared)
+  if (fromField.groupset === 'autre') return fromText
+  // Champ « Ultegra » sans précision, description « Ultegra Di2 » : la description complète le champ.
+  if (!/^non/.test(electric) && fromText.groupset === `${fromField.groupset}-di2`) return fromText
+  return fromField
 }
 
 /** Retire les pièces en carbone qui ne sont pas le cadre (roues, cintre…). */
@@ -151,8 +172,12 @@ function detectBrakes(t: string): { brakes: Brakes; doubt?: string } {
   return { brakes: 'disque', doubt: 'Type de freins non précisé' }
 }
 
+/** Modèles et mentions de vélos de contre-la-montre ou de triathlon : ce ne sont pas des vélos de route. */
+const TIME_TRIAL = /\b(aerium|speedmax|shiv|plasma|trinity|speed ?concept|p-?series|p5x?|p3x?|cervelo p\d|quintana roo|velo de (?:triathlon|clm|chrono|contre[- ]la[- ]montre)|velo (?:triathlon|clm|chrono))\b/
+
 function detectType(t: string, typeAttr: string): BikeType {
   const a = fold(typeAttr)
+  if (TIME_TRIAL.test(t)) return 'clm'
   // La pratique déclarée par le vendeur prime sur le texte (« je passe au gravel » ne fait pas un gravel).
   if (/route|course|endurance|clm|triathlon/.test(a)) return 'route'
   if (/gravel/.test(a)) return 'gravel'
@@ -162,15 +187,37 @@ function detectType(t: string, typeAttr: string): BikeType {
   return 'route'
 }
 
-function detectSize(title: string, t: string, sizeAttr: string): string | null {
+const sizeKey = (v: string) => fold(v).replace(/\s|cm/g, '')
+const ACCEPTED_SIZES = DEFAULT_CRITERIA.sizes.map(sizeKey)
+const ACCEPTED_NUMERIC = ACCEPTED_SIZES.filter((v) => /^\d{2}$/.test(v)).map(Number)
+
+/**
+ * Taille : celle déclarée par le vendeur dans le champ prévu (attribut) et celle écrite dans
+ * le titre ou la description. Si elles divergent (« M » déclaré, « T54/M » dans le texte),
+ * on garde celle qui correspond à tes critères et on le signale ; un écart net (M déclaré,
+ * 52 écrit) retient la taille chiffrée, plus précise.
+ */
+function detectSize(title: string, t: string, sizeAttr: string): { size: string | null; doubt?: string } {
   const explicit = (s: string) =>
-    s.match(/\b(?:taille|size)\s*:?\s*(xxs|xs|s\/m|m\/l|l\/xl|s|m|l|xl|xxl|\d{2})\b/)?.[1] ?? s.match(/\bt\.?\s?(4[6-9]|5\d|6[0-4])\b/)?.[1]
-  const found = explicit(fold(title)) ?? explicit(t)
-  if (found) return found.toUpperCase()
-  const attr = fold(sizeAttr).match(/\b(xxs|xs|s\/m|m\/l|l\/xl|s|m|l|xl|xxl|\d{2})\b/)?.[1]
-  if (attr) return attr.toUpperCase()
-  // Dernier recours : une taille en majuscules isolée dans le titre (« Esker 8.0 GRX XL Carbon »).
-  return title.match(/(?:^|\s)(XXS|XS|S|M|L|XL|XXL)(?=\s|$|,)/)?.[1] ?? null
+    // « Taille du cadre : M (54) », « taille M/54 » : la valeur chiffrée précise la lettre.
+    s.match(/\b(?:taille|size)(?: du cadre| cadre)?\s*:?\s*(?:xxs|xs|s|m|l|xl|xxl)\s*[(/]\s*(\d{2})\b/)?.[1] ??
+    s.match(/\b(?:taille|size)(?: du cadre| cadre)?\s*:?\s*(xxs|xs|s\/m|m\/l|l\/xl|s|m|l|xl|xxl|\d{2})\b/)?.[1] ??
+    s.match(/\bt\.?\s?(4[6-9]|5\d|6[0-4])\b/)?.[1]
+  const written = (explicit(fold(title)) ?? explicit(t))?.toUpperCase() ?? null
+  const declared = fold(sizeAttr).match(/\b(xxs|xs|s\/m|m\/l|l\/xl|s|m|l|xl|xxl|\d{2})\b/)?.[1]?.toUpperCase() ?? null
+  if (!declared || !written || declared === written) {
+    // Dernier recours : une taille en majuscules isolée dans le titre (« Esker 8.0 GRX XL Carbon »).
+    return { size: written ?? declared ?? title.match(/(?:^|\s)(XXS|XS|S|M|L|XL|XXL)(?=\s|$|,)/)?.[1] ?? null }
+  }
+  const ok = (v: string) => ACCEPTED_SIZES.includes(sizeKey(v))
+  const number = /^\d{2}$/.test(written) ? Number(written) : null
+  const near = number !== null && ACCEPTED_NUMERIC.some((n) => Math.abs(n - number) <= 2)
+  const doubt = `Taille à confirmer : ${declared} déclarée, ${written} dans la description`
+  // Les deux conviennent (« M » et « 56 ») : pas de contradiction, on garde la plus précise.
+  if (ok(declared) && ok(written)) return { size: number !== null ? written : declared }
+  if (ok(declared) && (number === null || near)) return { size: declared, doubt }
+  if (!ok(declared) && ok(written)) return { size: written, doubt }
+  return { size: written }
 }
 
 function detectYear(t: string): number {
@@ -245,12 +292,16 @@ export function toListing(raw: RawAd, today: string): Listing {
   const doubts = [...(raw.toVerify ?? [])]
 
   const brand = findBrand(fold(raw.title), t)
-  const { groupset, doubt: g } = detectGroupset(t)
-  const { frame, doubt: f } = detectFrame(t)
-  const { brakes, doubt: b } = detectBrakes(t)
-  const size = detectSize(raw.title, t, attrs.bicycle_size ?? attrs.taille ?? attrs['taille du cadre'] ?? attrs.size ?? '')
-  const year = detectYear(t)
-  for (const d of [g, f, b]) if (d) doubts.push(d)
+  const { groupset, doubt: g } = groupsetFrom(attrs, t)
+  // Matière et freinage : le champ rempli par le vendeur prime sur le texte libre.
+  const material = fold(attrs['matiere principale'] ?? attrs.matiere ?? '')
+  const braking = fold(attrs['type de freinage'] ?? attrs.freinage ?? '')
+  const { frame, doubt: f } = material ? detectFrame(`cadre ${material}`) : detectFrame(t)
+  const { brakes, doubt: b } = braking ? detectBrakes(braking) : detectBrakes(t)
+  const { size, doubt: sz } = detectSize(raw.title, t, attrs.bicycle_size ?? attrs['taille du cadre'] ?? attrs.taille ?? attrs.size ?? '')
+  const declaredYear = Number((attrs.annee ?? attrs.year ?? '').match(/\b(19[89]\d|20[0-3]\d)\b/)?.[1] ?? 0)
+  const year = declaredYear || detectYear(t)
+  for (const d of [g, f, b, sz]) if (d) doubts.push(d)
   if (!size) doubts.push('Taille non précisée')
   if (!year) doubts.push('Année non précisée')
 

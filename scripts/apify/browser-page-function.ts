@@ -112,7 +112,9 @@ export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
       // déjà analysées (cd.skipIds) ne sont pas rouvertes : on ne paie que les nouvelles.
       const skip = new Set(cd.skipIds || []);
       const sizes = (cd.sizes || []).map((s) => fold(String(s)).replace(/\\s|cm/g, ''));
-      const stats = { known: 0, price: 0, size: 0, group: 0, far: 0 };
+      const stats = { known: 0, price: 0, size: 0, group: 0, far: 0, repeat: 0 };
+      const repeated = new Set(cd.repeatIds || []);
+      const ids = [];
       const decided = [];
       const decisions = [];
       const departments = cd.departments || [];
@@ -125,16 +127,23 @@ export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
         const size = field ? field.replace(/\\s|cm/g, '') : null;
         const sized = size && /^(xxs|xs|s|m|l|xl|xxl|s\\/m|m\\/l|l\\/xl|\\d{2})$/.test(size) ? size : null;
         const group = prefilter ? prefilter.test(t) : true;
+        // « taille 56 » ou « T56 » dans le titre : précise, ou corrige, la taille de la vignette.
+        const titled = (t.match(/\\b(?:taille|t)\\s?(\\d{2})\\b/) || [])[1] || null;
+        const sizeOk = (sized && sizes.includes(sized)) || (titled && sizes.includes(titled));
+        if (id) ids.push(id);
         let why = null;
+        // Annonces « À la une », répétées en tête de chaque page.
+        if (id && repeated.has(id)) { stats.repeat++; continue; }
         if (id && skip.has(id)) { why = 'known'; }
         else if (price !== null && (price < cd.priceMin || price > cd.priceMax)) { why = 'price'; }
-        else if (sized && sizes.length && !sizes.includes(sized)) { why = 'size'; }
-        else if (!sized && !group) { why = 'group'; }
+        else if ((sized || titled) && sizes.length && !sizeOk) { why = 'size'; }
+        else if (!sized && !titled && !group) { why = 'group'; }
         // Lieu de la vignette : « Livraison LIMOUX (11300) ». Hors des départements à portée et sans
         // livraison, l'annonce serait écartée de toute façon : inutile de payer pour l'ouvrir.
-        const cp = ((text.match(/\\((\\d{5})\\)/g) || []).pop() || '').replace(/\\D/g, '');
+        // Un code postal à 4 chiffres est étranger (Belgique, Suisse, Luxembourg).
+        const cp = ((text.match(/\\((\\d{4,5})\\)/g) || []).pop() || '').replace(/\\D/g, '');
         const shipping = /\\blivraison\\b/.test(t);
-        if (!why && cp && !shipping && departments.length && !departments.includes(cp.slice(0, 2))) why = 'far';
+        if (!why && cp && !shipping && departments.length && (cp.length === 4 || !departments.includes(cp.slice(0, 2)))) why = 'far';
         if (why) stats[why]++;
         else decided.push({ url, group, sized: !!sized });
         // Décision par vignette, sans le pseudonyme du vendeur, pour le journal de contrôle.
@@ -178,10 +187,11 @@ export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
         stats,
         candidates: decided.length,
         decisions: decisions.slice(0, 40),
+        ids,
         next,
         apis,
       };
-    }, customData);
+    }, Object.assign({}, customData, { repeatIds: (request.userData && request.userData.listed) || [] }));
     log.info(customData.label + ' : ' + data.found + ' annonces sur la page, ' + data.kept.length + ' prometteuses ouvertes');
     const captured = page.__radarJson || [];
     const apis = Array.from(new Set(captured.map((c) => c.url + ' (' + c.status + ')').concat(data.apis))).slice(0, 15);
@@ -190,7 +200,7 @@ export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
     const list = { kind: 'list', url: base, status, found: data.found, kept: data.kept.length, pageTitle: data.pageTitle, size: data.size, samples: data.samples, apis, stats: data.stats, candidates: data.candidates, decisions: data.decisions, next: data.next, page: pageIndex };
     // Page suivante de la liste, dans la limite de customData.maxListPages.
     if (data.next && data.found > 0 && pageIndex < (customData.maxListPages || 1)) {
-      await context.enqueueRequest({ url: data.next, userData: { label: 'LIST', page: pageIndex + 1 } });
+      await context.enqueueRequest({ url: data.next, userData: { label: 'LIST', page: pageIndex + 1, listed: ((request.userData && request.userData.listed) || []).concat(data.ids) } });
     }
     if (data.found === 0) {
       // Page vide : les annonces sont peut-être seulement dans les réponses JSON du site.

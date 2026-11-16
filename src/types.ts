@@ -1,4 +1,4 @@
-export type BikeType = 'route' | 'gravel' | 'urbain' | 'vae'
+export type BikeType = 'route' | 'gravel' | 'urbain' | 'vae' | 'clm'
 export type SourceId = 'leboncoin' | 'troc-velo' | 'decathlon'
 export type Groupset =
   | 'dura-ace-di2'

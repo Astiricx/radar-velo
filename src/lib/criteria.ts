@@ -6,6 +6,7 @@ export const TYPE_LABELS: Record<BikeType, string> = {
   gravel: 'Gravel',
   urbain: 'Urbain',
   vae: 'VAE',
+  clm: 'Contre-la-montre / triathlon',
 }
 
 export const GROUPSET_LABELS: Record<Groupset, string> = {

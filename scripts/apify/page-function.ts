@@ -27,7 +27,7 @@ export interface ListPage {
   /** Annonces lues dans les réponses JSON du site plutôt que dans la page. */
   fromJson?: boolean
   /** Vignettes écartées sur la liste : déjà analysées, hors budget, taille incompatible, ni taille ni groupe. */
-  stats?: { known: number; price: number; size: number; group: number; far?: number }
+  stats?: { known: number; price: number; size: number; group: number; far?: number; repeat?: number }
   /** Décision prise pour chaque vignette (« ouvrir | … », « size | … »), sans pseudonyme. */
   decisions?: string[]
   /** Adresse de la page suivante de la liste, si elle a été trouvée. */

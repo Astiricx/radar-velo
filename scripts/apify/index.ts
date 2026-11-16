@@ -174,15 +174,16 @@ export async function collectFromApify(today: string, warnings: string[], seenId
             size: acc.size + (p.stats?.size ?? 0),
             group: acc.group + (p.stats?.group ?? 0),
             far: acc.far + (p.stats?.far ?? 0),
+            repeat: acc.repeat + (p.stats?.repeat ?? 0),
             candidates: acc.candidates + (p.candidates ?? 0),
           }),
-          { known: 0, price: 0, size: 0, group: 0, far: 0, candidates: 0 },
+          { known: 0, price: 0, size: 0, group: 0, far: 0, repeat: 0, candidates: 0 },
         )
         const sorted = pages.some((p) => p.stats)
-          ? ` Tri de la liste : ${st.known} déjà analysées, ${st.price} hors budget, ${st.size} d'une autre taille, ${st.group} sans taille ni groupe cité, ${st.far} trop loin sans livraison, ${st.candidates} à ouvrir.`
+          ? ` Tri de la liste : ${st.known} déjà analysées, ${st.price} hors budget, ${st.size} d'une autre taille, ${st.group} sans taille ni groupe cité, ${st.far} trop loin sans livraison, ${st.candidates} à ouvrir${st.repeat ? ` (${st.repeat} annonces « à la une » répétées d'une page à l'autre, comptées une fois)` : ''}.`
           : ''
         notes.push(
-          `${s.label} (${how}) : ${plural(listed ?? ads.length, 'annonce sur la liste', 'annonces sur la liste')}${pages.length > 1 ? ` (${pages.length} pages)` : ''}, ` +
+          `${s.label} (${how}) : ${plural((listed ?? ads.length) - st.repeat, 'annonce sur la liste', 'annonces sur la liste')}${pages.length > 1 ? ` (${pages.length} pages)` : ''}, ` +
             `${plural(ads.length, 'fiche ouverte', 'fiches ouvertes')}${skipped ? `, ${plural(skipped, 'page illisible', 'pages illisibles')}` : ''}.${sorted}`,
         )
         failures.length = 0
