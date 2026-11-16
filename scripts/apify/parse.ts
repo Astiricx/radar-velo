@@ -158,7 +158,9 @@ function detectSize(title: string, t: string, sizeAttr: string): string | null {
   const found = explicit(fold(title)) ?? explicit(t)
   if (found) return found.toUpperCase()
   const attr = fold(sizeAttr).match(/\b(xxs|xs|s|m|l|xl|xxl|\d{2})\b/)?.[1]
-  return attr ? attr.toUpperCase() : null
+  if (attr) return attr.toUpperCase()
+  // Dernier recours : une taille en majuscules isolée dans le titre (« Esker 8.0 GRX XL Carbon »).
+  return title.match(/(?:^|\s)(XXS|XS|S|M|L|XL|XXL)(?=\s|$|,)/)?.[1] ?? null
 }
 
 function detectYear(t: string): number {

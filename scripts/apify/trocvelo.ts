@@ -9,54 +9,11 @@
  * la préfecture du département, et signalée comme approximative.
  */
 import type { ActorRunner } from './client'
-import { TROCVELO } from './config'
+import { PREFILTER, SEARCH, TROCVELO } from './config'
+import { PAGE_FUNCTION } from './page-function'
 import { fold, type RawAd } from './parse'
 
-/**
- * Exécutée par Apify sur chaque page. Écrite en JavaScript simple (pas de TypeScript) :
- * elle est envoyée telle quelle à l'acteur.
- */
-export const PAGE_FUNCTION = `async function pageFunction(context) {
-  const { $, request, enqueueRequest, customData, log } = context;
-  const base = request.loadedUrl || request.url;
-  const abs = (href) => { try { return new URL(href, base).href.split('#')[0]; } catch (e) { return null; } };
-
-  if (!request.userData || request.userData.label !== 'DETAIL') {
-    const found = new Set();
-    $('a[href*="/annonce/"]').each((_, a) => {
-      const url = abs($(a).attr('href'));
-      if (url && /\\/annonce\\/.+-\\d+\\/?$/.test(new URL(url).pathname)) found.add(url);
-    });
-    const urls = Array.from(found).slice(0, customData.maxListings);
-    log.info('Troc-Vélo : ' + found.size + ' annonces sur la page, ' + urls.length + ' ouvertes');
-    for (const url of urls) await enqueueRequest({ url, userData: { label: 'DETAIL' } });
-    return { kind: 'list', url: base, found: found.size };
-  }
-
-  const meta = (name) => $('meta[property="' + name + '"]').attr('content') || $('meta[name="' + name + '"]').attr('content') || '';
-  const jsonLd = [];
-  $('script[type="application/ld+json"]').each((_, s) => { try { jsonLd.push(JSON.parse($(s).contents().text())); } catch (e) {} });
-  const attributes = {};
-  $('dt').each((_, dt) => { const dd = $(dt).next('dd'); if (dd.length) attributes[$(dt).text().trim()] = dd.text().trim(); });
-  $('tr').each((_, tr) => { const cells = $(tr).children('th,td'); if (cells.length === 2) attributes[$(cells[0]).text().trim()] = $(cells[1]).text().trim(); });
-  const images = [];
-  $('img').each((_, img) => {
-    const src = abs($(img).attr('data-src') || $(img).attr('src') || '');
-    if (src && /^https?:/.test(src) && !/logo|icon|avatar|sprite|flag|\\.svg/i.test(src) && !images.includes(src)) images.push(src);
-  });
-  return {
-    kind: 'ad',
-    url: base,
-    title: $('h1').first().text().trim(),
-    ogTitle: meta('og:title'),
-    description: meta('og:description') || meta('description'),
-    image: meta('og:image'),
-    images: images.slice(0, 6),
-    jsonLd,
-    attributes,
-    text: ($('main').text() || $('body').text()).replace(/\\s+/g, ' ').trim().slice(0, 8000),
-  };
-}`
+export { PAGE_FUNCTION }
 
 export async function fetchTrocVelo(run: ActorRunner): Promise<{ ads: RawAd[]; skipped: number; listed: number | null }> {
   const items = await run(
@@ -64,7 +21,14 @@ export async function fetchTrocVelo(run: ActorRunner): Promise<{ ads: RawAd[]; s
     {
       startUrls: [{ url: TROCVELO.startUrl }],
       pageFunction: PAGE_FUNCTION,
-      customData: { maxListings: TROCVELO.maxListings },
+      customData: {
+        label: 'Troc-Vélo',
+        linkPattern: '/annonce/.+-\\d+/?$',
+        maxListings: TROCVELO.maxListings,
+        prefilter: PREFILTER,
+        priceMin: SEARCH.priceMin,
+        priceMax: SEARCH.priceMax,
+      },
       maxRequestsPerCrawl: TROCVELO.maxListings + 1,
       maxConcurrency: 3,
       maxRequestRetries: 1,
@@ -135,7 +99,7 @@ type Obj = Record<string, unknown>
 const isObj = (v: unknown): v is Obj => typeof v === 'object' && v !== null && !Array.isArray(v)
 
 /** Cherche un objet schema.org Product dans les blocs JSON-LD de la page. */
-function productOf(jsonLd: unknown): Obj | null {
+export function productOf(jsonLd: unknown): Obj | null {
   const queue: unknown[] = Array.isArray(jsonLd) ? [...jsonLd] : [jsonLd]
   while (queue.length > 0) {
     const node = queue.shift()
@@ -149,7 +113,7 @@ function productOf(jsonLd: unknown): Obj | null {
   return null
 }
 
-const toNumber = (v: unknown) => {
+export const toNumber = (v: unknown) => {
   const n = typeof v === 'number' ? v : Number(String(v ?? '').replace(/[\s  ]/g, '').replace(',', '.'))
   return Number.isFinite(n) && n > 0 ? n : null
 }

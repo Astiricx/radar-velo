@@ -34,7 +34,15 @@ async function call(token: string, path: string, init: RequestInit = {}, timeout
     signal: AbortSignal.timeout(timeoutMs),
   })
   if (!res.ok) {
-    const body = (await res.text()).slice(0, 300)
+    const raw = await res.text()
+    const approval = raw.match(/"approvalUrl"\s*:\s*"([^"]+)"/)?.[1]
+    if (approval) {
+      throw new ApifyError(
+        `Apify demande d'autoriser une fois cet acteur dans ton compte : ouvre ${approval} puis clique sur « Approve ».`,
+        res.status,
+      )
+    }
+    const body = raw.slice(0, 300)
     const hint =
       res.status === 401
         ? ' (clé APIFY_TOKEN invalide)'

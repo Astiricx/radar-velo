@@ -16,7 +16,8 @@
  *
  * Variables d'environnement :
  *   VEILLE_DATE        date analysée, AAAA-MM-JJ (par défaut : aujourd'hui, UTC)
- *   VEILLE_SIMULATION  « true » pour ajouter des annonces inventées (tests)
+ *   VEILLE_SIMULATION  « true » pour ajouter des annonces inventées (tests, jamais publiées)
+ *   VEILLE_RESCAN      « true » pour réanalyser aussi les annonces déjà vues
  *   APIFY_TOKEN        clé d'API Apify ; réglages fins dans scripts/apify/config.ts
  */
 import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
@@ -47,6 +48,8 @@ const MAX_AGE_DAYS = 45
 
 const date = process.env.VEILLE_DATE?.match(/^\d{4}-\d{2}-\d{2}$/) ? process.env.VEILLE_DATE : new Date().toISOString().slice(0, 10)
 const simulation = (process.env.VEILLE_SIMULATION ?? 'false').toLowerCase() === 'true'
+/** « true » : réanalyse toutes les annonces collectées, même déjà vues (après un changement de règles). */
+const rescan = (process.env.VEILLE_RESCAN ?? 'false').toLowerCase() === 'true'
 const criteria = DEFAULT_CRITERIA
 
 // ───────────── Types des fichiers de données ─────────────
@@ -66,6 +69,8 @@ type SavedListing = Listing & {
   zone: string | null
   distanceKm: number | null
   scoreDetail: ScoreResult['parts']
+  /** Motif d'exclusion selon les critères par défaut, ou null si retenue. */
+  rejection: string | null
 }
 
 interface Analysed {
@@ -218,6 +223,7 @@ function toSaved(a: Analysed, firstSeen: string): SavedListing {
     zone: a.zone.inside && a.zone.nearest ? a.zone.nearest.label : null,
     distanceKm: Number.isFinite(a.zone.distance) ? a.zone.distance : null,
     scoreDetail: a.score.parts,
+    rejection: a.rejection,
   }
 }
 
@@ -241,7 +247,7 @@ async function main() {
 
   // Une seule fois par identifiant, même si deux recherches renvoient la même annonce.
   const candidates = [...new Map([...real, ...simulated].map((c) => [c.listing.id, c])).values()]
-  const fresh = candidates.filter(({ listing }) => !state.seen[listing.id])
+  const fresh = rescan ? candidates : candidates.filter(({ listing }) => !state.seen[listing.id])
   const analysed = fresh.map(({ listing, simulated: sim }) => analyse(listing, sim))
   const relevant = analysed.filter((a) => !a.rejection).sort((a, b) => b.score.total - a.score.total)
   const rejected = analysed.filter((a) => a.rejection)
@@ -258,25 +264,27 @@ async function main() {
   state.lastRun = date
   writeJson(FILES.state, state)
 
-  // Annonces publiées sur le site : uniquement de vraies annonces avec un lien direct.
+  // Annonces publiées sur le site : vraies annonces avec un lien direct, retenues ou écartées
+  // (le site affiche les écartées avec leur motif).
   const previous = readJson<{ listings?: SavedListing[] }>(FILES.listings, {}).listings ?? []
   const byId = new Map(
     previous.filter((s) => !(s as { simulated?: boolean }).simulated && s.frame && isDirectAdUrl(s.url)).map((s) => [s.id, s]),
   )
-  for (const a of relevant) if (!a.simulated && isDirectAdUrl(a.listing.url)) byId.set(a.listing.id, toSaved(a, date))
+  for (const a of analysed) {
+    if (a.simulated || !isDirectAdUrl(a.listing.url)) continue
+    byId.set(a.listing.id, toSaved(a, byId.get(a.listing.id)?.firstSeen ?? date))
+  }
   // Annonce déjà retenue et toujours en ligne : prix, photos et texte du jour.
   let refreshed = 0
   for (const { listing } of real) {
     const saved = byId.get(listing.id)
     if (!saved || fresh.some((f) => f.listing.id === listing.id)) continue
-    const again = analyse({ ...listing, firstSeen: saved.firstSeen }, false)
-    if (again.rejection) byId.delete(listing.id)
-    else byId.set(listing.id, toSaved(again, saved.firstSeen))
+    byId.set(listing.id, toSaved(analyse({ ...listing, firstSeen: saved.firstSeen }, false), saved.firstSeen))
     refreshed++
   }
   const kept = [...byId.values()]
     .filter((s) => daysBetween(s.lastSeen ?? s.firstSeen, date) <= MAX_AGE_DAYS)
-    .sort((a, b) => b.score - a.score || a.price - b.price)
+    .sort((a, b) => Number(!!a.rejection) - Number(!!b.rejection) || b.score - a.score || a.price - b.price)
   writeJson(FILES.listings, {
     updatedAt: date,
     criteria: {
@@ -285,6 +293,7 @@ async function main() {
       zones: criteria.zones.filter((z) => z.enabled).map((z) => `${z.label} (${z.radiusKm} km autour de ${z.center})`),
     },
     count: kept.length,
+    retained: kept.filter((s) => !s.rejection).length,
     listings: kept,
   })
 

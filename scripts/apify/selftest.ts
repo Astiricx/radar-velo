@@ -13,7 +13,9 @@ import type { Listing } from '../../src/types'
 import { LEBONCOIN_ZONES } from './config'
 import { normalizeLeboncoin, searchUrl } from './leboncoin'
 import { toListing } from './parse'
-import { normalizeTrocVelo, PAGE_FUNCTION } from './trocvelo'
+import { normalizeDecathlon } from './decathlon'
+import { PAGE_FUNCTION } from './page-function'
+import { normalizeTrocVelo } from './trocvelo'
 
 const here = dirname(fileURLToPath(import.meta.url))
 const fixture = (name: string) => JSON.parse(readFileSync(resolve(here, 'fixtures', name), 'utf8')) as unknown[]
@@ -137,9 +139,72 @@ test('Troc-Vélo : Look à patins dans les Pyrénées, écarté', () => {
   assert.ok(verdict(l))
 })
 
-test('la fonction de page Troc-Vélo est du JavaScript valide', () => {
+test('Decathlon Occasion : Van Rysel RCR-F livré, retenu ; page de liste ignorée', () => {
+  const ads = fixture('apify~cheerio-scraper.json').map(normalizeDecathlon).filter(Boolean)
+  assert.equal(ads.length, 1)
+  const l = toListing(ads[0]!, today)
+  assert.equal(l.source, 'decathlon')
+  assert.equal(l.id, 'dc-1f0c6a2e-5b8d-4d0e-9c47-2a7d3e8b9f10')
+  assert.equal(l.price, 3299)
+  assert.equal(l.newPrice, 5499)
+  assert.equal(l.brand, 'Van Rysel')
+  assert.equal(l.groupset, 'ultegra-di2')
+  assert.equal(l.size, 'M')
+  assert.equal(l.year, 2024)
+  assert.equal(l.aero, true)
+  assert.equal(l.shipping, true)
+  assert.equal(isDirectAdUrl(l.url), true)
+  assert.equal(verdict(l), null)
+})
+
+test('la fonction de page est du JavaScript valide', () => {
   const fn = new Function(`return (${PAGE_FUNCTION})`)()
   assert.equal(typeof fn, 'function')
 })
+
+// Lecture directe (sans Apify) sur de petites pages servies en local. Demande la
+// bibliothèque cheerio, installée par npm (absente seulement hors projet).
+const cheerioReady = await import('cheerio').then(() => true, () => false)
+if (cheerioReady) {
+  const { createServer } = await import('node:http')
+  const { directRunner } = await import('./direct')
+  const pages: Record<string, string> = {
+    '/liste': `<html><body><ul>
+      <li><a href="/fr-fr/annonce/canyon-aeroad-ultegra-di2-111">Canyon Aeroad Ultegra Di2</a><span>3 200 €</span></li>
+      <li><a href="/fr-fr/annonce/btwin-triban-100-222">Btwin Triban 100</a><span>150 €</span></li>
+      <li><a href="/fr-fr/annonce/trek-madone-dura-ace-di2-333">Trek Madone Dura-Ace Di2</a><span>9 800 €</span></li>
+      <li><a href="/fr-fr/aide">Aide</a></li></ul></body></html>`,
+    '/fr-fr/annonce/canyon-aeroad-ultegra-di2-111': `<html><head><meta property="og:image" content="https://img.example/1.jpg">
+      <script type="application/ld+json">{"@type":"Product","name":"Canyon Aeroad Ultegra Di2","offers":{"price":"3200"}}</script></head>
+      <body><main><h1>Canyon Aeroad Ultegra Di2 - CANYON - 75011</h1><dl><dt>Taille</dt><dd>M</dd></dl><p>Cadre carbone, freins à disque.</p></main></body></html>`,
+  }
+  const server = createServer((req, res) => {
+    const body = pages[req.url ?? '']
+    res.writeHead(body ? 200 : 404, { 'content-type': 'text/html; charset=utf-8' }).end(body ?? 'introuvable')
+  })
+  await new Promise<void>((ok) => server.listen(0, ok))
+  const port = (server.address() as { port: number }).port
+  const items = await directRunner()('apify/cheerio-scraper', {
+    startUrls: [{ url: `http://localhost:${port}/liste` }],
+    pageFunction: PAGE_FUNCTION,
+    customData: { label: 'Test', linkPattern: '/annonce/.+-\\d+/?$', maxListings: 5, prefilter: 'di2|ultegra|dura.?ace|\\b105\\b', priceMin: 1500, priceMax: 4500 },
+    maxRequestsPerCrawl: 6,
+  }, { timeoutSecs: 30 })
+  server.close()
+  test('lecture directe : pré-filtre sur la liste (groupe et prix), puis annonce lue', () => {
+    const list = items.find((i) => (i as { kind: string }).kind === 'list') as { found: number; kept: number }
+    assert.equal(list.found, 3)
+    assert.equal(list.kept, 1)
+    const ads = items.map((i) => normalizeTrocVelo({ ...(i as object), url: String((i as { url: string }).url).replace(`http://localhost:${port}`, 'https://www.troc-velo.com') })).filter(Boolean)
+    assert.equal(ads.length, 1)
+    const l = toListing(ads[0]!, today)
+    assert.equal(l.price, 3200)
+    assert.equal(l.size, 'M')
+    assert.equal(l.city, '75011, Paris')
+    assert.equal(verdict(l), null)
+  })
+} else {
+  console.log('  – lecture directe non testée : bibliothèque cheerio absente')
+}
 
 console.log(`${passed} vérifications réussies.`)

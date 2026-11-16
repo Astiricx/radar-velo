@@ -1,5 +1,9 @@
 [
-  { "kind": "list", "url": "https://www.troc-velo.com/fr-fr/categorie/velos-complets/route", "found": 24 },
+  {
+    "kind": "list",
+    "url": "https://www.troc-velo.com/fr-fr/categorie/velos-complets/route",
+    "found": 24
+  },
   {
     "kind": "ad",
     "url": "https://www.troc-velo.com/fr-fr/annonce/cervelo-s5-ultegra-di2-2022-4251234",
@@ -7,9 +11,27 @@
     "ogTitle": "Cervélo S5 Ultegra Di2 2022",
     "description": "Cervélo S5 de 2022 en très bon état, Ultegra Di2 R8170, freins à disque hydrauliques.",
     "image": "https://www.troc-velo.com/media/annonces/4251234/photo-1.jpg",
-    "images": ["https://www.troc-velo.com/media/annonces/4251234/photo-2.jpg", "https://www.troc-velo.com/images/logo.svg"],
-    "jsonLd": [ { "@context": "https://schema.org", "@type": "Product", "name": "Cervélo S5 Ultegra Di2 2022", "offers": { "@type": "Offer", "price": "3990.00", "priceCurrency": "EUR" } } ],
-    "attributes": { "Taille": "M", "Marque": "CERVELO", "Année": "2022" },
+    "images": [
+      "https://www.troc-velo.com/media/annonces/4251234/photo-2.jpg",
+      "https://www.troc-velo.com/images/logo.svg"
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Cervélo S5 Ultegra Di2 2022",
+        "offers": {
+          "@type": "Offer",
+          "price": "3990.00",
+          "priceCurrency": "EUR"
+        }
+      }
+    ],
+    "attributes": {
+      "Taille": "M",
+      "Marque": "CERVELO",
+      "Année": "2022"
+    },
     "text": "Cervélo S5 Ultegra Di2 2022 3 990 € Taille : M (56) Cadre carbone, roues Reserve 52 mm. Livraison possible via Mondial Relay. Annonces similaires Pinarello Dogma F Dura-Ace Di2 9 000 €"
   },
   {
@@ -20,5 +42,38 @@
     "jsonLd": [],
     "attributes": {},
     "text": "Prix 2 150 € Taille S. Remise en main propre."
+  },
+  {
+    "kind": "list",
+    "url": "https://www.decathlon.fr/occasion/velo-route-occasion?from=0&size=40",
+    "found": 40,
+    "kept": 2
+  },
+  {
+    "kind": "ad",
+    "url": "https://www.decathlon.fr/p/mp/second-life-velo-de-route-van-rysel-rcr-f-ultegra-di2-taille-m-d-occasion/1f0c6a2e-5b8d-4d0e-9c47-2a7d3e8b9f10/c9",
+    "title": "VAN RYSEL Second Life - Vélo de route Van Rysel RCR-F Ultegra Di2 taille M d'occasion",
+    "description": "Vélo de route aéro en carbone, Shimano Ultegra Di2 12 vitesses, freins à disque hydrauliques. Révisé par un atelier.",
+    "image": "https://contents.mediadecathlon.com/m1234567/k$abc/rcr-f.jpg",
+    "images": [],
+    "jsonLd": [
+      {
+        "@type": "Product",
+        "name": "Van Rysel RCR-F Ultegra Di2 taille M",
+        "offers": {
+          "@type": "Offer",
+          "price": "3299.00"
+        }
+      }
+    ],
+    "attributes": {},
+    "text": "Vendu et expédié par Van Rysel Second Life 3 299,00 € Prix neuf 5 499,00 € État : Très bon état Année 2024 Produits similaires Pinarello Dogma F Dura-Ace Di2"
+  },
+  {
+    "kind": "ad",
+    "url": "https://www.decathlon.fr/occasion/velo-route-occasion",
+    "title": "Page de liste",
+    "jsonLd": [],
+    "text": "2 490 €"
   }
 ]

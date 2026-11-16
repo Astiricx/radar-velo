@@ -59,7 +59,8 @@ export function ListingTable({ rows, criteria, sort, onSort, onOpen, onStatus }:
                     </button>
                     <div className="flex items-center gap-2 text-xs text-muted">
                       <span className="truncate">
-                        {l.brand} {l.model}, {SOURCES[l.source].label}
+                        {l.brand} {l.model}{' '}
+                        <span className={`ml-1 inline-block rounded px-1.5 py-px text-[11px] font-medium ${SOURCES[l.source].badge}`}>{SOURCES[l.source].label}</span>
                       </span>
                       {isNew && <span className="chip bg-gold-soft text-gold">Nouveau</span>}
                     </div>

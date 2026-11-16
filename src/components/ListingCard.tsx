@@ -26,7 +26,7 @@ export function ListingCard({ row, criteria, onOpen, onStatus }: Props) {
       <button type="button" onClick={() => onOpen(l.id)} className="relative block w-full text-left" aria-label={`Ouvrir la fiche : ${l.title}`}>
         <BikeThumb listing={l} width={420} showKind className="aspect-[16/10] w-full" />
         <span className="absolute left-2 top-2 flex flex-wrap gap-1">
-          <span className="chip bg-surface/90 text-ink">{SOURCES[l.source].label}</span>
+          <span className={`chip border-0 ${SOURCES[l.source].badge}`}>{SOURCES[l.source].label}</span>
           {isNew && <span className="chip bg-gold-soft text-gold">Nouveau</span>}
         </span>
         <span className="absolute -bottom-5 right-3">

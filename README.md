@@ -125,16 +125,22 @@ Sans ce secret, la veille tourne quand même mais ne collecte rien.
 
 ### Coût et garde-fous
 
-| Plateforme | Acteur Apify | Par jour, au plus | Coût estimé par mois |
-| ---------- | ------------ | ----------------- | -------------------- |
-| Leboncoin  | `memo23/leboncoin-scraper` (0,79 $ / 1 000 annonces, sans frais de plateforme) | 2 recherches × 20 annonces | ~0,95 $ |
-| Troc-Vélo  | `apify/cheerio-scraper` (gratuit, temps de calcul seul) | 1 page de liste + 12 annonces | ~0,30 $ |
+| Plateforme | Comment | Par jour, au plus | Coût estimé par mois |
+| ---------- | ------- | ----------------- | -------------------- |
+| Leboncoin  | Acteur `memo23/leboncoin-scraper` (0,79 $ / 1 000 annonces) | 2 recherches × 30 annonces | ~1,40 $ |
+| Troc-Vélo  | Lecture directe depuis GitHub ; en secours, `apify/cheerio-scraper` (générique, temps de calcul seul) | 1 page de liste + 12 annonces | 0 à ~0,30 $ |
+| Decathlon Occasion | Idem, page « Vélo route occasion » | 4 pages de liste + 12 annonces | 0 à ~0,30 $ |
 
-Soit environ 1,25 $ par mois sur les 5 $ du plan gratuit. Les recherches
-Leboncoin sont filtrées à la source : catégorie Vélos, type Course, taille M,
-1 500 à 4 500 €, 60 km autour de Paris et de Saint-Nazaire, plus récentes
-d'abord. Chaque exécution a un plafond de dépense, et la collecte s'arrête si
-la consommation du mois atteint 4 $.
+Sur Troc-Vélo et Decathlon, seules les annonces dont la vignette cite un groupe
+Shimano retenu et un prix dans le budget sont ouvertes. Leboncoin est filtré à la
+source : catégorie Vélos, type Course, taille M, 1 500 à 4 500 €, 60 km autour
+de Paris et de Saint-Nazaire, plus récentes d'abord. Chaque exécution a un
+plafond de dépense, et la collecte s'arrête si la consommation du mois atteint 4 $.
+
+**Cheerio Scraper.** C'est l'acteur générique d'Apify : il n'a pas besoin d'être
+ajouté à ton compte, mais Apify demande de l'autoriser une fois. Si le journal
+affiche « Apify demande d'autoriser une fois cet acteur », ouvre le lien indiqué
+et clique sur **Approve**. Il ne sert que si la lecture directe est bloquée.
 
 **Réglages facultatifs** (Settings → Secrets and variables → Actions → onglet
 Variables) :
@@ -142,14 +148,17 @@ Variables) :
 | Variable              | Par défaut | Effet |
 | --------------------- | ---------- | ----- |
 | `APIFY_BUDGET_USD`    | `4`        | Consommation du mois au-delà de laquelle la collecte est sautée |
-| `APIFY_MAX_ITEMS`     | `20`       | Annonces Leboncoin lues par zone et par jour |
+| `APIFY_MAX_ITEMS`     | `30`       | Annonces Leboncoin lues par zone et par jour |
+| `DECATHLON_MAX_ITEMS` | `12`       | Annonces Decathlon Occasion ouvertes par jour |
+| `DECATHLON_ENABLED`   | `true`     | `false` : ne plus lire Decathlon Occasion |
 | `TROCVELO_MAX_ITEMS`  | `12`       | Annonces Troc-Vélo ouvertes par jour |
 | `TROCVELO_SEARCH_URL` | catégorie route | Page de liste Troc-Vélo (copie l'adresse après avoir posé tes filtres) |
 | `TROCVELO_ENABLED`    | `true`     | `false` : ne plus lire Troc-Vélo |
 | `COMMIT_RESULTS`      | `true`     | `false` : simple exécution de contrôle, rien n'est commité |
 
 **Lancer la veille à la main** : onglet Actions → « Veille quotidienne » →
-« Run workflow ».
+« Run workflow ». Cases utiles : « Réanalyser aussi les annonces déjà vues » et
+« Annonces Leboncoin lues par zone » pour une collecte plus large ponctuelle.
 
 En local : `APIFY_TOKEN=… npm run daily-check`. Sans clé, `npm run test:apify`
 vérifie l'analyse sur des exemples, et

@@ -6,7 +6,9 @@ import { resolve } from 'node:path'
 import { plural } from '../../src/lib/format'
 import type { Listing } from '../../src/types'
 import { apifyRunner, monthlyUsage, type ActorRunner } from './client'
-import { APIFY, LEBONCOIN, TROCVELO } from './config'
+import { APIFY, DECATHLON, LEBONCOIN, TROCVELO } from './config'
+import { fetchDecathlon } from './decathlon'
+import { directRunner } from './direct'
 import { fetchLeboncoin } from './leboncoin'
 import { toListing } from './parse'
 import { fetchTrocVelo } from './trocvelo'
@@ -70,18 +72,35 @@ export async function collectFromApify(today: string, warnings: string[]): Promi
     }
   }
 
-  if (TROCVELO.enabled) {
-    try {
-      const { ads, skipped, listed } = await fetchTrocVelo(run)
-      listings.push(...ads.map((ad) => toListing(ad, today)))
-      notes.push(`Troc-Vélo : ${plural(ads.length, 'annonce lue', 'annonces lues')}${skipped ? `, ${plural(skipped, 'page illisible', 'pages illisibles')}` : ''}.`)
-      if (listed === 0) {
-        warnings.push(
-          `Troc-Vélo : aucune annonce trouvée sur ${TROCVELO.startUrl}. Si la page a changé, indique la bonne adresse dans la variable TROCVELO_SEARCH_URL du dépôt.`,
+  // Troc-Vélo et Decathlon : lecture directe depuis GitHub (gratuite), puis Cheerio Scraper d'Apify si le site bloque.
+  const scrapers = [
+    { label: 'Troc-Vélo', enabled: TROCVELO.enabled, fetch: fetchTrocVelo, page: TROCVELO.startUrl, variable: 'TROCVELO_SEARCH_URL' },
+    { label: 'Decathlon Occasion', enabled: DECATHLON.enabled, fetch: fetchDecathlon, page: DECATHLON.startUrls[0], variable: null },
+  ]
+  for (const s of scrapers) {
+    if (!s.enabled) continue
+    const attempts: { how: string; runner: ActorRunner }[] = fixtures
+      ? [{ how: 'exemples', runner: run }]
+      : [{ how: 'lecture directe', runner: directRunner() }, ...(APIFY.token ? [{ how: 'Cheerio Scraper d’Apify', runner: run }] : [])]
+    const failures: string[] = []
+    for (const { how, runner } of attempts) {
+      try {
+        const { ads, skipped, listed } = await s.fetch(runner)
+        if (listed === 0 && ads.length === 0) throw new Error(`aucune annonce trouvée sur ${s.page}`)
+        listings.push(...ads.map((ad) => toListing(ad, today)))
+        notes.push(
+          `${s.label} (${how}) : ${plural(listed ?? ads.length, 'annonce sur la liste', 'annonces sur la liste')}, ` +
+            `${plural(ads.length, 'prometteuse ouverte', 'prometteuses ouvertes')}${skipped ? `, ${plural(skipped, 'page illisible', 'pages illisibles')}` : ''}.`,
         )
+        failures.length = 0
+        break
+      } catch (error) {
+        failures.push(`${how} : ${(error as Error).message}`)
       }
-    } catch (error) {
-      warnings.push(`Troc-Vélo : ${(error as Error).message}`)
+    }
+    if (failures.length > 0) {
+      const hint = s.variable ? ` Si la page a changé, indique la bonne adresse dans la variable ${s.variable} du dépôt.` : ''
+      warnings.push(`${s.label} non lu. ${failures.join(' ; ')}.${hint}`)
     }
   }
 

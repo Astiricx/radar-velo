@@ -1,4 +1,5 @@
-# Veille quotidienne : collecte les annonces (Apify), les analyse, enregistre data/ et republie le site.
+# Veille quotidienne : collecte Leboncoin (Apify), Troc-Vélo et Decathlon Occasion (lecture directe,
+# Cheerio Scraper d'Apify en secours), analyse, enregistre data/ et republie le site.
 name: Veille quotidienne
 
 on:
@@ -13,6 +14,14 @@ on:
         description: Ajouter des annonces inventées (test, jamais publiées sur le site)
         type: boolean
         default: false
+      rescan:
+        description: Réanalyser aussi les annonces déjà vues (après un changement de règles)
+        type: boolean
+        default: false
+      max_items:
+        description: Annonces Leboncoin lues par zone pour cette exécution (vide = réglage habituel)
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -45,7 +54,10 @@ jobs:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
           # Réglages facultatifs (variables de dépôt), valeurs par défaut dans scripts/apify/config.ts.
           APIFY_BUDGET_USD: ${{ vars.APIFY_BUDGET_USD }}
-          APIFY_MAX_ITEMS: ${{ vars.APIFY_MAX_ITEMS }}
+          APIFY_MAX_ITEMS: ${{ inputs.max_items || vars.APIFY_MAX_ITEMS }}
+          VEILLE_RESCAN: ${{ inputs.rescan && 'true' || 'false' }}
+          DECATHLON_ENABLED: ${{ vars.DECATHLON_ENABLED }}
+          DECATHLON_MAX_ITEMS: ${{ vars.DECATHLON_MAX_ITEMS }}
           APIFY_LEBONCOIN_ACTOR: ${{ vars.APIFY_LEBONCOIN_ACTOR }}
           TROCVELO_ENABLED: ${{ vars.TROCVELO_ENABLED }}
           TROCVELO_SEARCH_URL: ${{ vars.TROCVELO_SEARCH_URL }}
