@@ -2,6 +2,18 @@
 
 ## Lundi 16 novembre 2026
 
+- Crédit Apify consommé ce mois-ci avant la collecte : 0,34 $ sur 5,00 $.
+- Leboncoin : 60 annonces lues autour de Paris et de Saint-Nazaire (30 au plus par zone).
+
+0 nouvelle annonce analysée : 0 pertinente, 0 écartée.
+
+Avertissements :
+
+- Troc-Vélo non lu. navigateur Puppeteer Scraper d’Apify : page de liste non lue (bloquée ou injoignable) : https://www.troc-velo.com/fr-fr/categorie/velos-complets/route.
+- Decathlon Occasion non lu. lecture directe : lecture directe impossible (HTTP 403) ; Cheerio Scraper d’Apify : page de liste non lue (bloquée ou injoignable) : https://www.decathlon.fr/occasion/velo-route-occasion?from=0&size=40.
+
+## Lundi 16 novembre 2026
+
 - Crédit Apify consommé ce mois-ci avant la collecte : 0,29 $ sur 5,00 $.
 - Leboncoin : 60 annonces lues autour de Paris et de Saint-Nazaire (30 au plus par zone).
 
