@@ -70,10 +70,12 @@ export function scoreListing(l: Listing, c: Criteria, zone: ZoneMatch): ScoreRes
     ? `≈ ${durationLabel(zone.train.minutes)} de Paris en train (gare de ${zone.train.station} à ${d} km)`
     : zone.nearest
       ? `${Number.isFinite(d) ? `${d} km de ${zone.nearest.center}` : 'Lieu inconnu'}${zone.inside ? `, zone ${zone.nearest.label}` : ', hors zone'}`
-      : 'Aucune zone active'
+      : c.zones.some((z) => z.enabled) || c.train?.enabled !== false
+        ? 'Lieu hors de tes zones ou non situé'
+        : 'Aucune zone active'
   parts.push({
     label: 'Distance',
-    detail: `${where}${deliverable ? ', livraison possible' : ''}`,
+    detail: deliverable && !zone.inside ? 'Expédié par le vendeur' : `${where}${deliverable ? ', livraison possible' : ''}`,
     points: Math.max(byRoad, deliverable ? 7 : 0),
     max: 10,
   })
