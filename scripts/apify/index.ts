@@ -84,7 +84,9 @@ export async function collectFromApify(today: string, warnings: string[], seenId
 
   if (BUYCYCLE.enabled) {
     try {
-      const { ads, skipped, mode } = await fetchBuycycle(run)
+      const { ads, skipped, mode, dropped, rejections } = await fetchBuycycle(run)
+      for (const r of rejections) console.log(`    buycycle, filtre refusé par l'acteur : ${r}`)
+      if (dropped.length > 0) warnings.push(`buycycle : filtres retirés car refusés par l'acteur (${dropped.join(', ')}). Détail dans le journal de l'exécution.`)
       const read = ads.map((ad) => toListing(ad, today))
       listings.push(...read)
       notes.push(

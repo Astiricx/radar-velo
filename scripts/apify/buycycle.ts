@@ -33,15 +33,31 @@ export function buycycleInput() {
   }
 }
 
-export async function fetchBuycycle(run: ActorRunner): Promise<{ ads: RawAd[]; skipped: number; mode: 'filtres' | 'catalogue' }> {
+export async function fetchBuycycle(
+  run: ActorRunner,
+): Promise<{ ads: RawAd[]; skipped: number; mode: 'filtres' | 'catalogue'; dropped: string[]; rejections: string[] }> {
   const options = { maxItems: BUYCYCLE.maxItems + 40, maxTotalChargeUsd: BUYCYCLE.maxChargeUsd, timeoutSecs: 280 }
-  let items: unknown[]
+  let items: unknown[] | null = null
   let mode: 'filtres' | 'catalogue' = 'filtres'
-  try {
-    items = await run(BUYCYCLE.actor, buycycleInput(), options)
-  } catch (error) {
-    // 400 : une valeur de filtre n'est pas reconnue par l'acteur. On repasse par le catalogue.
-    if (!(error instanceof ApifyError) || error.status !== 400) throw error
+  const input: Record<string, unknown> = buycycleInput()
+  const dropped: string[] = []
+  const rejections: string[] = []
+  // Un filtre refusé (400 « Field input.xxx … ») est retiré, puis on relance ; le message
+  // d'Apify, qui liste en général les valeurs admises, est gardé pour le journal.
+  for (let attempt = 0; attempt < 4 && items === null; attempt++) {
+    try {
+      items = await run(BUYCYCLE.actor, input, options)
+    } catch (error) {
+      if (!(error instanceof ApifyError) || error.status !== 400) throw error
+      rejections.push(error.message.slice(0, 400))
+      const field = error.message.match(/input\.(\w+)/)?.[1]
+      if (!field || !(field in input) || ['country', 'maxResults', 'includeFullSpecs'].includes(field)) break
+      delete input[field]
+      dropped.push(field)
+    }
+  }
+  if (items === null) {
+    // Filtres inutilisables : on lit le catalogue buycycle, et l'analyse fait le tri.
     mode = 'catalogue'
     items = await run(
       BUYCYCLE.actor,
@@ -56,7 +72,7 @@ export async function fetchBuycycle(run: ActorRunner): Promise<{ ads: RawAd[]; s
     if (ad) ads.push(ad)
     else skipped++
   }
-  return { ads, skipped, mode }
+  return { ads, skipped, mode, dropped, rejections }
 }
 
 // ───────────── Normalisation ─────────────
