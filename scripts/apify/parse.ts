@@ -131,7 +131,7 @@ const NOT_FRAME = /(roues?|jantes?|cintre|tige de selle|tige|potence|selle|fourc
 
 function detectFrame(t: string): { frame: Frame; doubt?: string } {
   // « Cadre et roues carbone », « cadre en carbone » : le cadre est nommé, pas de doute.
-  if (/\bcadre\b[^.;\n]{0,25}\bcarbone?\b/.test(t)) return { frame: 'carbone' }
+  if (/\bcadre (?:et [a-z]+ )?(?:en |full |tout )?carbone?\b/.test(t)) return { frame: 'carbone' }
   const frameOnly = t.replace(NOT_FRAME, ' ')
   if (/\bcarbone?\b|\bcf\b|\bfull carbon/.test(frameOnly)) return { frame: 'carbone' }
   if (/\balu(minium)?\b/.test(frameOnly)) return { frame: 'aluminium' }
