@@ -13,8 +13,8 @@
       "Saint-Nazaire et Loire-Atlantique (120 km autour de Saint-Nazaire)"
     ]
   },
-  "count": 110,
-  "retained": 26,
+  "count": 115,
+  "retained": 28,
   "listings": [
     {
       "id": "lbc-3309937771",
@@ -227,6 +227,10 @@
       "price": 2400,
       "description": "BMC SLR 01 Team Machine: - Modèle : SLR 01 Team Machine - Taille du cadre : M (54) - Couleur : Gris-rouge - Taille des roues : 700c (28 pouces) - Transmission : Shimano Ultegra Di2 11v - Étrier Freins : Shimano Dura-Ace - Cintre aero BMC. - Pédalier Rotor aldhu Option roues carbones+700e Révisé et prêt à prendre la route. Facture d'origine : Non Retour : Non Référence de l'annonce : 4314720",
       "city": "SOUMOULOU (64420)",
+      "coords": {
+        "lat": 43.2621,
+        "lon": -0.1924
+      },
       "shipping": true,
       "publishedAt": "2026-11-16T08:00:00.000Z",
       "frame": "carbone",
@@ -245,7 +249,7 @@
       "lastSeen": "2026-11-16",
       "score": 72,
       "zone": null,
-      "distanceKm": null,
+      "distanceKm": 473,
       "scoreDetail": [
         {
           "label": "Prix",
@@ -291,7 +295,7 @@
         },
         {
           "label": "Distance",
-          "detail": "Aucune zone active, livraison possible",
+          "detail": "473 km de Saint-Nazaire, hors zone, livraison possible",
           "points": 7,
           "max": 10
         },
@@ -2150,6 +2154,194 @@
       "rejection": null
     },
     {
+      "id": "tv-4314667",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/specialized-tarmac-sl7-pro-4314667",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/667/14667/4314667/4314667-specialized-tarmac-sl7-pro-4314667-1794853784.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/667/14667/4314667/4314667-specialized-tarmac-sl7-pro-4314667-1794853786.jpg",
+      "imageKind": "annonce",
+      "title": "Specialized tarmac SL7 pro",
+      "brand": "Specialized",
+      "model": "tarmac SL7 pro",
+      "year": 2021,
+      "type": "route",
+      "size": "56",
+      "price": 3500,
+      "description": "Bonjour à tous, je me sépare de mon tarmac sl7 pro taille 56, de 2021 Voici les caractéristiques : Vélo en excellent état Groupe ultegra Di2 11 vitesses Roues roval alpinist CL montées en 11-34 Pneu continental GP 5000 avec TPU (non tubeless), en 28mm, très bon état Disques 160/140 Dura ace Potence 110 S-works, cintre rapide 420 mm Selle Sworks Romin mirror Guidoline neuve, embout des cocottes neuf Révision récente avec changement de chaine, changement du jeux de direction, changement des durites et purge des freins Vendu avec : Plateaux 50/34 (montés), 52/36, 52/39 Cassette 11/30 Ultegra Porte compteur (compatible Garmin) Porte radar garmin Porte bidon si besoin Disponible si besoin d'autres informations ! Sportivement, Facture d'origine : Non Retour : Non Référence de l'annonce : 4314667",
+      "city": "Lille (59800)",
+      "coords": {
+        "lat": 50.6311,
+        "lon": 3.0468
+      },
+      "shipping": false,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 34,
+      "extensions": "inconnu",
+      "condition": "bon",
+      "batch": 0,
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 59,
+      "zone": "Région parisienne",
+      "distanceKm": 204,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 34 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "204 km de Paris, zone Région parisienne",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Bon état, modèle 2021",
+          "points": 4,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
+      "id": "lbc-3311084474",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3311084474",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/9a/2b/a4/9a2ba4848988604d0a3c0d06f54799c8a693d9a8.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/6b/fe/a0/6bfea0c9f58ea8c3847819d0c42f7b6b0b0d5c24.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "Specialized Tarmac SL7 comp disc | Shimano 105 Di2 - Excellent état",
+      "brand": "Specialized",
+      "model": "Tarmac SL7 comp disc | Shimano 105 Di2 - Excellent état",
+      "year": 2024,
+      "type": "route",
+      "size": "M",
+      "price": 2199,
+      "description": "Bonjour,\n\nOncle Can vous propose ce superbe Specialized Tarmac SL7 Comp en carbone FACT 9r, équipé du groupe Shimano 105 Di2 12 vitesses, à la vente.\nCe vélo est en très bon état, entièrement révisé, et prêt à reprendre la route.\n\nVéritable référence du peloton moderne, le Specialized Tarmac SL7 Comp est positionné au cœur de la gamme compétition de la marque américaine, ce millésime 2024 associe le châssis issu du WorldTour à la transmission électronique sans fil semi-intégrée Shimano 105 Di2 R7170. Sur la route, il se distingue par une direction incisive, un transfert de puissance immédiat et une remarquable polyvalence sur tous les profils.\n\nGrâce à son cadre en carbone FACT 9r, issu de la bibliothèque de profils FreeFoil Shape Library, optimisé en soufflerie (Win Tunnel Engineered), il offre un équilibre idéal entre pénétration dans l’air, rigidité latérale, confort sur les longues distances et facilité d’entretien.\nUn vélo qui conjugue aérodynamisme, précision électronique Di2 et polyvalence sportive — parfait pour le cycliste compétiteur ou cyclosportif exigeant souhaitant un vélo rapide sur tous les terrains.\n\nCi-dessous, voici toutes les informations sur le vélo :\n\nSpecialized Tarmac SL7 Comp - Shimano 105 Di2 (2024)\n\nTaille du vélo : M - 54\nTaille du cycliste : 170 - 176 cms\nPoids : 8,1 kg\nCouleur : SATIN RED TINT OVER CARBON / RED SKY\nFreinage : Disques hydrauliques\nGroupe : Shimano 105 Di2 2x12 vitesses\n\nMatériau du cadre : Carbone FACT 9r\nFourche : Specialized FA…",
+      "city": "Paris",
+      "coords": {
+        "lat": 48.883,
+        "lon": 2.318
+      },
+      "shipping": true,
+      "publishedAt": "2026-11-16T21:57:39.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 58,
+      "zone": "Région parisienne",
+      "distanceKm": 4,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "4 km de Paris, zone Région parisienne, livraison possible",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2024",
+          "points": 6,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
       "id": "lbc-3307918584",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3307918584",
@@ -2845,8 +3037,8 @@
       "description": "Je vends mon Wilier Cento 10 SL, acheté neuf en mai 2023. Premier propriétaire, vélo entretenu avec soin. factures d’achat sont disponibles. Acheter 4800 *Vélo vendu avec roue wilier 38 carbone Le vélo est en parfait état de fonctionnement et prêt à rouler. Équipement : Cadre Wilier Cento 10 SL carbone Taille 54 (M) Groupe Shimano Ultegra R8000 mécanique 11 vitesses cassette 11/28 plateau 52/36 Pédalier capteur de puissance Freins à disque hydrauliques À noter : quelques éclats de peinture et rayures liés à une utilisation normale, uniquement esthétique. Vélo performant, rigide et confortable, idéal pour les longues sorties comme pour la compétition. Facture d'origine : Oui Retour : Non Référence de l'annonce : 4314679",
       "city": "Saint-gilles (35590)",
       "coords": {
-        "lat": 48.1173,
-        "lon": -1.6778
+        "lat": 48.1517,
+        "lon": -1.85
       },
       "shipping": true,
       "publishedAt": "2026-11-16T08:00:00.000Z",
@@ -2859,14 +3051,11 @@
       "extensions": "inconnu",
       "condition": "bon",
       "batch": 0,
-      "toVerify": [
-        "Lieu approximatif : distance calculée depuis le chef-lieu du département"
-      ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
       "score": 72,
       "zone": "Saint-Nazaire et Loire-Atlantique",
-      "distanceKm": 102,
+      "distanceKm": 101,
       "scoreDetail": [
         {
           "label": "Prix",
@@ -2912,7 +3101,7 @@
         },
         {
           "label": "Distance",
-          "detail": "102 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique, livraison possible",
+          "detail": "101 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique, livraison possible",
           "points": 7,
           "max": 10
         },
@@ -2920,6 +3109,101 @@
           "label": "État et âge",
           "detail": "Bon état, modèle 2023",
           "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": "Taille 54 incompatible"
+    },
+    {
+      "id": "tv-4304229",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/cannondale-supersix-evo-2-4304229",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/229/4229/4304229/4304229-cannondale-supersix-evo-2-4304229-1793279649.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/229/4229/4304229/4304229-cannondale-supersix-evo-2-4304229-1793279650.jpg",
+      "imageKind": "annonce",
+      "title": "Cannondale Supersix evo 2",
+      "brand": "Cannondale",
+      "model": "Supersix evo 2",
+      "year": 2025,
+      "type": "route",
+      "size": "54",
+      "price": 4500,
+      "newPrice": 6300,
+      "description": "Je vend mon Cannondale supersix evo2 full carbone couleur bleu comète T54/M Acheter en 2025 et très peu servi pour cause de blessure. A fait moins de 4000km Equiper en : Shimano ultegra Di2 Cassettes 12V 20/11 Pédalier 50/34 Capteur de puissance Favero assioma duo-shi. Prix neuf 500€ Pédales shimano spd-sl Roues carbones Hollowgram R45 Prix neuf 600€ Ceintre Vision trimax aéro carbone prix neuf 400€ Vélo acheter neuf à 6300€ Toujours entretenue et suivi chez un mécanicien. Purge, plaquette et liquide de frein seront changer pour la vente. La guidoline peut elle aussi être changer. Prix négociable dans la limite du raisonnable Disponible sur Nantes et Caen Facture d'origine : Non Retour : Non Référence de l'annonce : 4304229",
+      "city": "Orvault (44700)",
+      "coords": {
+        "lat": 47.2745,
+        "lon": -1.6195
+      },
+      "shipping": false,
+      "publishedAt": "2026-10-29T14:14:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": true,
+      "powerMeter": true,
+      "wheelDepth": 45,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 72,
+      "zone": "Saint-Nazaire et Loire-Atlantique",
+      "distanceKm": 45,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Entre l'idéal et le maximum de 4 500 €",
+          "points": 10,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "29 % sous le prix neuf (6 300 €)",
+          "points": 6.4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Inclus",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 45 mm",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "45 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique",
+          "points": 8,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2025",
+          "points": 7,
           "max": 8
         }
       ],
@@ -4369,6 +4653,100 @@
         }
       ],
       "rejection": "Groupe non retenu (SRAM AXS)"
+    },
+    {
+      "id": "tv-4314479",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/specialized-s-works-tarmac-sl6-ultegra-di2-56-trek-pinarello-scott-canyon-giant-colnago-ridley-4314479",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/479/14479/4314479/4314479-specialized-s-works-tarmac-sl6-ultegra-di2-56-trek-pinarello-scott-canyon-giant-colnago-ridley-4314479-1794838958.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/479/14479/4314479/4314479-specialized-s-works-tarmac-sl6-ultegra-di2-56-trek-pinarello-scott-canyon-giant-colnago-ridley-4314479-1794838971.jpg",
+      "imageKind": "annonce",
+      "title": "🔥Specialized S-Works Tarmac SL6 Ultegra Di2 56🔥trek pinarello scott canyon giant colnago ridley",
+      "brand": "Specialized",
+      "model": "🔥 S-Works Tarmac SL6 Ultegra Di2 56🔥trek pinarello scott c",
+      "year": 0,
+      "type": "route",
+      "size": "56",
+      "price": 1899,
+      "newPrice": 9000,
+      "description": "A réserver avec un petit acompte de 150 euros seulement Nous avons revu et amélioré notre technologie Rider-First Engineered™ pour rendre le nouveau Tarmac encore plus léger et qu'il soit rigide ou souple exactement là où il faut. Des séquences de laminage et matériaux revus et modifiés aux fourches visiblement différentes, nous avons étudié le moindre aspect du nouveau Tarmac pour vous offrir le vélo idéal. En nous appuyant sur un nombre incalculable de points de données Retül et les retours de coureurs professionnels, nous avons mis au point une géométrie performance route qui parfait la combinaison avant réactif / empattement court pour offrir une réponse instantanée et un transfert optimal de la puissance. SH SPORT vous propose ce superbe et très haut de gamme Specialized S-Works Tarmac SL6 , équipé en Shimano Ultegra Di2 Disque et en taille 56 Très beau et haut de gamme Tarmac dans sa version la plus haut de gamme, S-Works il est équipé en shimano Ultegra DI2 disque,potence S-Works SL, tige de selle S-Works carbon et selle Power ! Superbe coloris Quickstep, coloris noir carbon apparent, inscriptions blanches et détails bleu Le Tarmac SL6 est une référence absolue en terme de polyvalence, l'un des meilleurs vélos de route sur le marché ! Très bel état, très peu de traces d'utilisation ! Valeur à neuf 9.000 euros Vendu 1899 euros avec roues alu ou possibilité de roues carbon sans nom 40mm +299 euros (pas les Dt Swiss de la photo) Vendu avec facture et garantie à votre nom…",
+      "city": "BAUDOUR (7331), hors de France métropolitaine",
+      "shipping": false,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 40,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "toVerify": [
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 62,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "79 % sous le prix neuf (9 000 €)",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 40 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Aucune zone active",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, année non précisée",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": "Lieu inconnu ou trop éloigné, sans livraison"
     },
     {
       "id": "lbc-3305754230",
@@ -6318,96 +6696,6 @@
       "rejection": "Taille 58 incompatible"
     },
     {
-      "id": "tv-4314667",
-      "source": "troc-velo",
-      "url": "https://www.troc-velo.com/fr-fr/annonce/specialized-tarmac-sl7-pro-4314667",
-      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/667/14667/4314667/4314667-specialized-tarmac-sl7-pro-4314667-1794853784.jpg",
-      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/667/14667/4314667/4314667-specialized-tarmac-sl7-pro-4314667-1794853786.jpg",
-      "imageKind": "annonce",
-      "title": "Specialized tarmac SL7 pro",
-      "brand": "Specialized",
-      "model": "tarmac SL7 pro",
-      "year": 2021,
-      "type": "route",
-      "size": "56",
-      "price": 3500,
-      "description": "Bonjour à tous, je me sépare de mon tarmac sl7 pro taille 56, de 2021 Voici les caractéristiques : Vélo en excellent état Groupe ultegra Di2 11 vitesses Roues roval alpinist CL montées en 11-34 Pneu continental GP 5000 avec TPU (non tubeless), en 28mm, très bon état Disques 160/140 Dura ace Potence 110 S-works, cintre rapide 420 mm Selle Sworks Romin mirror Guidoline neuve, embout des cocottes neuf Révision récente avec changement de chaine, changement du jeux de direction, changement des durites et purge des freins Vendu avec : Plateaux 50/34 (montés), 52/36, 52/39 Cassette 11/30 Ultegra Porte compteur (compatible Garmin) Porte radar garmin Porte bidon si besoin Disponible si besoin d'autres informations ! Sportivement, Facture d'origine : Non Retour : Non Référence de l'annonce : 4314667",
-      "city": "Lille (59800)",
-      "shipping": false,
-      "publishedAt": "2026-11-16T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "ultegra-di2",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 34,
-      "extensions": "inconnu",
-      "condition": "bon",
-      "batch": 0,
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 55,
-      "zone": null,
-      "distanceKm": null,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "Ultegra Di2",
-          "points": 13,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Carbone, jantes de 34 mm",
-          "points": 5,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "Aucune zone active",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Bon état, modèle 2021",
-          "points": 4,
-          "max": 8
-        }
-      ],
-      "rejection": "Lieu inconnu ou trop éloigné, sans livraison"
-    },
-    {
       "id": "lbc-3311030776",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3311030776",
@@ -6438,9 +6726,6 @@
       "extensions": "inconnu",
       "condition": "neuf",
       "batch": 0,
-      "toVerify": [
-        "Matériau du cadre non précisé"
-      ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
       "score": 54,
@@ -7010,8 +7295,8 @@
       "description": "dérailleur AR- SRAM force neuf changé- vendu avec derailleur ex Shimano Durace neuf- chaine neuve-cassette 11x21 - fourche HSD- direction FSA- pédales Durace 7810- freins Shimano Durace - selle Rione carbone- tige de selle Kuota carbone- roues American Classic - cintre Steath pro -poignées SRAM force changées avec cables passés dans guidon (nouvelle configuration, vendu avec les anciennes poignées Durace sortie latérale - mis en nouvelle configuration 2024 Facture d'origine : Non Retour : Non Référence de l'annonce : 4314660",
       "city": "AUBERVILLIERS (93300)",
       "coords": {
-        "lat": 48.9077,
-        "lon": 2.4386
+        "lat": 48.9128,
+        "lon": 2.3886
       },
       "shipping": false,
       "publishedAt": "2026-11-16T08:00:00.000Z",
@@ -7024,14 +7309,11 @@
       "extensions": "inconnu",
       "condition": "tres-bon",
       "batch": 0,
-      "toVerify": [
-        "Lieu approximatif : distance calculée depuis le chef-lieu du département"
-      ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
       "score": 52,
       "zone": "Région parisienne",
-      "distanceKm": 8,
+      "distanceKm": 7,
       "scoreDetail": [
         {
           "label": "Prix",
@@ -7077,7 +7359,7 @@
         },
         {
           "label": "Distance",
-          "detail": "8 km de Paris, zone Région parisienne",
+          "detail": "7 km de Paris, zone Région parisienne",
           "points": 10,
           "max": 10
         },
@@ -10414,6 +10696,103 @@
       "rejection": "Groupe non retenu (105 mécanique)"
     },
     {
+      "id": "tv-4314520",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/giant-propel-taille-m-4314520",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/520/14520/4314520/4314520-giant-propel-taille-m-4314520-1794842988.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/520/14520/4314520/4314520-giant-propel-taille-m-4314520-1794842989.jpg",
+      "imageKind": "annonce",
+      "title": "Giant propel taille M",
+      "brand": "Giant",
+      "model": "propel",
+      "year": 0,
+      "type": "route",
+      "size": "M",
+      "price": 2750,
+      "description": "Giant propel sl Groupe sram force axs ,potence carbone, cintre carbone aéro, selle rail carbone Roues alu dt swiss 1600 Vendu avec chargeur et les 2 batteries de dérailleurs Facture d'origine : Non Retour : Non Référence de l'annonce : 4314520",
+      "city": "PLABENNEC (29860)",
+      "coords": {
+        "lat": 48.5012,
+        "lon": -4.4254
+      },
+      "shipping": false,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "sram-axs",
+      "aero": true,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "bon",
+      "batch": 0,
+      "toVerify": [
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 46,
+      "zone": null,
+      "distanceKm": 214,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "SRAM AXS",
+          "points": 3,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "214 km de Saint-Nazaire, hors zone",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Bon état, année non précisée",
+          "points": 4,
+          "max": 8
+        }
+      ],
+      "rejection": "Groupe non retenu (SRAM AXS)"
+    },
+    {
       "id": "lbc-3297832594",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3297832594",
@@ -10510,6 +10889,104 @@
         }
       ],
       "rejection": "Taille 54 incompatible"
+    },
+    {
+      "id": "tv-4307123",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/cube-aerium-c-68-slt-taille-m-low-sram-red-axs-prolongateurs-ascalon-4307123",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/123/7123/4307123/4307123-cube-aerium-c-68-slt-taille-m-low-sram-red-axs-prolongateurs-ascalon-4307123-1793717461.HEIC",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/123/7123/4307123/4307123-cube-aerium-c-68-slt-taille-m-low-sram-red-axs-prolongateurs-ascalon-4307123-1793717462.HEIC",
+      "imageKind": "annonce",
+      "title": "Cube Aerium C:68 SLT (Taille M / Low) - SRAM Red AXS - Prolongateurs Ascalon",
+      "brand": "Cube",
+      "model": "Aerium C:68 SLT ( / Low) - SRAM Red AXS - Prolongateurs Asca",
+      "year": 2021,
+      "type": "route",
+      "size": "M",
+      "price": 4000,
+      "description": "Vélo de triathlon haut de gamme Cube Aerium C:68 SLT (version Low), modèle 2021 en taille M. Le vélo est vendu complet dans sa configuration d'origine, avec des optimisations majeures pour le confort sur longue distance et la polyvalence. Ce cadre en taille M convient parfaitement pour un athlète mesurant entre 1m75 et 1m85 (je mesure 1m86 et ça me convient dans une configuration agressive). Le vélo a bénéficié de deux améliorations : • Remplacement des prolongateurs d’origine par des Aerocoach Ascalon. Ils apportent un gain aérodynamique net et un confort incomparable pour les formats L et Full Ironman grâce à leur forme enveloppante au niveau des repose-bras et des possibilités d'un réglage précis de la position (prix neuf 1.086€). • Transmission adaptée aux parcours vallonnés : Montage d'une cassette SRAM Force en 10-30 (au lieu de la 10-26 d'origine). Cette modification offre plus de souplesse et de polyvalence dans les bosses sans sacrifier l'étagement très serré sur le plat.",
+      "city": "Strasbourg (67000)",
+      "coords": {
+        "lat": 48.5691,
+        "lon": 7.7621
+      },
+      "shipping": true,
+      "publishedAt": "2026-11-03T15:51:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "sram-axs",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "kit",
+      "condition": "neuf",
+      "batch": 0,
+      "toVerify": [
+        "Matériau du cadre non précisé",
+        "Type de freins non précisé"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 44,
+      "zone": null,
+      "distanceKm": 398,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Entre l'idéal et le maximum de 4 500 €",
+          "points": 17.5,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "SRAM AXS",
+          "points": 3,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : kit tiers",
+          "points": 4,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "398 km de Paris, hors zone, livraison possible",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "État neuf, modèle 2021",
+          "points": 6,
+          "max": 8
+        }
+      ],
+      "rejection": "Groupe non retenu (SRAM AXS)"
     },
     {
       "id": "lbc-3310699996",
