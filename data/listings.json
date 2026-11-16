@@ -13,8 +13,8 @@
       "Saint-Nazaire et Loire-Atlantique (120 km autour de Saint-Nazaire)"
     ]
   },
-  "count": 104,
-  "retained": 24,
+  "count": 110,
+  "retained": 26,
   "listings": [
     {
       "id": "lbc-3309937771",
@@ -206,6 +206,197 @@
           "label": "État et âge",
           "detail": "État neuf, modèle 2026",
           "points": 8,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
+      "id": "tv-4314720",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/bmc-slr-01-4314720",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/720/14720/4314720/4314720-bmc-slr-01-4314720-1794861879.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/720/14720/4314720/4314720-bmc-slr-01-4314720-1794861880.jpg",
+      "imageKind": "annonce",
+      "title": "Bmc slr 01",
+      "brand": "BMC",
+      "model": "slr 01",
+      "year": 0,
+      "type": "route",
+      "size": "M",
+      "price": 2400,
+      "description": "BMC SLR 01 Team Machine: - Modèle : SLR 01 Team Machine - Taille du cadre : M (54) - Couleur : Gris-rouge - Taille des roues : 700c (28 pouces) - Transmission : Shimano Ultegra Di2 11v - Étrier Freins : Shimano Dura-Ace - Cintre aero BMC. - Pédalier Rotor aldhu Option roues carbones+700e Révisé et prêt à prendre la route. Facture d'origine : Non Retour : Non Référence de l'annonce : 4314720",
+      "city": "SOUMOULOU (64420)",
+      "shipping": true,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": true,
+      "powerMeter": false,
+      "wheelDepth": 54,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "toVerify": [
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 72,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 54 mm",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Aucune zone active, livraison possible",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, année non précisée",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
+      "id": "lbc-3287241477",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3287241477",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/5f/ca/fc/5fcafce33a965db7f64124faa201af818c1a12f8.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/bd/ef/af/bdefaf5c4e62207b3c45ac0b8e1871245d737b9c.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "Vélo de course route Giant Avanced Pro 0 DI2 ultegra électronique avec Powermeter Giant Power Pro freins à disque",
+      "brand": "Giant",
+      "model": "route Avanced Pro 0 DI2 ultegra électronique avec Powermeter",
+      "year": 0,
+      "type": "route",
+      "size": "M",
+      "price": 2200,
+      "description": "Je vends ce vélo de course Giant, idéal pour les sorties sur route.\n- Type de vélo : Vélo de course\n- Univers : Homme\n- Marque : Giant\n- Taille du cadre : M\n- Couleur : Bleu\n- Taille des roues : 28 pouces\nTrès bon état\nPrêt à prendre la route avec son nouveau propriétaire.",
+      "city": "Ris-Orangis",
+      "coords": {
+        "lat": 48.647,
+        "lon": 2.409
+      },
+      "shipping": false,
+      "publishedAt": "2026-10-12T18:18:08.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": true,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "toVerify": [
+        "Matériau du cadre non précisé",
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 71,
+      "zone": "Région parisienne",
+      "distanceKm": 24,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Inclus",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "24 km de Paris, zone Région parisienne",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, année non précisée",
+          "points": 5,
           "max": 8
         }
       ],
@@ -2635,6 +2826,104 @@
         }
       ],
       "rejection": "Type hors critères (Gravel)"
+    },
+    {
+      "id": "tv-4314679",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/wilier-cento-10-sl-4314679",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/679/14679/4314679/4314679-wilier-cento-10-sl-4314679-1794856497.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/679/14679/4314679/4314679-wilier-cento-10-sl-4314679-1794856498.jpg",
+      "imageKind": "annonce",
+      "title": "Wilier Cento 10 sl",
+      "brand": "Wilier",
+      "model": "Cento 10 sl",
+      "year": 2023,
+      "type": "route",
+      "size": "54",
+      "price": 2250,
+      "newPrice": 5000,
+      "description": "Je vends mon Wilier Cento 10 SL, acheté neuf en mai 2023. Premier propriétaire, vélo entretenu avec soin. factures d’achat sont disponibles. Acheter 4800 *Vélo vendu avec roue wilier 38 carbone Le vélo est en parfait état de fonctionnement et prêt à rouler. Équipement : Cadre Wilier Cento 10 SL carbone Taille 54 (M) Groupe Shimano Ultegra R8000 mécanique 11 vitesses cassette 11/28 plateau 52/36 Pédalier capteur de puissance Freins à disque hydrauliques À noter : quelques éclats de peinture et rayures liés à une utilisation normale, uniquement esthétique. Vélo performant, rigide et confortable, idéal pour les longues sorties comme pour la compétition. Facture d'origine : Oui Retour : Non Référence de l'annonce : 4314679",
+      "city": "Saint-gilles (35590)",
+      "coords": {
+        "lat": 48.1173,
+        "lon": -1.6778
+      },
+      "shipping": true,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra",
+      "aero": false,
+      "powerMeter": true,
+      "wheelDepth": 38,
+      "extensions": "inconnu",
+      "condition": "bon",
+      "batch": 0,
+      "toVerify": [
+        "Lieu approximatif : distance calculée depuis le chef-lieu du département"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 72,
+      "zone": "Saint-Nazaire et Loire-Atlantique",
+      "distanceKm": 102,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "55 % sous le prix neuf (5 000 €)",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra mécanique",
+          "points": 6,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Inclus",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 38 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "102 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique, livraison possible",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Bon état, modèle 2023",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": "Taille 54 incompatible"
     },
     {
       "id": "lbc-3276448598",
@@ -5933,6 +6222,192 @@
       "rejection": "Taille 53 incompatible"
     },
     {
+      "id": "tv-4314710",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/trek-emonda-sl6-pro-di2-2023-4314710",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/710/14710/4314710/4314710-trek-emonda-sl6-pro-di2-2023-4314710-1794859983.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/710/14710/4314710/4314710-trek-emonda-sl6-pro-di2-2023-4314710-1794859985.jpg",
+      "imageKind": "annonce",
+      "title": "Trek Emonda SL6 Pro Di2 (2023)",
+      "brand": "Trek",
+      "model": "Emonda SL6 Pro Di2 ( )",
+      "year": 2023,
+      "type": "route",
+      "size": "58",
+      "price": 2699,
+      "newPrice": 4000,
+      "description": "Bonjour, Vends Trek Emonda SL6 Pro Di2 (modèle 2023) en bon état : Acheté en 2024 (11.500 km) Couleur Quicksilver / Radioactive Red Taille 58 (je mesure 1m83) Cadre et roues carbone Bontrager 35 mm Transmission Shimano 105 Di2 Plateaux 50/36, cassette 11/34 Nettoyage et dégraissage hebdomadaire Révision annuelle par un vélociste Toutes les factures sont disponibles Chaîne : remplacée 08-2026 Roue arrière : remplacée 01-2026 Boîtier de pédalier : remplacé 01-2026 À vendre 2.699 EUR (prix neuf 4.000 EUR) Photos sur demande Vélo visible dans le Haut-Rhin, pas d’envoi Facture d'origine : Oui Retour : Non Référence de l'annonce : 4314710",
+      "city": "Durlinsdorf (68480)",
+      "shipping": false,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 35,
+      "extensions": "inconnu",
+      "condition": "bon",
+      "km": 11500,
+      "batch": 0,
+      "toVerify": [
+        "Matériau du cadre non précisé",
+        "Type de freins non précisé"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 55,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "33 % sous le prix neuf (4 000 €)",
+          "points": 7.3,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 35 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Aucune zone active",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Bon état, modèle 2023",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": "Taille 58 incompatible"
+    },
+    {
+      "id": "tv-4314667",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/specialized-tarmac-sl7-pro-4314667",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/667/14667/4314667/4314667-specialized-tarmac-sl7-pro-4314667-1794853784.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/667/14667/4314667/4314667-specialized-tarmac-sl7-pro-4314667-1794853786.jpg",
+      "imageKind": "annonce",
+      "title": "Specialized tarmac SL7 pro",
+      "brand": "Specialized",
+      "model": "tarmac SL7 pro",
+      "year": 2021,
+      "type": "route",
+      "size": "56",
+      "price": 3500,
+      "description": "Bonjour à tous, je me sépare de mon tarmac sl7 pro taille 56, de 2021 Voici les caractéristiques : Vélo en excellent état Groupe ultegra Di2 11 vitesses Roues roval alpinist CL montées en 11-34 Pneu continental GP 5000 avec TPU (non tubeless), en 28mm, très bon état Disques 160/140 Dura ace Potence 110 S-works, cintre rapide 420 mm Selle Sworks Romin mirror Guidoline neuve, embout des cocottes neuf Révision récente avec changement de chaine, changement du jeux de direction, changement des durites et purge des freins Vendu avec : Plateaux 50/34 (montés), 52/36, 52/39 Cassette 11/30 Ultegra Porte compteur (compatible Garmin) Porte radar garmin Porte bidon si besoin Disponible si besoin d'autres informations ! Sportivement, Facture d'origine : Non Retour : Non Référence de l'annonce : 4314667",
+      "city": "Lille (59800)",
+      "shipping": false,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 34,
+      "extensions": "inconnu",
+      "condition": "bon",
+      "batch": 0,
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 55,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 34 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Aucune zone active",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Bon état, modèle 2021",
+          "points": 4,
+          "max": 8
+        }
+      ],
+      "rejection": "Lieu inconnu ou trop éloigné, sans livraison"
+    },
+    {
       "id": "lbc-3311030776",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3311030776",
@@ -6517,6 +6992,103 @@
         }
       ],
       "rejection": "Groupe non retenu (105 mécanique)"
+    },
+    {
+      "id": "tv-4314660",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/kuota-kom-carbone-optimized-lateral-stiffness-tres-peu-kilometre-suite-a-un-accident-de-voiture-4314660",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/660/14660/4314660/4314660-kuota-kom-carbone-optimized-lateral-stiffness-tres-peu-kilometre-suite-a-un-accident-de-voiture-4314660-1794853139.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/660/14660/4314660/4314660-kuota-kom-carbone-optimized-lateral-stiffness-tres-peu-kilometre-suite-a-un-accident-de-voiture-4314660-1794853140.jpg",
+      "imageKind": "annonce",
+      "title": "Kuota kom carbone (optimized lateral stiffness) très peu kilométré suite à un accident de voiture",
+      "brand": "Kuota",
+      "model": "kom carbone (optimized lateral stiffness) très peu kilométré",
+      "year": 2024,
+      "type": "route",
+      "size": "M",
+      "price": 1700,
+      "description": "dérailleur AR- SRAM force neuf changé- vendu avec derailleur ex Shimano Durace neuf- chaine neuve-cassette 11x21 - fourche HSD- direction FSA- pédales Durace 7810- freins Shimano Durace - selle Rione carbone- tige de selle Kuota carbone- roues American Classic - cintre Steath pro -poignées SRAM force changées avec cables passés dans guidon (nouvelle configuration, vendu avec les anciennes poignées Durace sortie latérale - mis en nouvelle configuration 2024 Facture d'origine : Non Retour : Non Référence de l'annonce : 4314660",
+      "city": "AUBERVILLIERS (93300)",
+      "coords": {
+        "lat": 48.9077,
+        "lon": 2.4386
+      },
+      "shipping": false,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "patins",
+      "groupset": "sram-axs",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "toVerify": [
+        "Lieu approximatif : distance calculée depuis le chef-lieu du département"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 52,
+      "zone": "Région parisienne",
+      "distanceKm": 8,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "SRAM AXS",
+          "points": 3,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "8 km de Paris, zone Région parisienne",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2024",
+          "points": 6,
+          "max": 8
+        }
+      ],
+      "rejection": "Freins à patins"
     },
     {
       "id": "lbc-3310443992",

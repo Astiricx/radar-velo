@@ -2,6 +2,35 @@
 
 ## Lundi 16 novembre 2026
 
+- Crédit Apify consommé ce mois-ci avant la collecte : 0,74 $ sur 5,00 $.
+- Leboncoin : 60 annonces lues autour de Paris et de Saint-Nazaire (30 au plus par zone).
+- Troc-Vélo (navigateur Puppeteer Scraper d’Apify) : 30 annonces sur la liste, 5 fiches ouvertes. Tri de la liste : 0 déjà analysées, 13 hors budget, 11 d'une autre taille, 1 sans taille ni groupe cité, 5 à ouvrir.
+
+6 nouvelles annonces analysées : 2 pertinentes, 4 écartées.
+
+| Score | Annonce | Prix | Taille | Transmission | Zone | Lieu | Source |
+| ---: | --- | ---: | --- | --- | --- | --- | --- |
+| **72** | [Bmc slr 01](https://www.troc-velo.com/fr-fr/annonce/bmc-slr-01-4314720) | 2 400 € | M | Ultegra Di2 | Hors zone | SOUMOULOU (64420) | Troc-Vélo |
+| **71** | [Vélo de course route Giant Avanced Pro 0 DI2 ultegra électronique avec Powermeter Giant Power Pro freins à disque](https://www.leboncoin.fr/ad/velos/3287241477) | 2 200 € | M | Ultegra Di2, capteur | Région parisienne | Ris-Orangis (24 km de Paris) | Leboncoin |
+
+À vérifier avant de contacter le vendeur :
+
+- Bmc slr 01 : année non précisée
+- Vélo de course route Giant Avanced Pro 0 DI2 ultegra électronique avec Powermeter Giant Power Pro freins à disque : matériau du cadre non précisé ; année non précisée
+
+Écartées :
+
+- [Wilier Cento 10 sl](https://www.troc-velo.com/fr-fr/annonce/wilier-cento-10-sl-4314679), 2 250 € : Taille 54 incompatible
+- [Trek Emonda SL6 Pro Di2 (2023)](https://www.troc-velo.com/fr-fr/annonce/trek-emonda-sl6-pro-di2-2023-4314710), 2 699 € : Taille 58 incompatible
+- [Specialized tarmac SL7 pro](https://www.troc-velo.com/fr-fr/annonce/specialized-tarmac-sl7-pro-4314667), 3 500 € : Lieu inconnu ou trop éloigné, sans livraison
+- [Kuota kom carbone (optimized lateral stiffness) très peu kilométré suite à un accident de voiture](https://www.troc-velo.com/fr-fr/annonce/kuota-kom-carbone-optimized-lateral-stiffness-tres-peu-kilometre-suite-a-un-accident-de-voiture-4314660), 1 700 € : Freins à patins
+
+Avertissements :
+
+- Decathlon Occasion non lu. lecture directe (sans proxy) : lecture directe impossible (HTTP 403) ; Cheerio Scraper d’Apify (proxy Apify automatique) : page de liste non lue (bloquée ou injoignable) : https://www.decathlon.fr/occasion/velo-route-occasion?from=0&size=40. Journal Apify : Last Error Message: Error: Request blocked - received 403 status code. / INFO  CheerioCrawler: Error analysis: {"totalErrors":4,"uniqueErrors":1,"mostCommonErrors":["4x: Request blocked - received 403 status code. (/usr/src/app/node_modules/@crawlee/basic/internals/basic-crawler.js:954:19)"]}.
+
+## Lundi 16 novembre 2026
+
 - Crédit Apify consommé ce mois-ci avant la collecte : 0,66 $ sur 5,00 $.
 - Leboncoin : 60 annonces lues autour de Paris et de Saint-Nazaire (30 au plus par zone).
 - Troc-Vélo : appels JSON relevés sur la page de liste (piste d'API interne) : https://api.troc-velo.com/api/category_product_counters (200), https://collector.appconsent.io/hello (200), https://api.btloader.com/country?o=5094764668518400 (200), https://api.troc-velo.com/api/category_product_counters, https://www.troc-velo.com/fr-fr?_rsc=eOPycq5ES9Tk-Ef7.
