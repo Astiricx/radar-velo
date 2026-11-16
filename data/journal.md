@@ -2,6 +2,41 @@
 
 ## Lundi 16 novembre 2026
 
+- Crédit Apify consommé ce mois-ci avant la collecte : 2,06 $ sur 5,00 $.
+- Leboncoin : 60 annonces lues sur toute la France, les plus récentes (60 au plus).
+- buycycle : 120 annonces lues (route, carbone, disques, tailles M et L, 120 au plus).
+- Troc-Vélo : appels JSON relevés sur la page de liste (piste d'API interne) : https://api.troc-velo.com/api/category_product_counters (200), https://collector.appconsent.io/hello (200), https://api.btloader.com/country?o=5094764668518400 (200), https://api.troc-velo.com/api/category_product_counters, https://www.troc-velo.com/fr-fr?_rsc=eOPycq5ES9Tk-Ef7.
+- Troc-Vélo (navigateur Puppeteer Scraper d’Apify) : 54 annonces sur la liste (2 pages), 10 fiches ouvertes. Tri de la liste : 11 déjà analysées, 29 hors budget, 11 d'une autre taille, 2 sans taille ni groupe cité, 0 trop loin sans livraison, 1 à ouvrir (6 annonces « à la une » répétées d'une page à l'autre, comptées une fois). API de recherche : 300 annonces récentes lues, 25 déjà sur la page, 9 déjà analysées, 112 hors budget, 81 d'une autre taille, 30 sans groupe retenu cité, 43 candidates.
+- Decathlon Occasion (Cheerio Scraper d’Apify) : 42 annonces sur la liste, 0 fiche ouverte.
+
+11 nouvelles annonces analysées : 7 pertinentes, 4 écartées.
+
+| Score | Annonce | Prix | Taille | Transmission | Zone | Lieu | Source |
+| ---: | --- | ---: | --- | --- | --- | --- | --- |
+| **66** | [Scott foil 2023](https://www.troc-velo.com/fr-fr/annonce/scott-foil-2023-4314376) | 2 900 € | M | 105 Di2 | Hors zone | Grasse (06130) (677 km de Paris, livraison) | Troc-Vélo |
+| **65** | [Origine Axxome III GTR](https://www.troc-velo.com/fr-fr/annonce/origine-axxome-iii-gtr-4314561) | 2 890 € | M | Ultegra Di2 | Région parisienne | Rouvignies (59220) (182 km de Paris) | Troc-Vélo |
+| **65** | [Axxome III GTR](https://www.troc-velo.com/fr-fr/annonce/axxome-iii-gtr-4314554) | 2 990 € | M | Ultegra Di2 | Région parisienne | Rouvignies (59220) (182 km de Paris) | Troc-Vélo |
+| **65** | [CERVÉLO R3 CARBONE – 2021 – ULTEGRA DI2 – TAILLE 56](https://www.troc-velo.com/fr-fr/annonce/cervelo-r3-carbone-2021-ultegra-di2-taille-56-4313028) | 3 000 € | 56 | Ultegra Di2 | Hors zone | Venelles (13770) (633 km de Paris, livraison) | Troc-Vélo |
+| **59** | [Cannondale SuperSix Evo Gen4](https://www.troc-velo.com/fr-fr/annonce/cannondale-supersix-evo-gen4-4310107) | 2 700 € | 56 | 105 Di2 | Hors zone | Salles (33770) (321 km de Saint-Nazaire, livraison) | Troc-Vélo |
+| **58** | [Bianchi Specialissima PRO Ultegra Di2 2024](https://buycycle.com/fr-fr/product/specialissima-pro-ultegra-di2-2024-56218) | 3 998 € | 57 | Ultegra Di2 | Hors zone | Basse-Goulaine, France (livraison buycycle) | buycycle |
+| **51** | [PINARELLO Dogma F12 Di2 dura ace](https://www.troc-velo.com/fr-fr/annonce/pinarello-dogma-f12-di2-dura-ace-4314252) | 4 500 € | M | Dura-Ace Di2 | Hors zone | ALLAN (26780) (520 km de Paris, livraison) | Troc-Vélo |
+
+À vérifier avant de contacter le vendeur :
+
+- Origine Axxome III GTR : année non précisée
+- Axxome III GTR : année non précisée
+- Bianchi Specialissima PRO Ultegra Di2 2024 : frais de port buycycle à vérifier
+- PINARELLO Dogma F12 Di2 dura ace : année non précisée
+
+Écartées :
+
+- [Vélo de route Origine Axxome GTS, taille M, acheté neuf en mars 2025, en excellent état.](https://www.troc-velo.com/fr-fr/annonce/velo-de-route-origine-axxome-gts-taille-m-achete-neuf-en-mars-2025-en-excellent-etat-4313305), 1 890 € : Groupe non retenu (105 mécanique)
+- [Velo giant propel](https://www.troc-velo.com/fr-fr/annonce/velo-giant-propel-4314386), 1 500 € : Groupe non retenu (105 mécanique)
+- [Produit Reconditionne Scott Addict 50 Rose Velo De Route Bon Etat](https://www.troc-velo.com/fr-fr/annonce/produit-reconditionne-scott-addict-50-rose-velo-de-route-bon-etat3805942-4314202), 1 854 € : Groupe non retenu (105 mécanique)
+- [Produit Reconditionne Scott Addict Rc 15 Di2 11v Noir Velo De Route Tres Bon Etat](https://www.troc-velo.com/fr-fr/annonce/produit-reconditionne-scott-addict-rc-15-di2-11v-noir-velo-de-route-tres-bon-etat3805082-4314136), 3 170 € : Lieu inconnu ou trop éloigné, sans livraison
+
+## Lundi 16 novembre 2026
+
 - Crédit Apify consommé ce mois-ci avant la collecte : 1,96 $ sur 5,00 $.
 - Leboncoin : 60 annonces lues sur toute la France, les plus récentes (60 au plus).
 - buycycle : 120 annonces lues (route, carbone, disques, tailles M et L, 120 au plus).

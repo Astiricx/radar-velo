@@ -13,8 +13,8 @@
       "Saint-Nazaire et Loire-Atlantique (120 km autour de Saint-Nazaire)"
     ]
   },
-  "count": 767,
-  "retained": 206,
+  "count": 778,
+  "retained": 213,
   "listings": [
     {
       "id": "bc-78489",
@@ -7003,6 +7003,107 @@
       "rejection": null
     },
     {
+      "id": "tv-4314376",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/scott-foil-2023-4314376",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/376/14376/4314376/4314376-scott-foil-2023-4314376-1794827062.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/376/14376/4314376/4314376-scott-foil-2023-4314376-1794827063.jpg",
+      "imageKind": "annonce",
+      "title": "Scott foil 2023",
+      "brand": "Scott",
+      "model": "foil",
+      "year": 2023,
+      "type": "route",
+      "size": "M",
+      "price": 2900,
+      "description": "Scott foil 2023 -Très bon état. -Taille M. -Couleur bordeau pailletté sur le devant avec dégradé vers le gris sur la fin du cadre. -Sorti de révision. -Transmission shimano 105 di2 -Freinage shimano 105 -Plaques en 50-34 et cassette en 11-30. -Selle syncros. -Post de pilotage syncros avec support garmin integré. - roues d’entraînement syncros alu en 30mm - roues de course sonic wheels 50-58 ondulées, rayons plat carbone, moyeux céramique. Prix du vélo avec roues d’entraînement 2.900€ Prix du vélo avec les roues de compétitions 4.300€ Facture d'origine : Non Retour : Non Référence de l'annonce : 4314376",
+      "city": "Grasse (06130)",
+      "coords": {
+        "lat": 43.656,
+        "lon": 6.937
+      },
+      "shipping": true,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": true,
+      "powerMeter": false,
+      "wheelDepth": 30,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "firstSeen": "2026-11-16",
+      "priceHistory": [
+        {
+          "d": "2026-11-16",
+          "p": 2900
+        }
+      ],
+      "lastSeen": "2026-11-16",
+      "parser": 5,
+      "score": 66,
+      "zone": null,
+      "distanceKm": 677,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 30 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "677 km de Paris, hors zone, livraison possible",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2023",
+          "points": 6,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
       "id": "bc-99428",
       "source": "buycycle",
       "url": "https://buycycle.com/fr-fr/product/spark-evo-disc-ultegra-di2-2026-99428",
@@ -7895,6 +7996,317 @@
           "label": "État et âge",
           "detail": "Très bon état, modèle 2024",
           "points": 6,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
+      "id": "tv-4314561",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/origine-axxome-iii-gtr-4314561",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/561/14561/4314561/4314561-origine-axxome-iii-gtr-4314561-1794845855.jpeg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/561/14561/4314561/4314561-origine-axxome-iii-gtr-4314561-1794845857.jpeg",
+      "imageKind": "annonce",
+      "title": "Origine Axxome III GTR",
+      "brand": "Vélo de route",
+      "model": "Origine Axxome III GTR",
+      "year": 0,
+      "type": "route",
+      "size": "M",
+      "price": 2890,
+      "newPrice": 6890,
+      "description": "Origine Axxome III GTR Taille M Transmission Shimano Ultegra Di2 2x12 vitesses Pédalier 172,5mm 50-34 / Cassette 11-30 Roues Orion C35 Pro Combo R8 BLKTECH 400 / 100 mm Selle Italia SLR boost Superflow Vélo d'occasions Facture à votre nom Facture d'origine : Non Retour : Non Référence de l'annonce : 4314561",
+      "city": "Rouvignies (59220)",
+      "coords": {
+        "lat": 50.3348,
+        "lon": 3.4405
+      },
+      "shipping": false,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 35,
+      "extensions": "inconnu",
+      "condition": "bon",
+      "batch": 0,
+      "toVerify": [
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "priceHistory": [
+        {
+          "d": "2026-11-16",
+          "p": 2890
+        }
+      ],
+      "lastSeen": "2026-11-16",
+      "parser": 5,
+      "score": 65,
+      "zone": "Région parisienne",
+      "distanceKm": 182,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "58 % sous le prix neuf (6 890 €)",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 35 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "182 km de Paris, zone Région parisienne",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Bon état, année non précisée",
+          "points": 4,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
+      "id": "tv-4314554",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/axxome-iii-gtr-4314554",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/554/14554/4314554/4314554-axxome-iii-gtr-4314554-1794845381.jpeg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/554/14554/4314554/4314554-axxome-iii-gtr-4314554-1794845383.jpeg",
+      "imageKind": "annonce",
+      "title": "Axxome III GTR",
+      "brand": "Vélo de route",
+      "model": "Axxome III GTR",
+      "year": 0,
+      "type": "route",
+      "size": "M",
+      "price": 2990,
+      "newPrice": 6650,
+      "description": "Origine Axxome III GTR Taille M Transmission Shimano Ultegra Di2 2x12 vitesses Pédalier 175mm en 50-34 / Cassette 11-30 Roues Orion DC 35 Pro (roue avant dynamométrique) Pneus GP 5000 Tubeless Combo Prymahl Selle Italia SLR Boost Superflow Vélo d'occasions Facture à votre nom Facture d'origine : Non Retour : Non Référence de l'annonce : 4314554",
+      "city": "Rouvignies (59220)",
+      "coords": {
+        "lat": 50.3348,
+        "lon": 3.4405
+      },
+      "shipping": false,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 35,
+      "extensions": "inconnu",
+      "condition": "bon",
+      "batch": 0,
+      "toVerify": [
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "priceHistory": [
+        {
+          "d": "2026-11-16",
+          "p": 2990
+        }
+      ],
+      "lastSeen": "2026-11-16",
+      "parser": 5,
+      "score": 65,
+      "zone": "Région parisienne",
+      "distanceKm": 182,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "55 % sous le prix neuf (6 650 €)",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 35 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "182 km de Paris, zone Région parisienne",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Bon état, année non précisée",
+          "points": 4,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
+      "id": "tv-4313028",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/cervelo-r3-carbone-2021-ultegra-di2-taille-56-4313028",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/28/13028/4313028/4313028-cervelo-r3-carbone-2021-ultegra-di2-taille-56-4313028-1794650967.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/28/13028/4313028/4313028-cervelo-r3-carbone-2021-ultegra-di2-taille-56-4313028-1794650968.jpg",
+      "imageKind": "annonce",
+      "title": "CERVÉLO R3 CARBONE – 2021 – ULTEGRA DI2 – TAILLE 56",
+      "brand": "Cervélo",
+      "model": "R3 CARBONE – – ULTEGRA DI2",
+      "year": 2021,
+      "type": "route",
+      "size": "56",
+      "price": 3000,
+      "description": "Je vends mon Cervélo R3 de 2021, vélo de route haut de gamme, en très bon état général. Vélo soigneusement entretenu, facture d’achat disponible. Entretien effectué, prêt à rouler immédiatement, aucun frais à prévoir. Équipement : Cadre et fourche tout carbone Cervélo Taille 56 Transmission Shimano Ultegra Di2 Pédalier compact 50/34 Cassette 11/36 Freins à disque Roues carbone Prolongateurs pour une position aérodynamique Les atouts du vélo : Excellent rendement et très bon confort Polyvalent : idéal sur parcours plats, vallonnés et montagneux Transmission électronique précise et fiable Entretien suivi Facture disponible Vélo vendu prêt à rouler. Prix de vente : 2 790 € Vélo visible et essayable sur rendez-vous. Vente sérieuse, renseignements et photos supplémentaires sur demande. Facture d'origine : Oui Retour : Non Référence de l'annonce : 4313028",
+      "city": "Venelles (13770)",
+      "coords": {
+        "lat": 43.5951,
+        "lon": 5.4991
+      },
+      "shipping": true,
+      "publishedAt": "2026-11-14T11:09:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 40,
+      "extensions": "kit",
+      "condition": "tres-bon",
+      "batch": 0,
+      "firstSeen": "2026-11-16",
+      "priceHistory": [
+        {
+          "d": "2026-11-16",
+          "p": 3000
+        }
+      ],
+      "lastSeen": "2026-11-16",
+      "parser": 5,
+      "score": 65,
+      "zone": null,
+      "distanceKm": 633,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 40 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : kit tiers",
+          "points": 4,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "633 km de Paris, hors zone, livraison possible",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2021",
+          "points": 5,
           "max": 8
         }
       ],
@@ -14151,6 +14563,107 @@
       "rejection": null
     },
     {
+      "id": "tv-4310107",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/cannondale-supersix-evo-gen4-4310107",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/107/10107/4310107/4310107-cannondale-supersix-evo-gen4-4310107-1794159889.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/107/10107/4310107/4310107-cannondale-supersix-evo-gen4-4310107-1794159891.jpg",
+      "imageKind": "annonce",
+      "title": "Cannondale SuperSix Evo Gen4",
+      "brand": "Cannondale",
+      "model": "SuperSix Evo Gen4",
+      "year": 2023,
+      "type": "route",
+      "size": "56",
+      "price": 2700,
+      "description": "Je mets en vente mon Cannondale SuperSix EVO Génération 4, acheté en décembre 2023. Vélo carbone performant et polyvalent, idéal aussi bien pour les sorties sportives que pour les longues distances. Équipements : Cadre carbone Cannondale SuperSix EVO Gen 4 Transmission électronique Shimano 105 Di2 12 vitesses Cintre carbone Zipp SL Roues carbone Polygon WR4 Carbon Disc (neuves, jamais roulées) Selle Specialized Mimic Comp 143 mm Informations : Taille : 56 Achat : décembre 2023 Vélo toujours entretenu et en bon état général. Quelques traces d’utilisation normales. Facture d'origine : Oui Retour : Non Référence de l'annonce : 4310107",
+      "city": "Salles (33770)",
+      "coords": {
+        "lat": 44.536,
+        "lon": -0.8899
+      },
+      "shipping": true,
+      "publishedAt": "2026-11-08T18:44:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 40,
+      "extensions": "inconnu",
+      "condition": "bon",
+      "batch": 0,
+      "firstSeen": "2026-11-16",
+      "priceHistory": [
+        {
+          "d": "2026-11-16",
+          "p": 2700
+        }
+      ],
+      "lastSeen": "2026-11-16",
+      "parser": 5,
+      "score": 59,
+      "zone": null,
+      "distanceKm": 321,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 40 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "321 km de Saint-Nazaire, hors zone, livraison possible",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Bon état, modèle 2023",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
       "id": "bc-80698",
       "source": "buycycle",
       "url": "https://buycycle.com/fr-fr/product/pressure-ultegra-di2-2023-80698",
@@ -15866,6 +16379,107 @@
         {
           "label": "État et âge",
           "detail": "Bon état, modèle 2025",
+          "points": 6,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
+      "id": "bc-56218",
+      "source": "buycycle",
+      "url": "https://buycycle.com/fr-fr/product/specialissima-pro-ultegra-di2-2024-56218",
+      "image": "https://d1mgeijqpfaspl.cloudfront.net/uploads/bike/media/2877381/0f109641-9cf5-4068-9a42-8cdbb11af851.webp",
+      "fallbackImage": "https://d1mgeijqpfaspl.cloudfront.net/uploads/bike/media/2877381/9b1ca07b-922d-4782-aeb0-01b7bde54ba6.webp",
+      "imageKind": "annonce",
+      "title": "Bianchi Specialissima PRO Ultegra Di2 2024",
+      "brand": "Bianchi",
+      "model": "Specialissima PRO Ultegra Di2",
+      "year": 2024,
+      "type": "route",
+      "size": "57",
+      "price": 3998,
+      "newPrice": 7849,
+      "description": "Prix vendeur 3900 €, 3998 € avec la protection acheteur buycycle (hors frais de port).",
+      "city": "Basse-Goulaine, France (livraison buycycle)",
+      "shipping": true,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "toVerify": [
+        "Frais de port buycycle à vérifier"
+      ],
+      "firstSeen": "2026-11-16",
+      "priceHistory": [
+        {
+          "d": "2026-11-16",
+          "p": 3998
+        }
+      ],
+      "lastSeen": "2026-11-16",
+      "parser": 5,
+      "score": 58,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Entre l'idéal et le maximum de 4 500 €",
+          "points": 17.5,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "49 % sous le prix neuf (7 849 €)",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Aucune zone active, livraison possible",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2024",
           "points": 6,
           "max": 8
         }
@@ -19317,6 +19931,112 @@
         {
           "label": "Distance",
           "detail": "204 km de Paris, zone Région parisienne, livraison possible",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, année non précisée",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
+      "id": "tv-4314252",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/pinarello-dogma-f12-di2-dura-ace-4314252",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/252/14252/4314252/4314252-pinarello-dogma-f12-di2-dura-ace-4314252-1794813505.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/252/14252/4314252/4314252-pinarello-dogma-f12-di2-dura-ace-4314252-1794813506.jpg",
+      "imageKind": "annonce",
+      "title": "PINARELLO Dogma F12 Di2 dura ace",
+      "brand": "Pinarello",
+      "model": "Dogma F12 Di2 dura ace",
+      "year": 0,
+      "type": "route",
+      "size": "M",
+      "price": 4500,
+      "newPrice": 13800,
+      "description": "Magnifique Pinarello Dogma F12 TailleM Di 2 dura ace Très peu roulé (environ 1500kms) Pneu Pirelli Pzero encore d'origine ! Full carbone Poids 6.7kg Je le vends, car je m'en sert quasiment pas, je roule principalement en vtt. Facture d'origine : Non Retour : Non Référence de l'annonce : 4314252",
+      "city": "ALLAN (26780)",
+      "coords": {
+        "lat": 44.4968,
+        "lon": 4.8036
+      },
+      "shipping": true,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "dura-ace-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "km": 1500,
+      "batch": 0,
+      "toVerify": [
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "priceHistory": [
+        {
+          "d": "2026-11-16",
+          "p": 4500
+        }
+      ],
+      "lastSeen": "2026-11-16",
+      "parser": 5,
+      "score": 51,
+      "zone": null,
+      "distanceKm": 520,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Entre l'idéal et le maximum de 4 500 €",
+          "points": 10,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "67 % sous le prix neuf (13 800 €)",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Dura-Ace Di2",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "520 km de Paris, hors zone, livraison possible",
           "points": 7,
           "max": 10
         },
@@ -24354,6 +25074,110 @@
         }
       ],
       "rejection": "Taille 53 incompatible"
+    },
+    {
+      "id": "tv-4314136",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/produit-reconditionne-scott-addict-rc-15-di2-11v-noir-velo-de-route-tres-bon-etat3805082-4314136",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/136/14136/4314136/marketplace_6afa65d54675b4.90728027.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/136/14136/4314136/marketplace_6afa65d57b2642.20351932.jpg",
+      "imageKind": "annonce",
+      "title": "Produit Reconditionne Scott Addict Rc 15 Di2 11v Noir Velo De Route Tres Bon Etat",
+      "brand": "Scott",
+      "model": "Produit Reconditionne Addict Rc 15 Di2 11v Noir Tres Bon Eta",
+      "year": 0,
+      "type": "route",
+      "size": "56",
+      "price": 3170,
+      "newPrice": 6500,
+      "description": "Introduction Velo de route velo reconditionne taille 56 cm 178 187 cm avec un cadre en carbone et transmission shimano ultegra electronique 11v les images de ce velo sont reelles et specifiques ce ne sont pas des photographies de catalogue État esthétique Velo d occasion en tres bon etat il peut presenter les marques habituelles d utilisation telles que des rayures ou de petites eraflures pas de rayures importantes ni de signes de chocs ou de chutes pedales non incluses Garantie Avec facture precisant 1 an de garantie Détails Taille 56 cm 178 187 cm Cadre Carbone Taille de roue 700 Materiau des roues Roues Carbone Transmission Shimano ultegra electronique 11v Type de transmission Shimano ultegra electronique Capteur de puissance Non Vitesses 11 Cassette 11 30 t Manettes Shimano ultegra electronique Manivelles Rotor vegast Plateaux 52 36 t Freins Shimano ultegra Type de freins Disque Roues Zipp 303 s Materiau de la potence Aluminium Guidon Aluminium Tige Carbone Plus d'informations Sur le velole scott addict rc 15 est un velo de route a freins a disque concu pour les cyclistes recherchant performance et legerete son cadre en carbone taille 56 offre rigidite et confort tandis que la transmission electronique shimano ultegra electronique a 11 vitesses assure des changements precis et rapides equipe de roues zipp 303 s et de freins a disque shimano ultegra ce velo allie aerodynamisme et controle sur toutes les routes parfait pour ceux qui veulent une machine fiable et efficace p…",
+      "city": "Terrassa, Barcelone (08227)",
+      "shipping": false,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": false,
+      "powerMeter": true,
+      "wheelDepth": 42,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "toVerify": [
+        "Code postal inconnu en France : lieu à vérifier",
+        "Gamme du groupe Di2 non précisée (105, Ultegra ou Dura-Ace)",
+        "Taille à confirmer : S déclarée, 56 dans la description",
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "priceHistory": [
+        {
+          "d": "2026-11-16",
+          "p": 3170
+        }
+      ],
+      "lastSeen": "2026-11-16",
+      "parser": 5,
+      "score": 68,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "51 % sous le prix neuf (6 500 €)",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Inclus",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 42 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Aucune zone active",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, année non précisée",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": "Lieu inconnu ou trop éloigné, sans livraison"
     },
     {
       "id": "bc-48248",
@@ -36577,6 +37401,108 @@
       "rejection": "Taille 54 incompatible"
     },
     {
+      "id": "tv-4314386",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/velo-giant-propel-4314386",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/386/14386/4314386/4314386-velo-giant-propel-4314386-1794828290.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/386/14386/4314386/4314386-velo-giant-propel-4314386-1794828318.jpg",
+      "imageKind": "annonce",
+      "title": "Velo giant propel",
+      "brand": "Giant",
+      "model": "propel",
+      "year": 0,
+      "type": "route",
+      "size": "M/L",
+      "price": 1500,
+      "newPrice": 3000,
+      "description": "Vélo giant aero propel taille M/L carbone 11 vitesses 52x36 - 11x34 shimano 105 - roues alu Facture d'origine : Oui Retour : Non Référence de l'annonce : 4314386",
+      "city": "VOROUX-LEZ-LIERS (4451), hors de France métropolitaine",
+      "shipping": true,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105",
+      "aero": true,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "bon",
+      "batch": 0,
+      "toVerify": [
+        "Annonce hors de France métropolitaine : vérifier la livraison et les frais",
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "priceHistory": [
+        {
+          "d": "2026-11-16",
+          "p": 1500
+        }
+      ],
+      "lastSeen": "2026-11-16",
+      "parser": 5,
+      "score": 59,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "50 % sous le prix neuf (3 000 €)",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 mécanique",
+          "points": 3,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Aucune zone active, livraison possible",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Bon état, année non précisée",
+          "points": 4,
+          "max": 8
+        }
+      ],
+      "rejection": "Groupe non retenu (105 mécanique)"
+    },
+    {
       "id": "bc-63249",
       "source": "buycycle",
       "url": "https://buycycle.com/fr-fr/product/vbr177-63249",
@@ -38393,6 +39319,109 @@
         }
       ],
       "rejection": "Groupe non retenu (Autre groupe)"
+    },
+    {
+      "id": "tv-4313305",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/velo-de-route-origine-axxome-gts-taille-m-achete-neuf-en-mars-2025-en-excellent-etat-4313305",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/305/13305/4313305/4313305-velo-de-route-origine-axxome-gts-taille-m-achete-neuf-en-mars-2025-en-excellent-etat-4313305-1794674087.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/305/13305/4313305/4313305-velo-de-route-origine-axxome-gts-taille-m-achete-neuf-en-mars-2025-en-excellent-etat-4313305-1794674088.jpeg",
+      "imageKind": "annonce",
+      "title": "Vélo de route Origine Axxome GTS, taille M, acheté neuf en mars 2025, en excellent état.",
+      "brand": "Vélo de route",
+      "model": "Origine Axxome GTS, , acheté neuf en mars , en excellent éta",
+      "year": 2025,
+      "type": "route",
+      "size": "M",
+      "price": 1890,
+      "newPrice": 2700,
+      "description": "Vélo carbone performant, rigide et confortable, idéal pour le cyclisme sur route, les cyclosportives et le triathlon. Environ 2 500 km parcourus, vélo parfaitement entretenu. CARACTÉRISTIQUES TECHNIQUES Marque : Origine Modèle : Axxome GTS Taille : M – Convient à un cycliste mesurant environ 1,70 m à 1,78 m Cadre : carbone Origine Axxome GTS Fourche : carbone Origine Axxome III Disc Coloris : Rouge Flamme, finition satinée Transmission : Shimano 105 R7100 mécanique, 12 vitesses Pédalier : Shimano 105 R7100, 50/34, manivelles 172,5 mm Cassette : Shimano 105 R7100, 11-34 Freins : Shimano 105 hydrauliques à disques Disques : Shimano RT54, 160 mm avant et arrière Roues vendues : Prymahl Orion A30 R Disc, roues d'origine Pneus : Hutchinson Blackbird Racing Lab, 28 mm Chambres à air : TPU, légères et performantes Potence : TKN TK-278A, 90 mm ou 100mm selon la taille Cintre : Ritchey Road Curve Comp, 420 mm Tige de selle : Ritchey Monobloc 27,2 mm, 350 mm Selle : Selle Italia X3 Flow Boost Ruban de cintre : Velox High Grip Porte-bidons : 2 Elite Cannibal XC latéraux LES POINTS FORTS Cadre carbone performant et confortable Transmission Shimano 105 12 vitesses Freinage hydraulique à disques Pneus Hutchinson Blackbird 28 mm avec chambres à air TPU Vélo polyvalent pour entraînement et compétition Faible kilométrage : environ 2 500 km Excellent état général Facture d'achat disponible IMPORTANT Le vélo est vendu avec ses roues d'origine Prymahl Orion A30 R Disc et pas les roues Prymahl C…",
+      "city": "BLAIN (44130)",
+      "coords": {
+        "lat": 47.4562,
+        "lon": -1.7817
+      },
+      "shipping": true,
+      "publishedAt": "2026-11-14T17:34:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 30,
+      "extensions": "inconnu",
+      "condition": "bon",
+      "km": 2500,
+      "batch": 0,
+      "firstSeen": "2026-11-16",
+      "priceHistory": [
+        {
+          "d": "2026-11-16",
+          "p": 1890
+        }
+      ],
+      "lastSeen": "2026-11-16",
+      "parser": 5,
+      "score": 58,
+      "zone": "Saint-Nazaire et Loire-Atlantique",
+      "distanceKm": 38,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "30 % sous le prix neuf (2 700 €)",
+          "points": 6.7,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 mécanique",
+          "points": 3,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 30 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "38 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique, livraison possible",
+          "points": 8,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Bon état, modèle 2025",
+          "points": 6,
+          "max": 8
+        }
+      ],
+      "rejection": "Groupe non retenu (105 mécanique)"
     },
     {
       "id": "bc-69694",
@@ -47073,6 +48102,109 @@
         }
       ],
       "rejection": "Taille 53 incompatible"
+    },
+    {
+      "id": "tv-4314202",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/produit-reconditionne-scott-addict-50-rose-velo-de-route-bon-etat3805942-4314202",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/202/14202/4314202/marketplace_6afa69ee032b85.01307768.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/202/14202/4314202/marketplace_6afa69ee378a91.27132457.jpg",
+      "imageKind": "annonce",
+      "title": "Produit Reconditionne Scott Addict 50 Rose Velo De Route Bon Etat",
+      "brand": "Scott",
+      "model": "Produit Reconditionne Addict 50 Rose Bon Etat",
+      "year": 0,
+      "type": "route",
+      "size": "56",
+      "price": 1854,
+      "newPrice": 2800,
+      "description": "Introduction Velo de route velo reconditionne taille 56 cm 178 187 cm avec un cadre en carbone et transmission shimano 105 12v les images de ce velo sont reelles et specifiques ce ne sont pas des photographies de catalogue État esthétique Velo d occasion en bon etat il peut presenter les marques habituelles d utilisation telles que des rayures ou de petites eraflures pas de rayures importantes ni de signes de chocs ou de chutes pedales non incluses Détails Taille 56 cm 178 187 cm Cadre Carbone Taille de roue 700 Materiau des roues Roues Aluminium Transmission Shimano 105 12v Type de transmission Shimano 105 Capteur de puissance Non Vitesses 12 Cassette 11 34 t Manettes Shimano 105 Manivelles Shimano 105 Plateaux 50 34 t Freins Shimano 105 Type de freins Disque Roues Syncros rp 2 0 disc Materiau de la potence Aluminium Guidon Aluminium Tige Carbone Plus d'informations Sur le velole scott addict 50 est un velo de route a disque concu pour les cyclistes recherchant performance et legerete son cadre en carbone taille 56 offre une excellente rigidite et confort tandis que le groupe shimano 105 a 12 vitesses assure des changements precis et fiables equipe de roues syncros rp 2 0 disc et freins a disque shimano 105 ce velo offre un controle exceptionnel en toutes conditions ideal pour ceux qui veulent une machine agile et efficace pour les parcours exigeants nous examinons chaque velo en detailnous verifions l integrite structurelle du cadre et des roues nous verifions le fonctionn…",
+      "city": "Terrassa, Barcelone (08227)",
+      "shipping": false,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105",
+      "aero": false,
+      "powerMeter": true,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "toVerify": [
+        "Code postal inconnu en France : lieu à vérifier",
+        "Taille à confirmer : L déclarée, 56 dans la description",
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "priceHistory": [
+        {
+          "d": "2026-11-16",
+          "p": 1854
+        }
+      ],
+      "lastSeen": "2026-11-16",
+      "parser": 5,
+      "score": 55,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "34 % sous le prix neuf (2 800 €)",
+          "points": 7.6,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 mécanique",
+          "points": 3,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Inclus",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Aucune zone active",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, année non précisée",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": "Groupe non retenu (105 mécanique)"
     },
     {
       "id": "bc-15486",
