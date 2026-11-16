@@ -6,9 +6,9 @@ Ces fichiers sont mis à jour chaque jour par la GitHub Action
 | Fichier         | Contenu                                                                 |
 | --------------- | ----------------------------------------------------------------------- |
 | `journal.md`    | Une entrée par jour : annonces pertinentes (avec score), écartées et pourquoi |
-| `listings.json` | Toutes les annonces retenues depuis le début, de la meilleure à la moins bonne |
+| `listings.json` | Vraies annonces retenues (lien direct), de la meilleure à la moins bonne ; lu par le site. Une annonce disparaît 45 jours après avoir été vue pour la dernière fois |
 | `state.json`    | Identifiants déjà analysés, pour ne jamais traiter deux fois la même annonce |
-| `inbox.json`    | Annonces réelles à analyser, à remplir à la main ou par un autre outil   |
+| `inbox.json`    | Annonces réelles à ajouter à la main, en plus de la collecte Apify       |
 
 ## Ajouter une vraie annonce dans `inbox.json`
 
@@ -47,6 +47,9 @@ Le fichier contient une liste. Exemple d'entrée :
 - `source` : `leboncoin`, `troc-velo` ou `decathlon`.
 - `groupset` : `dura-ace-di2`, `ultegra-di2`, `105-di2`, `ultegra`, `105`,
   `sram-axs`, `grx` ou `autre`.
-- `city` doit figurer dans `src/data/cities.ts`, sinon la distance est inconnue.
+- `url` doit être le lien de l'annonce elle-même (`…/ad/velos/123…`) : un lien
+  de recherche est refusé.
+- `city` doit figurer dans `src/data/cities.ts`, sinon la distance est inconnue
+  (ou ajoute `"coords": { "lat": 48.85, "lon": 2.35 }`).
 - Une entrée déjà analysée (même `id`) n'est jamais retraitée : inutile de
   vider le fichier.

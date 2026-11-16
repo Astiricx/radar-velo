@@ -3,26 +3,16 @@ import type { SourceId } from '../types'
 export interface SourceMeta {
   id: SourceId
   label: string
-  /** Page de recherche de la plateforme pour un modèle donné. */
-  searchUrl: (query: string) => string
 }
 
+/**
+ * Plateformes suivies. L'application n'ouvre jamais de page de recherche : seulement
+ * le lien direct d'une annonce (voir lib/links.ts).
+ */
 export const SOURCES: Record<SourceId, SourceMeta> = {
-  leboncoin: {
-    id: 'leboncoin',
-    label: 'Leboncoin',
-    searchUrl: (q) => `https://www.leboncoin.fr/recherche?text=${encodeURIComponent(q)}`,
-  },
-  'troc-velo': {
-    id: 'troc-velo',
-    label: 'Troc-Vélo',
-    searchUrl: () => 'https://www.troc-velo.com/fr-fr/categorie/velos-complets/route',
-  },
-  decathlon: {
-    id: 'decathlon',
-    label: 'Decathlon Occasion',
-    searchUrl: (q) => `https://www.decathlon.fr/search?Ntt=${encodeURIComponent(`${q} occasion`)}`,
-  },
+  leboncoin: { id: 'leboncoin', label: 'Leboncoin' },
+  'troc-velo': { id: 'troc-velo', label: 'Troc-Vélo' },
+  decathlon: { id: 'decathlon', label: 'Decathlon Occasion' },
 }
 
 export const SOURCE_LIST = Object.values(SOURCES)

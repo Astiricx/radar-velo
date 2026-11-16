@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { srcSet, unsplashUrl } from '../data/photos'
+import { yearLabel } from '../lib/format'
 import type { Listing } from '../types'
 
 interface Props {
@@ -87,7 +88,7 @@ function BrandPlate({ listing: l, compact }: { listing: Listing; compact: boolea
       <span className="line-clamp-2 max-w-[90%] text-sm font-medium leading-snug text-white/75">{l.model}</span>
       <span className="mt-2 h-px w-10 bg-white/35" />
       <span className="tnum text-xs text-white/60">
-        {l.year}, taille {l.size}
+        {yearLabel(l.year)}, taille {l.size}
       </span>
     </div>
   )

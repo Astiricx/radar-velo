@@ -1,4 +1,4 @@
-# Veille quotidienne : analyse les nouvelles annonces et enregistre les résultats dans data/.
+# Veille quotidienne : collecte les annonces (Apify), les analyse, enregistre data/ et republie le site.
 name: Veille quotidienne
 
 on:
@@ -10,12 +10,14 @@ on:
   workflow_dispatch:
     inputs:
       simulation:
-        description: Ajouter les annonces simulées du jour
+        description: Ajouter des annonces inventées (test, jamais publiées sur le site)
         type: boolean
-        default: true
+        default: false
 
 permissions:
   contents: write
+  # Pour relancer la publication du site après la veille.
+  actions: write
 
 concurrency:
   group: veille-quotidienne
@@ -24,7 +26,7 @@ concurrency:
 jobs:
   analyse:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -35,18 +37,25 @@ jobs:
       - name: Installer les dépendances
         run: if [ -f package-lock.json ]; then npm ci; else npm install --no-audit --no-fund; fi
 
-      - name: Analyser les nouvelles annonces
+      - name: Collecter et analyser les nouvelles annonces
         id: veille
         run: npm run daily-check
         env:
-          # Lancement manuel : la case « simulation ». Exécution planifiée : la variable
-          # de dépôt VEILLE_SIMULATION (Settings → Secrets and variables → Actions → Variables),
-          # « true » si elle n'existe pas.
-          VEILLE_SIMULATION: ${{ github.event_name == 'workflow_dispatch' && format('{0}', inputs.simulation) || vars.VEILLE_SIMULATION || 'true' }}
+          # Clé d'API Apify : secret de dépôt APIFY_TOKEN. Sans elle, la collecte est sautée.
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          # Réglages facultatifs (variables de dépôt), valeurs par défaut dans scripts/apify/config.ts.
+          APIFY_BUDGET_USD: ${{ vars.APIFY_BUDGET_USD }}
+          APIFY_MAX_ITEMS: ${{ vars.APIFY_MAX_ITEMS }}
+          APIFY_LEBONCOIN_ACTOR: ${{ vars.APIFY_LEBONCOIN_ACTOR }}
+          TROCVELO_ENABLED: ${{ vars.TROCVELO_ENABLED }}
+          TROCVELO_SEARCH_URL: ${{ vars.TROCVELO_SEARCH_URL }}
+          TROCVELO_MAX_ITEMS: ${{ vars.TROCVELO_MAX_ITEMS }}
+          VEILLE_SIMULATION: ${{ github.event_name == 'workflow_dispatch' && format('{0}', inputs.simulation) || vars.VEILLE_SIMULATION || 'false' }}
 
       - name: Enregistrer les résultats sur main
+        id: commit
         # Mettre la variable de dépôt COMMIT_RESULTS à « false » pour une simple exécution de contrôle.
-        if: steps.veille.outputs.analysed != '0' && vars.COMMIT_RESULTS != 'false'
+        if: vars.COMMIT_RESULTS != 'false'
         env:
           MESSAGE: ${{ steps.veille.outputs.commit_message }}
         run: |
@@ -60,3 +69,12 @@ jobs:
           git commit -m "$MESSAGE"
           git pull --rebase origin main
           git push origin HEAD:main
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      # Un commit fait par l'Action ne relance pas les autres workflows : on demande
+      # explicitement la republication du site pour qu'il affiche les nouvelles annonces.
+      - name: Republier le site
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main --repo "$GITHUB_REPOSITORY"

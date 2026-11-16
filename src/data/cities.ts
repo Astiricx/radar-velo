@@ -58,10 +58,13 @@ export const CITIES: Record<string, City> = {
 
 export const CITY_NAMES = Object.keys(CITIES).sort((a, b) => a.localeCompare(b, 'fr'))
 
-/** Distance à vol d'oiseau entre deux villes, en km (formule de haversine). */
+/** Distance à vol d'oiseau entre deux villes connues, en km. */
 export function distanceKm(from: string, to: string): number {
-  const a = CITIES[from]
-  const b = CITIES[to]
+  return distanceBetween(CITIES[from], CITIES[to])
+}
+
+/** Distance à vol d'oiseau entre deux points, en km (formule de haversine). */
+export function distanceBetween(a: City | undefined, b: City | undefined): number {
   if (!a || !b) return Number.POSITIVE_INFINITY
   const rad = (deg: number) => (deg * Math.PI) / 180
   const dLat = rad(b.lat - a.lat)

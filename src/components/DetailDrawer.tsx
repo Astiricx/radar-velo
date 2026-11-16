@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { SOURCES } from '../data/sources'
 import { CONDITION_LABELS, TYPE_LABELS } from '../lib/criteria'
 import { discountPct, distanceLabel, eur, relativeDay, shortDate } from '../lib/format'
+import { directUrl } from '../lib/links'
 import type { Criteria, Row, Status, Tracking } from '../types'
 import { AttributeChips } from './AttributeChips'
 import { BikeThumb } from './BikeThumb'
@@ -24,6 +25,7 @@ export function DetailDrawer({ row, criteria, onClose, onStatus, onPatch, onDele
   const { listing: l, score, zone, tracking: t, rejection } = row
   const discount = discountPct(l.price, l.newPrice)
   const patch = (p: Partial<Tracking>) => onPatch(l.id, p)
+  const href = directUrl(l)
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose()
@@ -34,7 +36,7 @@ export function DetailDrawer({ row, criteria, onClose, onStatus, onPatch, onDele
   const facts: [string, string][] = [
     ['Type', TYPE_LABELS[l.type]],
     ['Taille', l.size],
-    ['Année', String(l.year)],
+    ['Année', l.year > 0 ? String(l.year) : 'Non précisée'],
     ['État', CONDITION_LABELS[l.condition]],
     ['Kilométrage', l.km ? `${l.km.toLocaleString('fr-FR')} km` : 'Non précisé'],
     ['Cadre', `${l.frame}, freins à ${l.brakes}`],
@@ -71,9 +73,15 @@ export function DetailDrawer({ row, criteria, onClose, onStatus, onPatch, onDele
 
           <div className="flex flex-wrap items-center gap-3">
             <StatusSelect id="drawer-status" value={t.status} onChange={(s) => onStatus(l.id, s)} className="py-1.5 text-sm" />
-            <a href={l.url} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-              Voir sur {SOURCES[l.source].label} <ExternalLink size={15} aria-hidden />
-            </a>
+            {href ? (
+              <a href={href} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                Voir l'annonce sur {SOURCES[l.source].label} <ExternalLink size={15} aria-hidden />
+              </a>
+            ) : (
+              <span className="text-sm text-muted">
+                {l.demo ? "Annonce de démonstration inventée : il n'y a pas d'annonce à ouvrir." : "Pas de lien direct vers l'annonce."}
+              </span>
+            )}
           </div>
 
           <section className="flex flex-col gap-3">
@@ -81,7 +89,17 @@ export function DetailDrawer({ row, criteria, onClose, onStatus, onPatch, onDele
               <ZoneBadge zone={zone} criteria={criteria} shipping={l.shipping} />
             </div>
             <AttributeChips listing={l} />
-            <p className="max-w-prose text-sm leading-relaxed">{l.description}</p>
+            {l.toVerify && l.toVerify.length > 0 && (
+              <div className="rounded-md bg-warn-soft px-3 py-2 text-sm text-warn">
+                <p className="font-medium">À vérifier auprès du vendeur</p>
+                <ul className="mt-1 list-disc pl-5">
+                  {l.toVerify.map((v) => (
+                    <li key={v}>{v}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            <p className="max-w-prose whitespace-pre-line text-sm leading-relaxed">{l.description}</p>
             <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
               {facts.map(([label, value]) => (
                 <div key={label}>

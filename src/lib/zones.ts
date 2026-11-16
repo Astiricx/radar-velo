@@ -1,12 +1,14 @@
-import { distanceKm } from '../data/cities'
+import { CITIES, distanceBetween } from '../data/cities'
 import type { Listing, Zone, ZoneMatch } from '../types'
 
 /** Trouve la zone active la plus proche d'une annonce et dit si l'annonce est dans son rayon. */
 export function matchZone(listing: Listing, zones: Zone[]): ZoneMatch {
   let best: ZoneMatch = { nearest: null, distance: Number.POSITIVE_INFINITY, inside: false }
+  // Coordonnées exactes de l'annonce si la plateforme les donne, sinon celles de la ville.
+  const where = listing.coords ?? CITIES[listing.city]
   for (const zone of zones) {
     if (!zone.enabled) continue
-    const distance = distanceKm(zone.center, listing.city)
+    const distance = distanceBetween(CITIES[zone.center], where)
     const inside = distance <= zone.radiusKm
     // Une zone qui contient l'annonce passe avant une zone plus proche qui ne la contient pas.
     const better = (inside && !best.inside) || (inside === best.inside && distance < best.distance)

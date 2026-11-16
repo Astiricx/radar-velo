@@ -93,44 +93,72 @@ Importe le dépôt, garde les réglages détectés pour Vite (build `npm run bui
 dossier `dist`). Aucune variable d'environnement n'est nécessaire : sans
 `BASE_PATH`, le site est servi à la racine.
 
-## Veille quotidienne automatique (GitHub Actions)
+## Veille quotidienne automatique (GitHub Actions + Apify)
 
 Tous les jours à 8 h UTC (9 h à Paris en hiver, 10 h en été), le workflow
 `.github/workflows/daily-analysis.yml` lance `scripts/daily-check.ts` :
 
-1. il rassemble les annonces du jour : celles déposées dans `data/inbox.json`
-   et, tant que la simulation est active, quelques annonces simulées dans tes
-   deux zones ;
+1. il collecte les annonces récentes sur **Leboncoin** et **Troc-Vélo** via
+   Apify (voir plus bas), plus celles déposées dans `data/inbox.json` ;
 2. il ignore celles déjà analysées (`data/state.json`) ;
-3. il applique **le même filtre strict et le même score que l'application**
+3. il lit dans le titre et la description le groupe, le cadre, les freins, la
+   taille, l'année, les roues et le capteur de puissance. Ce que l'annonce ne
+   précise pas est supposé et marqué **« À vérifier »** ;
+4. il applique **le même filtre strict et le même score que l'application**
    (`src/lib`) : carbone, disques, taille M / 56 / 57, budget maximum 4 500 €,
    région parisienne ou Saint-Nazaire / Loire-Atlantique, ou livraison ;
-4. il met à jour `data/journal.md` (une entrée par jour, avec les annonces
-   pertinentes, leur score et les écartées) et `data/listings.json` ;
-5. s'il a analysé de nouvelles annonces, il commite `data/` sur `main`.
+5. il met à jour `data/journal.md` et `data/listings.json` (vraies annonces
+   retenues, avec leur **lien direct**), commite `data/` sur `main`, puis
+   relance la publication du site, qui affiche ces annonces.
 
 Le résumé de chaque exécution s'affiche dans l'onglet **Actions** du dépôt.
 
+### Clé Apify (plan gratuit)
+
+1. Sur https://console.apify.com, menu **Settings** → **API & Integrations** :
+   copie ton **Personal API token**.
+2. Sur GitHub, dans le dépôt : **Settings** → **Secrets and variables** →
+   **Actions** → onglet **Secrets** → **New repository secret**.
+3. Nom : `APIFY_TOKEN`, valeur : la clé copiée → **Add secret**.
+
+Sans ce secret, la veille tourne quand même mais ne collecte rien.
+
+### Coût et garde-fous
+
+| Plateforme | Acteur Apify | Par jour, au plus | Coût estimé par mois |
+| ---------- | ------------ | ----------------- | -------------------- |
+| Leboncoin  | `memo23/leboncoin-scraper` (0,79 $ / 1 000 annonces, sans frais de plateforme) | 2 recherches × 20 annonces | ~0,95 $ |
+| Troc-Vélo  | `apify/cheerio-scraper` (gratuit, temps de calcul seul) | 1 page de liste + 12 annonces | ~0,30 $ |
+
+Soit environ 1,25 $ par mois sur les 5 $ du plan gratuit. Les recherches
+Leboncoin sont filtrées à la source : catégorie Vélos, type Course, taille M,
+1 500 à 4 500 €, 60 km autour de Paris et de Saint-Nazaire, plus récentes
+d'abord. Chaque exécution a un plafond de dépense, et la collecte s'arrête si
+la consommation du mois atteint 4 $.
+
+**Réglages facultatifs** (Settings → Secrets and variables → Actions → onglet
+Variables) :
+
+| Variable              | Par défaut | Effet |
+| --------------------- | ---------- | ----- |
+| `APIFY_BUDGET_USD`    | `4`        | Consommation du mois au-delà de laquelle la collecte est sautée |
+| `APIFY_MAX_ITEMS`     | `20`       | Annonces Leboncoin lues par zone et par jour |
+| `TROCVELO_MAX_ITEMS`  | `12`       | Annonces Troc-Vélo ouvertes par jour |
+| `TROCVELO_SEARCH_URL` | catégorie route | Page de liste Troc-Vélo (copie l'adresse après avoir posé tes filtres) |
+| `TROCVELO_ENABLED`    | `true`     | `false` : ne plus lire Troc-Vélo |
+| `COMMIT_RESULTS`      | `true`     | `false` : simple exécution de contrôle, rien n'est commité |
+
 **Lancer la veille à la main** : onglet Actions → « Veille quotidienne » →
-« Run workflow ». La case « simulation » choisit d'ajouter ou non les annonces
-simulées.
+« Run workflow ».
 
-**Réglages** (Settings → Secrets and variables → Actions → onglet Variables) :
+En local : `APIFY_TOKEN=… npm run daily-check`. Sans clé, `npm run test:apify`
+vérifie l'analyse sur des exemples, et
+`APIFY_FIXTURES=scripts/apify/fixtures npm run daily-check` rejoue une veille
+complète sans appeler Apify.
 
-| Variable            | Effet                                                               |
-| ------------------- | ------------------------------------------------------------------- |
-| `VEILLE_SIMULATION` | `false` : n'analyse plus que `data/inbox.json` (vraies annonces)    |
-| `COMMIT_RESULTS`    | `false` : simple exécution de contrôle, rien n'est commité          |
-
-En local : `npm run daily-check` (ajoute `VEILLE_DATE=2026-12-01` pour rejouer
-une date précise).
-
-> **Annonces simulées.** Le script ne lit pas Leboncoin, Troc-Vélo ni Decathlon :
-> depuis les serveurs de GitHub, ces sites bloquent les robots, et leurs
-> conditions d'utilisation l'interdisent pour Leboncoin. Les annonces simulées sont
-> marquées « *(simulée)* » dans le journal et `"simulated": true` dans
-> `listings.json`. Les vraies annonces passent par `data/inbox.json`, dont le
-> format est décrit dans `data/README.md`.
+> **Conditions d'utilisation.** Leboncoin interdit la collecte automatique dans
+> ses conditions. Cette veille est réglée pour un usage personnel et un très petit
+> volume (40 annonces par jour au plus), mais le risque reste le tien.
 
 > GitHub suspend les tâches planifiées d'un dépôt public sans activité pendant
 > 60 jours. Les commits quotidiens de la veille suffisent à l'éviter ; en mode
@@ -144,9 +172,9 @@ une date précise).
   est rattachée à la zone la plus proche ; celles hors zones restent retenues si
   elles sont livrables. Rayon, ville centre et nom de chaque zone se règlent dans
   « Critères », et chaque zone peut être désactivée.
-- **Agrégation simulée.** 38 annonces de démonstration réparties en trois vagues,
-  dans les deux zones. « Lancer une recherche » fait arriver la vague suivante,
-  marquée « Nouveau ».
+- **Vraies annonces.** Celles retenues par la veille quotidienne, avec leur lien
+  direct et la photo du vendeur. Les nouvelles du jour sont marquées « Nouveau » ;
+  « Actualiser » recharge le dernier résultat.
 - **Filtre automatique.** Toute annonce hors budget maximum, hors type, hors taille,
   sans cadre carbone ou freins à disque, avec une transmission non retenue, ou hors
   de tes zones sans livraison est écartée. La liste des écartées et le motif
@@ -188,10 +216,19 @@ typographie : aucune illustration dessinée.
 .
 ├── .github/workflows/
 │   ├── ci.yml                 Vérification automatique à chaque push
-│   └── daily-analysis.yml     Veille quotidienne planifiée
+│   ├── daily-analysis.yml     Veille quotidienne planifiée
+│   └── pages.yml              Publication du site sur GitHub Pages
 ├── scripts/
-│   ├── daily-check.ts         Analyse quotidienne (filtre, score, journal)
-│   └── simulation.ts          Annonces simulées, tirées selon la date
+│   ├── daily-check.ts         Veille quotidienne (collecte, filtre, score, journal)
+│   ├── apify/                 Collecte Leboncoin et Troc-Vélo via Apify
+│   │   ├── config.ts          Recherches, limites et budget (plan gratuit)
+│   │   ├── client.ts          Appels à l'API Apify
+│   │   ├── leboncoin.ts       Recherches ciblées et lecture des annonces Leboncoin
+│   │   ├── trocvelo.ts        Lecture des annonces Troc-Vélo (Cheerio Scraper)
+│   │   ├── parse.ts           Groupe, cadre, freins, taille… lus dans le texte
+│   │   ├── selftest.ts        Vérifications sur des exemples (npm run test:apify)
+│   │   └── fixtures/          Exemples au format des acteurs Apify
+│   └── simulation.ts          Annonces inventées, pour les tests
 ├── data/                      Résultats de la veille (journal, annonces, état)
 ├── public/favicon.svg
 ├── index.html
@@ -206,10 +243,12 @@ typographie : aucune illustration dessinée.
     ├── data/
     │   ├── mockListings.ts    Annonces de démonstration (Paris et Loire-Atlantique)
     │   ├── photos.ts          Catalogue des photos Unsplash
-    │   ├── sources.ts         Plateformes et liens de recherche
+    │   ├── sources.ts         Plateformes suivies
     │   └── cities.ts          Villes, coordonnées, calcul de distance
     ├── lib/
-    │   ├── aggregator.ts      Recherche simulée (à remplacer par de vraies données)
+    │   ├── aggregator.ts      Recherche simulée du mode démonstration
+    │   ├── live.ts            Chargement des annonces de la veille (data/listings.json)
+    │   ├── links.ts           Liens directs d'annonces (jamais de recherche)
     │   ├── criteria.ts        Critères et zones de départ, filtre automatique
     │   ├── zones.ts           Rattachement d'une annonce à la zone la plus proche
     │   ├── scoring.ts         Calcul du score de pertinence
@@ -249,17 +288,16 @@ typographie : aucune illustration dessinée.
 
 Un bonus décoché dans les critères sort du calcul ; le total est ramené sur 100.
 
-## Brancher de vraies annonces
+## Annonces affichées
 
-Le scraping est simulé. Un navigateur ne peut pas lire Leboncoin ou Troc-Vélo
-directement : ces sites bloquent les requêtes venant d'une autre page (CORS) et les
-robots. Deux voies :
+Le site lit `data/listings.json`, produit par la veille quotidienne. Chaque
+bouton « Voir l'annonce » ouvre l'annonce elle-même, jamais une recherche : les
+liens sont vérifiés par `src/lib/links.ts`.
 
-1. **À la main** : « Ajouter une annonce » dans l'application.
-2. **Automatique** : un script côté serveur (une fonction Vercel planifiée, par
-   exemple) produit un fichier JSON d'objets `Listing`, et `runSearch()` dans
-   `src/lib/aggregator.ts` va le chercher avec `fetch()`. C'est la seule fonction à
-   remplacer.
+Tant que la veille n'a trouvé aucune vraie annonce, l'application montre des
+annonces de démonstration inventées, sans lien. Elles disparaissent dès la
+première annonce réelle. Tu peux aussi ajouter une annonce à la main (« Ajouter
+une annonce ») ; elle reste dans ton navigateur.
 
 ## Données enregistrées
 

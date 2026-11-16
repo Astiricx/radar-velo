@@ -18,7 +18,10 @@ export type ExtensionFit = 'oui' | 'kit' | 'inconnu' | 'non'
 export interface Listing {
   id: string
   source: SourceId
-  /** Lien vers l'annonce d'origine. */
+  /**
+   * Lien direct vers l'annonce d'origine (…/ad/velos/123456 sur Leboncoin).
+   * Vide pour les annonces de démonstration : elles n'existent pas.
+   */
   url: string
   /** URL de la photo principale. */
   image: string
@@ -29,6 +32,7 @@ export interface Listing {
   title: string
   brand: string
   model: string
+  /** 0 si l'annonce ne précise pas l'année. */
   year: number
   type: BikeType
   size: string
@@ -36,7 +40,7 @@ export interface Listing {
   /** Prix neuf constaté, pour calculer la décote. */
   newPrice?: number
   description: string
-  /** Nom d'une ville connue de data/cities.ts. */
+  /** Ville de l'annonce. Sans `coords`, doit être connue de data/cities.ts pour calculer la distance. */
   city: string
   shipping: boolean
   publishedAt: string
@@ -53,6 +57,14 @@ export interface Listing {
   /** Vague de recherche simulée qui fait apparaître l'annonce (0 = ajout manuel). */
   batch: number
   custom?: boolean
+  /** Annonce inventée pour la démonstration. */
+  demo?: boolean
+  /** Coordonnées précises du lieu, fournies par la plateforme. Sinon, celles de `city`. */
+  coords?: { lat: number; lon: number }
+  /** Points que l'annonce ne précise pas et que l'analyse automatique a supposés. */
+  toVerify?: string[]
+  /** Date (AAAA-MM-JJ) à laquelle la veille quotidienne a trouvé l'annonce. */
+  firstSeen?: string
 }
 
 /** Une zone de recherche : une ville centre et un rayon. */

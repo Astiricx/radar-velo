@@ -39,6 +39,9 @@ export function distanceLabel(km: number, center: string | undefined): string {
   return `à ${km} km de ${center}`
 }
 
+/** « 2023 », ou « année ? » quand l'annonce ne la donne pas. */
+export const yearLabel = (year: number) => (year > 0 ? String(year) : 'année ?')
+
 export function discountPct(price: number, newPrice?: number): number | null {
   if (!newPrice || newPrice <= price) return null
   return Math.round((1 - price / newPrice) * 100)

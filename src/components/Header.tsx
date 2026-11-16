@@ -3,6 +3,8 @@ import type { ThemeMode } from '../hooks/useTheme'
 
 interface Props {
   searching: boolean
+  /** Texte du bouton principal : « Actualiser » avec les vraies annonces. */
+  searchLabel: string
   status: string
   onSearch: () => void
   onAdd: () => void
@@ -17,7 +19,7 @@ const THEMES: { id: ThemeMode; label: string; icon: typeof Sun }[] = [
   { id: 'system', label: 'Thème du système', icon: Monitor },
 ]
 
-export function Header({ searching, status, onSearch, onAdd, onCriteria, theme, onTheme }: Props) {
+export function Header({ searching, searchLabel, status, onSearch, onAdd, onCriteria, theme, onTheme }: Props) {
   return (
     <header className="border-b border-line bg-surface">
       <div className="gutter mx-auto flex max-w-[84rem] flex-wrap items-center gap-x-4 gap-y-3 py-3">
@@ -34,7 +36,7 @@ export function Header({ searching, status, onSearch, onAdd, onCriteria, theme, 
         <div className="ml-auto flex flex-wrap items-center gap-2">
           <button type="button" onClick={onSearch} disabled={searching} className="btn btn-primary">
             <RefreshCw size={15} aria-hidden className={searching ? 'animate-spin' : ''} />
-            {searching ? 'Recherche en cours' : 'Lancer une recherche'}
+            {searching ? 'Chargement' : searchLabel}
           </button>
           <button type="button" onClick={onAdd} className="btn">
             <Plus size={15} aria-hidden /> Ajouter une annonce

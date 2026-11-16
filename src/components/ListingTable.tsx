@@ -1,6 +1,7 @@
 import { ArrowUpDown, ExternalLink } from 'lucide-react'
 import { SOURCES } from '../data/sources'
 import { distanceLabel, eur, relativeDay } from '../lib/format'
+import { directUrl } from '../lib/links'
 import type { Criteria, Row, SortKey, Status } from '../types'
 import { BikeThumb } from './BikeThumb'
 import { ScoreBib } from './ScoreBib'
@@ -83,9 +84,13 @@ export function ListingTable({ rows, criteria, sort, onSort, onOpen, onStatus }:
                 <StatusSelect id={`table-status-${l.id}`} value={tracking.status} onChange={(s) => onStatus(l.id, s)} className="w-40" />
               </td>
               <td className="whitespace-nowrap px-3 py-2">
-                <a href={l.url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-1 font-medium text-accent hover:underline" aria-label={`Voir l'annonce sur ${SOURCES[l.source].label}`}>
-                  Ouvrir <ExternalLink size={14} aria-hidden />
-                </a>
+                {directUrl(l) ? (
+                  <a href={l.url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-1 font-medium text-accent hover:underline" aria-label={`Voir l'annonce sur ${SOURCES[l.source].label}`}>
+                    Ouvrir <ExternalLink size={14} aria-hidden />
+                  </a>
+                ) : (
+                  <span className="text-muted">{l.demo ? 'Fictive' : '—'}</span>
+                )}
               </td>
             </tr>
           ))}

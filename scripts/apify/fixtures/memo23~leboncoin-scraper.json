@@ -1,0 +1,65 @@
+[
+  {
+    "rowType": "ad",
+    "adId": "3310839472",
+    "title": "Canyon Aeroad CF SL 8 Disc Di2 taille M 2022",
+    "description": "Vends mon Canyon Aeroad CF SL 8 Disc, groupe Shimano Ultegra Di2 12 vitesses (R8170), freins à disque hydrauliques.\nRoues DT Swiss ARC 1400 de 62 mm, capteur de puissance 4iiii sur la manivelle.\nEnviron 8 000 km, révisé en septembre. Visible à Paris 11e.",
+    "price": 3200,
+    "priceCents": 320000,
+    "currency": "EUR",
+    "url": "https://www.leboncoin.fr/ad/velos/3310839472",
+    "categoryId": "55",
+    "categoryName": "Vélos",
+    "firstPublishedAt": "2026-11-16 09:12:44",
+    "location": { "city": "Paris", "zipcode": "75011", "lat": 48.8589, "lng": 2.3797 },
+    "images": { "count": 3, "thumb": "https://img.leboncoin.fr/api/v1/lbcpb1/images/aa/bb/cc1.jpg?rule=ad-thumb", "urls": ["https://img.leboncoin.fr/api/v1/lbcpb1/images/aa/bb/cc1.jpg?rule=ad-image", "https://img.leboncoin.fr/api/v1/lbcpb1/images/aa/bb/cc2.jpg?rule=ad-image"] },
+    "attributes": { "bicycle_type": "Course", "bicycle_size": "M", "condition": "Très bon état", "shippable": "false" }
+  },
+  {
+    "rowType": "seller",
+    "userId": "abc"
+  },
+  {
+    "listId": 3308714258,
+    "title": "Specialized Tarmac SL7 Expert 105 Di2",
+    "url": "https://www.leboncoin.fr/ad/velos/3308714258",
+    "price": 2900,
+    "priceCents": 290000,
+    "firstPublicationDate": "2026-11-15 18:01:00",
+    "images": [ { "thumbnailUrl": "https://img.leboncoin.fr/x/1.jpg?rule=ad-thumb", "largeUrl": "https://img.leboncoin.fr/x/1.jpg?rule=ad-large" } ],
+    "condition": "Bon état",
+    "attributes": { "bicycle_type": "Course", "bicycle_size": "M" },
+    "location": { "city": "Pornichet", "zipcode": "44380", "latitude": 47.2626, "longitude": -2.3393 },
+    "shippable": true,
+    "description": "Tarmac SL7 en carbone, Shimano 105 Di2 12v, taille 56. Roues Roval C38. Facture d'achat de 2023, prix neuf 5 200 €. Envoi possible."
+  },
+  {
+    "list_id": 3290858432,
+    "subject": "Trek Madone SLR 6 Gen 7 Ultegra Di2 taille 58",
+    "body": "Madone SLR 6, cadre carbone OCLV 800, Ultegra Di2, disques. Taille 58, trop grand pour moi.",
+    "url": "https://www.leboncoin.fr/ad/velos/3290858432",
+    "price": [4300],
+    "city": "Versailles",
+    "zipcode": "78000",
+    "lat": 48.8049,
+    "lng": 2.1204,
+    "images": ["https://img.leboncoin.fr/y/1.jpg?rule=ad-image"],
+    "attributes": [ { "key": "bicycle_size", "value": "l", "value_label": "L" } ]
+  },
+  {
+    "adId": "3310826995",
+    "title": "Vélo de route Triban RC 520 taille M",
+    "description": "Cadre aluminium, fourche carbone, roues carbone 50 mm ajoutées, groupe Shimano 105 mécanique, freins à disque. 2021.",
+    "url": "https://www.leboncoin.fr/ad/velos/3310826995",
+    "price": 1600,
+    "location": { "city": "Nantes", "zipcode": "44000", "lat": 47.2184, "lng": -1.5536 },
+    "images": { "urls": [] },
+    "attributes": { "bicycle_size": "M" }
+  },
+  {
+    "adId": "999",
+    "title": "Lien de recherche, pas une annonce",
+    "url": "https://www.leboncoin.fr/recherche?category=55&text=aeroad",
+    "price": 3000
+  }
+]

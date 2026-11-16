@@ -1,0 +1,24 @@
+[
+  { "kind": "list", "url": "https://www.troc-velo.com/fr-fr/categorie/velos-complets/route", "found": 24 },
+  {
+    "kind": "ad",
+    "url": "https://www.troc-velo.com/fr-fr/annonce/cervelo-s5-ultegra-di2-2022-4251234",
+    "title": "Cervélo S5 Ultegra Di2 2022 - CERVELO - 44350",
+    "ogTitle": "Cervélo S5 Ultegra Di2 2022",
+    "description": "Cervélo S5 de 2022 en très bon état, Ultegra Di2 R8170, freins à disque hydrauliques.",
+    "image": "https://www.troc-velo.com/media/annonces/4251234/photo-1.jpg",
+    "images": ["https://www.troc-velo.com/media/annonces/4251234/photo-2.jpg", "https://www.troc-velo.com/images/logo.svg"],
+    "jsonLd": [ { "@context": "https://schema.org", "@type": "Product", "name": "Cervélo S5 Ultegra Di2 2022", "offers": { "@type": "Offer", "price": "3990.00", "priceCurrency": "EUR" } } ],
+    "attributes": { "Taille": "M", "Marque": "CERVELO", "Année": "2022" },
+    "text": "Cervélo S5 Ultegra Di2 2022 3 990 € Taille : M (56) Cadre carbone, roues Reserve 52 mm. Livraison possible via Mondial Relay. Annonces similaires Pinarello Dogma F Dura-Ace Di2 9 000 €"
+  },
+  {
+    "kind": "ad",
+    "url": "https://www.troc-velo.com/fr-fr/annonce/look-785-huez-rs-proteam-ultegra-4065739",
+    "title": "Vélo Look 785 Huez RS Proteam Ultegra - LOOK - 65250",
+    "description": "Look 785 Huez RS, Ultegra mécanique, freins à patins.",
+    "jsonLd": [],
+    "attributes": {},
+    "text": "Prix 2 150 € Taille S. Remise en main propre."
+  }
+]

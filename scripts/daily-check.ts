@@ -1,21 +1,23 @@
 /**
- * Veille quotidienne : analyse les nouvelles annonces et met à jour data/.
+ * Veille quotidienne : collecte les nouvelles annonces, les analyse et met à jour data/.
  *
  * Lancement : `npm run daily-check` (en local ou par la GitHub Action
  * .github/workflows/daily-analysis.yml).
  *
  * 1. Rassemble les annonces candidates :
- *    - data/inbox.json : annonces réelles déposées à la main ou par un autre outil ;
- *    - la simulation du jour (scripts/simulation.ts), si VEILLE_SIMULATION n'est pas « false ».
+ *    - Leboncoin et Troc-Vélo via Apify (scripts/apify), si le secret APIFY_TOKEN existe ;
+ *    - data/inbox.json : annonces déposées à la main ;
+ *    - la simulation du jour (scripts/simulation.ts), seulement si VEILLE_SIMULATION=true.
  * 2. Ignore celles déjà vues (data/state.json).
  * 3. Applique le filtre strict et le score de l'application (src/lib), pour les
  *    deux zones : région parisienne et Saint-Nazaire / Loire-Atlantique.
- * 4. Écrit data/listings.json (annonces retenues), data/journal.md (une entrée
- *    par jour) et le résumé de l'exécution GitHub.
+ * 4. Écrit data/listings.json (vraies annonces retenues, lues par le site),
+ *    data/journal.md (une entrée par jour) et le résumé de l'exécution GitHub.
  *
  * Variables d'environnement :
  *   VEILLE_DATE        date analysée, AAAA-MM-JJ (par défaut : aujourd'hui, UTC)
- *   VEILLE_SIMULATION  « false » pour ne traiter que data/inbox.json
+ *   VEILLE_SIMULATION  « true » pour ajouter des annonces inventées (tests)
+ *   APIFY_TOKEN        clé d'API Apify ; réglages fins dans scripts/apify/config.ts
  */
 import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
@@ -24,9 +26,11 @@ import { CITIES } from '../src/data/cities'
 import { SOURCES } from '../src/data/sources'
 import { DEFAULT_CRITERIA, GROUPSET_LABELS, rejectionReason } from '../src/lib/criteria'
 import { eur, plural } from '../src/lib/format'
+import { isDirectAdUrl } from '../src/lib/links'
 import { scoreListing } from '../src/lib/scoring'
 import { matchZone } from '../src/lib/zones'
 import type { Listing, ScoreResult, ZoneMatch } from '../src/types'
+import { collectFromApify } from './apify'
 import { simulateDay } from './simulation'
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
@@ -38,9 +42,11 @@ const FILES = {
   journal: resolve(DATA, 'journal.md'),
 }
 const JOURNAL_TITLE = '# Journal de la veille quotidienne'
+/** Une annonce qui n'a pas été revue depuis ce nombre de jours est retirée du site (vendue ou retirée). */
+const MAX_AGE_DAYS = 45
 
 const date = process.env.VEILLE_DATE?.match(/^\d{4}-\d{2}-\d{2}$/) ? process.env.VEILLE_DATE : new Date().toISOString().slice(0, 10)
-const simulation = (process.env.VEILLE_SIMULATION ?? 'true').toLowerCase() !== 'false'
+const simulation = (process.env.VEILLE_SIMULATION ?? 'false').toLowerCase() === 'true'
 const criteria = DEFAULT_CRITERIA
 
 // ───────────── Types des fichiers de données ─────────────
@@ -51,29 +57,14 @@ interface State {
   seen: Record<string, string>
 }
 
-/** Une annonce retenue, telle qu'enregistrée dans data/listings.json. */
-interface SavedListing {
-  id: string
+/** Une annonce retenue, telle qu'enregistrée dans data/listings.json et lue par le site. */
+type SavedListing = Listing & {
   firstSeen: string
-  simulated: boolean
+  /** Dernière date où la collecte a encore vu l'annonce en ligne. */
+  lastSeen: string
   score: number
   zone: string | null
   distanceKm: number | null
-  title: string
-  brand: string
-  model: string
-  year: number
-  size: string
-  price: number
-  newPrice?: number
-  city: string
-  shipping: boolean
-  source: string
-  url: string
-  image: string
-  groupset: string
-  powerMeter: boolean
-  wheelDepth: number
   scoreDetail: ScoreResult['parts']
 }
 
@@ -98,11 +89,13 @@ function readJson<T>(path: string, fallback: T): T {
 
 const writeJson = (path: string, value: unknown) => writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`)
 
+const daysBetween = (from: string, to: string) => Math.round((Date.parse(to) - Date.parse(from)) / 86_400_000)
+
 // ───────────── Annonces déposées dans data/inbox.json ─────────────
 
 const REQUIRED = ['id', 'source', 'url', 'title', 'brand', 'model', 'year', 'size', 'price', 'city', 'frame', 'brakes', 'groupset'] as const
 
-/** Lit data/inbox.json. Les entrées incomplètes sont ignorées et signalées. */
+/** Lit data/inbox.json. Les entrées incomplètes ou sans lien direct sont ignorées et signalées. */
 function readInbox(warnings: string[]): Listing[] {
   const raw = readJson<unknown>(FILES.inbox, [])
   if (!Array.isArray(raw)) {
@@ -121,7 +114,11 @@ function readInbox(warnings: string[]): Listing[] {
       warnings.push(`inbox.json, entrée ${index + 1} ignorée : plateforme inconnue « ${String(e.source)} ».`)
       return
     }
-    if (!(String(e.city) in CITIES)) {
+    if (!isDirectAdUrl(String(e.url))) {
+      warnings.push(`inbox.json, « ${String(e.title)} » ignorée : le lien n'ouvre pas une annonce précise (${String(e.url)}).`)
+      return
+    }
+    if (!(String(e.city) in CITIES) && !e.coords) {
       warnings.push(`inbox.json, « ${String(e.title)} » : ville « ${String(e.city)} » absente de src/data/cities.ts, distance inconnue.`)
     }
     listings.push({
@@ -142,6 +139,7 @@ function readInbox(warnings: string[]): Listing[] {
       year: Number(e.year),
       price: Number(e.price),
       size: String(e.size),
+      firstSeen: date,
     } as Listing)
   })
   return listings
@@ -168,12 +166,13 @@ function place(a: Analysed): string {
   return cell(`${l.city} (${where}${l.shipping ? ', livraison' : ''})`)
 }
 
-function journalEntry(relevant: Analysed[], rejected: Analysed[], warnings: string[]): string {
+function journalEntry(relevant: Analysed[], rejected: Analysed[], notes: string[], warnings: string[]): string {
   const lines = [`## ${longDate(date)}`, '']
-  const origin = simulation ? 'simulation et data/inbox.json' : 'data/inbox.json uniquement'
+  for (const n of notes) lines.push(`- ${n}`)
+  if (notes.length > 0) lines.push('')
   lines.push(
-    `${plural(relevant.length + rejected.length, 'nouvelle annonce analysée', 'nouvelles annonces analysées')} ` +
-      `(${origin}) : ${plural(relevant.length, 'pertinente', 'pertinentes')}, ${plural(rejected.length, 'écartée', 'écartées')}.`,
+    `${plural(relevant.length + rejected.length, 'nouvelle annonce analysée', 'nouvelles annonces analysées')} : ` +
+      `${plural(relevant.length, 'pertinente', 'pertinentes')}, ${plural(rejected.length, 'écartée', 'écartées')}.`,
     '',
   )
   if (relevant.length > 0) {
@@ -181,16 +180,25 @@ function journalEntry(relevant: Analysed[], rejected: Analysed[], warnings: stri
     lines.push('| ---: | --- | ---: | --- | --- | --- | --- | --- |')
     for (const a of relevant) {
       const l = a.listing
-      const tag = a.simulated ? ' *(simulée)*' : ''
+      const name = a.simulated || !l.url ? `${cell(l.title)} *(simulée)*` : `[${cell(l.title)}](${l.url})`
       lines.push(
-        `| **${a.score.total}** | [${cell(l.title)}](${l.url})${tag} | ${eur(l.price)} | ${cell(l.size)} | ${GROUPSET_LABELS[l.groupset]}${l.powerMeter ? ', capteur' : ''} | ${a.zone.inside && a.zone.nearest ? cell(a.zone.nearest.label) : 'Hors zone'} | ${place(a)} | ${SOURCE_LABEL(l.source)} |`,
+        `| **${a.score.total}** | ${name} | ${eur(l.price)} | ${cell(l.size)} | ${GROUPSET_LABELS[l.groupset]}${l.powerMeter ? ', capteur' : ''} | ${a.zone.inside && a.zone.nearest ? cell(a.zone.nearest.label) : 'Hors zone'} | ${place(a)} | ${SOURCE_LABEL(l.source)} |`,
       )
     }
     lines.push('')
+    const doubts = relevant.filter((a) => a.listing.toVerify?.length)
+    if (doubts.length > 0) {
+      lines.push('À vérifier avant de contacter le vendeur :', '')
+      for (const a of doubts) lines.push(`- ${cell(a.listing.title)} : ${a.listing.toVerify!.join(' ; ').toLowerCase()}`)
+      lines.push('')
+    }
   }
   if (rejected.length > 0) {
     lines.push('Écartées :', '')
-    for (const a of rejected) lines.push(`- ${cell(a.listing.title)}, ${eur(a.listing.price)} : ${a.rejection}`)
+    for (const a of rejected) {
+      const name = a.listing.url && !a.simulated ? `[${cell(a.listing.title)}](${a.listing.url})` : cell(a.listing.title)
+      lines.push(`- ${name}, ${eur(a.listing.price)} : ${a.rejection}`)
+    }
     lines.push('')
   }
   if (warnings.length > 0) {
@@ -201,57 +209,47 @@ function journalEntry(relevant: Analysed[], rejected: Analysed[], warnings: stri
   return lines.join('\n')
 }
 
-function toSaved(a: Analysed): SavedListing {
-  const l = a.listing
+function toSaved(a: Analysed, firstSeen: string): SavedListing {
   return {
-    id: l.id,
-    firstSeen: date,
-    simulated: a.simulated,
+    ...a.listing,
+    firstSeen,
+    lastSeen: date,
     score: a.score.total,
     zone: a.zone.inside && a.zone.nearest ? a.zone.nearest.label : null,
     distanceKm: Number.isFinite(a.zone.distance) ? a.zone.distance : null,
-    title: l.title,
-    brand: l.brand,
-    model: l.model,
-    year: l.year,
-    size: l.size,
-    price: l.price,
-    newPrice: l.newPrice,
-    city: l.city,
-    shipping: l.shipping,
-    source: l.source,
-    url: l.url,
-    image: l.image,
-    groupset: l.groupset,
-    powerMeter: l.powerMeter,
-    wheelDepth: l.wheelDepth,
     scoreDetail: a.score.parts,
   }
 }
 
+function analyse(listing: Listing, simulated: boolean): Analysed {
+  const zone = matchZone(listing, criteria.zones)
+  return { listing, simulated, zone, rejection: rejectionReason(listing, criteria, zone), score: scoreListing(listing, criteria, zone) }
+}
+
 // ───────────── Programme principal ─────────────
 
-function main() {
+async function main() {
   mkdirSync(DATA, { recursive: true })
   const warnings: string[] = []
   const state = readJson<State>(FILES.state, { lastRun: null, seen: {} })
   state.seen ??= {}
 
-  const inbox = readInbox(warnings).map((listing) => ({ listing, simulated: false }))
+  const collected = await collectFromApify(date, warnings)
+  const inbox = readInbox(warnings)
+  const real = [...collected.listings, ...inbox].map((listing) => ({ listing, simulated: false }))
   const simulated = simulation ? simulateDay(date).map((listing) => ({ listing, simulated: true })) : []
-  const candidates = [...inbox, ...simulated]
-  const fresh = candidates.filter(({ listing }) => !state.seen[listing.id])
 
-  const analysed: Analysed[] = fresh.map(({ listing, simulated: sim }) => {
-    const zone = matchZone(listing, criteria.zones)
-    return { listing, simulated: sim, zone, rejection: rejectionReason(listing, criteria, zone), score: scoreListing(listing, criteria, zone) }
-  })
+  // Une seule fois par identifiant, même si deux recherches renvoient la même annonce.
+  const candidates = [...new Map([...real, ...simulated].map((c) => [c.listing.id, c])).values()]
+  const fresh = candidates.filter(({ listing }) => !state.seen[listing.id])
+  const analysed = fresh.map(({ listing, simulated: sim }) => analyse(listing, sim))
   const relevant = analysed.filter((a) => !a.rejection).sort((a, b) => b.score.total - a.score.total)
   const rejected = analysed.filter((a) => a.rejection)
 
-  console.log(`Veille du ${date} — ${simulation ? 'avec' : 'sans'} simulation`)
+  console.log(`Veille du ${date}${simulation ? ' — avec simulation' : ''}`)
+  for (const n of collected.notes) console.log(`  · ${n}`)
   console.log(`Candidates : ${candidates.length} (dont ${inbox.length} de data/inbox.json), nouvelles : ${fresh.length}`)
-  for (const a of relevant) console.log(`  ✓ ${a.score.total}/100  ${a.listing.title}  ${eur(a.listing.price)}  ${a.listing.city}`)
+  for (const a of relevant) console.log(`  ✓ ${a.score.total}/100  ${a.listing.title}  ${eur(a.listing.price)}  ${a.listing.city}  ${a.listing.url}`)
   for (const a of rejected) console.log(`  ✗ ${a.listing.title} : ${a.rejection}`)
   for (const w of warnings) console.warn(`  ! ${w}`)
 
@@ -260,11 +258,25 @@ function main() {
   state.lastRun = date
   writeJson(FILES.state, state)
 
-  // Annonces retenues, de la meilleure à la moins bonne.
-  const saved = readJson<{ listings: SavedListing[] }>(FILES.listings, { listings: [] }).listings ?? []
-  const byId = new Map(saved.map((s) => [s.id, s]))
-  for (const a of relevant) byId.set(a.listing.id, toSaved(a))
-  const all = [...byId.values()].sort((a, b) => b.score - a.score || a.price - b.price)
+  // Annonces publiées sur le site : uniquement de vraies annonces avec un lien direct.
+  const previous = readJson<{ listings?: SavedListing[] }>(FILES.listings, {}).listings ?? []
+  const byId = new Map(
+    previous.filter((s) => !(s as { simulated?: boolean }).simulated && s.frame && isDirectAdUrl(s.url)).map((s) => [s.id, s]),
+  )
+  for (const a of relevant) if (!a.simulated && isDirectAdUrl(a.listing.url)) byId.set(a.listing.id, toSaved(a, date))
+  // Annonce déjà retenue et toujours en ligne : prix, photos et texte du jour.
+  let refreshed = 0
+  for (const { listing } of real) {
+    const saved = byId.get(listing.id)
+    if (!saved || fresh.some((f) => f.listing.id === listing.id)) continue
+    const again = analyse({ ...listing, firstSeen: saved.firstSeen }, false)
+    if (again.rejection) byId.delete(listing.id)
+    else byId.set(listing.id, toSaved(again, saved.firstSeen))
+    refreshed++
+  }
+  const kept = [...byId.values()]
+    .filter((s) => daysBetween(s.lastSeen ?? s.firstSeen, date) <= MAX_AGE_DAYS)
+    .sort((a, b) => b.score - a.score || a.price - b.price)
   writeJson(FILES.listings, {
     updatedAt: date,
     criteria: {
@@ -272,31 +284,34 @@ function main() {
       sizes: criteria.sizes,
       zones: criteria.zones.filter((z) => z.enabled).map((z) => `${z.label} (${z.radiusKm} km autour de ${z.center})`),
     },
-    count: all.length,
-    listings: all,
+    count: kept.length,
+    listings: kept,
   })
 
-  // Journal : une entrée par jour avec de nouvelles annonces, la plus récente en haut.
-  const entry = fresh.length > 0 || warnings.length > 0 ? journalEntry(relevant, rejected, warnings) : ''
+  // Journal : une entrée par jour avec de nouvelles annonces ou un message utile, la plus récente en haut.
+  const entry = fresh.length > 0 || warnings.length > 0 ? journalEntry(relevant, rejected, collected.notes, warnings) : ''
   if (entry) {
-    const previous = existsSync(FILES.journal) ? readFileSync(FILES.journal, 'utf8').replace(JOURNAL_TITLE, '').trim() : ''
-    writeFileSync(FILES.journal, `${JOURNAL_TITLE}\n\n${entry}\n${previous ? `${previous}\n` : ''}`)
+    const old = existsSync(FILES.journal) ? readFileSync(FILES.journal, 'utf8').replace(JOURNAL_TITLE, '').trim() : ''
+    writeFileSync(FILES.journal, `${JOURNAL_TITLE}\n\n${entry}\n${old ? `${old}\n` : ''}`)
   }
 
   // Sorties pour la GitHub Action.
   const message =
     `Veille du ${date} : ${plural(relevant.length, 'annonce pertinente', 'annonces pertinentes')} ` +
-    `sur ${fresh.length}${simulation ? ' (simulation)' : ''}`
+    `sur ${fresh.length}${simulation ? ' (simulation)' : ''}${refreshed ? `, ${plural(refreshed, 'annonce mise à jour', 'annonces mises à jour')}` : ''}`
   if (process.env.GITHUB_OUTPUT) {
     appendFileSync(process.env.GITHUB_OUTPUT, `analysed=${fresh.length}\nrelevant=${relevant.length}\ncommit_message=${message}\n`)
   }
   if (process.env.GITHUB_STEP_SUMMARY) {
     appendFileSync(
       process.env.GITHUB_STEP_SUMMARY,
-      entry || `## ${longDate(date)}\n\nAucune nouvelle annonce depuis la dernière exécution.\n`,
+      entry || `## ${longDate(date)}\n\n${collected.notes.map((n) => `- ${n}\n`).join('')}\nAucune nouvelle annonce depuis la dernière exécution.\n`,
     )
   }
   console.log(message)
 }
 
-main()
+main().catch((error) => {
+  console.error(error)
+  process.exit(1)
+})

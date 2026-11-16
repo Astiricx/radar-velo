@@ -12,7 +12,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "daily-check": "tsx scripts/daily-check.ts"
+    "daily-check": "tsx scripts/daily-check.ts",
+    "test:apify": "tsx scripts/apify/selftest.ts"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

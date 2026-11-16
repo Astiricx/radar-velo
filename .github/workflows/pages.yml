@@ -4,7 +4,7 @@ name: Site
 on:
   push:
     branches: [main]
-    # Les commits de la veille quotidienne ne touchent que data/ : pas de republication.
+    # Les commits de la veille ne touchent que data/ : c'est la veille qui relance alors la publication.
     paths-ignore: ['data/**']
   workflow_dispatch:
 
@@ -36,6 +36,8 @@ jobs:
           BASE_PATH: /radar-velo/
       # GitHub Pages sert 404.html pour toute adresse inconnue.
       - run: cp dist/index.html dist/404.html
+      # Annonces trouvées par la veille quotidienne, lues par l'application.
+      - run: mkdir -p dist/data && cp data/listings.json dist/data/listings.json
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

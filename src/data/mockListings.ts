@@ -1,14 +1,13 @@
 import type { Listing } from '../types'
 import { photo, type PhotoName } from './photos'
-import { SOURCES } from './sources'
 
 /**
  * Annonces de démonstration.
  *
  * Elles sont inventées mais réalistes (modèles, prix et équipements du marché de
  * l'occasion fin 2026), réparties entre tes deux zones : la région parisienne et
- * Saint-Nazaire / Loire-Atlantique. Le lien de chaque annonce ouvre la recherche
- * équivalente sur la plateforme d'origine. Les photos sont de vrais vélos de route
+ * Saint-Nazaire / Loire-Atlantique. Comme elles n'existent pas, elles n'ont pas de
+ * lien. Les photos sont de vrais vélos de route
  * (Unsplash), comparables mais pas identiques au modèle de l'annonce.
  *
  * `batch` simule l'arrivée progressive des annonces : la vague 1 est là au premier
@@ -417,6 +416,7 @@ export const MOCK_LISTINGS: Listing[] = SEEDS.map(({ daysAgo: age, photos: [main
   image: photo(main),
   fallbackImage: photo(backup),
   imageKind: 'illustration',
-  url: SOURCES[seed.source].searchUrl(`${seed.brand} ${seed.model}`),
+  url: '',
+  demo: true,
   publishedAt: daysAgo(age),
 }))

@@ -12,7 +12,8 @@ import { Toolbar } from './components/Toolbar'
 import { useTheme } from './hooks/useTheme'
 import { LAST_BATCH, listingsUpTo, runSearch } from './lib/aggregator'
 import { DEFAULT_CRITERIA, rejectionReason } from './lib/criteria'
-import { relativeDay } from './lib/format'
+import { plural, relativeDay, shortDate } from './lib/format'
+import { useLiveListings } from './lib/live'
 import { EMPTY_TRACKING } from './lib/pipeline'
 import { scoreListing } from './lib/scoring'
 import { clearAllStorage, useLocalStorage } from './lib/storage'
@@ -45,10 +46,15 @@ export default function App() {
   const [panel, setPanel] = useState<'criteria' | 'add' | null>(null)
   const [searching, setSearching] = useState(false)
   const [message, setMessage] = useState('')
+  const [live, reloadLive] = useLiveListings()
+
+  // Les annonces de démonstration ne servent que tant que la veille n'a trouvé aucune vraie annonce.
+  const demoMode = live.status !== 'loading' && live.listings.length === 0
 
   // Toutes les annonces connues, enrichies : zone, filtre automatique, score, suivi.
   const rows = useMemo<Row[]>(() => {
-    return [...custom, ...listingsUpTo(sync.batch)].map((listing) => {
+    const found = demoMode ? listingsUpTo(sync.batch) : live.listings
+    return [...custom, ...found].map((listing) => {
       const zone = matchZone(listing, criteria.zones)
       return {
         listing,
@@ -56,10 +62,10 @@ export default function App() {
         rejection: rejectionReason(listing, criteria, zone),
         score: scoreListing(listing, criteria, zone),
         tracking: { ...EMPTY_TRACKING, ...tracking[listing.id] },
-        isNew: sync.newIds.includes(listing.id),
+        isNew: demoMode ? sync.newIds.includes(listing.id) : !!listing.firstSeen && listing.firstSeen === live.updatedAt,
       }
     })
-  }, [custom, sync, criteria, tracking])
+  }, [custom, sync, criteria, tracking, demoMode, live])
 
   const kept = useMemo(() => rows.filter((r) => !r.rejection), [rows])
   const rejected = useMemo(() => rows.filter((r) => r.rejection), [rows])
@@ -92,6 +98,19 @@ export default function App() {
 
   async function search() {
     if (searching) return
+    if (!demoMode) {
+      // Vraies annonces : on relit simplement le dernier résultat de la veille quotidienne.
+      setSearching(true)
+      setMessage('Chargement des annonces de la veille…')
+      const next = await reloadLive()
+      setMessage(
+        next.status === 'error'
+          ? 'Impossible de charger les annonces de la veille. Réessaie dans un instant.'
+          : `${plural(next.listings.length, 'annonce réelle', 'annonces réelles')}, veille du ${next.updatedAt ? shortDate(`${next.updatedAt}T12:00:00Z`) : '?'}.`,
+      )
+      setSearching(false)
+      return
+    }
     if (sync.batch >= LAST_BATCH) {
       setSync({ ...sync, lastRun: new Date().toISOString(), newIds: [] })
       setMessage('Aucune nouvelle annonce depuis la dernière recherche.')
@@ -118,14 +137,17 @@ export default function App() {
   const filtersActive = JSON.stringify(filters) !== JSON.stringify(NO_FILTERS)
   const status =
     message ||
-    (sync.lastRun
-      ? `Dernière recherche ${relativeDay(sync.lastRun)}, ${zoneNames}`
-      : `Leboncoin, Troc-Vélo et Decathlon Occasion, ${zoneNames}`)
+    (!demoMode
+      ? `Veille du ${live.updatedAt ? shortDate(`${live.updatedAt}T12:00:00Z`) : '?'}, Leboncoin et Troc-Vélo, ${zoneNames}`
+      : sync.lastRun
+        ? `Démonstration, dernière recherche ${relativeDay(sync.lastRun)}, ${zoneNames}`
+        : `Démonstration, ${zoneNames}`)
 
   return (
     <div className="min-h-full">
       <Header
         searching={searching}
+        searchLabel={demoMode ? 'Lancer une recherche' : 'Actualiser'}
         status={status}
         onSearch={search}
         onAdd={() => setPanel('add')}
@@ -135,6 +157,12 @@ export default function App() {
       />
 
       <main className="gutter mx-auto flex max-w-[84rem] flex-col gap-5 py-5">
+        {demoMode && live.status === 'ready' && (
+          <p className="rounded-md border border-line bg-surface px-4 py-3 text-sm text-muted">
+            La veille quotidienne n'a encore trouvé aucune vraie annonce : les annonces affichées sont des exemples
+            inventés, sans lien. Elles disparaîtront dès la première annonce réelle.
+          </p>
+        )}
         <Summary
           criteria={criteria}
           kept={kept}
@@ -179,10 +207,10 @@ export default function App() {
         )}
 
         <footer className="border-t border-line pt-4 text-xs text-muted">
-          Les annonces fournies avec l'application sont des exemples réalistes, pas de vraies annonces : leur lien ouvre
-          la recherche équivalente sur la plateforme, et leur photo montre un vélo comparable (photos Unsplash). Les
-          annonces que tu ajoutes gardent la photo du vendeur. Tes statuts, notes, critères et annonces ajoutées restent
-          dans ce navigateur.
+          {demoMode
+            ? "Les annonces de démonstration sont inventées : elles n'ont pas de lien et leur photo montre un vélo comparable (Unsplash). "
+            : "Les annonces viennent de la veille quotidienne (Leboncoin et Troc-Vélo, via Apify) : chaque lien ouvre l'annonce elle-même, avec la photo du vendeur. "}
+          Tes statuts, notes, critères et annonces ajoutées restent dans ce navigateur.
         </footer>
       </main>
 

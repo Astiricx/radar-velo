@@ -1,6 +1,7 @@
 import { useState, type FormEvent, type InputHTMLAttributes } from 'react'
 import { CITY_NAMES } from '../data/cities'
 import { SOURCE_LIST } from '../data/sources'
+import { isDirectAdUrl } from '../lib/links'
 import { CONDITION_LABELS, EXTENSION_LABELS, GROUPSET_LABELS, TYPE_LABELS } from '../lib/criteria'
 import type { BikeType, Brakes, Condition, ExtensionFit, Frame, Groupset, Listing, SourceId } from '../types'
 import { Modal } from './Modal'
@@ -99,7 +100,18 @@ export function AddListingDialog({ defaultCity, onAdd, onClose }: Props) {
     <Modal title="Ajouter une annonce" onClose={onClose}>
       <form onSubmit={submit} className="flex flex-col gap-4">
         <div className="grid gap-3 sm:grid-cols-2">
-          {text('a-url', "Lien de l'annonce", 'url', { type: 'url', required: true, placeholder: 'https://www.leboncoin.fr/ad/velos/…' })}
+          {text('a-url', "Lien de l'annonce", 'url', {
+            type: 'url',
+            required: true,
+            placeholder: 'https://www.leboncoin.fr/ad/velos/…',
+            // Refuse les liens de recherche : seul le lien de l'annonce elle-même est accepté.
+            onInput: (e) => {
+              const v = e.currentTarget.value.trim()
+              e.currentTarget.setCustomValidity(
+                v === '' || isDirectAdUrl(v) ? '' : "Colle le lien de l'annonce elle-même (par exemple …/ad/velos/1234567890), pas celui d'une recherche.",
+              )
+            },
+          })}
           {text('a-image', 'Lien de la photo', 'image', { type: 'url', required: true, placeholder: 'Clic droit sur la photo › Copier l’adresse de l’image' })}
           {text('a-brand', 'Marque', 'brand', { required: true, placeholder: 'Canyon' })}
           {text('a-model', 'Modèle', 'model', { required: true, placeholder: 'Aeroad CF SLX 8 Di2' })}

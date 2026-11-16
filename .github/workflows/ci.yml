@@ -19,4 +19,6 @@ jobs:
       # « npm ci » si package-lock.json est commité, sinon « npm install ».
       - run: if [ -f package-lock.json ]; then npm ci; else npm install; fi
       - run: npm run typecheck
+      # Analyse des annonces Apify sur des exemples, sans appeler Apify.
+      - run: npm run test:apify
       - run: npm run build

@@ -10,7 +10,6 @@
  * (filtre, score, journal, commit) en attendant une vraie source d'annonces.
  */
 import { photo, PHOTO_NAMES, type PhotoName } from '../src/data/photos'
-import { SOURCES } from '../src/data/sources'
 import type { Condition, ExtensionFit, Frame, Groupset, Listing, SourceId } from '../src/types'
 
 interface Model {
@@ -113,7 +112,8 @@ export function simulateDay(date: string): Listing[] {
     listings.push({
       id: `sim-${date}-${i + 1}`,
       source,
-      url: SOURCES[source].searchUrl(`${m.brand} ${m.model}`),
+      url: '',
+      demo: true,
       image: photo(main),
       fallbackImage: photo(pick(PHOTO_NAMES.filter((n) => n !== main))),
       imageKind: 'illustration',

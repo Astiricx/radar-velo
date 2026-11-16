@@ -1,6 +1,7 @@
 import { Calendar, ExternalLink, MapPin, Ruler, Truck } from 'lucide-react'
 import { SOURCES } from '../data/sources'
-import { discountPct, distanceLabel, eur, relativeDay } from '../lib/format'
+import { discountPct, distanceLabel, eur, relativeDay, yearLabel } from '../lib/format'
+import { directUrl } from '../lib/links'
 import type { Criteria, Row, Status } from '../types'
 import { AttributeChips } from './AttributeChips'
 import { BikeThumb } from './BikeThumb'
@@ -18,6 +19,7 @@ interface Props {
 export function ListingCard({ row, criteria, onOpen, onStatus }: Props) {
   const { listing: l, score, zone, tracking, isNew } = row
   const discount = discountPct(l.price, l.newPrice)
+  const href = directUrl(l)
 
   return (
     <article className="flex min-w-0 flex-col overflow-hidden rounded-lg border border-line bg-surface">
@@ -51,7 +53,7 @@ export function ListingCard({ row, criteria, onOpen, onStatus }: Props) {
             <Ruler size={14} aria-hidden />
             <dt className="sr-only">Taille</dt>
             <dd>
-              Taille {l.size}, {l.year}
+              Taille {l.size}, {yearLabel(l.year)}
             </dd>
           </div>
           <div className="flex items-center gap-1.5">
@@ -80,12 +82,19 @@ export function ListingCard({ row, criteria, onOpen, onStatus }: Props) {
         </dl>
 
         <AttributeChips listing={l} />
+        {l.toVerify && l.toVerify.length > 0 && (
+          <p className="text-xs text-warn">À vérifier : {l.toVerify.join(', ').toLowerCase()}.</p>
+        )}
 
         <div className="mt-auto flex flex-wrap items-center justify-between gap-2 border-t border-line pt-3">
           <StatusSelect id={`card-status-${l.id}`} value={tracking.status} onChange={(s) => onStatus(l.id, s)} />
-          <a href={l.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline">
-            Voir l'annonce <ExternalLink size={14} aria-hidden />
-          </a>
+          {href ? (
+            <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline">
+              Voir l'annonce <ExternalLink size={14} aria-hidden />
+            </a>
+          ) : (
+            <span className="text-sm text-muted">{l.demo ? 'Annonce fictive' : 'Lien manquant'}</span>
+          )}
         </div>
       </div>
     </article>

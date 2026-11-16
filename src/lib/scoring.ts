@@ -72,10 +72,12 @@ export function scoreListing(l: Listing, c: Criteria, zone: ZoneMatch): ScoreRes
     max: 10,
   })
 
-  const age = new Date().getFullYear() - l.year
+  // Année inconnue : note moyenne, ni bonus ni pénalité.
+  const age = l.year > 0 ? new Date().getFullYear() - l.year : 4
   const agePts = age <= 1 ? 4 : age <= 3 ? 3 : age <= 5 ? 2 : 1
   const condPts = { neuf: 4, 'tres-bon': 3, bon: 2, correct: 1 }[l.condition]
-  parts.push({ label: 'État et âge', detail: `${CONDITION_LABELS[l.condition]}, modèle ${l.year}`, points: agePts + condPts, max: 8 })
+  const model = l.year > 0 ? `modèle ${l.year}` : 'année non précisée'
+  parts.push({ label: 'État et âge', detail: `${CONDITION_LABELS[l.condition]}, ${model}`, points: agePts + condPts, max: 8 })
 
   const got = parts.reduce((sum, p) => sum + p.points, 0)
   const max = parts.reduce((sum, p) => sum + p.max, 0)

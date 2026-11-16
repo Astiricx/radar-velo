@@ -6,7 +6,7 @@
 
 | Score | Annonce | Prix | Taille | Transmission | Zone | Lieu | Source |
 | ---: | --- | ---: | --- | --- | --- | --- | --- |
-| **90** | [Van Rysel RCR-F Pro 105 Di2 2025, taille 56](https://www.decathlon.fr/search?Ntt=Van%20Rysel%20RCR-F%20Pro%20105%20Di2%20occasion) *(simulée)* | 3 150 € | 56 | 105 Di2, capteur | Saint-Nazaire et Loire-Atlantique | Saint-Brevin-les-Pins (5 km de Saint-Nazaire, livraison) | Decathlon Occasion |
+| **90** | Van Rysel RCR-F Pro 105 Di2 2025, taille 56 *(simulée)* | 3 150 € | 56 | 105 Di2, capteur | Saint-Nazaire et Loire-Atlantique | Saint-Brevin-les-Pins (5 km de Saint-Nazaire, livraison) | Decathlon Occasion |
 
 Écartées :
 
