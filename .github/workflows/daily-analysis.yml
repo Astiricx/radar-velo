@@ -1,0 +1,62 @@
+# Veille quotidienne : analyse les nouvelles annonces et enregistre les résultats dans data/.
+name: Veille quotidienne
+
+on:
+  schedule:
+    # Tous les jours à 8 h UTC, soit 9 h à Paris en hiver et 10 h en été.
+    # GitHub peut décaler un peu les exécutions planifiées aux heures chargées.
+    - cron: '0 8 * * *'
+  # Bouton « Run workflow » dans l'onglet Actions.
+  workflow_dispatch:
+    inputs:
+      simulation:
+        description: Ajouter les annonces simulées du jour
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: veille-quotidienne
+  cancel-in-progress: false
+
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Installer les dépendances
+        run: if [ -f package-lock.json ]; then npm ci; else npm install --no-audit --no-fund; fi
+
+      - name: Analyser les nouvelles annonces
+        id: veille
+        run: npm run daily-check
+        env:
+          # Lancement manuel : la case « simulation ». Exécution planifiée : la variable
+          # de dépôt VEILLE_SIMULATION (Settings → Secrets and variables → Actions → Variables),
+          # « true » si elle n'existe pas.
+          VEILLE_SIMULATION: ${{ github.event_name == 'workflow_dispatch' && format('{0}', inputs.simulation) || vars.VEILLE_SIMULATION || 'true' }}
+
+      - name: Enregistrer les résultats sur main
+        # Mettre la variable de dépôt COMMIT_RESULTS à « false » pour une simple exécution de contrôle.
+        if: steps.veille.outputs.analysed != '0' && vars.COMMIT_RESULTS != 'false'
+        env:
+          MESSAGE: ${{ steps.veille.outputs.commit_message }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "Aucun changement à enregistrer."
+            exit 0
+          fi
+          git commit -m "$MESSAGE"
+          git pull --rebase origin main
+          git push origin HEAD:main

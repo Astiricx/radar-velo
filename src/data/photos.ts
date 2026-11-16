@@ -40,6 +40,8 @@ const PHOTO_IDS = {
 
 export type PhotoName = keyof typeof PHOTO_IDS
 
+export const PHOTO_NAMES = Object.keys(PHOTO_IDS) as PhotoName[]
+
 /** URL Unsplash d'une photo, recadrée à la largeur demandée. */
 export function photo(name: PhotoName, width = 800): string {
   return unsplashUrl(`https://images.unsplash.com/photo-${PHOTO_IDS[name]}`, width)

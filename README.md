@@ -98,6 +98,50 @@ npx vercel --prod   # déploie en production
 > partagent pas entre ton ordinateur et ton téléphone, ni entre `localhost` et
 > l'adresse Vercel.
 
+## Veille quotidienne automatique (GitHub Actions)
+
+Tous les jours à 8 h UTC (9 h à Paris en hiver, 10 h en été), le workflow
+`.github/workflows/daily-analysis.yml` lance `scripts/daily-check.ts` :
+
+1. il rassemble les annonces du jour : celles déposées dans `data/inbox.json`
+   et, tant que la simulation est active, quelques annonces simulées dans tes
+   deux zones ;
+2. il ignore celles déjà analysées (`data/state.json`) ;
+3. il applique **le même filtre strict et le même score que l'application**
+   (`src/lib`) : carbone, disques, taille M / 56 / 57, budget maximum 4 500 €,
+   région parisienne ou Saint-Nazaire / Loire-Atlantique, ou livraison ;
+4. il met à jour `data/journal.md` (une entrée par jour, avec les annonces
+   pertinentes, leur score et les écartées) et `data/listings.json` ;
+5. s'il a analysé de nouvelles annonces, il commite `data/` sur `main`.
+
+Le résumé de chaque exécution s'affiche dans l'onglet **Actions** du dépôt.
+
+**Lancer la veille à la main** : onglet Actions → « Veille quotidienne » →
+« Run workflow ». La case « simulation » choisit d'ajouter ou non les annonces
+simulées.
+
+**Réglages** (Settings → Secrets and variables → Actions → onglet Variables) :
+
+| Variable            | Effet                                                               |
+| ------------------- | ------------------------------------------------------------------- |
+| `VEILLE_SIMULATION` | `false` : n'analyse plus que `data/inbox.json` (vraies annonces)    |
+| `COMMIT_RESULTS`    | `false` : simple exécution de contrôle, rien n'est commité          |
+
+En local : `npm run daily-check` (ajoute `VEILLE_DATE=2026-12-01` pour rejouer
+une date précise).
+
+> **Annonces simulées.** Le script ne lit pas Leboncoin, Troc-Vélo ni Decathlon :
+> depuis les serveurs de GitHub, ces sites bloquent les robots, et leurs
+> conditions d'utilisation l'interdisent pour Leboncoin. Les annonces simulées sont
+> marquées « *(simulée)* » dans le journal et `"simulated": true` dans
+> `listings.json`. Les vraies annonces passent par `data/inbox.json`, dont le
+> format est décrit dans `data/README.md`.
+
+> GitHub suspend les tâches planifiées d'un dépôt public sans activité pendant
+> 60 jours. Les commits quotidiens de la veille suffisent à l'éviter ; en mode
+> contrôle seul (`COMMIT_RESULTS=false`), réactive-la depuis l'onglet Actions si
+> GitHub te prévient.
+
 ## Ce que fait l'application
 
 - **Deux zones de recherche.** Région parisienne (220 km autour de Paris) et
@@ -147,7 +191,13 @@ typographie : aucune illustration dessinée.
 
 ```
 .
-├── .github/workflows/ci.yml   Vérification automatique à chaque push
+├── .github/workflows/
+│   ├── ci.yml                 Vérification automatique à chaque push
+│   └── daily-analysis.yml     Veille quotidienne planifiée
+├── scripts/
+│   ├── daily-check.ts         Analyse quotidienne (filtre, score, journal)
+│   └── simulation.ts          Annonces simulées, tirées selon la date
+├── data/                      Résultats de la veille (journal, annonces, état)
 ├── public/favicon.svg
 ├── index.html
 ├── package.json

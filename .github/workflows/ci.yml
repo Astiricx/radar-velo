@@ -4,6 +4,8 @@ name: CI
 on:
   push:
     branches: [main]
+    # Les commits de la veille quotidienne ne touchent que data/ : pas besoin de recompiler.
+    paths-ignore: ['data/**']
   pull_request:
 
 jobs:
