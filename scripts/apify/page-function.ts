@@ -22,6 +22,10 @@ export interface ListPage {
   samples?: string[]
   /** Appels JSON relevés par le navigateur (Puppeteer Scraper seulement). */
   apis?: string[]
+  /** Code HTTP de la page de liste (navigateur). */
+  status?: number | null
+  /** Annonces lues dans les réponses JSON du site plutôt que dans la page. */
+  fromJson?: boolean
 }
 
 export const PAGE_FUNCTION = `async function pageFunction(context) {

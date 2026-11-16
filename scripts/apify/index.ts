@@ -5,8 +5,8 @@ import { existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { plural } from '../../src/lib/format'
 import type { Listing } from '../../src/types'
-import { apifyRunner, monthlyUsage, type ActorRunner } from './client'
-import { APIFY, DECATHLON, LEBONCOIN, TROCVELO } from './config'
+import { apifyRunner, lastRunLog, monthlyUsage, type ActorRunner } from './client'
+import { APIFY, DECATHLON, LEBONCOIN, PROXY, TROCVELO, TROCVELO_PROXY } from './config'
 import { fetchDecathlon } from './decathlon'
 import { directRunner } from './direct'
 import { fetchLeboncoin } from './leboncoin'
@@ -83,6 +83,8 @@ export async function collectFromApify(today: string, warnings: string[]): Promi
       variable: 'TROCVELO_SEARCH_URL',
       direct: false,
       apifyHow: 'navigateur Puppeteer Scraper d’Apify',
+      actor: TROCVELO.actor,
+      proxy: TROCVELO_PROXY,
     },
     {
       label: 'Decathlon Occasion',
@@ -92,6 +94,8 @@ export async function collectFromApify(today: string, warnings: string[]): Promi
       variable: null,
       direct: true,
       apifyHow: 'Cheerio Scraper d’Apify',
+      actor: DECATHLON.actor,
+      proxy: PROXY,
     },
   ]
   for (const s of scrapers) {
@@ -107,11 +111,18 @@ export async function collectFromApify(today: string, warnings: string[]): Promi
       continue
     }
     const failures: string[] = []
+    const proxyLabel = (p: { useApifyProxy: boolean; apifyProxyGroups?: string[]; apifyProxyCountry?: string }) =>
+      p.apifyProxyGroups?.length ? `proxy Apify ${p.apifyProxyGroups.join('+')}${p.apifyProxyCountry ? ` (${p.apifyProxyCountry})` : ''}` : 'proxy Apify automatique'
     for (const { how, runner } of attempts) {
+      const viaApify = runner === run && !fixtures
+      if (viaApify) console.log(`  ${s.label} : ${how}, ${proxyLabel(s.proxy)}`)
       try {
         const { ads, skipped, listed, pages } = await s.fetch(runner)
         for (const p of pages) {
-          console.log(`    ${s.label} ${p.url} : « ${p.pageTitle ?? '?'} », ${p.size ?? '?'} caractères, ${p.found} annonces, ${p.kept} retenues`)
+          console.log(
+            `    ${s.label} ${p.url}${p.status ? ` (HTTP ${p.status})` : ''} : « ${p.pageTitle ?? '?'} », ${p.size ?? '?'} caractères, ` +
+              `${p.found} annonces${p.fromJson ? ' lues dans les réponses JSON du site' : ''}, ${p.kept} retenues`,
+          )
           for (const sample of p.samples ?? []) console.log(`      ${sample}`)
           if (p.apis?.length) {
             console.log(`      Appels JSON du site (pistes d'API interne) :`)
@@ -133,7 +144,18 @@ export async function collectFromApify(today: string, warnings: string[]): Promi
         failures.length = 0
         break
       } catch (error) {
-        failures.push(`${how} : ${(error as Error).message.replace(/[.\s]+$/, '')}`)
+        let message = `${how} (${viaApify ? proxyLabel(s.proxy) : 'sans proxy'}) : ${(error as Error).message.replace(/[.\s]+$/, '')}`
+        // La cause d'une page non lue n'est que dans le journal de l'exécution Apify : on le rapatrie.
+        if (viaApify && /non lue|aucune annonce/.test(message)) {
+          try {
+            const log = await lastRunLog(APIFY.token, s.actor)
+            for (const line of log) console.log(`      [Apify] ${line}`)
+            if (log.length > 0) message += `. Journal Apify : ${log.slice(-2).join(' / ').slice(0, 400)}`
+          } catch {
+            // Journal indisponible : on garde le message d'origine.
+          }
+        }
+        failures.push(message)
       }
     }
     if (failures.length > 0) {

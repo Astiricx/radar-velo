@@ -66,6 +66,19 @@ export async function monthlyUsage(token: string): Promise<{ usedUsd: number; li
   }
 }
 
+/**
+ * Lignes utiles du journal de la dernière exécution d'un acteur (erreurs, blocages,
+ * codes HTTP) : la cause d'une page non lue n'apparaît que là.
+ */
+export async function lastRunLog(token: string, actor: string, max = 12): Promise<string[]> {
+  const res = await call(token, `/acts/${actor.replace('/', '~')}/runs/last/log`, {}, 30_000)
+  const lines = (await res.text()).split('\n')
+  return lines
+    .filter((l) => /error|warn|block|denied|forbidden|captcha|challenge|\b40[0-9]\b|\b429\b|\b5\d\d\b|timeout|timed out|proxy/i.test(l))
+    .map((l) => l.replace(/^\S+\s+/, '').slice(0, 300))
+    .slice(-max)
+}
+
 /** Exécution réelle sur Apify, en mode synchrone. */
 export function apifyRunner(token: string): ActorRunner {
   return async (actor, input, options) => {

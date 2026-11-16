@@ -67,7 +67,13 @@ export const DECATHLON = {
  * variable APIFY_PROXY_GROUPS à RESIDENTIAL : IP résidentielles françaises, facturées au volume
  * (quelques centimes par mois pour ces petites pages).
  */
-function proxyFor(groupsText: string) {
+export interface ProxyConfig {
+  useApifyProxy: boolean
+  apifyProxyGroups?: string[]
+  apifyProxyCountry?: string
+}
+
+function proxyFor(groupsText: string): ProxyConfig {
   const groups = groupsText
     .split(',')
     .map((g) => g.trim().toUpperCase())

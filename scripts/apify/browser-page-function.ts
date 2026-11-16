@@ -14,15 +14,82 @@
  * Exécutée dans Node par l'acteur ; le code passé à page.evaluate tourne dans la page.
  * Écrite en JavaScript simple : elle est envoyée telle quelle à Apify.
  */
+/**
+ * Exécuté avant chaque navigation : enregistre les réponses JSON du site pendant le
+ * chargement (recherche interne, données des annonces). La fonction de page s'en sert
+ * si les annonces n'apparaissent pas dans la page.
+ */
+export const PRE_NAVIGATION_HOOKS = `[
+  async ({ page }) => {
+    page.__radarJson = [];
+    page.on('response', async (res) => {
+      try {
+        const type = (res.headers()['content-type'] || '').toLowerCase();
+        const url = res.url();
+        if (!type.includes('json') || /google|facebook|doubleclick|datadome|didomi|sentry|analytics|hotjar|criteo|tiktok|bing/i.test(url)) return;
+        const body = await res.text();
+        if (page.__radarJson.length < 10 && body.length < 3000000) page.__radarJson.push({ url, status: res.status(), body: body.slice(0, 500000) });
+      } catch (e) {}
+    });
+  },
+]`
+
 export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
   const { page, request, customData, log } = context;
   const base = request.loadedUrl || request.url;
 
+  // Annonces trouvées dans les réponses JSON du site (API de recherche interne), si la page reste vide.
+  const fromJson = (captured, cd) => {
+    const out = [];
+    const seen = new Set();
+    const pattern = new RegExp(cd.linkPattern);
+    const fold = (s) => String(s).normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase();
+    const prefilter = cd.prefilter ? new RegExp(cd.prefilter) : null;
+    const pick = (o, keys) => { for (const k of keys) if (o[k] !== undefined && o[k] !== null && o[k] !== '') return o[k]; return undefined; };
+    const walk = (node, depth) => {
+      if (!node || depth > 8 || out.length >= 40) return;
+      if (Array.isArray(node)) { for (const x of node) walk(x, depth + 1); return; }
+      if (typeof node !== 'object') return;
+      const title = pick(node, ['title', 'name', 'titre', 'label', 'subject']);
+      let link = pick(node, ['url', 'link', 'href', 'permalink', 'canonical_url', 'slug']);
+      let price = pick(node, ['price', 'prix', 'amount', 'price_eur', 'sale_price', 'priceAmount']);
+      if (price && typeof price === 'object') price = pick(price, ['amount', 'value', 'price', 'eur']);
+      if (typeof title === 'string' && link !== undefined && price !== undefined) {
+        try {
+          link = String(link);
+          link = new URL(/^https?:/.test(link) || link.startsWith('/') ? link : '/fr-fr/annonce/' + link, base).href.split('#')[0];
+          let amount = Number(String(price).replace(/[^\\d.,]/g, '').replace(',', '.'));
+          if (amount > 50000) amount = amount / 100; // centimes
+          const blob = fold(JSON.stringify(node));
+          const keep = pattern.test(new URL(link).pathname) && !seen.has(link) && amount > 0 &&
+            (!prefilter || prefilter.test(blob)) && amount >= cd.priceMin && amount <= cd.priceMax;
+          if (keep) {
+            seen.add(link);
+            const img = pick(node, ['image', 'imageUrl', 'image_url', 'thumbnail', 'picture', 'photo', 'cover', 'main_image']);
+            const imgs = pick(node, ['images', 'photos', 'pictures']);
+            out.push({
+              kind: 'ad', url: link, title, fromJson: true, jsonLd: [],
+              attributes: Object.fromEntries([['taille', pick(node, ['size', 'taille', 'frame_size', 'frameSize'])], ['etat', pick(node, ['condition', 'etat', 'state'])]].filter(([, v]) => typeof v === 'string' || typeof v === 'number')),
+              image: typeof img === 'string' ? img : (img && pick(img, ['url', 'src', 'large'])) || '',
+              images: Array.isArray(imgs) ? imgs.map((i) => (typeof i === 'string' ? i : i && pick(i, ['url', 'src', 'large']))).filter(Boolean).slice(0, 4) : [],
+              postalCode: pick(node, ['zipcode', 'zip_code', 'postal_code', 'postalCode', 'postcode', 'cp']),
+              description: JSON.stringify(node).slice(0, 3000),
+              text: title + ' ' + amount + ' €',
+            });
+          }
+        } catch (e) {}
+      }
+      for (const v of Object.values(node)) if (v && typeof v === 'object') walk(v, depth + 1);
+    };
+    for (const c of captured) { try { walk(JSON.parse(c.body), 0); } catch (e) {} }
+    return out;
+  };
+
   if (!request.userData || request.userData.label !== 'DETAIL') {
-    // Les annonces sont injectées par le JavaScript du site : on attend qu'elles apparaissent.
-    await page.waitForSelector('a[href*="/annonce/"]', { timeout: 30000 }).catch(() => null);
+    // Les annonces sont injectées par le JavaScript du site : on leur laisse le temps d'apparaître.
+    await page.waitForSelector('a[href*="/annonce/"]', { timeout: 45000 }).catch(() => null);
     await page.evaluate(() => window.scrollBy(0, document.body.scrollHeight)).catch(() => null);
-    await new Promise((r) => setTimeout(r, 1500));
+    await new Promise((r) => setTimeout(r, 2500));
     const data = await page.evaluate((cd) => {
       const fold = (s) => s.normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase();
       const pattern = new RegExp(cd.linkPattern);
@@ -63,11 +130,21 @@ export const BROWSER_PAGE_FUNCTION = `async function pageFunction(context) {
       };
     }, customData);
     log.info(customData.label + ' : ' + data.found + ' annonces sur la page, ' + data.kept.length + ' prometteuses ouvertes');
+    const captured = page.__radarJson || [];
+    const apis = Array.from(new Set(captured.map((c) => c.url + ' (' + c.status + ')').concat(data.apis))).slice(0, 15);
+    const status = context.response && typeof context.response.status === 'function' ? context.response.status() : null;
+    const list = { kind: 'list', url: base, status, found: data.found, kept: data.kept.length, pageTitle: data.pageTitle, size: data.size, samples: data.samples, apis };
+    if (data.found === 0) {
+      // Page vide : les annonces sont peut-être seulement dans les réponses JSON du site.
+      const ads = fromJson(captured, customData).slice(0, 30);
+      log.info(customData.label + ' : aucune annonce dans la page, ' + ads.length + ' trouvées dans ' + captured.length + ' réponses JSON');
+      return [Object.assign(list, { found: ads.length, kept: ads.length, fromJson: true })].concat(ads);
+    }
     for (const url of data.kept) await context.enqueueRequest({ url, userData: { label: 'DETAIL' } });
-    return { kind: 'list', url: base, found: data.found, kept: data.kept.length, pageTitle: data.pageTitle, size: data.size, samples: data.samples, apis: data.apis };
+    return list;
   }
 
-  await page.waitForSelector('h1', { timeout: 20000 }).catch(() => null);
+  await page.waitForSelector('h1', { timeout: 30000 }).catch(() => null);
   const ad = await page.evaluate(() => {
     const meta = (name) => (document.querySelector('meta[property="' + name + '"]') || document.querySelector('meta[name="' + name + '"]') || {}).content || '';
     const jsonLd = [];

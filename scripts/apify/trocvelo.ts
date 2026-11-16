@@ -10,7 +10,7 @@
  * Troc-Vélo ne donne que le code postal du vendeur : la distance est calculée depuis
  * la préfecture du département, et signalée comme approximative.
  */
-import { BROWSER_PAGE_FUNCTION } from './browser-page-function'
+import { BROWSER_PAGE_FUNCTION, PRE_NAVIGATION_HOOKS } from './browser-page-function'
 import type { ActorRunner } from './client'
 import { PREFILTER, SEARCH, TROCVELO, TROCVELO_PROXY } from './config'
 import type { ListPage } from './page-function'
@@ -22,6 +22,8 @@ export async function fetchTrocVelo(run: ActorRunner): Promise<{ ads: RawAd[]; s
     {
       startUrls: [{ url: TROCVELO.startUrl }],
       pageFunction: BROWSER_PAGE_FUNCTION,
+      // Capture des réponses JSON du site pendant le chargement (voir browser-page-function.ts).
+      preNavigationHooks: PRE_NAVIGATION_HOOKS,
       customData: {
         label: 'Troc-Vélo',
         linkPattern: '/annonce/.+-\\d+/?$',
@@ -35,7 +37,8 @@ export async function fetchTrocVelo(run: ActorRunner): Promise<{ ads: RawAd[]; s
       maxPagesPerCrawl: TROCVELO.maxListings + 1,
       maxRequestsPerCrawl: TROCVELO.maxListings + 1,
       maxConcurrency: 2,
-      maxRequestRetries: 2,
+      // Une nouvelle tentative repart avec une autre adresse du proxy.
+      maxRequestRetries: 3,
       // Économie de temps et de bande passante (le proxy résidentiel est facturé au volume).
       downloadMedia: false,
       downloadCss: false,
@@ -43,10 +46,10 @@ export async function fetchTrocVelo(run: ActorRunner): Promise<{ ads: RawAd[]; s
       headless: true,
       useChrome: false,
       waitUntil: ['domcontentloaded'],
-      pageLoadTimeoutSecs: 60,
-      pageFunctionTimeoutSecs: 60,
+      pageLoadTimeoutSecs: 90,
+      pageFunctionTimeoutSecs: 120,
     },
-    { memoryMbytes: 2048, timeoutSecs: 280 },
+    { memoryMbytes: 2048, timeoutSecs: 290 },
   )
   let listed: number | null = null
   const pages: ListPage[] = []
@@ -149,7 +152,10 @@ export function normalizeTrocVelo(raw: unknown): RawAd | null {
 
   // Titres de la forme « Modèle - MARQUE - 44600 » : on garde le modèle et la marque, on lit le code postal.
   const parts = rawTitle.split(/\s+-\s+/)
-  const postal = parts.length > 1 && /^\d{4,5}$/.test(parts[parts.length - 1]) ? parts.pop()! : text.match(/\b(\d{5})\b(?=[^\d]{0,30}(?:remise|livraison|france))/i)?.[1]
+  const postalField = raw.postalCode !== undefined && raw.postalCode !== null ? String(raw.postalCode).trim() : ''
+  const postal = /^\d{4,5}$/.test(postalField)
+    ? postalField
+    : parts.length > 1 && /^\d{4,5}$/.test(parts[parts.length - 1]) ? parts.pop()! : text.match(/\b(\d{5})\b(?=[^\d]{0,30}(?:remise|livraison|france))/i)?.[1]
   // « … - CERVELO » répète la marque déjà présente dans le titre.
   if (parts.length > 1 && fold(parts[0]).includes(fold(parts[parts.length - 1]))) parts.pop()
   const title = parts.join(' - ')

@@ -142,10 +142,18 @@ ils n'ont pas besoin d'être ajoutés à ton compte, mais Apify demande d'autori
 chacun une fois. Si le journal affiche « Apify demande d'autoriser une fois cet
 acteur », ouvre le lien indiqué et clique sur **Approve**.
 
-**API interne de Troc-Vélo.** À chaque passage, le navigateur relève les appels
-JSON que fait la page de liste. S'ils révèlent une API de recherche, le journal
-les affiche (« appels JSON relevés ») : on pourra alors l'interroger directement,
-sans navigateur, pour presque rien.
+**API interne de Troc-Vélo.** Pendant le chargement, le navigateur enregistre les
+réponses JSON du site. Si les annonces n'apparaissent pas dans la page, il les
+lit directement dans ces réponses (titre, prix, lien, photo, code postal). Le
+journal affiche les appels relevés (« appels JSON relevés ») : si une API de
+recherche apparaît, on pourra l'interroger sans navigateur, pour presque rien.
+
+**Diagnostic.** Quand une page de liste n'est pas lue, la veille récupère les
+lignes d'erreur du journal de l'exécution Apify (code HTTP, blocage, délai) et
+les recopie dans son propre journal, avec le proxy réellement utilisé.
+
+`TROCVELO_PROXY_GROUPS` et `APIFY_PROXY_GROUPS` sont lus comme variables de dépôt
+ou, à défaut, comme secrets du même nom.
 
 **Réglages facultatifs** (Settings → Secrets and variables → Actions → onglet
 Variables) :
