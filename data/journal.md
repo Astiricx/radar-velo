@@ -2,6 +2,25 @@
 
 ## Lundi 16 novembre 2026
 
+- Crédit Apify consommé ce mois-ci avant la collecte : 0,40 $ sur 5,00 $.
+- Leboncoin : 60 annonces lues autour de Paris et de Saint-Nazaire (30 au plus par zone).
+- Troc-Vélo (navigateur Puppeteer Scraper d’Apify) : 30 annonces sur la liste, 3 prometteuses ouvertes.
+
+4 nouvelles annonces analysées : 0 pertinente, 4 écartées.
+
+Écartées :
+
+- [BMC Roadmachine 5](https://www.leboncoin.fr/ad/velos/3271505374), 1 600 € : Groupe non retenu (105 mécanique)
+- [Wilier cento 10 sl 105 di2](https://www.troc-velo.com/fr-fr/annonce/wilier-cento-10-sl-105-di2-4314711), 3 000 € : Type hors critères (Gravel)
+- [Vélo BH carbone di2 avec 2 paires de roue](https://www.troc-velo.com/fr-fr/annonce/velo-bh-carbone-di2-4272219), 1 990 € : Aucune zone de recherche active
+- [Trek Emonda SL6 Pro Di2 (2023)](https://www.troc-velo.com/fr-fr/annonce/trek-emonda-sl6-pro-di2-2023-4314710), 2 699 € : Taille ? incompatible
+
+Avertissements :
+
+- Decathlon Occasion non lu. lecture directe (sans proxy) : lecture directe impossible (HTTP 403) ; Cheerio Scraper d’Apify (proxy Apify automatique) : page de liste non lue (bloquée ou injoignable) : https://www.decathlon.fr/occasion/velo-route-occasion?from=0&size=40. Journal Apify : Last Error Message: Error: Request blocked - received 403 status code. / INFO  CheerioCrawler: Error analysis: {"totalErrors":4,"uniqueErrors":1,"mostCommonErrors":["4x: Request blocked - received 403 status code. (/usr/src/app/node_modules/@crawlee/basic/internals/basic-crawler.js:954:19)"]}.
+
+## Lundi 16 novembre 2026
+
 - Crédit Apify consommé ce mois-ci avant la collecte : 0,34 $ sur 5,00 $.
 - Leboncoin : 60 annonces lues autour de Paris et de Saint-Nazaire (30 au plus par zone).
 
