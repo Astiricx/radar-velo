@@ -2,6 +2,112 @@
 
 ## Lundi 16 novembre 2026
 
+- Crédit Apify consommé ce mois-ci avant la collecte : 1,02 $ sur 5,00 $.
+- Leboncoin : 60 annonces lues autour de Paris et de Saint-Nazaire (30 au plus par zone).
+- Troc-Vélo (navigateur Puppeteer Scraper d’Apify) : 54 annonces sur la liste (2 pages), 8 fiches ouvertes. Tri de la liste : 0 déjà analysées, 25 hors budget, 15 d'une autre taille, 2 sans taille ni groupe cité, 2 trop loin sans livraison, 10 à ouvrir (6 annonces « à la une » répétées d'une page à l'autre, comptées une fois).
+- Decathlon Occasion (Cheerio Scraper d’Apify) : 42 annonces sur la liste, 0 fiche ouverte.
+
+68 nouvelles annonces analysées : 27 pertinentes, 41 écartées.
+
+| Score | Annonce | Prix | Taille | Transmission | Zone | Lieu | Source |
+| ---: | --- | ---: | --- | --- | --- | --- | --- |
+| **86** | [Vélo carbone Trek madone SL7 2026](https://www.leboncoin.fr/ad/velos/3309937771) | 2 900 € | M | Dura-Ace Di2 | Région parisienne | Paris (sur place à Paris) | Leboncoin |
+| **73** | [BH Aerolight – Moins de 1 000 km – pédales capteur de puissance](https://www.leboncoin.fr/ad/velos/3310818575) | 4 500 € | M | Ultegra Di2, capteur | Région parisienne | Saint-Cyr-l'École (22 km de Paris) | Leboncoin |
+| **72** | [Bmc slr 01](https://www.troc-velo.com/fr-fr/annonce/bmc-slr-01-4314720) | 2 400 € | M | Ultegra Di2 | Hors zone | SOUMOULOU (64420) (473 km de Saint-Nazaire, livraison) | Troc-Vélo |
+| **72** | [Wilier Cento 10 sl](https://www.troc-velo.com/fr-fr/annonce/wilier-cento-10-sl-4314679) | 2 250 € | M | Ultegra mécanique, capteur | Saint-Nazaire et Loire-Atlantique | Saint-gilles (35590) (101 km de Saint-Nazaire, livraison) | Troc-Vélo |
+| **71** | [Vélo de course route Giant Avanced Pro 0 DI2 ultegra électronique avec Powermeter Giant Power Pro freins à disque](https://www.leboncoin.fr/ad/velos/3287241477) | 2 200 € | M | Ultegra Di2, capteur | Région parisienne | Ris-Orangis (24 km de Paris) | Leboncoin |
+| **70** | [Cube Agree C:62 SL carbone, Ultegra Di2, capteur de puissance, freins à disque, taille M](https://www.leboncoin.fr/ad/velos/3310527198) | 1 540 € | M | Ultegra Di2, capteur | Région parisienne | Clamart (8 km de Paris, livraison) | Leboncoin |
+| **69** | [BMC Teammachine SLR01 Three - Taille 54 - Ultegra di2 - Capteur puissance](https://www.leboncoin.fr/ad/velos/3276448598) | 2 700 € | M | Ultegra Di2, capteur | Saint-Nazaire et Loire-Atlantique | Elven (58 km de Saint-Nazaire) | Leboncoin |
+| **68** | [Giant Defy Pro Advanced 1 , Taille M , Shimano Ultegra Di2 , très bien équipé et surtout très bien entretenu...](https://www.leboncoin.fr/ad/velos/3309937451) | 2 500 € | M | Ultegra Di2 | Région parisienne | Sainte-Geneviève-des-Bois (24 km de Paris) | Leboncoin |
+| **67** | [Vélo BH chrono aerolight](https://www.leboncoin.fr/ad/velos/3309656939) | 1 650 € | M | Ultegra Di2 | Saint-Nazaire et Loire-Atlantique | Saint-Nazaire (sur place à Saint-Nazaire) | Leboncoin |
+| **66** | [LOOK 785 Huez RS Disc](https://www.leboncoin.fr/ad/velos/3287252955) | 2 800 € | M | Ultegra Di2 | Saint-Nazaire et Loire-Atlantique | Nantes (50 km de Saint-Nazaire) | Leboncoin |
+| **66** | [Cervelo R5 Dura-Ace Di2 (roues en option)](https://www.leboncoin.fr/ad/velos/3310758520) | 3 800 € | M | Dura-Ace Di2 | Région parisienne | Paris (3 km de Paris) | Leboncoin |
+| **66** | [Cannondale systemsix hi-mod di2 ultegra 2022 taille 56](https://www.leboncoin.fr/ad/velos/3291738536) | 2 500 € | 56 | Ultegra Di2 | Région parisienne | Paris (4 km de Paris, livraison) | Leboncoin |
+| **66** | [Wilier filante slr](https://www.leboncoin.fr/ad/velos/3310245228) | 3 500 € | M | Ultegra mécanique | Région parisienne | Ozoir-la-Ferrière (25 km de Paris) | Leboncoin |
+| **65** | [Vélo route carbone Cannondale synapse ultegra 11V taille 54](https://www.leboncoin.fr/ad/velos/3310134223) | 1 900 € | M | Ultegra Di2 | Région parisienne | Fontenay-Trésigny (41 km de Paris) | Leboncoin |
+| **64** | [Giant TCR](https://www.leboncoin.fr/ad/velos/3288707948) | 1 600 € | M | Ultegra mécanique, capteur | Région parisienne | Trilport (45 km de Paris) | Leboncoin |
+| **64** | [LOOK 795 Blade RS — Ultegra Di2 · Roues carbone DT Swiss ARC 1400](https://www.leboncoin.fr/ad/velos/3310229067) | 3 850 € | M | Ultegra Di2 | Région parisienne | Sèvres (12 km de Paris) | Leboncoin |
+| **63** | [Velo route scott](https://www.leboncoin.fr/ad/velos/3310284760) | 2 550 € | M | 105 Di2 | Saint-Nazaire et Loire-Atlantique | La Gacilly (55 km de Saint-Nazaire) | Leboncoin |
+| **61** | [Vélo Carbone \| TREK Emonda SL6 Taille M \| Garantie 2 ans](https://www.leboncoin.fr/ad/velos/3249910648) | 3 200 € | M | 105 Di2 | Saint-Nazaire et Loire-Atlantique | Saint-Herblain (43 km de Saint-Nazaire) | Leboncoin |
+| **61** | [FOCUS Izalco Max 8.9 2024 Taille 54 - Vélo Route Musculaire](https://www.leboncoin.fr/ad/velos/3308565787) | 2 299 € | M | 105 Di2 | Saint-Nazaire et Loire-Atlantique | Nantes (50 km de Saint-Nazaire, livraison) | Leboncoin |
+| **61** | [CANNONDALE disques SYNAPSE 51 idem supersix evo Focus Specialized Lapierre Look](https://www.leboncoin.fr/ad/velos/3310028926) | 1 760 € | M | Ultegra mécanique | Région parisienne | Fosses (29 km de Paris) | Leboncoin |
+| **59** | [Specialized tarmac SL7 pro](https://www.troc-velo.com/fr-fr/annonce/specialized-tarmac-sl7-pro-4314667) | 3 500 € | 56 | Ultegra Di2 | Région parisienne | Lille (59800) (204 km de Paris) | Troc-Vélo |
+| **58** | [Specialized Tarmac SL7 comp disc \| Shimano 105 Di2 - Excellent état](https://www.leboncoin.fr/ad/velos/3311084474) | 2 199 € | M | 105 Di2 | Région parisienne | Paris (4 km de Paris, livraison) | Leboncoin |
+| **57** | [Vélo Route Carbone NEUF Pardus SPK G4 - 105 Di2 12v - taille L](https://www.leboncoin.fr/ad/velos/3288075059) | 4 090 € | M | 105 Di2 | Saint-Nazaire et Loire-Atlantique | Savenay (23 km de Saint-Nazaire) | Leboncoin |
+| **56** | [MEGAMO Raise 15 2026 - Vélo Route Musculaire](https://www.leboncoin.fr/ad/velos/3308753947) | 2 249 € | M | 105 Di2 | Saint-Nazaire et Loire-Atlantique | Nantes (50 km de Saint-Nazaire, livraison) | Leboncoin |
+| **55** | [Vélo course KTM Alto](https://www.troc-velo.com/fr-fr/annonce/velo-course-ktm-alto-4302875) | 2 400 € | 57 | 105 Di2 | Hors zone | Ixelles (1050), hors de France métropolitaine | Troc-Vélo |
+| **49** | [Cervelo Soloist 2025](https://www.leboncoin.fr/ad/velos/3310603106) | 4 300 € | M | Ultegra Di2 | Saint-Nazaire et Loire-Atlantique | Séné (55 km de Saint-Nazaire) | Leboncoin |
+| **46** | [Vélo Carbone \| VAN RYSEL RCR Pro Ultegra Di2 Taille M \| Garantie 2 ans](https://www.leboncoin.fr/ad/velos/3285749244) | 4 500 € | M | Ultegra Di2 | Saint-Nazaire et Loire-Atlantique | Saint-Herblain (45 km de Saint-Nazaire) | Leboncoin |
+
+À vérifier avant de contacter le vendeur :
+
+- Vélo carbone Trek madone SL7 2026 : type de freins non précisé
+- BH Aerolight – Moins de 1 000 km – pédales capteur de puissance : matériau du cadre non précisé
+- Bmc slr 01 : taille à confirmer : m déclarée, 54 dans la description ; année non précisée
+- Wilier Cento 10 sl : taille à confirmer : m déclarée, 54 dans la description
+- Vélo de course route Giant Avanced Pro 0 DI2 ultegra électronique avec Powermeter Giant Power Pro freins à disque : matériau du cadre non précisé ; année non précisée
+- BMC Teammachine SLR01 Three - Taille 54 - Ultegra di2 - Capteur puissance : matériau du cadre non précisé ; taille à confirmer : m déclarée, 54 dans la description ; année non précisée
+- Giant Defy Pro Advanced 1 , Taille M , Shimano Ultegra Di2 , très bien équipé et surtout très bien entretenu... : type de freins non précisé
+- Vélo BH chrono aerolight : type de freins non précisé
+- LOOK 785 Huez RS Disc : matériau du cadre non précisé
+- Cervelo R5 Dura-Ace Di2 (roues en option) : taille à confirmer : m déclarée, 54 dans la description
+- Cannondale systemsix hi-mod di2 ultegra 2022 taille 56 : matériau du cadre non précisé ; type de freins non précisé
+- Wilier filante slr : groupe dura-ace mécanique, classé avec l’ultegra mécanique
+- Vélo route carbone Cannondale synapse ultegra 11V taille 54 : taille à confirmer : m déclarée, 54 dans la description
+- LOOK 795 Blade RS — Ultegra Di2 · Roues carbone DT Swiss ARC 1400 : matériau du cadre non précisé ; type de freins non précisé ; année non précisée
+- Velo route scott : matériau du cadre non précisé ; année non précisée
+- FOCUS Izalco Max 8.9 2024 Taille 54 - Vélo Route Musculaire : taille à confirmer : m déclarée, 54 dans la description
+- CANNONDALE disques SYNAPSE 51 idem supersix evo Focus Specialized Lapierre Look : année non précisée
+- Vélo Route Carbone NEUF Pardus SPK G4 - 105 Di2 12v - taille L : type de freins non précisé ; taille à confirmer : m déclarée, l dans la description ; année non précisée
+- MEGAMO Raise 15 2026 - Vélo Route Musculaire : taille à confirmer : m déclarée, s dans la description
+- Cervelo Soloist 2025 : matériau du cadre non précisé ; type de freins non précisé ; taille à confirmer : m déclarée, 54 dans la description
+
+Écartées :
+
+- [Vélo Gravel Giant TCX](https://www.leboncoin.fr/ad/velos/3311054914), 1 500 € : Groupe non retenu (Shimano GRX)
+- [Giant Propel Advanced Pro 1](https://www.leboncoin.fr/ad/velos/3303649266), 3 250 € : Groupe non retenu (SRAM AXS)
+- [Canyon Ultimate CF SL 7 Axs](https://www.leboncoin.fr/ad/velos/3290400376), 2 400 € : Groupe non retenu (SRAM AXS)
+- [Vélo Gravel Look 765 RS 2026 🚨destockage -30%](https://www.leboncoin.fr/ad/velos/3271083290), 3 499 € : Groupe non retenu (SRAM AXS)
+- [Specialized Tarmac SL7 Expert](https://www.leboncoin.fr/ad/velos/3267968192), 3 499 € : Freins à patins
+- [Kit cadre Specialized sworks tarmac sl8 taille 54 neuf](https://www.leboncoin.fr/ad/velos/3309226520), 3 200 € : Groupe non retenu (Autre groupe)
+- [LOOK 765 Gravel RS 2025 Taille M - Vélo Gravel Musculaire](https://www.leboncoin.fr/ad/velos/3309195042), 2 349 € : Groupe non retenu (SRAM AXS)
+- [VTC Mondraker PRIME X M 2026 Graphite Grey Taille M](https://www.leboncoin.fr/ad/velos/3234112898), 3 699 € : Cadre en aluminium
+- [Gravel mondraker arid carbon](https://www.leboncoin.fr/ad/velos/3226371813), 3 199 € : Groupe non retenu (SRAM AXS)
+- [Velo de route Merida Scultura 7000 taille M](https://www.leboncoin.fr/ad/velos/3226424371), 3 999 € : Groupe non retenu (SRAM AXS)
+- [Specialized Aethos Expert T54](https://www.leboncoin.fr/ad/velos/3309052798), 3 500 € : Groupe non retenu (Autre groupe)
+- [Gravel Carbone \| TREK Checkpoint Taille M \| Garantie 2 ans](https://www.leboncoin.fr/ad/velos/3294158059), 2 500 € : Groupe non retenu (Shimano GRX)
+- [Gravel Specialized Crux](https://www.leboncoin.fr/ad/velos/3292420886), 1 950 € : Groupe non retenu (SRAM AXS)
+- [Vélo de route ADRIS NEUF](https://www.leboncoin.fr/ad/velos/3308964093), 2 400 € : Groupe non retenu (Autre groupe)
+- [Vélo de route Specialized Aethos / M](https://www.leboncoin.fr/ad/velos/3308896322), 2 370 € : Groupe non retenu (SRAM AXS)
+- [Trek Emonda sl6pro](https://www.leboncoin.fr/ad/velos/3308800475), 1 800 € : Groupe non retenu (Autre groupe)
+- [Scott addict RC15](https://www.leboncoin.fr/ad/velos/3295594980), 1 700 € : Groupe non retenu (SRAM AXS)
+- [Pinarello prince fx velo route homme](https://www.leboncoin.fr/ad/velos/3308445202), 3 000 € : Taille 53 incompatible
+- [Velo route bh carbone roue zipp](https://www.leboncoin.fr/ad/velos/3288947794), 1 800 € : Groupe non retenu (105 mécanique)
+- [Bianchi Oltre XR4 - Ultegra Di2 11v - Roues Scoop R4 Carbone (Taille 55)](https://www.leboncoin.fr/ad/velos/3303004362), 1 600 € : Freins à patins
+- [BMC Roadmachine 5](https://www.leboncoin.fr/ad/velos/3271505374), 1 600 € : Groupe non retenu (105 mécanique)
+- [Scott Addict 50 taille M](https://www.leboncoin.fr/ad/velos/3311030776), 2 100 € : Groupe non retenu (105 mécanique)
+- [Vélo gravel Cannondale](https://www.leboncoin.fr/ad/velos/3310947783), 1 680 € : Groupe non retenu (Autre groupe)
+- [Cannondale SuperSix EVO Hi-Mod 1](https://www.leboncoin.fr/ad/velos/3290412765), 4 299 € : Groupe non retenu (SRAM AXS)
+- [Rose backroad](https://www.leboncoin.fr/ad/velos/3310704623), 2 650 € : Groupe non retenu (Autre groupe)
+- [Vélo route van rysel rcr pro](https://www.leboncoin.fr/ad/velos/3310699996), 4 500 € : Groupe non retenu (Autre groupe)
+- [Tarmac SL7taille 54 rouge et noir](https://www.leboncoin.fr/ad/velos/3310664428), 2 500 € : Groupe non retenu (SRAM AXS)
+- [Pinarello F5 carbon- SRAM eTap AXS - Capteur de puissance](https://www.leboncoin.fr/ad/velos/3248451299), 3 390 € : Taille 53 incompatible
+- [LOOK 765 Gravel RS 2025 Taille M - Vélo Gravel Musculaire reconditionné \| 15 jours pour essayer](https://www.leboncoin.fr/ad/velos/3310443992), 2 349 € : Groupe non retenu (SRAM AXS)
+- [Specialized Tarmac SL8 - Taille 54 - SRAM Rival - roues Roval Alpiniste CLX](https://www.leboncoin.fr/ad/velos/3297832594), 3 900 € : Groupe non retenu (SRAM AXS)
+- [Bmc](https://www.leboncoin.fr/ad/velos/3305253958), 1 990 € : Groupe non retenu (Autre groupe)
+- [Merida reacto 7000](https://www.leboncoin.fr/ad/velos/3310201243), 1 800 € : Freins à patins
+- [Giant Defy Advanced Pro 2 - 2024](https://www.leboncoin.fr/ad/velos/3310192367), 2 900 € : Groupe non retenu (105 mécanique)
+- [Velo cadre plongeant CLM notar paire paracylaires vintage](https://www.leboncoin.fr/ad/velos/3310184291), 1 600 € : Taille 52 incompatible
+- [Specialized Tarmac Sl7 Sport taille 54](https://www.leboncoin.fr/ad/velos/3310145578), 2 000 € : Groupe non retenu (105 mécanique)
+- [Vélo de route full carbone GIANT Advanced Propel Pro](https://www.leboncoin.fr/ad/velos/3310109319), 2 000 € : Groupe non retenu (SRAM AXS)
+- [Scott Addict 50](https://www.leboncoin.fr/ad/velos/3309970363), 1 900 € : Groupe non retenu (105 mécanique)
+- [Kuota kom carbone (optimized lateral stiffness) très peu kilométré suite à un accident de voiture](https://www.troc-velo.com/fr-fr/annonce/kuota-kom-carbone-optimized-lateral-stiffness-tres-peu-kilometre-suite-a-un-accident-de-voiture-4314660), 1 700 € : Freins à patins
+- [🔥Specialized S-Works Tarmac SL6 Ultegra Di2 56🔥trek pinarello scott canyon giant colnago ridley](https://www.troc-velo.com/fr-fr/annonce/specialized-s-works-tarmac-sl6-ultegra-di2-56-trek-pinarello-scott-canyon-giant-colnago-ridley-4314479), 1 899 € : Lieu inconnu ou trop éloigné, sans livraison
+- [Giant propel taille M](https://www.troc-velo.com/fr-fr/annonce/giant-propel-taille-m-4314520), 2 750 € : Groupe non retenu (SRAM AXS)
+- [Cube Aerium C:68 SLT (Taille M / Low) - SRAM Red AXS - Prolongateurs Ascalon](https://www.troc-velo.com/fr-fr/annonce/cube-aerium-c-68-slt-taille-m-low-sram-red-axs-prolongateurs-ascalon-4307123), 4 000 € : Type hors critères (Contre-la-montre / triathlon)
+
+## Lundi 16 novembre 2026
+
 - Crédit Apify consommé ce mois-ci avant la collecte : 0,84 $ sur 5,00 $.
 - Leboncoin : 60 annonces lues autour de Paris et de Saint-Nazaire (30 au plus par zone).
 - Troc-Vélo : appels JSON relevés sur la page de liste (piste d'API interne) : https://api.troc-velo.com/api/category_product_counters (200), https://cdn.api.btloader.com/device?orgid=5094764668518400&platformVersion=6.8.0&fullVersionList=%5B%7B%22brand%22%3A%22Not%3DA%3FBrand%22%2C%22version%22%3A%2224.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22140.0.7339.185%22%7D%5D&upapi=true (200), https://collector.appconsent.io/hello (200), https://api.troc-velo.com/api/category_product_counters, https://www.troc-velo.com/fr-fr?_rsc=eOPycq5ES9Tk-Ef7.

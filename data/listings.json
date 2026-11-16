@@ -13,8 +13,8 @@
       "Saint-Nazaire et Loire-Atlantique (120 km autour de Saint-Nazaire)"
     ]
   },
-  "count": 115,
-  "retained": 28,
+  "count": 116,
+  "retained": 38,
   "listings": [
     {
       "id": "lbc-3309937771",
@@ -212,6 +212,104 @@
       "rejection": null
     },
     {
+      "id": "tv-4314679",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/wilier-cento-10-sl-4314679",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/679/14679/4314679/4314679-wilier-cento-10-sl-4314679-1794856497.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/679/14679/4314679/4314679-wilier-cento-10-sl-4314679-1794856498.jpg",
+      "imageKind": "annonce",
+      "title": "Wilier Cento 10 sl",
+      "brand": "Wilier",
+      "model": "Cento 10 sl",
+      "year": 2023,
+      "type": "route",
+      "size": "M",
+      "price": 2250,
+      "newPrice": 5000,
+      "description": "Je vends mon Wilier Cento 10 SL, acheté neuf en mai 2023. Premier propriétaire, vélo entretenu avec soin. factures d’achat sont disponibles. Acheter 4800 *Vélo vendu avec roue wilier 38 carbone Le vélo est en parfait état de fonctionnement et prêt à rouler. Équipement : Cadre Wilier Cento 10 SL carbone Taille 54 (M) Groupe Shimano Ultegra R8000 mécanique 11 vitesses cassette 11/28 plateau 52/36 Pédalier capteur de puissance Freins à disque hydrauliques À noter : quelques éclats de peinture et rayures liés à une utilisation normale, uniquement esthétique. Vélo performant, rigide et confortable, idéal pour les longues sorties comme pour la compétition. Facture d'origine : Oui Retour : Non Référence de l'annonce : 4314679",
+      "city": "Saint-gilles (35590)",
+      "coords": {
+        "lat": 48.1517,
+        "lon": -1.85
+      },
+      "shipping": true,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra",
+      "aero": false,
+      "powerMeter": true,
+      "wheelDepth": 38,
+      "extensions": "inconnu",
+      "condition": "bon",
+      "batch": 0,
+      "toVerify": [
+        "Taille à confirmer : M déclarée, 54 dans la description"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 72,
+      "zone": "Saint-Nazaire et Loire-Atlantique",
+      "distanceKm": 101,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "55 % sous le prix neuf (5 000 €)",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra mécanique",
+          "points": 6,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Inclus",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 38 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "101 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique, livraison possible",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Bon état, modèle 2023",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
       "id": "tv-4314720",
       "source": "troc-velo",
       "url": "https://www.troc-velo.com/fr-fr/annonce/bmc-slr-01-4314720",
@@ -243,6 +341,7 @@
       "condition": "tres-bon",
       "batch": 0,
       "toVerify": [
+        "Taille à confirmer : M déclarée, 54 dans la description",
         "Année non précisée"
       ],
       "firstSeen": "2026-11-16",
@@ -495,6 +594,105 @@
           "label": "État et âge",
           "detail": "Très bon état, modèle 2018",
           "points": 4,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
+      "id": "lbc-3276448598",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3276448598",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/2a/48/b9/2a48b9bbb73bf1194a8226d035aa552780a15629.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/23/4d/ab/234dabd2abde27cc3401c2a136fd445cb8667a1e.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "BMC Teammachine SLR01 Three - Taille 54 - Ultegra di2 - Capteur puissance",
+      "brand": "BMC",
+      "model": "Teammachine SLR01 Three - - Ultegra di2 - Capteur puissance",
+      "year": 0,
+      "type": "route",
+      "size": "M",
+      "price": 2700,
+      "description": "Je vends mon BMC Teammachine SLR01 THREE, taille de 54.\n\nÉquipement\n\n* Cadre BMC Teammachine SLR01\n* Taille 54\n* Groupe Shimano Ultegra Di2 12 vitesses\n* Pédalier Shimano Ultegra\n* Capteur de puissance Giant Power Pro\n* Roues DT Swiss R470\n* Freins à disque\n\nÉtat / entretien\n\nVélo en très bon état général, entretenu avec soin.\n\n✅ Révision complète récemment effectuée, facture disponible\n✅ Facture d’achat du vélo disponible, acheté d’occasion auprès du VCP Loudeac (vélo galerie)\n✅ Vélo prêt à rouler\n\nÀ signaler : petit éclat de peinture sur la fourche, uniquement esthétique.\n\n📍 Visible dans le secteur Elven / Vannes (Morbihan).\n\nPrix : 2 700 €\n\nVente en main propre. Les factures seront disponibles lors de la vente.",
+      "city": "Elven",
+      "coords": {
+        "lat": 47.728,
+        "lon": -2.593
+      },
+      "shipping": false,
+      "publishedAt": "2026-09-25T16:07:02.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": true,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "toVerify": [
+        "Matériau du cadre non précisé",
+        "Taille à confirmer : M déclarée, 54 dans la description",
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 69,
+      "zone": "Saint-Nazaire et Loire-Atlantique",
+      "distanceKm": 58,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Inclus",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "58 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique",
+          "points": 8,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, année non précisée",
+          "points": 5,
           "max": 8
         }
       ],
@@ -1179,6 +1377,299 @@
           "label": "État et âge",
           "detail": "Très bon état, modèle 2025",
           "points": 7,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
+      "id": "lbc-3310245228",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3310245228",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/93/b5/3c/93b53c65b7d06236d99d90453f433fdf41616c1b.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/ca/76/e8/ca76e8b6b1c3841d82c8b77a80434adf261e5a14.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "Wilier filante slr",
+      "brand": "Wilier",
+      "model": "filante slr",
+      "year": 2023,
+      "type": "route",
+      "size": "M",
+      "price": 3500,
+      "description": "Bonjour, je met en vente mon cadre avec groupe shimano dura ace 12v \nWilier filante slr(le plus haut de gamme)2023\nCadre Carbone monocoque hus mod\nLe velo est en taille M,il sera vendu avec les roues reserve 34 37 moyeu dt240 disc dura ace, cassette dura ace,pneus gp5000 en 28 montees en Tubeless(200kms)sans pedales et sans le gps mais avec support\nC est un velo type aero, cintre combo il est en parti recouvert de clear protect...\nIl presente un legé accroc manette gauche (tres legé) suite a chute a l arret😒\nDispo de suite sur paris ou dans le 77\nValeur avec roues d origine a sa sortie 11000€\nVendu 3500€ ferme... Aucun interet de faire une offre\nGiant, colnago, trek, s works, spécialized, origine, b twin, van rysel...",
+      "city": "Ozoir-la-Ferrière",
+      "coords": {
+        "lat": 48.762,
+        "lon": 2.668
+      },
+      "shipping": false,
+      "publishedAt": "2026-11-15T17:59:07.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra",
+      "aero": true,
+      "powerMeter": false,
+      "wheelDepth": 34,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "km": 200,
+      "batch": 0,
+      "toVerify": [
+        "Groupe Dura-Ace mécanique, classé avec l’Ultegra mécanique"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 66,
+      "zone": "Région parisienne",
+      "distanceKm": 25,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra mécanique",
+          "points": 6,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 34 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "25 km de Paris, zone Région parisienne",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2023",
+          "points": 6,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
+      "id": "lbc-3310758520",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3310758520",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/bf/fa/a7/bffaa70d652283394743cdbaa2d470f816774d42.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/2a/fb/44/2afb4496427222c63e7ef2d38c966b171fc6ff82.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "Cervelo R5 Dura-Ace Di2 (roues en option)",
+      "brand": "Cervélo",
+      "model": "R5 Dura-Ace Di2 (roues en option)",
+      "year": 2025,
+      "type": "route",
+      "size": "M",
+      "price": 3800,
+      "description": "vélo de route Cervélo R5\ngroupe Shimano Dura-Ace Di2 12 vitesses R9250 en excellent état, taille 54 (je mesure 1m80) année 2025\n\nColoris magnifique gris vernis et doré pailleté (qui change de couleur selon la luminosité) et vélo de grimpeur exceptionnel, part comme une balle dans les relances, très très à l’aise et facile dans les côtes et reste très polyvalent car restant rapide sur le plat\n\nDéveloppement pédalier 52x36\n\nPoids 6,8kg\n\nSortie de selle à 73cm sur les photos \n\nTige de selle Cervelo Carbone, cintre Cervelo Carbone 420, potence Cervelo Carbone 120, câblerie entièrement intégrée.\n\nQuelques traces d’utilisation normale. Roulé 3800km\n\nOption combo roues :\n\n- Roues Syncros Capital 1.0S carbone à 1300g la paire! en 40mm moyeux DT Swiss DT240 EXP, rayons DT Aérolite, jantes de 40mm de haut, en 25mm de largeur interne et 31 externe, roues très légères\n\n- Pneus tubeless Schwalbe Pro One TLE 700x30c\n\n- Disques et cassette en Shimano Ultegra R8100\n\nPrix public vélo complet affiché hors remise 12000 euros\n\nVendu 3800 euros sans roues ou 4500 euros avec\n\nÀ récupérer sur place",
+      "city": "Paris",
+      "coords": {
+        "lat": 48.832,
+        "lon": 2.355
+      },
+      "shipping": false,
+      "publishedAt": "2026-11-16T14:16:02.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "dura-ace-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 36,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "km": 3800,
+      "batch": 0,
+      "toVerify": [
+        "Taille à confirmer : M déclarée, 54 dans la description"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 66,
+      "zone": "Région parisienne",
+      "distanceKm": 3,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Entre l'idéal et le maximum de 4 500 €",
+          "points": 20.5,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Dura-Ace Di2",
+          "points": 15,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 36 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "3 km de Paris, zone Région parisienne",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2025",
+          "points": 7,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
+      "id": "lbc-3310134223",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3310134223",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/6f/8e/41/6f8e41b4214f5ddc96396e52a0c3ce03a5a6a310.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/9f/ba/19/9fba19e2d2b30f2be8bd11547b2161d90ccedaa9.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "Vélo route carbone Cannondale synapse ultegra 11V taille 54",
+      "brand": "Cannondale",
+      "model": "carbone synapse ultegra 11V",
+      "year": 2021,
+      "type": "route",
+      "size": "M",
+      "price": 1900,
+      "description": "Je vends ce vélo de route Cannondale Synapse en carbone de 2021, équipé d'un groupe Shimano électrique hydraulique Ultegra Di2 11 vitesses.\n- Type de vélo : Vélo de route\n- Univers : Mixte\n- Marque : Cannondale\n- Modèle : Synapse\n- Taille du cadre : M (54 cm)\n- Matériau du cadre : Carbone\n- Couleur : Noir\n- Transmission : Shimano électrique Ultegra Di2 11 vitesses 52/36 et 11/28. -chaîne et cassette neuves\n- Freins : Disques, plaquettes neuves, purge des freins ok \nÉtat neuf, le cadre est neuf (retour de garantie).\nPivot de fourche volontairement coupé très haut pour le futur propriétaire qui pourra le couper plus court, à sa guise.\nPossibilité de changer les roues Shimano RS par des roues carbone tubeless ready pour 400€ en plus.\nVente cause double emploi...\nPrêt à rouler, aucun frais à prévoir.",
+      "city": "Fontenay-Trésigny",
+      "coords": {
+        "lat": 48.706,
+        "lon": 2.866
+      },
+      "shipping": false,
+      "publishedAt": "2026-11-15T16:34:37.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 40,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "toVerify": [
+        "Taille à confirmer : M déclarée, 54 dans la description"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 65,
+      "zone": "Région parisienne",
+      "distanceKm": 41,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 40 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "41 km de Paris, zone Région parisienne",
+          "points": 8,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "État neuf, modèle 2021",
+          "points": 6,
           "max": 8
         }
       ],
@@ -1963,6 +2454,103 @@
       "rejection": null
     },
     {
+      "id": "lbc-3308565787",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3308565787",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/8d/9b/50/8d9b509fbcce612e01884cc9babfcb35104b5f08.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/95/77/26/957726755b3750d4e31164655cda423dbedd42a0.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "FOCUS Izalco Max 8.9 2024 Taille 54 - Vélo Route Musculaire",
+      "brand": "Focus",
+      "model": "Izalco Max 8.9 - Musculaire",
+      "year": 2024,
+      "type": "route",
+      "size": "M",
+      "price": 2299,
+      "description": "🔥 Payez en 2, 3 ou 4 fois SANS FRAIS.\n\nPour plus de détails, contactez-nous directement via le bouton « Contacter » de l'annonce pour obtenir des conseils d'expert M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s, partenaire exclusif de FLEETA.\n\nNous sommes également joignables par téléphone du lundi au samedi de 9h à 19h si vous le préférez, en cliquant sur « voir le numéro ».\n\nLes vélos sont stockés soit dans l'entrepôt M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s à Aix-en-Provence, soit dans les installations FLEETA à Vienne ou à Nantes (qui ne reçoivent pas de public), et sont vendus par M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s. Ils peuvent être livrés directement chez vous partout en France ou dans un réseau de plus de 200 boutiques partenaires.\n\nFLEETA est un ambassadeur et distributeur indépendant officiel des vélos reconditionnés M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s. L’entreprise participe au reconditionnement de certains vélos M⁠I⁠N⁠T au sein de centres de reconditionnement spécialisés. Dans le cadre de ce partenariat officiel avec M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s, FLEETA est habilité à proposer, distribuer et accompagner la vente de vélos reconditionnés M⁠I⁠N⁠T.\n\nUne fois la commande passée le vélo sera livré sous 2 à 7 jours ouvrés. Vous aurez 15 jours pour essayer le vélo sur vos routes préférées.\n\n● Location à partir de 75,5€/mois\n● Payez en 2, 3 ou 4 fois SANS FRAIS, ou jusqu'à 84 fois !\n● 2200€ d'économie vs neuf\n● Meilleur prix garanti M⁠I⁠N⁠T (on s'aligne si vous trouvez moins cher ailleurs)\n● 15 jours pour essayer le vélo sur vos routes préférées pour changer…",
+      "city": "Nantes",
+      "coords": {
+        "lat": 47.218,
+        "lon": -1.553
+      },
+      "shipping": true,
+      "publishedAt": "2026-11-13T16:00:24.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": true,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "bon",
+      "batch": 0,
+      "toVerify": [
+        "Taille à confirmer : M déclarée, 54 dans la description"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 61,
+      "zone": "Saint-Nazaire et Loire-Atlantique",
+      "distanceKm": 50,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "50 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique, livraison possible",
+          "points": 8,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Bon état, modèle 2024",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
       "id": "lbc-3249910648",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3249910648",
@@ -2342,6 +2930,202 @@
       "rejection": null
     },
     {
+      "id": "lbc-3288075059",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3288075059",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/75/cc/cc/75ccccb0fc6b8adb175b4423de514c993a9e1dd6.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/be/1f/c5/be1fc5c14098f01818f201021f4d22689a5cecb5.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "Vélo Route Carbone NEUF Pardus SPK G4 - 105 Di2 12v - taille L",
+      "brand": "Vélo de route",
+      "model": "Carbone NEUF Pardus SPK G4 - 105 Di2 12v",
+      "year": 0,
+      "type": "route",
+      "size": "M",
+      "price": 4090,
+      "description": "Vélo de route Pardus SPK G4 neuf\n\n🚴 Caractéristiques :\n\nMarque : Pardus\n\nModèle : SPK G4\n\nType : Vélo de route\n\nTaille : L\n\nGroupe : Shimano 105 DI2 12v\n\nCadre : Carbone\n\nRoues : MVMT Carbone 50\n\nÉtat : Neuf (jamais roulé)\n\n💶 Prix : 4 090€\n\n🔧 Informations complémentaires :\n\nVélo neuf préparé et vérifié par notre atelier\n\nFacture avec TVA\n\nGarantie constructeur\n\nConseils professionnels lors de la vente\n\n📍 Disponibilité :\n\nEnvoi possible\n\nRetrait en magasin\n\nEssai possible\n\n🏪 Secteur 44 – Professionnel du cycle\n\n⭐ Abonnez-vous à notre compte Le Bon Coin pour ne manquer aucune de nos nouvelles offres vélos et équipements !",
+      "city": "Savenay",
+      "coords": {
+        "lat": 47.369,
+        "lon": -1.94
+      },
+      "shipping": false,
+      "publishedAt": "2026-10-14T10:08:31.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 50,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "toVerify": [
+        "Type de freins non précisé",
+        "Taille à confirmer : M déclarée, L dans la description",
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 57,
+      "zone": "Saint-Nazaire et Loire-Atlantique",
+      "distanceKm": 23,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Entre l'idéal et le maximum de 4 500 €",
+          "points": 16.2,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 50 mm",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "23 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "État neuf, année non précisée",
+          "points": 6,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
+      "id": "lbc-3308753947",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3308753947",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/96/2a/dd/962addc41d78bb86714916992122f81a11d67bfe.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/39/77/33/3977334d92cf3ddf00c1ce40da88bb27ca16ecf1.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "MEGAMO Raise 15 2026 - Vélo Route Musculaire",
+      "brand": "Cannondale",
+      "model": "MEGAMO Raise 15 - Musculaire",
+      "year": 2026,
+      "type": "route",
+      "size": "M",
+      "price": 2249,
+      "description": "🖤 BLACK WEEKS -350€ !\n🔥 Payez en 2, 3 ou 4 fois SANS FRAIS.\n\nPour plus de détails, contactez-nous directement via le bouton « Contacter » de l'annonce pour obtenir des conseils d'expert M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s, partenaire exclusif de FLEETA.\n\nNous sommes également joignables par téléphone du lundi au samedi de 9h à 19h si vous le préférez, en cliquant sur « voir le numéro ».\n\nLes vélos sont stockés soit dans l'entrepôt M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s à Aix-en-Provence, soit dans les installations FLEETA à Vienne ou à Nantes (qui ne reçoivent pas de public), et sont vendus par M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s. Ils peuvent être livrés directement chez vous partout en France ou dans un réseau de plus de 200 boutiques partenaires.\n\nFLEETA est un ambassadeur et distributeur indépendant officiel des vélos reconditionnés M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s. L’entreprise participe au reconditionnement de certains vélos M⁠I⁠N⁠T au sein de centres de reconditionnement spécialisés. Dans le cadre de ce partenariat officiel avec M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s, FLEETA est habilité à proposer, distribuer et accompagner la vente de vélos reconditionnés M⁠I⁠N⁠T.\n\nUne fois la commande passée le vélo sera livré sous 2 à 7 jours ouvrés. Vous aurez 15 jours pour essayer le vélo sur vos routes préférées.\n\n● Location à partir de 61,5€/mois\n● Payez en 2, 3 ou 4 fois SANS FRAIS, ou jusqu'à 84 fois !\n● 1250€ d'économie vs neuf\n● Meilleur prix garanti M⁠I⁠N⁠T (on s'aligne si vous trouvez moins cher ailleurs)\n● 15 jours pour essayer le vélo sur vos routes…",
+      "city": "Nantes",
+      "coords": {
+        "lat": 47.218,
+        "lon": -1.553
+      },
+      "shipping": true,
+      "publishedAt": "2026-11-13T20:33:10.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "bon",
+      "batch": 0,
+      "toVerify": [
+        "Taille à confirmer : M déclarée, S dans la description"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 56,
+      "zone": "Saint-Nazaire et Loire-Atlantique",
+      "distanceKm": 50,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "50 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique, livraison possible",
+          "points": 8,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Bon état, modèle 2026",
+          "points": 6,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
       "id": "lbc-3307918584",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3307918584",
@@ -2434,6 +3218,97 @@
           "label": "État et âge",
           "detail": "Bon état, modèle 2019",
           "points": 3,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
+      "id": "tv-4302875",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/velo-course-ktm-alto-4302875",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/875/2875/4302875/4302875-velo-course-ktm-alto-4302875-1793082610.jpeg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/875/2875/4302875/4302875-velo-course-ktm-alto-4302875-1793082611.jpeg",
+      "imageKind": "annonce",
+      "title": "Vélo course KTM Alto",
+      "brand": "KTM",
+      "model": "Alto",
+      "year": 2024,
+      "type": "route",
+      "size": "57",
+      "price": 2400,
+      "description": "Je vend mon ktm Alto pro en 105 Di2 taille 57 . 1500 km max cassette 105 neuve, chaîne kmc hotwax , pneus Vittoria corsa pro 28 et 30 de large . Vélo en parfait état et possibilité de facture et garantie Facture d'origine : Oui Retour : Non Référence de l'annonce : 4302875",
+      "city": "Ixelles (1050), hors de France métropolitaine",
+      "shipping": true,
+      "publishedAt": "2026-10-27T07:30:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "km": 1500,
+      "batch": 0,
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 55,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Aucune zone active, livraison possible",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2024",
+          "points": 6,
           "max": 8
         }
       ],
@@ -2533,6 +3408,105 @@
           "label": "État et âge",
           "detail": "État neuf, année non précisée",
           "points": 6,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
+      "id": "lbc-3310603106",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3310603106",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/16/13/ae/1613ae28478b46a7931117f6bf3910d92665ad80.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/3c/32/56/3c32564db3b396f62ecbfdebaf5f0f6aaa5e05af.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "Cervelo Soloist 2025",
+      "brand": "Cervélo",
+      "model": "Soloist",
+      "year": 2025,
+      "type": "route",
+      "size": "M",
+      "price": 4300,
+      "description": "Cervélo Soloist - Taille 54 - Gold Dust\nVélo monté à partir d'un kit cadre Cervélo Soloist acheté en janvier 2025.\nToutes les pièces ont été achetées neuves ensuite → montage 100 % neuf.\nVendu sans roues \n\nÉquipement:\n* Groupe Shimano Ultegra Di2 12 vitesses\n* Manivelles : 170 mm\n* Plateaux Alugear: 54-40\n* Cassette Ultegra: 11-36 ou 11-34\n* Cockpit BLACK INC HB02 : 110 × 380 mm\n\n*Poids: 7,9 kg",
+      "city": "Séné",
+      "coords": {
+        "lat": 47.62,
+        "lon": -2.736
+      },
+      "shipping": false,
+      "publishedAt": "2026-11-16T10:36:30.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "toVerify": [
+        "Matériau du cadre non précisé",
+        "Type de freins non précisé",
+        "Taille à confirmer : M déclarée, 54 dans la description"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 49,
+      "zone": "Saint-Nazaire et Loire-Atlantique",
+      "distanceKm": 55,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Entre l'idéal et le maximum de 4 500 €",
+          "points": 13,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "55 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique",
+          "points": 8,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2025",
+          "points": 7,
           "max": 8
         }
       ],
@@ -3020,101 +3994,6 @@
       "rejection": "Type hors critères (Gravel)"
     },
     {
-      "id": "tv-4314679",
-      "source": "troc-velo",
-      "url": "https://www.troc-velo.com/fr-fr/annonce/wilier-cento-10-sl-4314679",
-      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/679/14679/4314679/4314679-wilier-cento-10-sl-4314679-1794856497.jpg",
-      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/679/14679/4314679/4314679-wilier-cento-10-sl-4314679-1794856498.jpg",
-      "imageKind": "annonce",
-      "title": "Wilier Cento 10 sl",
-      "brand": "Wilier",
-      "model": "Cento 10 sl",
-      "year": 2023,
-      "type": "route",
-      "size": "54",
-      "price": 2250,
-      "newPrice": 5000,
-      "description": "Je vends mon Wilier Cento 10 SL, acheté neuf en mai 2023. Premier propriétaire, vélo entretenu avec soin. factures d’achat sont disponibles. Acheter 4800 *Vélo vendu avec roue wilier 38 carbone Le vélo est en parfait état de fonctionnement et prêt à rouler. Équipement : Cadre Wilier Cento 10 SL carbone Taille 54 (M) Groupe Shimano Ultegra R8000 mécanique 11 vitesses cassette 11/28 plateau 52/36 Pédalier capteur de puissance Freins à disque hydrauliques À noter : quelques éclats de peinture et rayures liés à une utilisation normale, uniquement esthétique. Vélo performant, rigide et confortable, idéal pour les longues sorties comme pour la compétition. Facture d'origine : Oui Retour : Non Référence de l'annonce : 4314679",
-      "city": "Saint-gilles (35590)",
-      "coords": {
-        "lat": 48.1517,
-        "lon": -1.85
-      },
-      "shipping": true,
-      "publishedAt": "2026-11-16T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "ultegra",
-      "aero": false,
-      "powerMeter": true,
-      "wheelDepth": 38,
-      "extensions": "inconnu",
-      "condition": "bon",
-      "batch": 0,
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 72,
-      "zone": "Saint-Nazaire et Loire-Atlantique",
-      "distanceKm": 101,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "55 % sous le prix neuf (5 000 €)",
-          "points": 10,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "Ultegra mécanique",
-          "points": 6,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Inclus",
-          "points": 10,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Carbone, jantes de 38 mm",
-          "points": 5,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "101 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique, livraison possible",
-          "points": 7,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Bon état, modèle 2023",
-          "points": 5,
-          "max": 8
-        }
-      ],
-      "rejection": "Taille 54 incompatible"
-    },
-    {
       "id": "tv-4304229",
       "source": "troc-velo",
       "url": "https://www.troc-velo.com/fr-fr/annonce/cannondale-supersix-evo-2-4304229",
@@ -3204,104 +4083,6 @@
           "label": "État et âge",
           "detail": "Très bon état, modèle 2025",
           "points": 7,
-          "max": 8
-        }
-      ],
-      "rejection": "Taille 54 incompatible"
-    },
-    {
-      "id": "lbc-3276448598",
-      "source": "leboncoin",
-      "url": "https://www.leboncoin.fr/ad/velos/3276448598",
-      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/2a/48/b9/2a48b9bbb73bf1194a8226d035aa552780a15629.jpg?rule=ad-large",
-      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/23/4d/ab/234dabd2abde27cc3401c2a136fd445cb8667a1e.jpg?rule=ad-large",
-      "imageKind": "annonce",
-      "title": "BMC Teammachine SLR01 Three - Taille 54 - Ultegra di2 - Capteur puissance",
-      "brand": "BMC",
-      "model": "Teammachine SLR01 Three - - Ultegra di2 - Capteur puissance",
-      "year": 0,
-      "type": "route",
-      "size": "54",
-      "price": 2700,
-      "description": "Je vends mon BMC Teammachine SLR01 THREE, taille de 54.\n\nÉquipement\n\n* Cadre BMC Teammachine SLR01\n* Taille 54\n* Groupe Shimano Ultegra Di2 12 vitesses\n* Pédalier Shimano Ultegra\n* Capteur de puissance Giant Power Pro\n* Roues DT Swiss R470\n* Freins à disque\n\nÉtat / entretien\n\nVélo en très bon état général, entretenu avec soin.\n\n✅ Révision complète récemment effectuée, facture disponible\n✅ Facture d’achat du vélo disponible, acheté d’occasion auprès du VCP Loudeac (vélo galerie)\n✅ Vélo prêt à rouler\n\nÀ signaler : petit éclat de peinture sur la fourche, uniquement esthétique.\n\n📍 Visible dans le secteur Elven / Vannes (Morbihan).\n\nPrix : 2 700 €\n\nVente en main propre. Les factures seront disponibles lors de la vente.",
-      "city": "Elven",
-      "coords": {
-        "lat": 47.728,
-        "lon": -2.593
-      },
-      "shipping": false,
-      "publishedAt": "2026-09-25T16:07:02.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "ultegra-di2",
-      "aero": false,
-      "powerMeter": true,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "tres-bon",
-      "batch": 0,
-      "toVerify": [
-        "Matériau du cadre non précisé",
-        "Année non précisée"
-      ],
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 69,
-      "zone": "Saint-Nazaire et Loire-Atlantique",
-      "distanceKm": 58,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "Ultegra Di2",
-          "points": 13,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Inclus",
-          "points": 10,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "58 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique",
-          "points": 8,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Très bon état, année non précisée",
-          "points": 5,
           "max": 8
         }
       ],
@@ -3607,7 +4388,7 @@
       "model": "Oltre XR4 - Ultegra Di2 11v - Roues Scoop R4 Carbone ( )",
       "year": 0,
       "type": "route",
-      "size": "55",
+      "size": "M",
       "price": 1600,
       "description": "Je mets en vente mon Bianchi Oltre XR4, très rapide et confortable.\nVélo très polyvalent que ce soit pour le sprint ou la montagne.\nCaractéristiques:\n* Cadre : Bianchi Oltre XR4 (patins / rim brakes)\n* Groupe : Shimano Ultegra Di2 11v\n* Roues : Scoop R4 carbone\n* Freinage : Patins\n* État général : La transmission fonctionne parfaitement.\nLe vélo a subi une chute et le cadre en carbone a été réparé par un professionnel spécialisé. La structure est parfaitement saine, rigide et sécurisée.\nPrix proposé : 1 600 € (négociable ).\nModalités :\n* Visible sur Bouguenais.\n* Remise en main propre.\nN'hésitez pas à me contacter par la messagerie pour toute question ou photos complémentaires.",
       "city": "Bouguenais",
@@ -3627,6 +4408,7 @@
       "condition": "bon",
       "batch": 0,
       "toVerify": [
+        "Taille à confirmer : M déclarée, 55 dans la description",
         "Année non précisée"
       ],
       "firstSeen": "2026-11-16",
@@ -3690,196 +4472,7 @@
           "max": 8
         }
       ],
-      "rejection": "Taille 55 incompatible"
-    },
-    {
-      "id": "lbc-3310758520",
-      "source": "leboncoin",
-      "url": "https://www.leboncoin.fr/ad/velos/3310758520",
-      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/bf/fa/a7/bffaa70d652283394743cdbaa2d470f816774d42.jpg?rule=ad-large",
-      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/2a/fb/44/2afb4496427222c63e7ef2d38c966b171fc6ff82.jpg?rule=ad-large",
-      "imageKind": "annonce",
-      "title": "Cervelo R5 Dura-Ace Di2 (roues en option)",
-      "brand": "Cervélo",
-      "model": "R5 Dura-Ace Di2 (roues en option)",
-      "year": 2025,
-      "type": "route",
-      "size": "54",
-      "price": 3800,
-      "description": "vélo de route Cervélo R5\ngroupe Shimano Dura-Ace Di2 12 vitesses R9250 en excellent état, taille 54 (je mesure 1m80) année 2025\n\nColoris magnifique gris vernis et doré pailleté (qui change de couleur selon la luminosité) et vélo de grimpeur exceptionnel, part comme une balle dans les relances, très très à l’aise et facile dans les côtes et reste très polyvalent car restant rapide sur le plat\n\nDéveloppement pédalier 52x36\n\nPoids 6,8kg\n\nSortie de selle à 73cm sur les photos \n\nTige de selle Cervelo Carbone, cintre Cervelo Carbone 420, potence Cervelo Carbone 120, câblerie entièrement intégrée.\n\nQuelques traces d’utilisation normale. Roulé 3800km\n\nOption combo roues :\n\n- Roues Syncros Capital 1.0S carbone à 1300g la paire! en 40mm moyeux DT Swiss DT240 EXP, rayons DT Aérolite, jantes de 40mm de haut, en 25mm de largeur interne et 31 externe, roues très légères\n\n- Pneus tubeless Schwalbe Pro One TLE 700x30c\n\n- Disques et cassette en Shimano Ultegra R8100\n\nPrix public vélo complet affiché hors remise 12000 euros\n\nVendu 3800 euros sans roues ou 4500 euros avec\n\nÀ récupérer sur place",
-      "city": "Paris",
-      "coords": {
-        "lat": 48.832,
-        "lon": 2.355
-      },
-      "shipping": false,
-      "publishedAt": "2026-11-16T14:16:02.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "dura-ace-di2",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 36,
-      "extensions": "inconnu",
-      "condition": "tres-bon",
-      "km": 3800,
-      "batch": 0,
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 66,
-      "zone": "Région parisienne",
-      "distanceKm": 3,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Entre l'idéal et le maximum de 4 500 €",
-          "points": 20.5,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "Dura-Ace Di2",
-          "points": 15,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Carbone, jantes de 36 mm",
-          "points": 5,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "3 km de Paris, zone Région parisienne",
-          "points": 10,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Très bon état, modèle 2025",
-          "points": 7,
-          "max": 8
-        }
-      ],
-      "rejection": "Taille 54 incompatible"
-    },
-    {
-      "id": "lbc-3310134223",
-      "source": "leboncoin",
-      "url": "https://www.leboncoin.fr/ad/velos/3310134223",
-      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/6f/8e/41/6f8e41b4214f5ddc96396e52a0c3ce03a5a6a310.jpg?rule=ad-large",
-      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/9f/ba/19/9fba19e2d2b30f2be8bd11547b2161d90ccedaa9.jpg?rule=ad-large",
-      "imageKind": "annonce",
-      "title": "Vélo route carbone Cannondale synapse ultegra 11V taille 54",
-      "brand": "Cannondale",
-      "model": "carbone synapse ultegra 11V",
-      "year": 2021,
-      "type": "route",
-      "size": "54",
-      "price": 1900,
-      "description": "Je vends ce vélo de route Cannondale Synapse en carbone de 2021, équipé d'un groupe Shimano électrique hydraulique Ultegra Di2 11 vitesses.\n- Type de vélo : Vélo de route\n- Univers : Mixte\n- Marque : Cannondale\n- Modèle : Synapse\n- Taille du cadre : M (54 cm)\n- Matériau du cadre : Carbone\n- Couleur : Noir\n- Transmission : Shimano électrique Ultegra Di2 11 vitesses 52/36 et 11/28. -chaîne et cassette neuves\n- Freins : Disques, plaquettes neuves, purge des freins ok \nÉtat neuf, le cadre est neuf (retour de garantie).\nPivot de fourche volontairement coupé très haut pour le futur propriétaire qui pourra le couper plus court, à sa guise.\nPossibilité de changer les roues Shimano RS par des roues carbone tubeless ready pour 400€ en plus.\nVente cause double emploi...\nPrêt à rouler, aucun frais à prévoir.",
-      "city": "Fontenay-Trésigny",
-      "coords": {
-        "lat": 48.706,
-        "lon": 2.866
-      },
-      "shipping": false,
-      "publishedAt": "2026-11-15T16:34:37.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "ultegra-di2",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 40,
-      "extensions": "inconnu",
-      "condition": "neuf",
-      "batch": 0,
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 65,
-      "zone": "Région parisienne",
-      "distanceKm": 41,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "Ultegra Di2",
-          "points": 13,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Carbone, jantes de 40 mm",
-          "points": 5,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "41 km de Paris, zone Région parisienne",
-          "points": 8,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "État neuf, modèle 2021",
-          "points": 6,
-          "max": 8
-        }
-      ],
-      "rejection": "Taille 54 incompatible"
+      "rejection": "Freins à patins"
     },
     {
       "id": "lbc-3279677657",
@@ -4088,7 +4681,7 @@
       "model": "full carbone Advanced Propel Pro",
       "year": 2017,
       "type": "route",
-      "size": "M/L",
+      "size": "M",
       "price": 2000,
       "description": "Vend vélo de route 2017 Giant Propel Advanced Pro SL0 ISP, Taille Médium/Grand (56) en super état\n\nLe modèle le plus haut de gamme de Giant, valeur 8000€\n\nGroupe Mécanique SRAM Red [manettes, derailleurs, plateau (53/39)], Ultegra [cassette(11/30)], Freins aero Fourier [Direct-Mount, uniquement disponible pour les équipes professionnelles].\n\nRoues Carbone de course à Boyaux DT Swiss RC38T [38mm hauteur], moyeux en cliquet, super léger (1275 g pour la paire vérifié, avant 575g, arrière 700g ). Très bon état, pas de voile, pas de saut, la bande de frein et le roulement sont en super état # Boyaux neufs, Vittoria Corsa Control Graphene 2.0 en 28mm\n\nCintre Ritchey Ergomax 40 cm, potence Giant Control SLR carbone 90 mm, pédales Look Keo Blade Carbone # En super état, aucune chute ou crash. Ce vélo est une fusée en carbone, super aero, rigide et léger\n\nTaille M/L (je fais 178cm). Hauteur maximale du boitier de pédalier jusqu'à la selle 76 cm\n\nÀ voir sur place, Montreuil proche 20eme arrondissement. Remise en mains propres, pas de livraison. Tous les consommables récemment entretenus, prêts à rouler.\n\nEntretien de 100€ réalisé récemment et chaîne neuve. \n\nSûrement les plateaux avant à changer car légers sauts de chaînes aperçus au moment des reprises, d’où le prix que je baisse volontairement.",
       "city": "Montreuil",
@@ -4363,101 +4956,6 @@
         }
       ],
       "rejection": "Groupe non retenu (105 mécanique)"
-    },
-    {
-      "id": "lbc-3310245228",
-      "source": "leboncoin",
-      "url": "https://www.leboncoin.fr/ad/velos/3310245228",
-      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/93/b5/3c/93b53c65b7d06236d99d90453f433fdf41616c1b.jpg?rule=ad-large",
-      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/ca/76/e8/ca76e8b6b1c3841d82c8b77a80434adf261e5a14.jpg?rule=ad-large",
-      "imageKind": "annonce",
-      "title": "Wilier filante slr",
-      "brand": "Wilier",
-      "model": "filante slr",
-      "year": 2023,
-      "type": "route",
-      "size": "M",
-      "price": 3500,
-      "description": "Bonjour, je met en vente mon cadre avec groupe shimano dura ace 12v \nWilier filante slr(le plus haut de gamme)2023\nCadre Carbone monocoque hus mod\nLe velo est en taille M,il sera vendu avec les roues reserve 34 37 moyeu dt240 disc dura ace, cassette dura ace,pneus gp5000 en 28 montees en Tubeless(200kms)sans pedales et sans le gps mais avec support\nC est un velo type aero, cintre combo il est en parti recouvert de clear protect...\nIl presente un legé accroc manette gauche (tres legé) suite a chute a l arret😒\nDispo de suite sur paris ou dans le 77\nValeur avec roues d origine a sa sortie 11000€\nVendu 3500€ ferme... Aucun interet de faire une offre\nGiant, colnago, trek, s works, spécialized, origine, b twin, van rysel...",
-      "city": "Ozoir-la-Ferrière",
-      "coords": {
-        "lat": 48.762,
-        "lon": 2.668
-      },
-      "shipping": false,
-      "publishedAt": "2026-11-15T17:59:07.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "autre",
-      "aero": true,
-      "powerMeter": false,
-      "wheelDepth": 34,
-      "extensions": "inconnu",
-      "condition": "tres-bon",
-      "km": 200,
-      "batch": 0,
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 63,
-      "zone": "Région parisienne",
-      "distanceKm": 25,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "Autre groupe",
-          "points": 3,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre et cintre profilés",
-          "points": 8,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Carbone, jantes de 34 mm",
-          "points": 5,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "25 km de Paris, zone Région parisienne",
-          "points": 10,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Très bon état, modèle 2023",
-          "points": 6,
-          "max": 8
-        }
-      ],
-      "rejection": "Groupe non retenu (Autre groupe)"
     },
     {
       "id": "lbc-3245169266",
@@ -4846,100 +5344,6 @@
         }
       ],
       "rejection": "Taille 53 incompatible"
-    },
-    {
-      "id": "lbc-3308565787",
-      "source": "leboncoin",
-      "url": "https://www.leboncoin.fr/ad/velos/3308565787",
-      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/8d/9b/50/8d9b509fbcce612e01884cc9babfcb35104b5f08.jpg?rule=ad-large",
-      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/95/77/26/957726755b3750d4e31164655cda423dbedd42a0.jpg?rule=ad-large",
-      "imageKind": "annonce",
-      "title": "FOCUS Izalco Max 8.9 2024 Taille 54 - Vélo Route Musculaire",
-      "brand": "Focus",
-      "model": "Izalco Max 8.9 - Musculaire",
-      "year": 2024,
-      "type": "route",
-      "size": "54",
-      "price": 2299,
-      "description": "🔥 Payez en 2, 3 ou 4 fois SANS FRAIS.\n\nPour plus de détails, contactez-nous directement via le bouton « Contacter » de l'annonce pour obtenir des conseils d'expert M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s, partenaire exclusif de FLEETA.\n\nNous sommes également joignables par téléphone du lundi au samedi de 9h à 19h si vous le préférez, en cliquant sur « voir le numéro ».\n\nLes vélos sont stockés soit dans l'entrepôt M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s à Aix-en-Provence, soit dans les installations FLEETA à Vienne ou à Nantes (qui ne reçoivent pas de public), et sont vendus par M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s. Ils peuvent être livrés directement chez vous partout en France ou dans un réseau de plus de 200 boutiques partenaires.\n\nFLEETA est un ambassadeur et distributeur indépendant officiel des vélos reconditionnés M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s. L’entreprise participe au reconditionnement de certains vélos M⁠I⁠N⁠T au sein de centres de reconditionnement spécialisés. Dans le cadre de ce partenariat officiel avec M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s, FLEETA est habilité à proposer, distribuer et accompagner la vente de vélos reconditionnés M⁠I⁠N⁠T.\n\nUne fois la commande passée le vélo sera livré sous 2 à 7 jours ouvrés. Vous aurez 15 jours pour essayer le vélo sur vos routes préférées.\n\n● Location à partir de 75,5€/mois\n● Payez en 2, 3 ou 4 fois SANS FRAIS, ou jusqu'à 84 fois !\n● 2200€ d'économie vs neuf\n● Meilleur prix garanti M⁠I⁠N⁠T (on s'aligne si vous trouvez moins cher ailleurs)\n● 15 jours pour essayer le vélo sur vos routes préférées pour changer…",
-      "city": "Nantes",
-      "coords": {
-        "lat": 47.218,
-        "lon": -1.553
-      },
-      "shipping": true,
-      "publishedAt": "2026-11-13T16:00:24.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "105-di2",
-      "aero": true,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "bon",
-      "batch": 0,
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 61,
-      "zone": "Saint-Nazaire et Loire-Atlantique",
-      "distanceKm": 50,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "105 Di2",
-          "points": 9,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre et cintre profilés",
-          "points": 8,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "50 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique, livraison possible",
-          "points": 8,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Bon état, modèle 2024",
-          "points": 5,
-          "max": 8
-        }
-      ],
-      "rejection": "Taille 54 incompatible"
     },
     {
       "id": "lbc-3309703074",
@@ -5661,7 +6065,8 @@
       "condition": "tres-bon",
       "batch": 0,
       "toVerify": [
-        "Matériau du cadre non précisé"
+        "Matériau du cadre non précisé",
+        "Taille à confirmer : M déclarée, 54 dans la description"
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
@@ -6019,104 +6424,6 @@
       "rejection": "Freins à patins"
     },
     {
-      "id": "lbc-3288075059",
-      "source": "leboncoin",
-      "url": "https://www.leboncoin.fr/ad/velos/3288075059",
-      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/75/cc/cc/75ccccb0fc6b8adb175b4423de514c993a9e1dd6.jpg?rule=ad-large",
-      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/be/1f/c5/be1fc5c14098f01818f201021f4d22689a5cecb5.jpg?rule=ad-large",
-      "imageKind": "annonce",
-      "title": "Vélo Route Carbone NEUF Pardus SPK G4 - 105 Di2 12v - taille L",
-      "brand": "Vélo de route",
-      "model": "Carbone NEUF Pardus SPK G4 - 105 Di2 12v",
-      "year": 0,
-      "type": "route",
-      "size": "L",
-      "price": 4090,
-      "description": "Vélo de route Pardus SPK G4 neuf\n\n🚴 Caractéristiques :\n\nMarque : Pardus\n\nModèle : SPK G4\n\nType : Vélo de route\n\nTaille : L\n\nGroupe : Shimano 105 DI2 12v\n\nCadre : Carbone\n\nRoues : MVMT Carbone 50\n\nÉtat : Neuf (jamais roulé)\n\n💶 Prix : 4 090€\n\n🔧 Informations complémentaires :\n\nVélo neuf préparé et vérifié par notre atelier\n\nFacture avec TVA\n\nGarantie constructeur\n\nConseils professionnels lors de la vente\n\n📍 Disponibilité :\n\nEnvoi possible\n\nRetrait en magasin\n\nEssai possible\n\n🏪 Secteur 44 – Professionnel du cycle\n\n⭐ Abonnez-vous à notre compte Le Bon Coin pour ne manquer aucune de nos nouvelles offres vélos et équipements !",
-      "city": "Savenay",
-      "coords": {
-        "lat": 47.369,
-        "lon": -1.94
-      },
-      "shipping": false,
-      "publishedAt": "2026-10-14T10:08:31.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "105-di2",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 50,
-      "extensions": "inconnu",
-      "condition": "neuf",
-      "batch": 0,
-      "toVerify": [
-        "Type de freins non précisé",
-        "Année non précisée"
-      ],
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 57,
-      "zone": "Saint-Nazaire et Loire-Atlantique",
-      "distanceKm": 23,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Entre l'idéal et le maximum de 4 500 €",
-          "points": 16.2,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "105 Di2",
-          "points": 9,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Carbone, jantes de 50 mm",
-          "points": 8,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "23 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique",
-          "points": 10,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "État neuf, année non précisée",
-          "points": 6,
-          "max": 8
-        }
-      ],
-      "rejection": "Taille L incompatible"
-    },
-    {
       "id": "lbc-3292694842",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3292694842",
@@ -6412,100 +6719,6 @@
       "rejection": "Taille 54 incompatible"
     },
     {
-      "id": "lbc-3308753947",
-      "source": "leboncoin",
-      "url": "https://www.leboncoin.fr/ad/velos/3308753947",
-      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/96/2a/dd/962addc41d78bb86714916992122f81a11d67bfe.jpg?rule=ad-large",
-      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/39/77/33/3977334d92cf3ddf00c1ce40da88bb27ca16ecf1.jpg?rule=ad-large",
-      "imageKind": "annonce",
-      "title": "MEGAMO Raise 15 2026 - Vélo Route Musculaire",
-      "brand": "Cannondale",
-      "model": "MEGAMO Raise 15 - Musculaire",
-      "year": 2026,
-      "type": "route",
-      "size": "S",
-      "price": 2249,
-      "description": "🖤 BLACK WEEKS -350€ !\n🔥 Payez en 2, 3 ou 4 fois SANS FRAIS.\n\nPour plus de détails, contactez-nous directement via le bouton « Contacter » de l'annonce pour obtenir des conseils d'expert M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s, partenaire exclusif de FLEETA.\n\nNous sommes également joignables par téléphone du lundi au samedi de 9h à 19h si vous le préférez, en cliquant sur « voir le numéro ».\n\nLes vélos sont stockés soit dans l'entrepôt M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s à Aix-en-Provence, soit dans les installations FLEETA à Vienne ou à Nantes (qui ne reçoivent pas de public), et sont vendus par M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s. Ils peuvent être livrés directement chez vous partout en France ou dans un réseau de plus de 200 boutiques partenaires.\n\nFLEETA est un ambassadeur et distributeur indépendant officiel des vélos reconditionnés M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s. L’entreprise participe au reconditionnement de certains vélos M⁠I⁠N⁠T au sein de centres de reconditionnement spécialisés. Dans le cadre de ce partenariat officiel avec M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s, FLEETA est habilité à proposer, distribuer et accompagner la vente de vélos reconditionnés M⁠I⁠N⁠T.\n\nUne fois la commande passée le vélo sera livré sous 2 à 7 jours ouvrés. Vous aurez 15 jours pour essayer le vélo sur vos routes préférées.\n\n● Location à partir de 61,5€/mois\n● Payez en 2, 3 ou 4 fois SANS FRAIS, ou jusqu'à 84 fois !\n● 1250€ d'économie vs neuf\n● Meilleur prix garanti M⁠I⁠N⁠T (on s'aligne si vous trouvez moins cher ailleurs)\n● 15 jours pour essayer le vélo sur vos routes…",
-      "city": "Nantes",
-      "coords": {
-        "lat": 47.218,
-        "lon": -1.553
-      },
-      "shipping": true,
-      "publishedAt": "2026-11-13T20:33:10.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "105-di2",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "bon",
-      "batch": 0,
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 56,
-      "zone": "Saint-Nazaire et Loire-Atlantique",
-      "distanceKm": 50,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "105 Di2",
-          "points": 9,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "50 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique, livraison possible",
-          "points": 8,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Bon état, modèle 2026",
-          "points": 6,
-          "max": 8
-        }
-      ],
-      "rejection": "Taille S incompatible"
-    },
-    {
       "id": "lbc-3304964579",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3304964579",
@@ -6694,6 +6907,203 @@
         }
       ],
       "rejection": "Taille 58 incompatible"
+    },
+    {
+      "id": "lbc-3310184291",
+      "source": "leboncoin",
+      "url": "https://www.leboncoin.fr/ad/velos/3310184291",
+      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/8e/26/80/8e26802cb1244c8407a015fdb292a0dd5963d48c.jpg?rule=ad-large",
+      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/d8/94/bd/d894bda0c32820fb17277f1a425bd7c8831b64e9.jpg?rule=ad-large",
+      "imageKind": "annonce",
+      "title": "Velo cadre plongeant CLM notar paire paracylaires vintage",
+      "brand": "Vélo de route",
+      "model": "cadre plongeant CLM notar paire paracylaires vintage",
+      "year": 0,
+      "type": "route",
+      "size": "52",
+      "price": 1600,
+      "description": "Je vends ce vélo de course vintage, idéal pour les amateurs de belles pièces rétro.\n- cadre plongeant CLM Notar vintage \n- paire paraculaire ambrosio \n- taille 52/53\n- Univers : Homme\n- moyeux Dura Ace \n- full campagnolo \n- selle rolls San Marco\n\nStigmatisons du vélo par expertise 2500€ ( voir photo catalogue \n\nDepuis il a été exposé dans plusieurs boutiques sans jamais rouler \n\nPossible envoi via UPS\n\nTrès bon état\n\nUn véritable bijou à découvrir sans plus attendre !",
+      "city": "Villejuif",
+      "coords": {
+        "lat": 48.792,
+        "lon": 2.369
+      },
+      "shipping": true,
+      "publishedAt": "2026-11-15T17:11:59.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "toVerify": [
+        "Groupe Dura-Ace mécanique, classé avec l’Ultegra mécanique",
+        "Matériau du cadre non précisé",
+        "Type de freins non précisé",
+        "Année non précisée"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 54,
+      "zone": "Région parisienne",
+      "distanceKm": 7,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra mécanique",
+          "points": 6,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "7 km de Paris, zone Région parisienne, livraison possible",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, année non précisée",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": "Taille 52 incompatible"
+    },
+    {
+      "id": "tv-4314660",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/kuota-kom-carbone-optimized-lateral-stiffness-tres-peu-kilometre-suite-a-un-accident-de-voiture-4314660",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/660/14660/4314660/4314660-kuota-kom-carbone-optimized-lateral-stiffness-tres-peu-kilometre-suite-a-un-accident-de-voiture-4314660-1794853139.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/660/14660/4314660/4314660-kuota-kom-carbone-optimized-lateral-stiffness-tres-peu-kilometre-suite-a-un-accident-de-voiture-4314660-1794853140.jpg",
+      "imageKind": "annonce",
+      "title": "Kuota kom carbone (optimized lateral stiffness) très peu kilométré suite à un accident de voiture",
+      "brand": "Kuota",
+      "model": "kom carbone (optimized lateral stiffness) très peu kilométré",
+      "year": 2022,
+      "type": "route",
+      "size": "M",
+      "price": 1700,
+      "description": "dérailleur AR- SRAM force neuf changé- vendu avec derailleur ex Shimano Durace neuf- chaine neuve-cassette 11x21 - fourche HSD- direction FSA- pédales Durace 7810- freins Shimano Durace - selle Rione carbone- tige de selle Kuota carbone- roues American Classic - cintre Steath pro -poignées SRAM force changées avec cables passés dans guidon (nouvelle configuration, vendu avec les anciennes poignées Durace sortie latérale - mis en nouvelle configuration 2024 Facture d'origine : Non Retour : Non Référence de l'annonce : 4314660",
+      "city": "AUBERVILLIERS (93300)",
+      "coords": {
+        "lat": 48.9128,
+        "lon": 2.3886
+      },
+      "shipping": false,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "patins",
+      "groupset": "ultegra",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "toVerify": [
+        "Groupe Dura-Ace mécanique, classé avec l’Ultegra mécanique"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 54,
+      "zone": "Région parisienne",
+      "distanceKm": 7,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra mécanique",
+          "points": 6,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "7 km de Paris, zone Région parisienne",
+          "points": 10,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2022",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": "Freins à patins"
     },
     {
       "id": "lbc-3311030776",
@@ -7093,7 +7503,7 @@
       "model": "Aethos Expert",
       "year": 0,
       "type": "route",
-      "size": "54",
+      "size": "M",
       "price": 3500,
       "description": "Cause arrêt vends Specialized Aethos Expert Shimano 105DI12 taille 54 entièrement remis à neuf par Specialized : pédalier 50/34, chaîne, cassette 11/36, dérailleurs électriques, plaquettes, pneus tous ces éléments ont 400km.\nRoues Roval carbone C38.\nCompteur.\n7;2kg.\nRemise en mains propres.",
       "city": "Damgan",
@@ -7116,6 +7526,7 @@
       "toVerify": [
         "Matériau du cadre non précisé",
         "Type de freins non précisé",
+        "Taille à confirmer : M déclarée, 54 dans la description",
         "Année non précisée"
       ],
       "firstSeen": "2026-11-16",
@@ -7179,7 +7590,7 @@
           "max": 8
         }
       ],
-      "rejection": "Taille 54 incompatible"
+      "rejection": "Groupe non retenu (Autre groupe)"
     },
     {
       "id": "lbc-3284807399",
@@ -7277,100 +7688,6 @@
         }
       ],
       "rejection": "Groupe non retenu (105 mécanique)"
-    },
-    {
-      "id": "tv-4314660",
-      "source": "troc-velo",
-      "url": "https://www.troc-velo.com/fr-fr/annonce/kuota-kom-carbone-optimized-lateral-stiffness-tres-peu-kilometre-suite-a-un-accident-de-voiture-4314660",
-      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/660/14660/4314660/4314660-kuota-kom-carbone-optimized-lateral-stiffness-tres-peu-kilometre-suite-a-un-accident-de-voiture-4314660-1794853139.jpg",
-      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/660/14660/4314660/4314660-kuota-kom-carbone-optimized-lateral-stiffness-tres-peu-kilometre-suite-a-un-accident-de-voiture-4314660-1794853140.jpg",
-      "imageKind": "annonce",
-      "title": "Kuota kom carbone (optimized lateral stiffness) très peu kilométré suite à un accident de voiture",
-      "brand": "Kuota",
-      "model": "kom carbone (optimized lateral stiffness) très peu kilométré",
-      "year": 2024,
-      "type": "route",
-      "size": "M",
-      "price": 1700,
-      "description": "dérailleur AR- SRAM force neuf changé- vendu avec derailleur ex Shimano Durace neuf- chaine neuve-cassette 11x21 - fourche HSD- direction FSA- pédales Durace 7810- freins Shimano Durace - selle Rione carbone- tige de selle Kuota carbone- roues American Classic - cintre Steath pro -poignées SRAM force changées avec cables passés dans guidon (nouvelle configuration, vendu avec les anciennes poignées Durace sortie latérale - mis en nouvelle configuration 2024 Facture d'origine : Non Retour : Non Référence de l'annonce : 4314660",
-      "city": "AUBERVILLIERS (93300)",
-      "coords": {
-        "lat": 48.9128,
-        "lon": 2.3886
-      },
-      "shipping": false,
-      "publishedAt": "2026-11-16T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "patins",
-      "groupset": "sram-axs",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "tres-bon",
-      "batch": 0,
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 52,
-      "zone": "Région parisienne",
-      "distanceKm": 7,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "SRAM AXS",
-          "points": 3,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "7 km de Paris, zone Région parisienne",
-          "points": 10,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Très bon état, modèle 2024",
-          "points": 6,
-          "max": 8
-        }
-      ],
-      "rejection": "Freins à patins"
     },
     {
       "id": "lbc-3310443992",
@@ -7499,6 +7816,7 @@
       "km": 1000,
       "batch": 0,
       "toVerify": [
+        "Taille à confirmer : M déclarée, 54 dans la description",
         "Année non précisée"
       ],
       "firstSeen": "2026-11-16",
@@ -7657,105 +7975,6 @@
         }
       ],
       "rejection": "Groupe non retenu (Shimano GRX)"
-    },
-    {
-      "id": "lbc-3310184291",
-      "source": "leboncoin",
-      "url": "https://www.leboncoin.fr/ad/velos/3310184291",
-      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/8e/26/80/8e26802cb1244c8407a015fdb292a0dd5963d48c.jpg?rule=ad-large",
-      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/d8/94/bd/d894bda0c32820fb17277f1a425bd7c8831b64e9.jpg?rule=ad-large",
-      "imageKind": "annonce",
-      "title": "Velo cadre plongeant CLM notar paire paracylaires vintage",
-      "brand": "Vélo de route",
-      "model": "cadre plongeant CLM notar paire paracylaires vintage",
-      "year": 0,
-      "type": "route",
-      "size": "52",
-      "price": 1600,
-      "description": "Je vends ce vélo de course vintage, idéal pour les amateurs de belles pièces rétro.\n- cadre plongeant CLM Notar vintage \n- paire paraculaire ambrosio \n- taille 52/53\n- Univers : Homme\n- moyeux Dura Ace \n- full campagnolo \n- selle rolls San Marco\n\nStigmatisons du vélo par expertise 2500€ ( voir photo catalogue \n\nDepuis il a été exposé dans plusieurs boutiques sans jamais rouler \n\nPossible envoi via UPS\n\nTrès bon état\n\nUn véritable bijou à découvrir sans plus attendre !",
-      "city": "Villejuif",
-      "coords": {
-        "lat": 48.792,
-        "lon": 2.369
-      },
-      "shipping": true,
-      "publishedAt": "2026-11-15T17:11:59.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "autre",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "tres-bon",
-      "batch": 0,
-      "toVerify": [
-        "Matériau du cadre non précisé",
-        "Type de freins non précisé",
-        "Année non précisée"
-      ],
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 51,
-      "zone": "Région parisienne",
-      "distanceKm": 7,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "Autre groupe",
-          "points": 3,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "7 km de Paris, zone Région parisienne, livraison possible",
-          "points": 10,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Très bon état, année non précisée",
-          "points": 5,
-          "max": 8
-        }
-      ],
-      "rejection": "Taille 52 incompatible"
     },
     {
       "id": "lbc-3271505374",
@@ -8355,7 +8574,7 @@
       "model": "prince fx homme",
       "year": 2021,
       "type": "route",
-      "size": "M",
+      "size": "53",
       "price": 3000,
       "description": "Je vends ce vélo de route Pinarello, conçu pour les amateurs de performance sur route, très peu utilisé car je réside à l'étranger.\n- Type de vélo : Vélo de route \n- Univers : Homme\n- Marque : Pinarello prince FX\n- Taille du cadre : M / 53 / cycliste de 1,74 m à 1,80 m\n- Taille des pneus : 700 x 26 c (26-622) turbo specialized\n- Couleur : Noir\nTrès bon état \nVoir devis ci joint valeur du vélo en 2021 : 6 210€ \nPrêt à rouler, il n'attend plus que son nouveau propriétaire.",
       "city": "Pornic",
@@ -8439,7 +8658,7 @@
           "max": 8
         }
       ],
-      "rejection": "Groupe non retenu (Autre groupe)"
+      "rejection": "Taille 53 incompatible"
     },
     {
       "id": "lbc-3299242605",
@@ -8540,6 +8759,100 @@
         }
       ],
       "rejection": "Type hors critères (Gravel)"
+    },
+    {
+      "id": "tv-4307123",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/cube-aerium-c-68-slt-taille-m-low-sram-red-axs-prolongateurs-ascalon-4307123",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/123/7123/4307123/4307123-cube-aerium-c-68-slt-taille-m-low-sram-red-axs-prolongateurs-ascalon-4307123-1793717461.HEIC",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/123/7123/4307123/4307123-cube-aerium-c-68-slt-taille-m-low-sram-red-axs-prolongateurs-ascalon-4307123-1793717462.HEIC",
+      "imageKind": "annonce",
+      "title": "Cube Aerium C:68 SLT (Taille M / Low) - SRAM Red AXS - Prolongateurs Ascalon",
+      "brand": "Cube",
+      "model": "Aerium C:68 SLT ( / Low) - SRAM Red AXS - Prolongateurs Asca",
+      "year": 2021,
+      "type": "clm",
+      "size": "M",
+      "price": 4000,
+      "description": "Vélo de triathlon haut de gamme Cube Aerium C:68 SLT (version Low), modèle 2021 en taille M. Le vélo est vendu complet dans sa configuration d'origine, avec des optimisations majeures pour le confort sur longue distance et la polyvalence. Ce cadre en taille M convient parfaitement pour un athlète mesurant entre 1m75 et 1m85 (je mesure 1m86 et ça me convient dans une configuration agressive). Le vélo a bénéficié de deux améliorations : • Remplacement des prolongateurs d’origine par des Aerocoach Ascalon. Ils apportent un gain aérodynamique net et un confort incomparable pour les formats L et Full Ironman grâce à leur forme enveloppante au niveau des repose-bras et des possibilités d'un réglage précis de la position (prix neuf 1.086€). • Transmission adaptée aux parcours vallonnés : Montage d'une cassette SRAM Force en 10-30 (au lieu de la 10-26 d'origine). Cette modification offre plus de souplesse et de polyvalence dans les bosses sans sacrifier l'étagement très serré sur le plat. Caractéristiques techniques : • Cadre : Aerium C:68 Monocoque Advanced Twin Mold Technology (Géométrie Low) • Groupe de transmission : SRAM Red eTap AXS électronique sans fil • Prolongateurs : Aerocoach Ascalon • Cassette : SRAM Force 10-30T • Roues : DT Swiss ARC 1100 DICUT Carbon 80 • Accessoires d'origine inclus (système d'hydratation intégré à l'avant, nutrition box sur le cadre, chargeur SRAM etap, les différentes cales pour le réglage des prolongateurs). Le vélo a été rigoureusement entretenu…",
+      "city": "Strasbourg (67000)",
+      "coords": {
+        "lat": 48.5691,
+        "lon": 7.7621
+      },
+      "shipping": true,
+      "publishedAt": "2026-11-03T15:51:00.000Z",
+      "frame": "carbone",
+      "brakes": "patins",
+      "groupset": "sram-axs",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 80,
+      "extensions": "kit",
+      "condition": "tres-bon",
+      "batch": 0,
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 51,
+      "zone": null,
+      "distanceKm": 398,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Entre l'idéal et le maximum de 4 500 €",
+          "points": 17.5,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "SRAM AXS",
+          "points": 3,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 80 mm",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : kit tiers",
+          "points": 4,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "398 km de Paris, hors zone, livraison possible",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2021",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": "Type hors critères (Contre-la-montre / triathlon)"
     },
     {
       "id": "lbc-3287194983",
@@ -9039,7 +9352,7 @@
       "model": "Gravel mondraker arid carbon",
       "year": 0,
       "type": "route",
-      "size": "M/L",
+      "size": "M",
       "price": 3199,
       "description": "Gravel Mondraker ARID Taille M/L\nArid Stealth Air Carbon, stockage dans tube, support inférieur\nPivot de fourche conique Steatlh Air Carbon, HHG, fourche intégrée \nFreins Sram Apex 1, étrier 2 pièces, disque monopièce 6 trous Centerline 160 mm IS,\nRoues Mavic Allroad Disc, UST, largeur interne 25 mm\npneus Maxxis Reaver 700x45, compatible tubeless, gomme double, protection EXO, 120 TPI,\nDÉRAILLEUR ARRIÈRE · SRAM APEX XPLR\nVélo disponible de suite, première révision offerte",
       "city": "Les Sorinières",
@@ -9136,7 +9449,7 @@
       "model": "Kit cadre sworks tarmac sl8 neuf",
       "year": 0,
       "type": "route",
-      "size": "54",
+      "size": "M",
       "price": 3200,
       "description": "A vendre kit cadre Specialized S-Works Tarmac SL8 taille 54 neuf, facture d'achat disponible, encore dans son emballage d'origine.\n- Type de vélo : Vélo de route\n- Univers : Mixte\n- Marque : Specialized\n- Modèle : S-Works Tarmac SL8\n- Taille du cadre : M (54 cm)\n- Couleur : Gris avec détails jaunes\nÉtat neuf\nPrêt à rouler, aucun frais à prévoir.",
       "city": "Nantes",
@@ -9158,6 +9471,7 @@
       "toVerify": [
         "Matériau du cadre non précisé",
         "Type de freins non précisé",
+        "Taille à confirmer : M déclarée, 54 dans la description",
         "Année non précisée"
       ],
       "firstSeen": "2026-11-16",
@@ -9221,7 +9535,7 @@
           "max": 8
         }
       ],
-      "rejection": "Taille 54 incompatible"
+      "rejection": "Groupe non retenu (Autre groupe)"
     },
     {
       "id": "lbc-3083377656",
@@ -9532,7 +9846,7 @@
       "model": "Tarmac Sl7 Sport",
       "year": 2025,
       "type": "route",
-      "size": "54",
+      "size": "M",
       "price": 2000,
       "newPrice": 2025,
       "description": "Je vends ce vélo de route Specialized Tarmac SL7 Sport acheté en juin 2025 environ 3 800 km en Très bon état.\n\nCadre\nTarmac SL7 FACT 9r Carbon, Rider First Engineered™, Win Tunnel Engineered, Clean Routing, Threaded BB, 12x142mm thru-axle, flat-mount disc\n\nFourche\nFACT Carbon, 12x100mm thru-axle, flat-mount disc\n\nFreins\nFrein avant\nShimano 105, Hydraulic Disc 160mm rotor\nFrein arrière\nShimano 105, Hydraulic Disc 140mm rotor\n\nTransmission\nCommande vitesse\nShimano 105, 12 speed Mechanical\nDérailleur avant\nShimano 105, Braze-on\nDérailleur arrière\nShimano 105, 12 speed Mechanical\nCassette\nShimano 105, 12-speed, 11-34t\nChaîne\nShimano SLX M7100, 12-speed w/ quick link\nManivelles\nShimano 105, 12-speed\nPlateaux\n52/36T\nBoîtier de pédalier\nShimano Threaded BSA BB\n\nRoues et pneus \nPneu avant\nTurbo Pro, 700x26\nRoue avant\nDT R470 Disc\nPneu arrière\nTurbo Pro, 700x26\nRoue arrière\nDT R470 Disc\n\nPoste de pilotage\nPotence\nTarmac integrated stem, 6-degree\n\nCintre\nSpecialized Shallow Drop, 6061, 70x125mm, 31.8mm clamp\n\nRuban de guidon\nRoubaix S-Wrap\n\nSelle\nBody Geometry Power Sport, steel rails\n\nTige de selle\nS-Works Tarmac Carbon seat post, FACT Carbon, 20mm offset\nCollier de selle\nTarmac integrated wedge\n\nPneus neuf et roues quasiment neuves j avais une autre paires de roues dessus.\n\nVendu avec ses 2 portes bidons Rib cage II et support de gps intégré ( Compatible avec Garmin, Wahoo, Bryton, Polar, Lezyne, Mio Magellan, Sigma, Cateye, Camera Mount (GoPro), Stix et adaptateur d'éclairage unive…",
@@ -9553,6 +9867,9 @@
       "condition": "tres-bon",
       "km": 3800,
       "batch": 0,
+      "toVerify": [
+        "Taille à confirmer : M déclarée, 54 dans la description"
+      ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
       "score": 49,
@@ -9614,7 +9931,7 @@
           "max": 8
         }
       ],
-      "rejection": "Taille 54 incompatible"
+      "rejection": "Groupe non retenu (105 mécanique)"
     },
     {
       "id": "lbc-3308896322",
@@ -10202,104 +10519,6 @@
       "rejection": "Taille 54 incompatible"
     },
     {
-      "id": "lbc-3310603106",
-      "source": "leboncoin",
-      "url": "https://www.leboncoin.fr/ad/velos/3310603106",
-      "image": "https://img.leboncoin.fr/api/v1/lbcpb1/images/16/13/ae/1613ae28478b46a7931117f6bf3910d92665ad80.jpg?rule=ad-large",
-      "fallbackImage": "https://img.leboncoin.fr/api/v1/lbcpb1/images/3c/32/56/3c32564db3b396f62ecbfdebaf5f0f6aaa5e05af.jpg?rule=ad-large",
-      "imageKind": "annonce",
-      "title": "Cervelo Soloist 2025",
-      "brand": "Cervélo",
-      "model": "Soloist",
-      "year": 2025,
-      "type": "route",
-      "size": "54",
-      "price": 4300,
-      "description": "Cervélo Soloist - Taille 54 - Gold Dust\nVélo monté à partir d'un kit cadre Cervélo Soloist acheté en janvier 2025.\nToutes les pièces ont été achetées neuves ensuite → montage 100 % neuf.\nVendu sans roues \n\nÉquipement:\n* Groupe Shimano Ultegra Di2 12 vitesses\n* Manivelles : 170 mm\n* Plateaux Alugear: 54-40\n* Cassette Ultegra: 11-36 ou 11-34\n* Cockpit BLACK INC HB02 : 110 × 380 mm\n\n*Poids: 7,9 kg",
-      "city": "Séné",
-      "coords": {
-        "lat": 47.62,
-        "lon": -2.736
-      },
-      "shipping": false,
-      "publishedAt": "2026-11-16T10:36:30.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "ultegra-di2",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "tres-bon",
-      "batch": 0,
-      "toVerify": [
-        "Matériau du cadre non précisé",
-        "Type de freins non précisé"
-      ],
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 49,
-      "zone": "Saint-Nazaire et Loire-Atlantique",
-      "distanceKm": 55,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Entre l'idéal et le maximum de 4 500 €",
-          "points": 13,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "Ultegra Di2",
-          "points": 13,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "55 km de Saint-Nazaire, zone Saint-Nazaire et Loire-Atlantique",
-          "points": 8,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Très bon état, modèle 2025",
-          "points": 7,
-          "max": 8
-        }
-      ],
-      "rejection": "Taille 54 incompatible"
-    },
-    {
       "id": "lbc-3295594980",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3295594980",
@@ -10432,6 +10651,7 @@
       "toVerify": [
         "Matériau du cadre non précisé",
         "Type de freins non précisé",
+        "Taille à confirmer : M déclarée, 54 dans la description",
         "Année non précisée"
       ],
       "firstSeen": "2026-11-16",
@@ -10804,7 +11024,7 @@
       "model": "Tarmac SL8 - - SRAM Rival - roues Roval Alpiniste CLX",
       "year": 2024,
       "type": "route",
-      "size": "54",
+      "size": "M",
       "price": 3900,
       "description": "Je vends (pour raison de santé) mon Specialized Tarmac SL8, vélo de route haut de gamme, acheté neuf le 11 décembre 2024 au prix de 8 200 € (facture d'achat en ma possession)\nVélo performant, léger et réactif, idéal pour les cyclosportives, les longues sorties et les cyclistes recherchant un vélo rapide et efficace en montée comme sur le plat.\nVélo soigné et entretenu régulièrement.\nVisible et essayable sur rdv\nPossibilité d'envoyer des photos supplémentaires et d répondre à vos questions\nPrix: 3 900€ discussion possible devant le vélo",
       "city": "Beauvais",
@@ -10825,7 +11045,8 @@
       "batch": 0,
       "toVerify": [
         "Matériau du cadre non précisé",
-        "Type de freins non précisé"
+        "Type de freins non précisé",
+        "Taille à confirmer : M déclarée, 54 dans la description"
       ],
       "firstSeen": "2026-11-16",
       "lastSeen": "2026-11-16",
@@ -10885,104 +11106,6 @@
           "label": "État et âge",
           "detail": "État neuf, modèle 2024",
           "points": 7,
-          "max": 8
-        }
-      ],
-      "rejection": "Taille 54 incompatible"
-    },
-    {
-      "id": "tv-4307123",
-      "source": "troc-velo",
-      "url": "https://www.troc-velo.com/fr-fr/annonce/cube-aerium-c-68-slt-taille-m-low-sram-red-axs-prolongateurs-ascalon-4307123",
-      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/123/7123/4307123/4307123-cube-aerium-c-68-slt-taille-m-low-sram-red-axs-prolongateurs-ascalon-4307123-1793717461.HEIC",
-      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/123/7123/4307123/4307123-cube-aerium-c-68-slt-taille-m-low-sram-red-axs-prolongateurs-ascalon-4307123-1793717462.HEIC",
-      "imageKind": "annonce",
-      "title": "Cube Aerium C:68 SLT (Taille M / Low) - SRAM Red AXS - Prolongateurs Ascalon",
-      "brand": "Cube",
-      "model": "Aerium C:68 SLT ( / Low) - SRAM Red AXS - Prolongateurs Asca",
-      "year": 2021,
-      "type": "route",
-      "size": "M",
-      "price": 4000,
-      "description": "Vélo de triathlon haut de gamme Cube Aerium C:68 SLT (version Low), modèle 2021 en taille M. Le vélo est vendu complet dans sa configuration d'origine, avec des optimisations majeures pour le confort sur longue distance et la polyvalence. Ce cadre en taille M convient parfaitement pour un athlète mesurant entre 1m75 et 1m85 (je mesure 1m86 et ça me convient dans une configuration agressive). Le vélo a bénéficié de deux améliorations : • Remplacement des prolongateurs d’origine par des Aerocoach Ascalon. Ils apportent un gain aérodynamique net et un confort incomparable pour les formats L et Full Ironman grâce à leur forme enveloppante au niveau des repose-bras et des possibilités d'un réglage précis de la position (prix neuf 1.086€). • Transmission adaptée aux parcours vallonnés : Montage d'une cassette SRAM Force en 10-30 (au lieu de la 10-26 d'origine). Cette modification offre plus de souplesse et de polyvalence dans les bosses sans sacrifier l'étagement très serré sur le plat.",
-      "city": "Strasbourg (67000)",
-      "coords": {
-        "lat": 48.5691,
-        "lon": 7.7621
-      },
-      "shipping": true,
-      "publishedAt": "2026-11-03T15:51:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "sram-axs",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "kit",
-      "condition": "neuf",
-      "batch": 0,
-      "toVerify": [
-        "Matériau du cadre non précisé",
-        "Type de freins non précisé"
-      ],
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 44,
-      "zone": null,
-      "distanceKm": 398,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Entre l'idéal et le maximum de 4 500 €",
-          "points": 17.5,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "SRAM AXS",
-          "points": 3,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : kit tiers",
-          "points": 4,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "398 km de Paris, hors zone, livraison possible",
-          "points": 7,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "État neuf, modèle 2021",
-          "points": 6,
           "max": 8
         }
       ],
