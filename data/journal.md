@@ -2,6 +2,34 @@
 
 ## Lundi 16 novembre 2026
 
+- Crédit Apify consommé ce mois-ci avant la collecte : 1,22 $ sur 5,00 $.
+- Leboncoin : 60 annonces lues autour de Paris et de Saint-Nazaire (30 au plus par zone).
+- Troc-Vélo : appels JSON relevés sur la page de liste (piste d'API interne) : https://api.troc-velo.com/api/category_product_counters (200), https://collector.appconsent.io/hello (200), https://api.btloader.com/country?o=5094764668518400 (200), https://api.troc-velo.com/api/category_product_counters, https://www.troc-velo.com/fr-fr?_rsc=eOPycq5ES9Tk-Ef7.
+- Troc-Vélo (navigateur Puppeteer Scraper d’Apify) : 57 annonces sur la liste (2 pages), 7 fiches ouvertes. Tri de la liste : 1 déjà analysées, 30 hors budget, 13 d'une autre taille, 3 sans taille ni groupe cité, 3 trop loin sans livraison, 7 à ouvrir (2 annonces « à la une » répétées d'une page à l'autre, comptées une fois).
+- Decathlon Occasion (Cheerio Scraper d’Apify) : 42 annonces sur la liste, 0 fiche ouverte.
+
+7 nouvelles annonces analysées : 3 pertinentes, 4 écartées.
+
+| Score | Annonce | Prix | Taille | Transmission | Zone | Lieu | Source |
+| ---: | --- | ---: | --- | --- | --- | --- | --- |
+| **72** | [Wilier Cento 10 sl](https://www.troc-velo.com/fr-fr/annonce/wilier-cento-10-sl-4314679) | 2 250 € | M | Ultegra mécanique, capteur | Saint-Nazaire et Loire-Atlantique | Saint-gilles (35590) (101 km de Saint-Nazaire, livraison) | Troc-Vélo |
+| **68** | [Giant TCR](https://www.troc-velo.com/fr-fr/annonce/giant-tcr-4307680) | 1 950 € | M | Ultegra Di2 | Hors zone | BERNISSART (7320), hors de France métropolitaine | Troc-Vélo |
+| **59** | [Specialized tarmac SL7 pro](https://www.troc-velo.com/fr-fr/annonce/specialized-tarmac-sl7-pro-4314667) | 3 500 € | 56 | Ultegra Di2 | Région parisienne | Lille (59800) (204 km de Paris) | Troc-Vélo |
+
+À vérifier avant de contacter le vendeur :
+
+- Wilier Cento 10 sl : taille à confirmer : m déclarée, 54 dans la description
+- Giant TCR : annonce hors de france métropolitaine : vérifier la livraison et les frais ; année non précisée
+
+Écartées :
+
+- [🔥Specialized S-Works Tarmac SL6 Ultegra Di2 56🔥trek pinarello scott canyon giant colnago ridley](https://www.troc-velo.com/fr-fr/annonce/specialized-s-works-tarmac-sl6-ultegra-di2-56-trek-pinarello-scott-canyon-giant-colnago-ridley-4314479), 1 899 € : Lieu inconnu ou trop éloigné, sans livraison
+- [Colnago V4RS SRAM Red AXS](https://www.troc-velo.com/fr-fr/annonce/colnago-v4rs-sram-red-axs-campagnolo-hyperon-ultra-garmin-rally-rs200-4304746), 3 500 € : Taille 51 incompatible
+- [Giant propel taille M](https://www.troc-velo.com/fr-fr/annonce/giant-propel-taille-m-4314520), 2 750 € : Groupe non retenu (SRAM AXS)
+- [Cube Aerium C:68 SLT (Taille M / Low) - SRAM Red AXS - Prolongateurs Ascalon](https://www.troc-velo.com/fr-fr/annonce/cube-aerium-c-68-slt-taille-m-low-sram-red-axs-prolongateurs-ascalon-4307123), 4 000 € : Type hors critères (Contre-la-montre / triathlon)
+
+## Lundi 16 novembre 2026
+
 - Crédit Apify consommé ce mois-ci avant la collecte : 1,13 $ sur 5,00 $.
 - Leboncoin : 60 annonces lues autour de Paris et de Saint-Nazaire (30 au plus par zone).
 - Troc-Vélo : appels JSON relevés sur la page de liste (piste d'API interne) : https://api.troc-velo.com/api/products/promoted?category=c8 (200), https://api.troc-velo.com/api/products?category=c8&sorting=relevance%3Adesc&itemsPerPage=30 (200), https://api.troc-velo.com/api/category_product_counters (200), https://api.troc-velo.com/api/products/with-aggregations?category=c8&sorting=relevance%3Adesc&itemsPerPage=1 (200), https://cdn.api.btloader.com/device?orgid=5094764668518400&platformVersion=6.8.0&fullVersionList=%5B%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22141.0.7390.54%22%7D%2C%7B%22brand%22%3A%22Not%3FA_Brand%22%2C%22version%22%3A%228.0.0.0%22%7D%5D&upapi=true (200).
