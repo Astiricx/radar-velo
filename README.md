@@ -150,6 +150,7 @@ Variables) :
 | `APIFY_BUDGET_USD`    | `4`        | Consommation du mois au-delà de laquelle la collecte est sautée |
 | `APIFY_MAX_ITEMS`     | `30`       | Annonces Leboncoin lues par zone et par jour |
 | `DECATHLON_MAX_ITEMS` | `12`       | Annonces Decathlon Occasion ouvertes par jour |
+| `APIFY_PROXY_GROUPS`  | vide (proxy automatique) | `RESIDENTIAL` : proxy résidentiel français pour le Cheerio Scraper, si Troc-Vélo ou Decathlon bloquent le proxy par défaut |
 | `DECATHLON_ENABLED`   | `true`     | `false` : ne plus lire Decathlon Occasion |
 | `TROCVELO_MAX_ITEMS`  | `12`       | Annonces Troc-Vélo ouvertes par jour |
 | `TROCVELO_SEARCH_URL` | catégorie route | Page de liste Troc-Vélo (copie l'adresse après avoir posé tes filtres) |

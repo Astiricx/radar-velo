@@ -9,7 +9,7 @@
  * la préfecture du département, et signalée comme approximative.
  */
 import type { ActorRunner } from './client'
-import { PREFILTER, SEARCH, TROCVELO } from './config'
+import { PREFILTER, PROXY, SEARCH, TROCVELO } from './config'
 import { PAGE_FUNCTION } from './page-function'
 import { fold, type RawAd } from './parse'
 
@@ -32,7 +32,8 @@ export async function fetchTrocVelo(run: ActorRunner): Promise<{ ads: RawAd[]; s
       maxRequestsPerCrawl: TROCVELO.maxListings + 1,
       maxConcurrency: 3,
       maxRequestRetries: 1,
-      proxyConfiguration: { useApifyProxy: false },
+      // Obligatoire pour le Cheerio Scraper : proxy Apify (voir PROXY dans config.ts).
+      proxyConfiguration: PROXY,
     },
     { memoryMbytes: 1024, timeoutSecs: 180 },
   )

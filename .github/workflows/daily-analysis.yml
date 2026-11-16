@@ -56,6 +56,7 @@ jobs:
           APIFY_BUDGET_USD: ${{ vars.APIFY_BUDGET_USD }}
           APIFY_MAX_ITEMS: ${{ inputs.max_items || vars.APIFY_MAX_ITEMS }}
           VEILLE_RESCAN: ${{ inputs.rescan && 'true' || 'false' }}
+          APIFY_PROXY_GROUPS: ${{ vars.APIFY_PROXY_GROUPS }}
           DECATHLON_ENABLED: ${{ vars.DECATHLON_ENABLED }}
           DECATHLON_MAX_ITEMS: ${{ vars.DECATHLON_MAX_ITEMS }}
           APIFY_LEBONCOIN_ACTOR: ${{ vars.APIFY_LEBONCOIN_ACTOR }}

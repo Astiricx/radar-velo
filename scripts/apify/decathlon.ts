@@ -6,7 +6,7 @@
  * vélos sont livrés, ce que tes critères acceptent hors zones.
  */
 import type { ActorRunner } from './client'
-import { DECATHLON, PREFILTER, SEARCH } from './config'
+import { DECATHLON, PREFILTER, PROXY, SEARCH } from './config'
 import { PAGE_FUNCTION } from './page-function'
 import type { RawAd } from './parse'
 import { productOf, toNumber } from './trocvelo'
@@ -29,7 +29,8 @@ export async function fetchDecathlon(run: ActorRunner): Promise<{ ads: RawAd[]; 
       maxRequestsPerCrawl: DECATHLON.startUrls.length + DECATHLON.maxListings,
       maxConcurrency: 3,
       maxRequestRetries: 1,
-      proxyConfiguration: { useApifyProxy: false },
+      // Obligatoire pour le Cheerio Scraper : proxy Apify (voir PROXY dans config.ts).
+      proxyConfiguration: PROXY,
     },
     { memoryMbytes: 1024, timeoutSecs: 240 },
   )

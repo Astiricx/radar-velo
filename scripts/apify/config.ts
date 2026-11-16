@@ -57,6 +57,21 @@ export const DECATHLON = {
 }
 
 /**
+ * Proxy du Cheerio Scraper (champ obligatoire). Par défaut, le proxy Apify « automatique »
+ * (datacenter, inclus dans le plan gratuit). Si Troc-Vélo ou Decathlon le bloquent, mettre la
+ * variable APIFY_PROXY_GROUPS à RESIDENTIAL : IP résidentielles françaises, facturées au volume
+ * (quelques centimes par mois pour ces petites pages).
+ */
+const proxyGroups = text(process.env.APIFY_PROXY_GROUPS, '')
+  .split(',')
+  .map((g) => g.trim().toUpperCase())
+  .filter(Boolean)
+export const PROXY =
+  proxyGroups.length > 0
+    ? { useApifyProxy: true, apifyProxyGroups: proxyGroups, ...(proxyGroups.includes('RESIDENTIAL') ? { apifyProxyCountry: 'FR' } : {}) }
+    : { useApifyProxy: true }
+
+/**
  * Pré-filtre des pages de liste Troc-Vélo et Decathlon (texte sans accents, en minuscules) :
  * on n'ouvre que les annonces dont la vignette cite un groupe Shimano retenu.
  */
