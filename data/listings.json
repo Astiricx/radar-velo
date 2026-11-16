@@ -13,7 +13,7 @@
       "Saint-Nazaire et Loire-Atlantique (120 km autour de Saint-Nazaire)"
     ]
   },
-  "count": 108,
+  "count": 109,
   "retained": 24,
   "listings": [
     {
@@ -6026,6 +6026,102 @@
       "rejection": "Taille 53 incompatible"
     },
     {
+      "id": "tv-4314710",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/trek-emonda-sl6-pro-di2-2023-4314710",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/710/14710/4314710/4314710-trek-emonda-sl6-pro-di2-2023-4314710-1794859983.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/710/14710/4314710/4314710-trek-emonda-sl6-pro-di2-2023-4314710-1794859985.jpg",
+      "imageKind": "annonce",
+      "title": "Trek Emonda SL6 Pro Di2 (2023)",
+      "brand": "Trek",
+      "model": "Emonda SL6 Pro Di2 ( )",
+      "year": 2023,
+      "type": "route",
+      "size": "58",
+      "price": 2699,
+      "newPrice": 4000,
+      "description": "Bonjour, Vends Trek Emonda SL6 Pro Di2 (modèle 2023) en bon état : Acheté en 2024 (11.500 km) Couleur Quicksilver / Radioactive Red Taille 58 (je mesure 1m83) Cadre et roues carbone Bontrager 35 mm Transmission Shimano 105 Di2 Plateaux 50/36, cassette 11/34 Nettoyage et dégraissage hebdomadaire Révision annuelle par un vélociste Toutes les factures sont disponibles Chaîne : remplacée 08-2026 Roue arrière : remplacée 01-2026 Boîtier de pédalier : remplacé 01-2026 À vendre 2.699 EUR (prix neuf 4.000 EUR) Photos sur demande Vélo visible dans le Haut-Rhin, pas d’envoi Facture d'origine : Oui Retour : Non Référence de l'annonce : 4314710",
+      "city": "Durlinsdorf (68480)",
+      "shipping": false,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 35,
+      "extensions": "inconnu",
+      "condition": "bon",
+      "km": 11500,
+      "batch": 0,
+      "toVerify": [
+        "Matériau du cadre non précisé",
+        "Type de freins non précisé"
+      ],
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 55,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "33 % sous le prix neuf (4 000 €)",
+          "points": 7.3,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 35 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Aucune zone active",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Bon état, modèle 2023",
+          "points": 5,
+          "max": 8
+        }
+      ],
+      "rejection": "Taille 58 incompatible"
+    },
+    {
       "id": "lbc-3311030776",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3311030776",
@@ -6318,6 +6414,96 @@
       "rejection": "Type hors critères (Gravel)"
     },
     {
+      "id": "tv-4276079",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/adris-le-performance-s2-105-di2-4276079",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/79/76079/4276079/4276079-adris-le-performance-s2-105-di2-4276079-1788787565.JPG",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/79/76079/4276079/4276079-adris-le-performance-s2-105-di2-4276079-1788787567.JPG",
+      "imageKind": "annonce",
+      "title": "ADRIS LE PERFORMANCE S2 105 di2",
+      "brand": "Vélo de route",
+      "model": "ADRIS LE PERFORMANCE S2 105 di2",
+      "year": 2025,
+      "type": "route",
+      "size": "M",
+      "price": 2900,
+      "description": "Je vends mon vélo ADRIS LE PERFORMANCE S2 acheté neuf en Septembre 2025. Le vélo est en excellent état, sera révisé et nettoyé complètement pour la vente. Il a parcouru moins de 1400 kilomètres depuis son achat. Transmission Shimano 105 di2 12 vitesses, développement en 50-34 à l'avant et 11-34 pour la cassette. Pneus tubeless Michelin POWER CUP 28mm qui ont parcouru moins de 300 kilomètres. Jantes MAVIC KSYRIUM 30 mm. Essai possible sur place, remise en main propre uniquement. D'autres infos et photos en MP ! Facture d'origine : Non Retour : Non Référence de l'annonce : 4276079",
+      "city": "Chassieu (69680)",
+      "shipping": false,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 30,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 54,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 30 mm",
+          "points": 5,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Aucune zone active",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2025",
+          "points": 7,
+          "max": 8
+        }
+      ],
+      "rejection": "Lieu inconnu ou trop éloigné, sans livraison"
+    },
+    {
       "id": "lbc-3271083290",
       "source": "leboncoin",
       "url": "https://www.leboncoin.fr/ad/velos/3271083290",
@@ -6328,7 +6514,7 @@
       "brand": "Look",
       "model": "Gravel 765 RS 🚨destockage -30%",
       "year": 2026,
-      "type": "gravel",
+      "type": "route",
       "size": "M",
       "price": 3499,
       "description": "Le magasin Le Grand Braquet à St-Brevin vous propose ce LOOK 765 GRAVEL RS APEX eTap 1x12, Vélo neuf en taille M.\n\nDescription\n\nLe LOOK 765 Gravel RS APEX eTap 1x12 est un gravel carbone performant et polyvalent, conçu pour les sorties sportives, les longues distances et les aventures sur chemins. Son cadre carbone LOOK, associé à la transmission électronique SRAM Apex eTap AXS 12 vitesses, offre un excellent compromis entre confort, dynamisme et performance.\n\nAvec son design élégant et son équipement pensé pour le gravel, il vous accompagnera aussi bien sur la route que sur les chemins.\n\nCaractéristiques\n\nCadre : LOOK 765 Gravel RS, cadre carbone.\n\nTransmission : SRAM Apex eTap AXS 1x12 vitesses, transmission électronique sans fil.\n\nType de vélo : Gravel carbone, idéal pour les sorties sportives et les longues distances.\n\nRoues : FULCRUM Rapid Red 500 2WF\net pneus HUTCHINSON Touareg 700\n\nMagasin Le Grand Braquet à Pontchâteau & Saint-Brevin-les-Pins.\n\nOuvert du mardi au samedi (samedi fermeture à 18h00).\n\n📍 Venez découvrir ce LOOK 765 Gravel RS en magasin et bénéficiez des conseils de notre équipe pour choisir le vélo adapté à votre pratique.\n\n🚴‍♂️ Le Grand Braquet – Votre prochaine aventure commence ici !",
@@ -6412,7 +6598,7 @@
           "max": 8
         }
       ],
-      "rejection": "Type hors critères (Gravel)"
+      "rejection": "Groupe non retenu (SRAM AXS)"
     },
     {
       "id": "lbc-3309052798",
@@ -6622,7 +6808,7 @@
       "brand": "Look",
       "model": "765 Gravel RS - Gravel Musculaire reconditionné | 15 jours p",
       "year": 2025,
-      "type": "gravel",
+      "type": "route",
       "size": "M",
       "price": 2349,
       "description": "🖤 BLACK WEEKS -800€ !\n🔥 Payez en 2, 3 ou 4 fois SANS FRAIS.\n\nPour plus de détails, contactez-nous directement via le bouton « Contacter » de l'annonce pour obtenir des conseils d'expert.\n\nNous sommes également joignables par téléphone du lundi au samedi de 9h à 19h si vous le préférez, en cliquant sur « voir le numéro ».\n\nREPAIR AND RUN PARIS VOLTAIRE est ambassadeur distributeur indépendant officiel d'un partenaire, habilité à proposer, distribuer et accompagner la vente des vélos reconditionnés de son partenaire.\n\nLes vélos sont disponibles à la vente et présentés en ligne via leur espace digital. Ils sont stockés dans un entrepôt central commun à l'ensemble du réseau, situé à Aix-en-Provence — le vélo n'est donc pas physiquement visible en boutique chez REPAIR AND RUN PARIS VOLTAIRE.\n\nUne fois votre commande passée, le vélo est livré sous 2 à 7 jours ouvrés. Vous disposez ensuite de 15 jours pour l'essayer sur vos routes préférées.\n\n● Location à partir de 77,5€/mois\n● Payez en 2, 3 ou 4 fois SANS FRAIS, ou jusqu'à 84 fois !\n● 2650€ d'économie vs neuf\n● Meilleur prix garanti (on s'aligne si vous trouvez moins cher ailleurs)\n● 15 jours pour essayer le vélo sur vos routes préférées pour changer d'avis. Il ne vous plait pas ? On le reprend !\n● Garantie 12 mois\n● Note des vélos 4,7/5 sur Trustpilot (1000+ avis)\n● Livraison en 2 à 7 jours ouvrés partout en France\n● Réservation immédiate par acompte de 100€\n\n📌 L'essentiel\n- LOOK 765 Gravel RS Gravel Musculaire\n- Apparence : P…",
@@ -6703,7 +6889,7 @@
           "max": 8
         }
       ],
-      "rejection": "Type hors critères (Gravel)"
+      "rejection": "Groupe non retenu (SRAM AXS)"
     },
     {
       "id": "lbc-3290412765",
@@ -6814,7 +7000,7 @@
       "brand": "Giant",
       "model": "Gravel TCX",
       "year": 2022,
-      "type": "gravel",
+      "type": "route",
       "size": "M",
       "price": 1500,
       "description": "Vends Vélo Gravel ou Cyclocross Giant TCX Advanced Pro 2 - taille M - Couleur \"Amber Glow\"\nAnnée : 09/2022\nCadre / Fourche / Tige de selle : carbone\nGroupe Shimano GRX , 1x11 vitesses, cassette 11-32, plateaux 40T\nFreins à disque - Roues Giant \n\nNeuf 3100 - prix 1500\nTrès bon état\nPrêt à rouler, aucun frais à prévoir.",
@@ -6895,7 +7081,7 @@
           "max": 8
         }
       ],
-      "rejection": "Type hors critères (Gravel)"
+      "rejection": "Groupe non retenu (Shimano GRX)"
     },
     {
       "id": "lbc-3310184291",
@@ -7105,7 +7291,7 @@
       "brand": "BMC",
       "model": "Gravel carbone URS Two Apex 1",
       "year": 0,
-      "type": "gravel",
+      "type": "route",
       "size": "M",
       "price": 1700,
       "description": "Je vends ce vélo gravel BMC URS Two Apex 1 en carbone, conçu pour affronter les routes et chemins.\n\n- Type de vélo : Gravel\n\n- Marque: BMC\n\n- Modèle : URS Two Apex 1\n\nMatériau du cadre: Carbone\n\nTaille du cadre: M\n\n-\n\n- Couleur: Bleu\n\nÉtat neuf\n\nPrêt à rouler, aucun frais à prévoir.",
@@ -7190,7 +7376,7 @@
           "max": 8
         }
       ],
-      "rejection": "Type hors critères (Gravel)"
+      "rejection": "Groupe non retenu (Autre groupe)"
     },
     {
       "id": "lbc-3292420886",
@@ -7203,7 +7389,7 @@
       "brand": "Specialized",
       "model": "Gravel Crux",
       "year": 2027,
-      "type": "gravel",
+      "type": "route",
       "size": "56",
       "price": 1950,
       "description": "Je vends ce vélo gravel Specialized Crux DSW taille 56, en très bon état.\n\nCadre très polyvalent pour un usage route/gravel.\nPneus de 40mm de section, à l'aise sur routes et chemins.\nMono plateau pour la simplicité d'utilisation avec groupe électronique haut de gamme Sram Force AXS.\n\nLe vélo est entièrement révisé et prêt à rouler, la transmission est neuve (chaine, plateau, cassette) ainsi que le ruban de cintre.\nLe cadre est sous garantie jusque fin juillet 2027 pour le prochain acquéreur.\n\nValeur du montage neuf 4200€\n\n+ d'informations par messages\nPossibilité de livraison en Bretagne",
@@ -7288,7 +7474,7 @@
           "max": 8
         }
       ],
-      "rejection": "Type hors critères (Gravel)"
+      "rejection": "Groupe non retenu (SRAM AXS)"
     },
     {
       "id": "lbc-3305253958",
@@ -8083,7 +8269,7 @@
       "brand": "Look",
       "model": "765 Gravel RS - Gravel Musculaire",
       "year": 2025,
-      "type": "gravel",
+      "type": "route",
       "size": "M",
       "price": 2349,
       "description": "🖤 BLACK WEEKS -800€ !\n🔥 Payez en 2, 3 ou 4 fois SANS FRAIS.\n\nPour plus de détails, contactez-nous directement via le bouton « Contacter » de l'annonce pour obtenir des conseils d'expert M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s, partenaire exclusif de FLEETA.\n\nNous sommes également joignables par téléphone du lundi au samedi de 9h à 19h si vous le préférez, en cliquant sur « voir le numéro ».\n\nLes vélos sont stockés soit dans l'entrepôt M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s à Aix-en-Provence, soit dans les installations FLEETA à Vienne ou à Nantes (qui ne reçoivent pas de public), et sont vendus par M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s. Ils peuvent être livrés directement chez vous partout en France ou dans un réseau de plus de 200 boutiques partenaires.\n\nFLEETA est un ambassadeur et distributeur indépendant officiel des vélos reconditionnés M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s. L’entreprise participe au reconditionnement de certains vélos M⁠I⁠N⁠T au sein de centres de reconditionnement spécialisés. Dans le cadre de ce partenariat officiel avec M⁠I⁠N⁠T⁠-⁠B⁠i⁠k⁠e⁠s, FLEETA est habilité à proposer, distribuer et accompagner la vente de vélos reconditionnés M⁠I⁠N⁠T.\n\nUne fois la commande passée le vélo sera livré sous 2 à 7 jours ouvrés. Vous aurez 15 jours pour essayer le vélo sur vos routes préférées.\n\n● Location à partir de 77,5€/mois\n● Payez en 2, 3 ou 4 fois SANS FRAIS, ou jusqu'à 84 fois !\n● 2650€ d'économie vs neuf\n● Meilleur prix garanti M⁠I⁠N⁠T (on s'aligne si vous trouvez moins cher ailleurs)\n● 15 jours pour essayer le vélo sur vos routes…",
@@ -8164,7 +8350,7 @@
           "max": 8
         }
       ],
-      "rejection": "Type hors critères (Gravel)"
+      "rejection": "Groupe non retenu (SRAM AXS)"
     },
     {
       "id": "lbc-3245167911",
@@ -8373,7 +8559,7 @@
       "brand": "Vélo de route",
       "model": "Gravel mondraker arid carbon",
       "year": 0,
-      "type": "gravel",
+      "type": "route",
       "size": "M/L",
       "price": 3199,
       "description": "Gravel Mondraker ARID Taille M/L\nArid Stealth Air Carbon, stockage dans tube, support inférieur\nPivot de fourche conique Steatlh Air Carbon, HHG, fourche intégrée \nFreins Sram Apex 1, étrier 2 pièces, disque monopièce 6 trous Centerline 160 mm IS,\nRoues Mavic Allroad Disc, UST, largeur interne 25 mm\npneus Maxxis Reaver 700x45, compatible tubeless, gomme double, protection EXO, 120 TPI,\nDÉRAILLEUR ARRIÈRE · SRAM APEX XPLR\nVélo disponible de suite, première révision offerte",
@@ -8457,7 +8643,7 @@
           "max": 8
         }
       ],
-      "rejection": "Type hors critères (Gravel)"
+      "rejection": "Groupe non retenu (SRAM AXS)"
     },
     {
       "id": "lbc-3309226520",
@@ -8668,7 +8854,7 @@
       "brand": "Cannondale",
       "model": "gravel",
       "year": 0,
-      "type": "gravel",
+      "type": "route",
       "size": "M",
       "price": 1680,
       "description": "Je vends ce vélo gravel Cannondale en vert Olive, conçu pour l'aventure sur tous les terrains avec sa cassette 11/36.\nVélo taille M convient pour une personne mesurant entre 1m70 et 1m80\n\nLe confort se fait ressentir avec la suspension kingpin\nÉquipé et vendu avec pédale semi automatique (valeur 90€)\nVélo disponible immédiatement \nPhotos à la demande \nPossibilité de venir le voir et essayer sur place \n\nVélo ayant - 1500km à ce jour \nToujours entretenu, pneu d'origine comme neuf tubless ready fournis",
@@ -8755,7 +8941,7 @@
           "max": 8
         }
       ],
-      "rejection": "Type hors critères (Gravel)"
+      "rejection": "Groupe non retenu (Autre groupe)"
     },
     {
       "id": "lbc-3288947794",
@@ -9060,7 +9246,7 @@
       "brand": "Trek",
       "model": "Gravel Carbone | Checkpoint | Garantie 2 ans",
       "year": 2022,
-      "type": "gravel",
+      "type": "route",
       "size": "M",
       "price": 2500,
       "description": "Gravel Carbone | TREK Checkpoint | Taille M | Garantie 2 ans\n\nCARACTÉRISTIQUES\n - Origine : Reprise\n - Etat : Excellent\n - Date : 2022\n - Taille : M\n - Poids : 9,7 kg\n - Cadre : Carbone OCLV Série 500\n - Position : Guidon flare Bontrager Elite IsoZone\n - Transmission : Shimano GRX RX810 46/30T, 11v 11/34T\n - Freinage : Shimano GRX RX400 Hydraulique\n - Roues : Bontrager Paradigm SL (Tubeless Ready)\n - Pneus : Gravel Pathfinder TLR 700x40C\n\nProduit SECONDE VIE DECATHLON Atlantis St-Herblain\nAchat uniquement en magasin (Place Océane, 44800 Saint-Herblain) | Pas de livraison possible\nGaranti 2 ans | Retours et échanges selon les conditions sur notre site decathlon.\nProduit contrôlé et fonctionnel.",
@@ -9141,7 +9327,97 @@
           "max": 8
         }
       ],
-      "rejection": "Type hors critères (Gravel)"
+      "rejection": "Groupe non retenu (Shimano GRX)"
+    },
+    {
+      "id": "tv-4314711",
+      "source": "troc-velo",
+      "url": "https://www.troc-velo.com/fr-fr/annonce/wilier-cento-10-sl-105-di2-4314711",
+      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/711/14711/4314711/4314711-wilier-cento-10-sl-105-di2-4314711-1794860374.jpg",
+      "fallbackImage": "https://media-cdn.troc-velo.com/full/main/bikeAds/711/14711/4314711/4314711-wilier-cento-10-sl-105-di2-4314711-1794860376.jpg",
+      "imageKind": "annonce",
+      "title": "Wilier cento 10 sl 105 di2",
+      "brand": "Wilier",
+      "model": "cento 10 sl 105 di2",
+      "year": 2025,
+      "type": "route",
+      "size": "XL",
+      "price": 3000,
+      "description": "Je vends ce vélo de route Wilier Cento 10 SL équipé d'un groupe Shimano Di2 105. - Type de vélo : Vélo de route - Univers : Homme - Marque : Wilier - Modèle : Cento 10 SL - Taille du cadre : XL - Couleur : Rouge - Transmission : Shimano Di2 105 - Freins : Disques -roues shimano aluminium État neuf Le vélo date de septembre 2025. Je suis le premier propriétaire, facture disponible de chez bouticycle a roufiac. Très peu roulé : moins de 2000 km. Je le vends pour passer sur une pratique gravel. Visible a proximité de Toulouse. Facture d'origine : Oui Retour : Non Référence de l'annonce : 4314711",
+      "city": "L UNION (31240)",
+      "shipping": false,
+      "publishedAt": "2026-11-16T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "tres-bon",
+      "batch": 0,
+      "firstSeen": "2026-11-16",
+      "lastSeen": "2026-11-16",
+      "score": 49,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Décote",
+          "detail": "Prix neuf inconnu",
+          "points": 4,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Aucune zone active",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Très bon état, modèle 2025",
+          "points": 7,
+          "max": 8
+        }
+      ],
+      "rejection": "Taille XL incompatible"
     },
     {
       "id": "lbc-3307124600",
@@ -10029,198 +10305,6 @@
         }
       ],
       "rejection": "Groupe non retenu (105 mécanique)"
-    },
-    {
-      "id": "tv-4314710",
-      "source": "troc-velo",
-      "url": "https://www.troc-velo.com/fr-fr/annonce/trek-emonda-sl6-pro-di2-2023-4314710",
-      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/710/14710/4314710/4314710-trek-emonda-sl6-pro-di2-2023-4314710-1794859983.jpg",
-      "fallbackImage": "https://media-cdn.troc-velo.com/zoom/main/bikeAds/710/14710/4314710/4314710-trek-emonda-sl6-pro-di2-2023-4314710-1794859983.jpg",
-      "imageKind": "annonce",
-      "title": "Trek Emonda SL6 Pro Di2 (2023)",
-      "brand": "Trek",
-      "model": "Emonda SL6 Pro Di2 ( )",
-      "year": 2023,
-      "type": "route",
-      "size": "?",
-      "price": 2699,
-      "description": "Trek Emonda SL6 Pro Di2 (2023), TREK - Bon état - Vélos et Cadres Route Course / CLM / Triathlon \n\nAnnonce géolocalisée à : 68480 Durlinsdorf \n\nTroc Vélo est le N°1 des annonces vélo et outdoor, bénéficiez du paiement sécurisé et de la livraison pour tous vos achats. \n\nTrek Emonda SL6 Pro Di2 (2023) 2699 €4000 € Réserver Accueil / Vélos et Cadres / Route / Course / CLM / Triathlon ... / Route / Course / CLM / Triathlon 1 / 5 Voir les",
-      "city": "Lieu non précisé",
-      "shipping": false,
-      "publishedAt": "2026-11-16T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "105-di2",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "bon",
-      "batch": 0,
-      "toVerify": [
-        "Gamme du groupe Di2 non précisée (105, Ultegra ou Dura-Ace)",
-        "Matériau du cadre non précisé",
-        "Type de freins non précisé",
-        "Taille non précisée"
-      ],
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 47,
-      "zone": null,
-      "distanceKm": null,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "105 Di2",
-          "points": 9,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "Aucune zone active",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Bon état, modèle 2023",
-          "points": 5,
-          "max": 8
-        }
-      ],
-      "rejection": "Taille ? incompatible"
-    },
-    {
-      "id": "tv-4314711",
-      "source": "troc-velo",
-      "url": "https://www.troc-velo.com/fr-fr/annonce/wilier-cento-10-sl-105-di2-4314711",
-      "image": "https://media-cdn.troc-velo.com/full/main/bikeAds/711/14711/4314711/4314711-wilier-cento-10-sl-105-di2-4314711-1794860374.jpg",
-      "fallbackImage": "https://media-cdn.troc-velo.com/zoom/main/bikeAds/711/14711/4314711/4314711-wilier-cento-10-sl-105-di2-4314711-1794860374.jpg",
-      "imageKind": "annonce",
-      "title": "Wilier cento 10 sl 105 di2",
-      "brand": "Wilier",
-      "model": "cento 10 sl 105 di2",
-      "year": 0,
-      "type": "route",
-      "size": "?",
-      "price": 3000,
-      "description": "Wilier cento 10 sl 105 di2, WILIER - Comme neuf - Vélos et Cadres Route Course / CLM / Triathlon \n\nAnnonce géolocalisée à : 31240 L UNION \n\nTroc Vélo est le N°1 des annonces vélo et outdoor, bénéficiez du paiement sécurisé et de la livraison pour tous vos achats. \n\nWilier cento 10 sl 105 di2 3000 € Réserver Accueil / Vélos et Cadres / Route / Course / CLM / Triathlon ... / Route / Course / CLM / Triathlon 1 / 7 Voir les",
-      "city": "Lieu non précisé",
-      "shipping": false,
-      "publishedAt": "2026-11-16T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "105-di2",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "tres-bon",
-      "batch": 0,
-      "toVerify": [
-        "Matériau du cadre non précisé",
-        "Type de freins non précisé",
-        "Taille non précisée",
-        "Année non précisée"
-      ],
-      "firstSeen": "2026-11-16",
-      "lastSeen": "2026-11-16",
-      "score": 47,
-      "zone": null,
-      "distanceKm": null,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Décote",
-          "detail": "Prix neuf inconnu",
-          "points": 4,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "105 Di2",
-          "points": 9,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "Aucune zone active",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Très bon état, année non précisée",
-          "points": 5,
-          "max": 8
-        }
-      ],
-      "rejection": "Taille ? incompatible"
     },
     {
       "id": "lbc-3297832594",
