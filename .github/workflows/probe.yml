@@ -1,0 +1,32 @@
+# Sonde des sites de vélos neufs : vérifie, depuis les serveurs de GitHub, quelles pages
+# sont lisibles et garde leur contenu en pièce jointe de l'exécution. Lancement manuel.
+name: Sonde des sources
+
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: Adresses à lire, séparées par des espaces
+        type: string
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/probe-sources.mjs
+        env:
+          PROBE_URLS: ${{ inputs.urls }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: probe
+          path: probe
+          retention-days: 3
