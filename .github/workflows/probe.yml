@@ -11,7 +11,8 @@ on:
         required: true
 
 permissions:
-  contents: read
+  # Pour déposer les pages lues sur la branche « probe-output ».
+  contents: write
 
 jobs:
   probe:
@@ -25,8 +26,12 @@ jobs:
       - run: node scripts/probe-sources.mjs
         env:
           PROBE_URLS: ${{ inputs.urls }}
-      - uses: actions/upload-artifact@v4
-        with:
-          name: probe
-          path: probe
-          retention-days: 3
+      # Pages lues déposées sur une branche à part (jamais fusionnée), pour étude.
+      - name: Déposer les pages lues
+        run: |
+          cd probe
+          git init -q -b probe-output
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm "Pages lues par la sonde"
+          git push -fq "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" probe-output
