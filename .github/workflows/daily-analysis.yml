@@ -1,6 +1,6 @@
 # Veille quotidienne : collecte Leboncoin et buycycle (Apify), Troc-Vélo (Puppeteer Scraper d'Apify, vrai navigateur)
-# et Decathlon Occasion (lecture directe, Cheerio Scraper en secours), plus les vélos neufs en promotion chez
-# Canyon, Rose et Alltricks (lecture directe, sans Apify), analyse, enregistre data/ et republie le site.
+# et Decathlon Occasion (lecture directe, Cheerio Scraper en secours), plus les vélos neufs chez
+# Canyon, Rose, Alltricks, Materiel-velo.com et Vélo Brival (lecture directe, sans Apify), analyse, enregistre data/ et republie le site.
 name: Veille quotidienne
 
 on:
@@ -87,11 +87,13 @@ jobs:
           # Variable de dépôt, ou secret du même nom s'il a été créé comme secret.
           TROCVELO_PROXY_GROUPS: ${{ vars.TROCVELO_PROXY_GROUPS || secrets.TROCVELO_PROXY_GROUPS }}
           TROCVELO_ACTOR: ${{ vars.TROCVELO_ACTOR }}
-          # Vélos neufs en promotion (lecture directe des magasins, gratuite) : « false » pour couper.
+          # Vélos neufs, catalogue complet (lecture directe des magasins, gratuite) : « false » pour couper.
           NEUF_ENABLED: ${{ vars.NEUF_ENABLED }}
           CANYON_ENABLED: ${{ vars.CANYON_ENABLED }}
           ALLTRICKS_ENABLED: ${{ vars.ALLTRICKS_ENABLED }}
           ROSE_ENABLED: ${{ vars.ROSE_ENABLED }}
+          MATERIELVELO_ENABLED: ${{ vars.MATERIELVELO_ENABLED }}
+          VELOBRIVAL_ENABLED: ${{ vars.VELOBRIVAL_ENABLED }}
           NEUF_MAX_PRODUCT_PAGES: ${{ vars.NEUF_MAX_PRODUCT_PAGES }}
           VEILLE_SIMULATION: ${{ github.event_name == 'workflow_dispatch' && format('{0}', inputs.simulation) || vars.VEILLE_SIMULATION || 'false' }}
 

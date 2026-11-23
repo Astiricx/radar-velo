@@ -1,5 +1,5 @@
 export type BikeType = 'route' | 'gravel' | 'urbain' | 'vae' | 'clm'
-export type SourceId = 'leboncoin' | 'troc-velo' | 'buycycle' | 'decathlon' | 'canyon' | 'alltricks' | 'rose'
+export type SourceId = 'leboncoin' | 'troc-velo' | 'buycycle' | 'decathlon' | 'canyon' | 'alltricks' | 'rose' | 'materiel-velo' | 'velobrival'
 /** « neuf » : vélo neuf vendu par une marque ou un magasin (promotion, déstockage). Absent : occasion. */
 export type Market = 'neuf' | 'occasion'
 export type Groupset =
@@ -95,6 +95,14 @@ export interface TrainReach {
   maxHours: number
 }
 
+/** Vélos neufs : on peut payer un peu plus pour un vélo impeccable, mais on veut le bon modèle. */
+export interface NewBikeRules {
+  /** Écarte les vélos neufs dont le cadre n'est pas aéro. */
+  aeroRequired: boolean
+  /** Dépassement du budget maximum accepté pour un vélo neuf, en %. */
+  overBudgetPct: number
+}
+
 export interface Criteria {
   types: BikeType[]
   sizes: string[]
@@ -103,6 +111,8 @@ export interface Criteria {
   zones: Zone[]
   /** Annonces accessibles en train hors zones (absent des critères enregistrés avant son ajout). */
   train?: TrainReach
+  /** Règles propres aux vélos neufs (absent des critères enregistrés avant leur ajout). */
+  newBikes?: NewBikeRules
   acceptShipping: boolean
   requireCarbon: boolean
   requireDisc: boolean

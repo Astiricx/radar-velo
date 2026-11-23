@@ -24,6 +24,8 @@ const AD_PAGES: Record<string, RegExp> = {
   'canyon.com': /^\/[a-z]{2}-[a-z]{2}\/.+\/\d+\.html$/i,
   'alltricks.fr': /\/P-\d+-/,
   'rosebikes.fr': /^\/fr\/p\/.+-\d+\/?$/i,
+  'materiel-velo.com': /^\/(?:gb\/)?\d+-.+\.html$/i,
+  'velobrival.com': /^\/catalogue\/velos\/.+\/[^/]+\/?$/i,
 }
 
 /** Vrai si `url` ouvre une annonce précise. */

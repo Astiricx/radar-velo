@@ -1,5 +1,5 @@
 import { Ban, MapPin, TrainFront } from 'lucide-react'
-import { GROUPSET_LABELS, TYPE_LABELS } from '../lib/criteria'
+import { DEFAULT_NEW_BIKES, GROUPSET_LABELS, TYPE_LABELS, priceCap } from '../lib/criteria'
 import { eur, isNewBike, plural } from '../lib/format'
 import { DEFAULT_TRAIN, TRAIN_TONE, TRAIN_ZONE_ID, ZONE_TONES } from '../lib/zones'
 import type { Criteria, Row, ZoneFilter } from '../types'
@@ -23,11 +23,13 @@ export function Summary({ criteria: c, kept, rejected, zoneFilter, onZone, onOpe
   const byTrain = kept.filter((r) => r.zone.train).length
   const brandNew = kept.filter((r) => isNewBike(r.listing)).length
   const train = { ...DEFAULT_TRAIN, ...c.train }
+  const newBikes = { ...DEFAULT_NEW_BIKES, ...c.newBikes }
   const lines = [
     c.types.map((t) => TYPE_LABELS[t]).join(', ') || 'Aucun type',
     `Taille ${c.sizes.join(', ') || 'indifférente'}`,
     `Idéal ${eur(c.budgetIdeal)}, maximum ${eur(c.budgetMax)}`,
     train.enabled ? `Train depuis Paris, moins de ${String(train.maxHours).replace('.', ',')} h` : '',
+    `Neuf : ${newBikes.aeroRequired ? 'cadre aéro, ' : ''}jusqu'à ${eur(priceCap({ market: 'neuf' }, c))}`,
     c.acceptShipping ? 'Livraison acceptée hors zones' : 'Remise en main propre uniquement',
     [c.requireCarbon && 'Cadre carbone', c.requireDisc && 'Freins à disque'].filter(Boolean).join(', '),
     c.groupsets.map((g) => GROUPSET_LABELS[g]).join(', '),

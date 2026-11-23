@@ -147,7 +147,7 @@ export default function App() {
   const status =
     message ||
     (!demoMode
-      ? `Veille du ${live.updatedAt ? shortDate(`${live.updatedAt}T12:00:00Z`) : '?'}, occasion (Leboncoin, buycycle, Troc-Vélo) et neuf en promotion (Canyon, Rose, Alltricks), ${zoneNames}${criteria.train?.enabled === false ? '' : `, ${String(criteria.train?.maxHours ?? 3).replace('.', ',')} h de train`}`
+      ? `Veille du ${live.updatedAt ? shortDate(`${live.updatedAt}T12:00:00Z`) : '?'}, occasion (Leboncoin, buycycle, Troc-Vélo) et neuf (Canyon, Rose, Alltricks, Materiel-velo.com, Vélo Brival), ${zoneNames}${criteria.train?.enabled === false ? '' : `, ${String(criteria.train?.maxHours ?? 3).replace('.', ',')} h de train`}`
       : sync.lastRun
         ? `Démonstration, dernière recherche ${relativeDay(sync.lastRun)}, ${zoneNames}`
         : `Démonstration, ${zoneNames}`)
@@ -221,7 +221,7 @@ export default function App() {
         <footer className="border-t border-line pt-4 text-xs text-muted">
           {demoMode
             ? "Les annonces de démonstration sont inventées : elles n'ont pas de lien et leur photo montre un vélo comparable (Unsplash). "
-            : "Les annonces d'occasion viennent de la veille quotidienne (Leboncoin, buycycle et Troc-Vélo, via Apify), les vélos neufs en promotion des sites de Canyon, Rose et Alltricks, relus chaque jour : chaque lien ouvre l'annonce ou la fiche du vélo elle-même. Un prix barré est celui affiché par le magasin. Les écartées restent consultables avec leur motif. "}
+            : "Les annonces d'occasion viennent de la veille quotidienne (Leboncoin, buycycle et Troc-Vélo, via Apify), les vélos neufs du catalogue de Canyon, Rose, Alltricks, Materiel-velo.com et Vélo Brival, relus chaque jour au prix du jour, remisé ou non : chaque lien ouvre l'annonce ou la fiche du vélo elle-même. Un prix barré est celui affiché par le magasin. Les écartées restent consultables avec leur motif. "}
           Tes statuts, notes, critères et annonces ajoutées restent dans ce navigateur.
         </footer>
       </main>

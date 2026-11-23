@@ -90,7 +90,8 @@ export function jsonLd(html: string): unknown[] {
     try {
       const data = JSON.parse(m[1].trim()) as unknown
       const graph = (data as { '@graph'?: unknown[] })?.['@graph']
-      out.push(...(Array.isArray(data) ? data : Array.isArray(graph) ? graph : [data]))
+      // Certains sites imbriquent des listes dans @graph : on aplatit.
+      out.push(...[Array.isArray(data) ? data : Array.isArray(graph) ? graph : [data]].flat(3))
     } catch {
       // JSON-LD invalide : on passe.
     }
@@ -102,4 +103,55 @@ export function jsonLd(html: string): unknown[] {
 export function blocks(html: string, start: RegExp): string[] {
   const at = [...html.matchAll(new RegExp(start.source, start.flags.includes('g') ? start.flags : `${start.flags}g`))].map((m) => m.index ?? 0)
   return at.map((from, i) => html.slice(from, at[i + 1] ?? Math.min(html.length, from + 30_000)))
+}
+
+type Obj = Record<string, unknown>
+const isObj = (v: unknown): v is Obj => typeof v === 'object' && v !== null && !Array.isArray(v)
+
+export interface ProductOffer {
+  /** Taille de la variante (« M », « 56 »…). */
+  label: string
+  inStock: boolean
+  /** Taille de cycliste conseillée, si la fiche la donne (« Body Height » chez Canyon). */
+  riderText?: string
+  price: number
+  isNew: boolean
+  /** Autres propriétés de la variante (« Braking type »…), clés en minuscules. */
+  props: Record<string, string>
+}
+
+/**
+ * Fiche produit au format schema.org : un ProductGroup avec une variante par couleur et par
+ * taille (stock, prix, état), ou un Product seul. Utilisé pour Canyon et Materiel-velo.com.
+ */
+export function productGroup(html: string): { name: string; description: string; image?: string; offers: ProductOffer[] } | null {
+  const all = jsonLd(html).filter(isObj)
+  const group = all.find((d) => d['@type'] === 'ProductGroup') ?? all.find((d) => d['@type'] === 'Product')
+  if (!group) return null
+  const variants = (Array.isArray(group.hasVariant) ? group.hasVariant : [group]).filter(isObj)
+  const offers = variants.flatMap((v): ProductOffer[] => {
+    const offer = (Array.isArray(v.offers) ? v.offers[0] : v.offers) as Obj | undefined
+    const price = Number(offer?.price)
+    if (!offer || !Number.isFinite(price) || price <= 0) return []
+    const props: Record<string, string> = {}
+    for (const p of (Array.isArray(v.additionalProperty) ? v.additionalProperty : []).filter(isObj)) props[String(p.name).toLowerCase()] = String(p.value ?? '')
+    const rider = Object.entries(props).find(([k]) => /body height|taille du cycliste|taille de l.utilisateur|rider height/.test(k))?.[1]
+    return [
+      {
+        label: String(v.size ?? '').trim() || '?',
+        inStock: /InStock|LimitedAvailability|PreOrder/i.test(String(offer.availability)),
+        riderText: rider,
+        price,
+        isNew: !/Refurbished|Used/i.test(String(offer.itemCondition)),
+        props,
+      },
+    ]
+  })
+  const image = Array.isArray(group.image) ? group.image[0] : group.image
+  return {
+    name: String(group.name ?? ''),
+    description: textOf(decode(String(group.description ?? ''))),
+    image: typeof image === 'string' ? image : undefined,
+    offers,
+  }
 }

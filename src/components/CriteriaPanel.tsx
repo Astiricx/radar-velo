@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { CITY_NAMES } from '../data/cities'
-import { GROUPSET_LABELS, TYPE_LABELS } from '../lib/criteria'
+import { DEFAULT_NEW_BIKES, GROUPSET_LABELS, TYPE_LABELS, priceCap } from '../lib/criteria'
+import { eur } from '../lib/format'
 import { DEFAULT_TRAIN } from '../lib/zones'
 import type { BikeType, Criteria, Groupset, Zone } from '../types'
 import { Modal } from './Modal'
@@ -29,6 +30,7 @@ export function CriteriaPanel({ criteria: c, onChange, onResetCriteria, onResetA
     set({ zones: c.zones.map((z) => (z.id === id ? { ...z, ...patch } : z)) })
   const [sizesText, setSizesText] = useState(c.sizes.join(', '))
   const train = { ...DEFAULT_TRAIN, ...c.train }
+  const newBikes = { ...DEFAULT_NEW_BIKES, ...c.newBikes }
   const [confirmReset, setConfirmReset] = useState(false)
 
   const check = (id: string, label: string, checked: boolean, onToggle: () => void) => (
@@ -122,6 +124,20 @@ export function CriteriaPanel({ criteria: c, onChange, onResetCriteria, onResetA
           <div className="flex flex-wrap gap-x-5 gap-y-2">
             {check('c-carbon', 'Cadre carbone', c.requireCarbon, () => set({ requireCarbon: !c.requireCarbon }))}
             {check('c-disc', 'Freins à disque', c.requireDisc, () => set({ requireDisc: !c.requireDisc }))}
+          </div>
+        </fieldset>
+
+        <fieldset className="flex flex-col gap-2">
+          <legend className="label">Vélos neufs</legend>
+          {check('c-new-aero', 'Cadre aéro obligatoire pour un vélo neuf', newBikes.aeroRequired, () => set({ newBikes: { ...newBikes, aeroRequired: !newBikes.aeroRequired } }))}
+          <div className="flex flex-wrap items-center gap-2 text-sm">
+            <label htmlFor="c-new-over">Dépassement accepté du budget maximum</label>
+            <select id="c-new-over" className="field w-24" value={newBikes.overBudgetPct} onChange={(e) => set({ newBikes: { ...newBikes, overBudgetPct: Number(e.target.value) } })}>
+              {[0, 5, 10, 15, 20].map((p) => (
+                <option key={p} value={p}>{p} %</option>
+              ))}
+            </select>
+            <span className="text-xs text-muted">soit {eur(priceCap({ market: 'neuf' }, c))} au plus pour du neuf</span>
           </div>
         </fieldset>
 

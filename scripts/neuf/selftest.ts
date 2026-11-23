@@ -18,6 +18,10 @@ import { euros } from './html'
 import { newBikeToRaw } from './index'
 import { parseRoseList, parseRoseProduct } from './rose'
 import { normalizeSize, pickSize, readSizeLabel } from './sizes'
+import { parseMvList } from './materielvelo'
+import { productGroup } from './html'
+import { vbCandidates } from './velobrival'
+import { dedupe } from './index'
 import type { NewBike } from './types'
 
 const here = dirname(fileURLToPath(import.meta.url))
@@ -101,7 +105,10 @@ test('Alltricks : vélos neufs, prix barré, tailles proposées, reconditionné 
   const trek = bikes.find((b) => /Madone/.test(b.title))!
   assert.equal(trek.size, 'M/L')
   const { l, rejection, score } = analyse(scott)
-  assert.equal(rejection, null)
+  // Scott Addict : bon vélo, mais pas aéro, critère exigé pour le neuf.
+  assert.match(rejection!, /non aéro/)
+  assert.equal(analyse(trek).rejection, null, 'Trek Madone (aéro) en M/L retenu')
+  assert.equal(analyse(trek).score.parts.find((p) => p.label === 'Garantie et tranquillité')!.points, 8)
   assert.equal(l.groupset, '105-di2')
   assert.equal(l.condition, 'neuf')
   assert.equal(l.originalPrice, 2800)
@@ -124,6 +131,45 @@ test('Rose : liste des promotions et fiche (tailles proposées)', () => {
   assert.equal(pick.size, 'M/L')
   assert.match(pick.doubts.join(' '), /Stock dans ta taille à confirmer/)
   assert.match(product.description, /Ultegra Di2/)
+})
+
+test('Materiel-velo.com : liste (JSON) et fiche, stock par taille et freins', () => {
+  const { items, pages } = parseMvList(page('materielvelo-list.json'))
+  assert.equal(pages, 6)
+  const bmc = items.find((i) => /Teammachine R 01 Five/.test(i.name))!
+  assert.equal(bmc.price, 4899)
+  assert.equal(bmc.originalPrice, 6499)
+  assert.ok(isDirectAdUrl(bmc.url), bmc.url)
+  const product = productGroup(page('materielvelo-product.html'))!
+  const fiftySix = product.offers.find((o) => o.label === '56')!
+  assert.equal(fiftySix.inStock, true)
+  assert.match(product.description, /aéro/)
+  assert.equal(pickSize(product.offers)!.size, '56')
+})
+
+test('neuf : marge de 10 % sur le budget, cadre aéro exigé, garantie au score', () => {
+  const base: NewBike = {
+    source: 'materiel-velo', id: 'mv-1891884', url: 'https://www.materiel-velo.com/1891884-velo-route-bmc-teammachine-r-01-five.html',
+    title: 'BMC Teammachine R 01 Five Shimano 105 Di2 12v Metallic Red Carbon 2027', description: 'Vélo route carbone aéro, freins à disque.',
+    price: 4899, originalPrice: 6499, images: [], seller: 'Materiel-velo.com', market: 'neuf', size: '56', sizesInStock: ['56'], attributes: {},
+  }
+  const bmc = analyse(base)
+  assert.equal(bmc.rejection, null, '4 899 € accepté pour du neuf (4 950 € au plus)')
+  assert.match(bmc.score.parts.find((p) => p.label === 'Prix')!.detail, /au-dessus de ton maximum, accepté pour du neuf/)
+  assert.match(analyse({ ...base, price: 5200 }).rejection!, /marge acceptée pour le neuf/)
+  // Même prix en occasion : au-dessus du budget, sans marge.
+  assert.match(analyse({ ...base, market: 'occasion' }).rejection!, /Au-dessus du budget maximum/)
+  assert.match(analyse({ ...base, title: 'Scott Addict 40 Shimano 105 Di2', description: 'Vélo route carbone.' }).rejection!, /non aéro/)
+  // Deux coloris au même prix : une seule annonce.
+  assert.equal(dedupe([base, { ...base, id: 'mv-2', title: `${base.title} Black` }]).length, 1)
+})
+
+test('Vélo Brival : boutique WooCommerce, groupe lu dans la fiche technique, aéro au nom', () => {
+  const { candidates } = vbCandidates(JSON.parse(page('velobrival-products.json')))
+  const names = candidates.map((c) => c.product.name)
+  assert.ok(names.includes('Madone SL 6 8e gén.'), names.join(', '))
+  assert.ok(!names.includes('HELIOS A7 DI2'), 'pas aéro')
+  for (const c of candidates) assert.ok(c.sizeVariants.every((v) => ['M', 'M/L', '56', '57'].includes(v.label)))
 })
 
 test('pages de liste des magasins : jamais des liens directs', () => {

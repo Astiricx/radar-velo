@@ -245,7 +245,11 @@ function detectYear(t: string): number {
   return 0
 }
 
-const AERO = /\baero\b|\baeroad\b|\bvenge\b|\bmadone\b|\bpropel\b|\bsystemsix\b|\bs5\b|\breacto\b|\bfoil\b|\baircode\b|\bnoah\b|\baerofly\b|\brcr-?f\b|\bfcr\b|\baeromax\b|\bdogma f\b|\bostro\b|\bizalco max\b|\bstrade bianche\b/
+const AERO =
+  /\baero\b|\baeroad\b|\bvenge\b|\bmadone\b|\bpropel\b|\bsystemsix\b|\bs5\b|\breacto\b|\bfoil\b|\baircode\b|\bnoah\b|\baerofly\b|\brcr-?f\b|\bfcr\b|\baeromax\b|\bdogma f\b|\bostro\b|\bizalco max\b|\bstrade bianche\b|\baerostorm\b|\bfilante\b|\boltre\b|\bteammachine r\b|\by1rs\b|\baerolight\b|\bnitrogen\b|\bzx-?1\b|\bfalcn\b|\bshave\b|\b795 blade\b|\bblade rs\b/
+
+/** Vrai si le texte (titre, description) désigne un cadre aéro connu. */
+export const isAeroText = (text: string) => AERO.test(fold(text))
 
 const POWER =
   /capteurs? de puissance|power ?meter|powermeter|\b4iiii\b|\bstages\b|\bassioma\b|\bquarq\b|\bfavero\b|\bpower2max\b|\bp2m\b|\bsigeyi\b|\bxcadey\b|\binpower\b|\brally\b|\br9[12]00-p\b|\br8100-p\b|\bpower pro\b|\bpioneer\b/

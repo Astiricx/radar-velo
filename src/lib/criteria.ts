@@ -1,4 +1,4 @@
-import type { BikeType, Condition, Criteria, ExtensionFit, Groupset, Listing, ZoneMatch } from '../types'
+import type { BikeType, Condition, Criteria, ExtensionFit, Groupset, Listing, NewBikeRules, ZoneMatch } from '../types'
 import { eur } from './format'
 
 export const TYPE_LABELS: Record<BikeType, string> = {
@@ -34,6 +34,16 @@ export const EXTENSION_LABELS: Record<ExtensionFit, string> = {
   non: 'Prolongateurs impossibles',
 }
 
+/** Vélo neuf : cadre aéro exigé, et jusqu'à 10 % au-dessus du budget maximum pour un vélo impeccable. */
+export const DEFAULT_NEW_BIKES: NewBikeRules = { aeroRequired: true, overBudgetPct: 10 }
+
+/** Prix plafond d'une annonce : le budget maximum, un peu plus pour un vélo neuf. */
+export function priceCap(l: Pick<Listing, 'market'>, c: Criteria): number {
+  if (l.market !== 'neuf') return c.budgetMax
+  const pct = Math.max(0, { ...DEFAULT_NEW_BIKES, ...c.newBikes }.overBudgetPct)
+  return Math.round((c.budgetMax * (1 + pct / 100)) / 10) * 10
+}
+
 /**
  * Tes critères de départ. Ils se modifient dans l'application (bouton « Critères »)
  * et sont alors enregistrés dans le navigateur.
@@ -49,6 +59,7 @@ export const DEFAULT_CRITERIA: Criteria = {
   ],
   // 2 à 3 h de train depuis Paris, comme convenu au départ.
   train: { enabled: true, maxHours: 3 },
+  newBikes: DEFAULT_NEW_BIKES,
   acceptShipping: true,
   requireCarbon: true,
   requireDisc: true,
@@ -64,11 +75,16 @@ const normSize = (s: string) => s.trim().toUpperCase()
  */
 export function rejectionReason(l: Listing, c: Criteria, zone: ZoneMatch): string | null {
   if (!c.types.includes(l.type)) return `Type hors critères (${TYPE_LABELS[l.type]})`
-  if (l.price > c.budgetMax) return `Au-dessus du budget maximum (${eur(l.price)} pour ${eur(c.budgetMax)})`
+  const cap = priceCap(l, c)
+  if (l.price > cap)
+    return l.market === 'neuf' && cap > c.budgetMax
+      ? `Au-dessus du budget, même avec la marge acceptée pour le neuf (${eur(l.price)} pour ${eur(cap)})`
+      : `Au-dessus du budget maximum (${eur(l.price)} pour ${eur(c.budgetMax)})`
   if (c.sizes.length > 0 && !c.sizes.map(normSize).includes(normSize(l.size))) return `Taille ${l.size} incompatible`
   if (c.requireCarbon && l.frame !== 'carbone') return `Cadre en ${l.frame}`
   if (c.requireDisc && l.brakes !== 'disque') return 'Freins à patins'
   if (!c.groupsets.includes(l.groupset)) return `Groupe non retenu (${GROUPSET_LABELS[l.groupset]})`
+  if (l.market === 'neuf' && { ...DEFAULT_NEW_BIKES, ...c.newBikes }.aeroRequired && !l.aero) return 'Vélo neuf au cadre non aéro (tu exiges un cadre aéro pour le neuf)'
   const deliverable = l.shipping && c.acceptShipping
   if (!zone.inside && !deliverable) {
     if (!zone.nearest) return c.zones.some((z) => z.enabled) ? 'Lieu inconnu ou trop éloigné, sans livraison' : 'Aucune zone de recherche active'

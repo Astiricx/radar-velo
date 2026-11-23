@@ -1,6 +1,6 @@
 /**
- * Canyon (vente directe de la marque) : vélos de route en promotion (« Outlet »), y compris
- * reconditionnés par Canyon, et la gamme aéro Aeroad au prix du jour.
+ * Canyon (vente directe de la marque) : toute la gamme aéro Aeroad au prix du jour, et les
+ * vélos de route de l'Outlet (fins de série, promotions, reconditionnés par Canyon).
  *
  * Lecture directe depuis GitHub, sans Apify. Chaque vignette de liste donne le nom, le prix,
  * le prix barré et souvent les seules tailles restantes (« Disponible uniquement en XL ») :
@@ -8,8 +8,10 @@
  * pour lire, dans le JSON-LD de la fiche, le stock taille par taille et la taille de
  * cycliste conseillée pour chacune.
  */
+import { DEFAULT_CRITERIA, DEFAULT_NEW_BIKES } from '../../src/lib/criteria'
+import { isAeroText } from '../apify/parse'
 import { NEUF } from './config'
-import { attr, blocks, decode, euros, getPage, jsonLd, pause, textByClass, textOf } from './html'
+import { attr, blocks, euros, getPage, pause, productGroup, textByClass } from './html'
 import type { NewBike, RetailerResult } from './types'
 import { pickSize, riderRange, type SizeOffer } from './sizes'
 
@@ -73,9 +75,6 @@ export function parseCanyonList(html: string): CanyonTile[] {
   return tiles
 }
 
-type Obj = Record<string, unknown>
-const isObj = (v: unknown): v is Obj => typeof v === 'object' && v !== null && !Array.isArray(v)
-
 export interface CanyonProduct {
   name: string
   description: string
@@ -85,31 +84,9 @@ export interface CanyonProduct {
 
 /** Lit le JSON-LD d'une fiche Canyon : une variante par couleur et par taille, avec stock et prix. */
 export function parseCanyonProduct(html: string): CanyonProduct | null {
-  const group = jsonLd(html).find((d) => isObj(d) && (d['@type'] === 'ProductGroup' || d['@type'] === 'Product')) as Obj | undefined
+  const group = productGroup(html)
   if (!group) return null
-  const variants = (Array.isArray(group.hasVariant) ? group.hasVariant : [group]).filter(isObj)
-  const offers = variants.flatMap((v) => {
-    const offer = (Array.isArray(v.offers) ? v.offers[0] : v.offers) as Obj | undefined
-    const price = Number(offer?.price)
-    if (!offer || !Number.isFinite(price) || price <= 0) return []
-    const props = (Array.isArray(v.additionalProperty) ? v.additionalProperty : []).filter(isObj)
-    const body = props.find((p) => /body height|taille du cycliste|taille de l.utilisateur/i.test(String(p.name)))
-    return [
-      {
-        label: String(v.size ?? '').trim() || '?',
-        inStock: /InStock|LimitedAvailability|PreOrder/i.test(String(offer.availability)),
-        rider: riderRange(body?.value as string | undefined),
-        price,
-        isNew: !/Refurbished|Used/i.test(String(offer.itemCondition)),
-      },
-    ]
-  })
-  return {
-    name: String(group.name ?? ''),
-    description: textOf(decode(String(group.description ?? ''))),
-    image: typeof group.image === 'string' ? group.image : undefined,
-    offers,
-  }
+  return { ...group, offers: group.offers.map((o) => ({ ...o, rider: riderRange(o.riderText) })) }
 }
 
 /** Prix « à partir de » ou prix d'une configuration : sans intérêt pour la veille. */
@@ -168,6 +145,11 @@ export async function fetchCanyon(): Promise<RetailerResult> {
       bikes.push({ ...base, market: 'neuf', size: pick.size, sizesInStock: pick.inStock, toVerify: pick.doubts })
       continue
     }
+    // Fiche ouverte seulement si le modèle peut convenir : aéro, quand c'est exigé pour le neuf.
+    if ({ ...DEFAULT_NEW_BIKES, ...DEFAULT_CRITERIA.newBikes }.aeroRequired && !isAeroText(t.name)) {
+      off++
+      continue
+    }
     toOpen.push(t)
   }
 
@@ -211,7 +193,7 @@ export async function fetchCanyon(): Promise<RetailerResult> {
   }
   const left = Math.max(0, toOpen.length - NEUF.maxProductPages)
   notes.unshift(
-    `${tiles.size} vélos sur ${pagesRead} page${pagesRead > 1 ? 's' : ''} de liste, ${off} hors sujet (gravel, cadre seul…), ${budget} hors budget, ` +
+    `${tiles.size} vélos sur ${pagesRead} page${pagesRead > 1 ? 's' : ''} de liste, ${off} hors sujet (gravel, cadre seul, neuf non aéro…), ${budget} hors budget, ` +
       `${opened} fiche${opened > 1 ? 's' : ''} ouverte${opened > 1 ? 's' : ''} pour le stock par taille${left ? `, ${left} lue${left > 1 ? 's' : ''} les jours suivants` : ''}`,
   )
   return { bikes, notes }

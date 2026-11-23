@@ -2,8 +2,8 @@
 
 Tableau de bord pour centraliser une recherche de vélo de route, d'occasion entre
 **deux zones** (la région parisienne et Saint-Nazaire / Loire-Atlantique) ou neuf en
-promotion et livré. Annonces agrégées (Leboncoin, buycycle, Troc-Vélo), vélos neufs
-en promotion ou en déstockage (Canyon, Rose, Alltricks), filtre automatique selon
+livré. Annonces agrégées (Leboncoin, buycycle, Troc-Vélo), vélos neufs au catalogue
+(Canyon, Rose, Alltricks, Materiel-velo.com, Vélo Brival), filtre automatique selon
 tes critères, score de pertinence, et suivi de chaque annonce jusqu'à l'achat.
 
 React 19, TypeScript, Vite 6, Tailwind CSS 4, icônes Lucide. Aucune base de données :
@@ -100,8 +100,8 @@ Tous les jours à 8 h UTC (9 h à Paris en hiver, 10 h en été), le workflow
 `.github/workflows/daily-analysis.yml` lance `scripts/daily-check.ts` :
 
 1. il collecte les annonces récentes sur **Leboncoin**, **buycycle** et
-   **Troc-Vélo** via Apify (voir plus bas), les **vélos neufs en promotion** chez
-   Canyon, Rose et Alltricks (voir « Vélos neufs en promotion »), plus les annonces
+   **Troc-Vélo** via Apify (voir plus bas), les **vélos neufs** de cinq magasins et
+   marques (voir « Vélos neufs : catalogue complet »), plus les annonces
    déposées dans `data/inbox.json` ;
 2. il ignore celles déjà analysées (`data/state.json`) ;
 3. il lit dans le titre et la description le groupe, le cadre, les freins, la
@@ -226,41 +226,50 @@ complète sans appeler Apify.
 > contrôle seul (`COMMIT_RESULTS=false`), réactive-la depuis l'onglet Actions si
 > GitHub te prévient.
 
-### Vélos neufs en promotion (Canyon, Rose, Alltricks)
+### Vélos neufs : catalogue complet (Canyon, Rose, Alltricks, Materiel-velo.com, Vélo Brival)
 
-`scripts/neuf` lit chaque jour, directement depuis GitHub et **sans Apify** (donc
-sans toucher au crédit) :
+`scripts/neuf` relit chaque jour, directement depuis GitHub et **sans Apify** (donc sans
+toucher au crédit), l'offre neuve disponible au prix du jour, **remisée ou non** :
 
-- **Canyon** : les vélos de route de l'Outlet (promotions, fins de série, et
-  reconditionnés par Canyon, classés en occasion) et la gamme aéro Aeroad. La
-  vignette donne le prix barré et souvent les seules tailles restantes ; sinon la
-  fiche est ouverte (12 au plus par jour) pour lire le stock **taille par taille**
-  et la taille de cycliste conseillée ;
-- **Alltricks** : les listes « vélo route Di2 », « Ultegra », « Ultegra Di2 » et
-  « vélo carbone route » (toutes marques : BMC, Trek, Scott, Lapierre, Orbea…), avec
-  le prix barré pendant les promotions et les tailles proposées à l'achat. Le
-  reconditionné est laissé de côté ;
-- **Rose** : la page « Vélos en promotion », puis la fiche des vélos de route dans le
-  budget (description, tailles proposées). Rose n'affiche pas le stock par taille :
-  il est marqué « à confirmer ».
+- **Canyon** : toute la gamme aéro Aeroad et l'Outlet route (fins de série, et
+  reconditionnés par Canyon, classés en occasion). Stock lu **taille par taille** sur la
+  fiche, avec la taille de cycliste conseillée ;
+- **Materiel-velo.com** : tout le catalogue route (environ 360 vélos, toutes marques). Les
+  modèles aéro en Shimano Di2 ou Ultegra dans le budget sont ouverts pour lire le stock
+  taille par taille et le type de freins ;
+- **Vélo Brival** (Brive, revendeur Orbea, Cube, Trek, Lapierre) : vélos « course » et
+  « aéro » de sa boutique, stock vérifié pour chaque taille de tes critères ;
+- **Alltricks** : listes « vélo route Di2 », « Ultegra », « Ultegra Di2 » et « vélo carbone
+  route », avec les tailles proposées à l'achat (reconditionné laissé de côté) ;
+- **Rose** : vélos de route de la page promotions (le reste du catalogue Rose n'est pas
+  lisible sans navigateur). Stock par taille non affiché : « à confirmer ».
 
-Chaque vélo passe par le **même filtre strict** (carbone, disques, Shimano Di2 ou
-Ultegra, taille M / M-L / 56 / 57 **en stock**, 4 500 € au plus) et le même score.
-Entre plusieurs tailles de tes critères, celle dont la plage de taille de cycliste
-du magasin couvre 1,80 m est préférée ; un écart est signalé « À vérifier ». Un
-vélo neuf est toujours livré. S'il n'apparaît plus deux jours de suite (promotion
-terminée, épuisé), il quitte le site pour ne pas afficher un prix périmé.
+Règles propres au neuf, réglables dans « Critères » :
+
+- **cadre aéro exigé** (Aeroad, Madone, Propel, Foil, Reacto, Orca Aero, Litening Aero,
+  Teammachine R, Falcn, S5, Aircode, Izalco Max…) ;
+- **dépassement du budget accepté** : 10 % par défaut, soit 4 950 € au plus pour un vélo
+  neuf. Au-delà de 4 500 €, le vélo perd quelques points de prix ;
+- la taille doit être M / M-L / 56 / 57 **en stock** ; entre plusieurs, celle dont la
+  plage de taille de cycliste du magasin couvre 1,80 m est préférée.
+
+Le score valorise la tranquillité du neuf : « État et âge » 8/8, et « Garantie et
+tranquillité » 8/8 (garantie constructeur, facture, aucun historique), contre 5 pour un
+reconditionné garanti, 3 pour buycycle (protection acheteur) et 1 pour un particulier.
+Un même modèle en plusieurs coloris au même prix ne compte qu'une fois. Un vélo neuf qui
+n'apparaît plus deux jours de suite (épuisé, retiré) quitte le site.
 
 | Variable                 | Défaut | Rôle |
 | ------------------------ | -----: | ---- |
 | `NEUF_ENABLED`           | `true` | `false` : plus aucun vélo neuf |
-| `CANYON_ENABLED`, `ALLTRICKS_ENABLED`, `ROSE_ENABLED` | `true` | `false` : ne plus lire ce magasin |
-| `NEUF_MAX_PRODUCT_PAGES` | `12`   | Fiches produit ouvertes par magasin et par jour |
+| `CANYON_ENABLED`, `ALLTRICKS_ENABLED`, `ROSE_ENABLED`, `MATERIELVELO_ENABLED`, `VELOBRIVAL_ENABLED` | `true` | `false` : ne plus lire ce magasin |
+| `NEUF_MAX_PRODUCT_PAGES` | `15`   | Fiches produit ouvertes par magasin et par jour |
 
-`npm run test:apify` vérifie aussi la lecture des magasins sur des extraits de leurs
-vraies pages (`scripts/neuf/fixtures`). Si un site change sa mise en page, le
-workflow manuel « Sonde des sources » relit des adresses depuis GitHub et dépose les
-pages sur la branche `probe-output` pour étude.
+Lancement manuel « Veille quotidienne » → case « Vélos neufs seulement » : rafraîchit le
+neuf sans Apify. `npm run test:apify` vérifie la lecture des magasins sur des extraits de
+leurs vraies pages (`scripts/neuf/fixtures`). Si un site change sa mise en page, le
+workflow manuel « Sonde des sources » relit des adresses depuis GitHub et dépose les pages
+sur la branche `probe-output` ; « Capture du site » y dépose des captures du site en ligne.
 
 ## Ce que fait l'application
 
@@ -271,8 +280,8 @@ pages sur la branche `probe-output` pour étude.
   « Critères », et chaque zone peut être désactivée.
 - **Vraies annonces.** Leboncoin, buycycle et Troc-Vélo, avec leur lien direct et
   la photo du vendeur ; les écartées restent consultables avec leur motif.
-- **Neuf ou occasion.** Les vélos neufs en promotion (Canyon, Rose, Alltricks) portent
-  un badge « Neuf », avec la remise et le prix barré du magasin, et les tailles
+- **Neuf ou occasion.** Les vélos neufs portent un badge « Neuf » (avec la remise et le
+  prix barré du magasin quand il y en a un), la mention « garantie constructeur » et les tailles
   disponibles. Le sélecteur « Tous / Neuf uniquement / Occasion uniquement » filtre la
   liste, le tableau et le podium.
 - **Podium.** Les trois meilleures annonces selon les filtres en cours, avec les
@@ -385,7 +394,7 @@ typographie : aucune illustration dessinée.
 
 | Critère              | Points | Règle                                                                    |
 | -------------------- | -----: | ------------------------------------------------------------------------ |
-| Prix                 |     25 | 25 jusqu'au budget idéal, puis dégressif jusqu'à 10 au maximum            |
+| Prix                 |     25 | 25 jusqu'au budget idéal, puis dégressif jusqu'à 10 au maximum ; neuf au-dessus du maximum (marge) jusqu'à 5 |
 | Décote ou remise     |     10 | Occasion : 10 à partir de 45 % sous le prix neuf. Neuf : 10 à partir de 30 % de remise sur le prix barré, 3 sans remise |
 | Transmission         |     15 | Dura-Ace Di2 15, Ultegra Di2 13, 105 Di2 9, Ultegra mécanique 6           |
 | Cadre aéro           |      8 | Aéro 8, polyvalent 2                                                      |
@@ -393,7 +402,8 @@ typographie : aucune illustration dessinée.
 | Roues                |      8 | Carbone ≥ 45 mm 8, ≥ 30 mm 5, carbone bas 3                               |
 | Prolongateurs        |      6 | Montage prévu 6, kit tiers 4, à vérifier 2                                |
 | Distance             |     10 | Depuis le centre de la zone la plus proche : ≤ 30 km 10, ≤ 80 km 8, ≤ 150 km 6, dans le rayon 4 ; livraison au moins 7 |
-| État et âge          |      8 | Occasion : état (1 à 4) + âge du modèle (1 à 4). Neuf : 8 (jamais roulé, garantie complète) |
+| État et âge          |      8 | Occasion : état (1 à 4) + âge du modèle (1 à 4). Neuf : 8 (jamais roulé) |
+| Garantie et tranquillité | 8 | Neuf 8, reconditionné garanti 5, buycycle 3, particulier 1             |
 
 Un bonus décoché dans les critères sort du calcul ; le total est ramené sur 100.
 

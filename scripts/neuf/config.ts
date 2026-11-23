@@ -1,8 +1,8 @@
 /**
- * Réglages de la veille du neuf (promotions, déstockages). Lecture directe des sites depuis
+ * Réglages de la veille du neuf (catalogue et promotions). Lecture directe des sites depuis
  * GitHub : gratuit, sans Apify. Chaque valeur se règle par une variable du dépôt GitHub.
  */
-import { DEFAULT_CRITERIA } from '../../src/lib/criteria'
+import { DEFAULT_CRITERIA, priceCap } from '../../src/lib/criteria'
 
 const num = (value: string | undefined, fallback: number) => {
   const n = Number(value)
@@ -16,11 +16,16 @@ export const NEUF = {
   canyon: on(process.env.CANYON_ENABLED),
   alltricks: on(process.env.ALLTRICKS_ENABLED),
   rose: on(process.env.ROSE_ENABLED),
+  materielVelo: on(process.env.MATERIELVELO_ENABLED),
+  veloBrival: on(process.env.VELOBRIVAL_ENABLED),
+  /** Pages de 60 vélos lues sur Materiel-velo.com (le catalogue route en compte environ 6). */
+  mvMaxPages: Math.max(1, Math.round(num(process.env.MATERIELVELO_MAX_PAGES, 8))),
   /** Fiches produit ouvertes au plus par magasin et par jour (stock par taille). */
-  maxProductPages: Math.max(0, Math.round(num(process.env.NEUF_MAX_PRODUCT_PAGES, 12))),
+  maxProductPages: Math.max(0, Math.round(num(process.env.NEUF_MAX_PRODUCT_PAGES, 15))),
   /** Pause entre deux pages d'un même site, en millisecondes : on reste discret. */
   delayMs: Math.round(num(process.env.NEUF_DELAY_MS, 1200)),
   /** En dessous, ce n'est pas un vélo carbone à groupe électronique ou Ultegra. */
   priceMin: num(process.env.NEUF_PRICE_MIN, 1500),
-  priceMax: DEFAULT_CRITERIA.budgetMax,
+  /** Budget maximum, plus la marge acceptée pour un vélo neuf (10 % par défaut). */
+  priceMax: priceCap({ market: 'neuf' }, DEFAULT_CRITERIA),
 }

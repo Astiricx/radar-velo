@@ -96,8 +96,11 @@ export function ListingCard({ row, criteria, onOpen, onStatus }: Props) {
           </div>
         </dl>
 
-        {brandNew && l.sizesInStock && l.sizesInStock.length > 0 && (
-          <p className="text-xs text-muted">Tailles disponibles : {l.sizesInStock.join(', ')}</p>
+        {brandNew && (
+          <p className="text-xs text-muted">
+            Jamais roulé, garantie constructeur et facture du magasin
+            {l.sizesInStock && l.sizesInStock.length > 0 ? `. Tailles disponibles : ${l.sizesInStock.join(', ')}` : ''}.
+          </p>
         )}
         <AttributeChips listing={l} />
         {l.toVerify && l.toVerify.length > 0 && (

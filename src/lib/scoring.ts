@@ -1,6 +1,6 @@
 import { durationLabel } from '../data/stations'
 import type { Criteria, Listing, ScorePart, ScoreResult, ZoneMatch } from '../types'
-import { CONDITION_LABELS, EXTENSION_LABELS, GROUPSET_LABELS } from './criteria'
+import { CONDITION_LABELS, EXTENSION_LABELS, GROUPSET_LABELS, priceCap } from './criteria'
 import { discountPct, eur, isNewBike, promoPct } from './format'
 
 const clamp = (n: number, min: number, max: number) => Math.min(max, Math.max(min, n))
@@ -11,18 +11,27 @@ const clamp = (n: number, min: number, max: number) => Math.min(max, Math.max(mi
  * aux critères (groupe, bonus cochés, distance). Les bonus décochés dans les
  * critères sortent du calcul, et le total est ramené sur 100.
  *
- * Vélo neuf : la décote devient la remise sur le prix barré du magasin, et l'état et l'âge
- * prennent tous leurs points (jamais roulé, garantie complète).
+ * Vélo neuf : la décote devient la remise sur le prix barré du magasin, l'état et l'âge
+ * prennent tous leurs points (jamais roulé), comme « Garantie et tranquillité ». Il peut
+ * dépasser un peu le budget maximum, au prix de quelques points.
  */
 export function scoreListing(l: Listing, c: Criteria, zone: ZoneMatch): ScoreResult {
   const parts: ScorePart[] = []
 
-  // Prix : plein score jusqu'au budget idéal, puis dégressif jusqu'au maximum.
+  // Prix : plein score jusqu'au budget idéal, puis dégressif jusqu'au maximum. Un vélo neuf
+  // peut le dépasser un peu (marge réglable) : il perd alors encore des points, jusqu'à 5.
   const over = clamp((l.price - c.budgetIdeal) / Math.max(1, c.budgetMax - c.budgetIdeal), 0, 1)
+  const cap = priceCap(l, c)
+  const beyond = l.price > c.budgetMax ? clamp((l.price - c.budgetMax) / Math.max(1, cap - c.budgetMax), 0, 1) : 0
   parts.push({
     label: 'Prix',
-    detail: l.price <= c.budgetIdeal ? `Sous ton budget idéal de ${eur(c.budgetIdeal)}` : `Entre l'idéal et le maximum de ${eur(c.budgetMax)}`,
-    points: 25 - 15 * over,
+    detail:
+      l.price > c.budgetMax
+        ? `${eur(l.price - c.budgetMax)} au-dessus de ton maximum, accepté pour du neuf`
+        : l.price <= c.budgetIdeal
+          ? `Sous ton budget idéal de ${eur(c.budgetIdeal)}`
+          : `Entre l'idéal et le maximum de ${eur(c.budgetMax)}`,
+    points: 25 - 15 * over - 5 * beyond,
     max: 25,
   })
 
@@ -105,6 +114,17 @@ export function scoreListing(l: Listing, c: Criteria, zone: ZoneMatch): ScoreRes
     const model = l.year > 0 ? `modèle ${l.year}` : 'année non précisée'
     parts.push({ label: 'État et âge', detail: `${CONDITION_LABELS[l.condition]}, ${model}`, points: agePts + condPts, max: 8 })
   }
+
+  // Tranquillité : garantie, facture et historique connu. Le neuf a tout ; un reconditionné
+  // garanti par la marque ou une plateforme protégée rassurent ; un particulier, rien de tout ça.
+  const peace = isNewBike(l)
+    ? { points: 8, detail: 'Neuf : garantie constructeur complète, facture, aucun historique de chute' }
+    : l.source === 'canyon' || l.source === 'decathlon'
+      ? { points: 5, detail: 'Reconditionné et garanti par un professionnel' }
+      : l.source === 'buycycle'
+        ? { points: 3, detail: 'Particulier, avec la protection acheteur de buycycle' }
+        : { points: 1, detail: 'Particulier : pas de garantie, historique à vérifier' }
+  parts.push({ label: 'Garantie et tranquillité', ...peace, max: 8 })
 
   const got = parts.reduce((sum, p) => sum + p.points, 0)
   const max = parts.reduce((sum, p) => sum + p.max, 0)
