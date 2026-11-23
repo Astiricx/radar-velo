@@ -80,7 +80,7 @@ export function ListingCard({ row, criteria, onOpen, onStatus }: Props) {
             <MapPin size={14} aria-hidden className="shrink-0" />
             <dt className="sr-only">Lieu</dt>
             <dd className="min-w-0 truncate">
-              {l.city}, {distanceLabel(zone.distance, zone.nearest?.center, zone.train)}
+              {brandNew ? `${l.city}, expédié par le magasin` : `${l.city}, ${distanceLabel(zone.distance, zone.nearest?.center, zone.train)}`}
             </dd>
           </div>
           <div className="col-span-2 flex flex-wrap items-center gap-1.5">
@@ -97,7 +97,7 @@ export function ListingCard({ row, criteria, onOpen, onStatus }: Props) {
         </dl>
 
         {brandNew && l.sizesInStock && l.sizesInStock.length > 0 && (
-          <p className="text-xs text-muted">En stock : {l.sizesInStock.join(', ')}</p>
+          <p className="text-xs text-muted">Tailles disponibles : {l.sizesInStock.join(', ')}</p>
         )}
         <AttributeChips listing={l} />
         {l.toVerify && l.toVerify.length > 0 && (

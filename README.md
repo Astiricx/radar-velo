@@ -272,8 +272,8 @@ pages sur la branche `probe-output` pour étude.
 - **Vraies annonces.** Leboncoin, buycycle et Troc-Vélo, avec leur lien direct et
   la photo du vendeur ; les écartées restent consultables avec leur motif.
 - **Neuf ou occasion.** Les vélos neufs en promotion (Canyon, Rose, Alltricks) portent
-  un badge « Neuf », avec la remise et le prix barré du magasin, et les tailles en
-  stock. Le sélecteur « Tous / Neuf uniquement / Occasion uniquement » filtre la
+  un badge « Neuf », avec la remise et le prix barré du magasin, et les tailles
+  disponibles. Le sélecteur « Tous / Neuf uniquement / Occasion uniquement » filtre la
   liste, le tableau et le podium.
 - **Podium.** Les trois meilleures annonces selon les filtres en cours, avec les
   critères qui leur rapportent des points et ceux qui leur en coûtent.

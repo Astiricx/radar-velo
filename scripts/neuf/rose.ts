@@ -8,7 +8,7 @@
  * « à confirmer ».
  */
 import { NEUF } from './config'
-import { attr, blocks, euros, getPage, jsonLd, pause, textByClass, textOf } from './html'
+import { attr, blocks, decode, euros, getPage, jsonLd, pause, textByClass, textOf } from './html'
 import { normalizeSize, pickSize, type SizeOffer } from './sizes'
 import type { NewBike, RetailerResult } from './types'
 
@@ -48,7 +48,8 @@ export function parseRoseList(html: string): RoseTile[] {
       price,
       originalPrice: euros(textByClass(tile, 'product-tile-price__old-value')) ?? undefined,
       category: product.category ?? '',
-      image: tile.match(/<img[^>]*src=['"](https:\/\/cdn\.rosebikes\.de\/images\/[^'"?]+)/)?.[1],
+      // Adresse complète, avec ses paramètres de redimensionnement (sans eux, le CDN refuse l'image).
+      image: decode(tile.match(/<img[^>]*src=['"](https:\/\/cdn\.rosebikes\.de\/images\/[^'"]+)/)?.[1] ?? '') || undefined,
     })
   }
   return tiles

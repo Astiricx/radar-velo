@@ -82,13 +82,12 @@ export function ListingTable({ rows, criteria, sort, onSort, onOpen, onStatus }:
               </td>
               <td className="px-3 py-2">
                 {l.size}
-                {isNewBike(l) && l.sizesInStock?.length ? <div className="text-xs text-muted">Stock : {l.sizesInStock.join(', ')}</div> : null}
+                {isNewBike(l) && l.sizesInStock?.length ? <div className="text-xs text-muted">Dispo : {l.sizesInStock.join(', ')}</div> : null}
               </td>
               <td className="px-3 py-2">
                 <div>{l.city}</div>
                 <div className="text-xs text-muted first-letter:uppercase">
-                  {distanceLabel(zone.distance, zone.nearest?.center, zone.train)}
-                  {l.shipping ? ', livraison' : ''}
+                  {isNewBike(l) ? 'expédié par le magasin' : `${distanceLabel(zone.distance, zone.nearest?.center, zone.train)}${l.shipping ? ', livraison' : ''}`}
                 </div>
                 <div className="mt-1">
                   <ZoneBadge zone={zone} criteria={criteria} shipping={l.shipping} short />
