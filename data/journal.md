@@ -2,6 +2,117 @@
 
 ## Lundi 23 novembre 2026
 
+- Collecte Apify désactivée : le secret APIFY_TOKEN n’est pas renseigné.
+- Canyon (neuf, lecture directe) : 39 vélos retenus pour analyse, dont 8 en promotion. 188 vélos sur 3 pages de liste, 50 hors sujet (gravel, cadre seul…), 99 hors budget, 1 fiche ouverte pour le stock par taille.
+- Alltricks (neuf, lecture directe) : 32 vélos retenus pour analyse, dont 9 en promotion. 32 vélos neufs sur 4 listes (Di2, Ultegra, carbone), dont 9 en promotion.
+- Rose (neuf, lecture directe) : 1 vélo retenu pour analyse, dont 1 en promotion. 12 vélos en promotion, 3 de route, 1 dans le budget, 1 fiche ouverte.
+
+72 nouvelles annonces analysées : 23 pertinentes, 49 écartées.
+
+| Score | Annonce | Prix | Taille | Transmission | Zone | Lieu | Source |
+| ---: | --- | ---: | --- | --- | --- | --- | --- |
+| **63** | [Vélo de Route Orbea Orca M20iTEAM Shimano Ultegra Di2 12V 700 mm Bleu Cobalt 2026](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3167839-velo_de_route_orbea_orca_m20iteam_shimano_ultegra_di2_12v_700_mm_bleu_cobalt_2026) | 3 500 € | 57 | Ultegra Di2 | Hors zone | Livraison Alltricks | Alltricks |
+| **63** | [Vélo de Route Focus Izalco Max 8.8 Shimano 105 Di2 12V 700 mm Noir 2026](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3247320-velo_de_route_focus_izalco_max_8_8_shimano_105_di2_12v_700_mm_noir_2026) | 2 700 € | M | 105 Di2 | Hors zone | Livraison Alltricks | Alltricks |
+| **63** | [Rose Shave Ultegra Di2](https://www.rosebikes.fr/fr/p/rose-shave-ultegra-di2-2726129) | 4 440 € | M/L | Ultegra Di2, capteur | Hors zone | Livraison Rose | Rose |
+| **61** | [Vélo de Route Trek Madone SL 6 Shimano 105 Di2 12V 700 mm Rouge Gén. 8](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3158188-velo_de_route_trek_madone_sl_6_shimano_105_di2_12v_700_mm_rouge_gen__8) | 3 500 € | M/L | 105 Di2 | Hors zone | Livraison Alltricks | Alltricks |
+| **60** | [Vélo de Route Lapierre Xelius DRS 7.0 Shimano Ultegra Di2 12V 700 mm Vert 2026](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3057329-velo_de_route_lapierre_xelius_drs_7_0_shimano_ultegra_di2_12v_700_mm_vert_2026) | 3 200 € | M | Ultegra Di2 | Hors zone | Livraison Alltricks | Alltricks |
+| **58** | [Vélo de Route Trek Madone SL 6 Shimano 105 Di2 12V 700 mm Noir Gén. 8](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3121522-velo_de_route_trek_madone_sl_6_shimano_105_di2_12v_700_mm_noir_gen__8) | 3 600 € | M/L | 105 Di2 | Hors zone | Livraison Alltricks | Alltricks |
+| **57** | [Vélo de Route Scott Addict 40 Shimano 105 Di2 12V 700 mm Vert 2026](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3233551-velo_de_route_scott_addict_40_shimano_105_di2_12v_700_mm_vert_2026) | 2 500 € | M | 105 Di2 | Hors zone | Livraison Alltricks | Alltricks |
+| **56** | [Canyon Endurace CF 8 Di2](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-8-di2/50053478.html) | 3 049 € | M | Ultegra Di2 | Hors zone | Livraison Canyon | Canyon |
+| **56** | [Vélo de Route BMC Teammachine SLR Three Shimano 105 Di2 12V 700 mm Rouge 2026](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3089746-velo_de_route_bmc_teammachine_slr_three_shimano_105_di2_12v_700_mm_rouge_2026) | 2 800 € | 56 | 105 Di2 | Hors zone | Livraison Alltricks | Alltricks |
+| **56** | [Vélo de Route Cannondale Synapse Carbon 4 Shimano 105 Di2 12V 700 mm Rouge](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3139833-velo_de_route_cannondale_synapse_carbon_4_shimano_105_di2_12v_700_mm_rouge) | 3 499 € | 56 | 105 Di2 | Hors zone | Livraison Alltricks | Alltricks |
+| **56** | [Vélo de Route Lapierre Xelius DRS 6.0 Shimano 105 Di2 12V 700 mm Gris/Beige 2026](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3115297-velo_de_route_lapierre_xelius_drs_6_0_shimano_105_di2_12v_700_mm_gris_beige_2026) | 3 200 € | M | 105 Di2 | Hors zone | Livraison Alltricks | Alltricks |
+| **56** | [Vélo de Route Scott Addict 20 Shimano Ultegra Di2 12V 700 mm Blanc](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3165677-velo_de_route_scott_addict_20_shimano_ultegra_di2_12v_700_mm_blanc) | 3 700 € | M | Ultegra Di2 | Hors zone | Livraison Alltricks | Alltricks |
+| **56** | [Vélo de Route BMC Teammachine SLR Two Shimano 105 Di2 12V 700 mm Rouge/Noir 2027](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3262166-velo_de_route_bmc_teammachine_slr_two_shimano_105_di2_12v_700_mm_rouge_noir_2027) | 2 999 € | 56 | 105 Di2 | Hors zone | Livraison Alltricks | Alltricks |
+| **55** | [Canyon Endurace CF 8 Di2](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-8-di2/50053633.html) | 3 199 € | M | Ultegra Di2 | Hors zone | Livraison Canyon | Canyon |
+| **55** | [Canyon Ultimate CF 8 Di2](https://www.canyon.com/fr-fr/promo-velos/route/ultimate-cf-8-di2/50053690.html) | 3 599 € | M | Ultegra Di2 | Hors zone | Livraison Canyon | Canyon |
+| **53** | [Vélo de Route BMC Teammachine SLR One Shimano Ultegra Di2 12V 700 mm Noir/Blanc 2027](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3274252-velo_de_route_bmc_teammachine_slr_one_shimano_ultegra_di2_12v_700_mm_noir_blanc_2027) | 3 999 € | 56 | Ultegra Di2 | Hors zone | Livraison Alltricks | Alltricks |
+| **53** | [Vélo de Route BMC Teammachine SLR One Shimano Ultegra Di2 12V 700 mm Bleu Clair 2027](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3274251-velo_de_route_bmc_teammachine_slr_one_shimano_ultegra_di2_12v_700_mm_bleu_clair_2027) | 3 999 € | 56 | Ultegra Di2 | Hors zone | Livraison Alltricks | Alltricks |
+| **50** | [Vélo de Route Megamo Raise 05 Shimano Ultegra Di2 12V 700 mm Beige 2026](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3231001-velo_de_route_megamo_raise_05_shimano_ultegra_di2_12v_700_mm_beige_2026) | 4 199 € | M | Ultegra Di2 | Hors zone | Livraison Alltricks | Alltricks |
+| **50** | [Vélo de Route Megamo Raise 05 Shimano Ultegra Di2 12V 700 mm Marron 2026](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3231002-velo_de_route_megamo_raise_05_shimano_ultegra_di2_12v_700_mm_marron_2026) | 4 199 € | M | Ultegra Di2 | Hors zone | Livraison Alltricks | Alltricks |
+| **47** | [Canyon Endurace CF SLX 7 Di2](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-slx-7-di2/50053534.html) | 3 799 € | M | 105 Di2 | Hors zone | Livraison Canyon | Canyon |
+| **45** | [Canyon Endurace CF SLX 7 Di2](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-slx-7-di2/50053835.html) | 3 899 € | M | 105 Di2 | Hors zone | Livraison Canyon | Canyon |
+| **39** | [Canyon Ultimate CF SLX 7 Di2](https://www.canyon.com/fr-fr/promo-velos/route/ultimate-cf-slx-7-di2/50053734.html) | 4 299 € | M | 105 Di2 | Hors zone | Livraison Canyon | Canyon |
+| **39** | [Canyon Ultimate CF SLX 7 Di2](https://www.canyon.com/fr-fr/promo-velos/route/ultimate-cf-slx-7-di2/50053807.html) | 4 299 € | M | 105 Di2 | Hors zone | Livraison Canyon | Canyon |
+
+À vérifier avant de contacter le vendeur :
+
+- Vélo de Route Orbea Orca M20iTEAM Shimano Ultegra Di2 12V 700 mm Bleu Cobalt 2026 : taille 57 prévue pour 186 à 191 cm selon le magasin ; matériau du cadre non précisé
+- Vélo de Route Focus Izalco Max 8.8 Shimano 105 Di2 12V 700 mm Noir 2026 : matériau du cadre non précisé
+- Rose Shave Ultegra Di2 : stock dans ta taille à confirmer auprès du magasin ; type de freins non précisé
+- Vélo de Route Trek Madone SL 6 Shimano 105 Di2 12V 700 mm Rouge Gén. 8 : taille m/l prévue pour 173 à 179 cm selon le magasin (il conseille la l pour 180 cm) ; matériau du cadre non précisé
+- Vélo de Route Lapierre Xelius DRS 7.0 Shimano Ultegra Di2 12V 700 mm Vert 2026 : matériau du cadre non précisé
+- Vélo de Route Trek Madone SL 6 Shimano 105 Di2 12V 700 mm Noir Gén. 8 : taille m/l prévue pour 173 à 179 cm selon le magasin (il conseille la l pour 180 cm)
+- Vélo de Route Scott Addict 40 Shimano 105 Di2 12V 700 mm Vert 2026 : taille m prévue pour 170 à 178 cm selon le magasin (il conseille la l pour 180 cm) ; matériau du cadre non précisé
+- Canyon Endurace CF 8 Di2 : type de freins non précisé ; année non précisée
+- Vélo de Route BMC Teammachine SLR Three Shimano 105 Di2 12V 700 mm Rouge 2026 : matériau du cadre non précisé
+- Vélo de Route Lapierre Xelius DRS 6.0 Shimano 105 Di2 12V 700 mm Gris/Beige 2026 : matériau du cadre non précisé
+- Vélo de Route Scott Addict 20 Shimano Ultegra Di2 12V 700 mm Blanc : taille m prévue pour 170 à 178 cm selon le magasin (il conseille la l pour 180 cm) ; matériau du cadre non précisé
+- Vélo de Route BMC Teammachine SLR Two Shimano 105 Di2 12V 700 mm Rouge/Noir 2027 : matériau du cadre non précisé
+- Canyon Endurace CF 8 Di2 : type de freins non précisé ; année non précisée
+- Canyon Ultimate CF 8 Di2 : type de freins non précisé ; année non précisée
+- Vélo de Route BMC Teammachine SLR One Shimano Ultegra Di2 12V 700 mm Noir/Blanc 2027 : matériau du cadre non précisé
+- Vélo de Route Megamo Raise 05 Shimano Ultegra Di2 12V 700 mm Beige 2026 : matériau du cadre non précisé
+- Vélo de Route Megamo Raise 05 Shimano Ultegra Di2 12V 700 mm Marron 2026 : matériau du cadre non précisé
+- Canyon Endurace CF SLX 7 Di2 : type de freins non précisé ; année non précisée
+- Canyon Endurace CF SLX 7 Di2 : type de freins non précisé ; année non précisée
+- Canyon Ultimate CF SLX 7 Di2 : type de freins non précisé ; année non précisée
+- Canyon Ultimate CF SLX 7 Di2 : type de freins non précisé ; année non précisée
+
+Écartées :
+
+- [Canyon Aeroad CF SLX 7 AXS SE](https://www.canyon.com/fr-fr/promo-velos/route/aeroad-cf-slx-7-axs-se/4414.html), 3 499 € : Taille 2XL incompatible
+- [Canyon Endurace CF 7 AXS](https://www.canyon.com/fr-fr/endurace-cf-7-axs/4364.html), 2 499 € : Groupe non retenu (SRAM AXS)
+- [Canyon Aeroad CF SLX 7 AXS SE3](https://www.canyon.com/fr-fr/promo-velos/route/aeroad-cf-slx-7-axs-se3/4476.html), 3 999 € : Taille 2XL incompatible
+- [Canyon Endurace CF 7 Di2](https://www.canyon.com/fr-fr/endurace-cf-7-di2/4275.html), 2 799 € : Taille 3XS incompatible
+- [Canyon Ultimate CF 7 A.50](https://www.canyon.com/fr-fr/promo-velos/route/ultimate-cf-7-a.50/4598.html), 2 599 € : Taille 2XL incompatible
+- [Canyon Aeroad CF SLX 7 Di2 C46](https://www.canyon.com/fr-fr/promo-velos/route/aeroad-cf-slx-7-di2-c46/4301.html), 4 499 € : Taille 2XS incompatible
+- [Canyon Aeroad CF SLX 7 Di2](https://www.canyon.com/fr-fr/promo-velos/route/aeroad-cf-slx-7-di2/4034.html), 4 199 € : Taille XL incompatible
+- [Canyon Endurace CF 8 Di2](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-8-di2/50053475.html), 3 199 € : Taille S incompatible
+- [Canyon Endurace CF 7 AXS](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-7-axs/50056400.html), 3 799 € : Taille XS incompatible
+- [Canyon Ultimate CF 7 Di2](https://www.canyon.com/fr-fr/promo-velos/route/ultimate-cf-7-di2/50047167.html), 2 949 € : Taille XL incompatible
+- [Canyon Ultimate CF 7](https://www.canyon.com/fr-fr/promo-velos/route/ultimate-cf-7/50053783.html), 2 649 € : Groupe non retenu (105 mécanique)
+- [Canyon Ultimate CF 7 AXS](https://www.canyon.com/fr-fr/promo-velos/route/ultimate-cf-7-axs/50053730.html), 3 299 € : Taille S incompatible
+- [Canyon Endurace CF SLX 7 Di2](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-slx-7-di2/50053815.html), 3 799 € : Taille L incompatible
+- [Canyon Endurace CF 8 Di2](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-8-di2/50053555.html), 3 199 € : Taille L incompatible
+- [Canyon Ultimate CF 7 AXS](https://www.canyon.com/fr-fr/promo-velos/route/ultimate-cf-7-axs/50053859.html), 3 299 € : Taille L incompatible
+- [Canyon Endurace CF SLX 7 Di2](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-slx-7-di2/50056708.html), 3 799 € : Taille 2XS incompatible
+- [Canyon Endurace CF SLX 7 AXS](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-slx-7-axs/50056240.html), 3 799 € : Taille XL incompatible
+- [Canyon Ultimate CF 8 Di2](https://www.canyon.com/fr-fr/promo-velos/route/ultimate-cf-8-di2/50054536.html), 3 599 € : Taille 2XS incompatible
+- [Canyon Ultimate CF SLX Team Movistar](https://www.canyon.com/fr-fr/promo-velos/professionnels/ultimate-cf-slx-team-movistar/50039769.html), 4 399 € : Taille 2XS incompatible
+- [Canyon Endurace CF SLX 7 Di2](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-slx-7-di2/50056686.html), 3 899 € : Taille XS incompatible
+- [Canyon Endurace CF 7 AXS](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-7-axs/50053549.html), 2 849 € : Taille L incompatible
+- [Canyon Ultimate CF 7 Di2](https://www.canyon.com/fr-fr/promo-velos/route/ultimate-cf-7-di2/50045862.html), 3 049 € : Taille XL incompatible
+- [Canyon Endurace CF SLX 8 Di2](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-slx-8-di2/50048254.html), 4 099 € : Taille XL incompatible
+- [Canyon Endurace CF SLX 7 AXS](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-slx-7-axs/50053714.html), 3 799 € : Groupe non retenu (SRAM AXS)
+- [Canyon Ultimate CF 7 AXS](https://www.canyon.com/fr-fr/promo-velos/route/ultimate-cf-7-axs/50053790.html), 4 299 € : Groupe non retenu (SRAM AXS)
+- [Canyon Ultimate CF 8 Di2](https://www.canyon.com/fr-fr/promo-velos/route/ultimate-cf-8-di2/50053870.html), 3 699 € : Taille 2XL incompatible
+- [Canyon Endurace CF 6](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-6/50056729.html), 1 649 € : Groupe non retenu (Autre groupe)
+- [Canyon Ultimate CF 8 Di2](https://www.canyon.com/fr-fr/promo-velos/route/ultimate-cf-8-di2/50054001.html), 3 599 € : Taille XS incompatible
+- [Canyon Ultimate CF 7 AXS](https://www.canyon.com/fr-fr/promo-velos/route/ultimate-cf-7-axs/50054478.html), 3 299 € : Taille 2XL incompatible
+- [Canyon Endurace CF SLX 8 Di2](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-slx-8-di2/50053717.html), 4 249 € : Taille L incompatible
+- [Canyon Endurace CF 7 AXS](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-7-axs/50053467.html), 2 649 € : Groupe non retenu (SRAM AXS)
+- [Canyon Ultimate CF 7 Di2](https://www.canyon.com/fr-fr/velos-de-route/velos-de-course/ultimate/cf-sl/ultimate-cf-7-di2/4065.html), 3 199 € : Taille XL, XS, 2XL incompatible
+- [Vélo de Route Lapierre Xelius DRS 8.0 Sram Force AXS 12V 700 mm Argent 2026](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3174849-velo_de_route_lapierre_xelius_drs_8_0_sram_force_axs_12v_700_mm_argent_2026), 5 700 € : Au-dessus du budget maximum (5 700 € pour 4 500 €)
+- [Vélo de Route BMC Teammachine SLR Two Shimano 105 Di2 12V 700 mm Noir 2027 T.54 172/180cm - Vélo d'Exposition](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3370987-velo_de_route_bmc_teammachine_slr_two_shimano_105_di2_12v_700_mm_noir_2027_t_54_172_180cm___velo_d_exposition), 2 800 € : Taille 54 incompatible
+- [Vélo de Route Trek Domane SL 5 Shimano 105 12V 700 mm Beige Gen.5](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3342354-velo_de_route_trek_domane_sl_5_shimano_105_12v_700_mm_beige_gen_5), 2 499 € : Groupe non retenu (105 mécanique)
+- [Velo de route Sava Vegur 4.0](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3215093-velo_de_route_sava_vegur_4_0), 2 199 € : Groupe non retenu (Autre groupe)
+- [Vélo de Route Trek Madone SL 6 Sram Rival AXS 12V 700 mm Noir Gén. 8](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3129462-velo_de_route_trek_madone_sl_6_sram_rival_axs_12v_700_mm_noir_gen__8), 3 500 € : Groupe non retenu (SRAM AXS)
+- [Vélo de Route Trek Madone SL 6 Sram Rival AXS 12V 700 mm Bleu/Noir/Corail Gén. 8](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3332426-velo_de_route_trek_madone_sl_6_sram_rival_axs_12v_700_mm_bleu_noir_corail_gen__8), 3 600 € : Groupe non retenu (SRAM AXS)
+- [Vélo de Route Orbea Orca M21eLTD PWR Sram Force eTap AXS 12V 700 mm Bleu Violet Tanzanite Carbon Raw 2025](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-2888465-velo_de_route_orbea_orca_m21eltd_pwr_sram_force_etap_axs_12v_700_mm_bleu_violet_tanzanite_carbon_raw_2025), 5 996 € : Au-dessus du budget maximum (5 996 € pour 4 500 €)
+- [Vélo de Route Cannondale SuperSix Evo 2 Shimano Ultegra Di2 12V 700 mm Gris/Noir 2026](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3227388-velo_de_route_cannondale_supersix_evo_2_shimano_ultegra_di2_12v_700_mm_gris_noir_2026), 5 700 € : Au-dessus du budget maximum (5 700 € pour 4 500 €)
+- [Vélo de Route Megamo Raise 03 Shimano Ultegra Di2 12V 700 mm Marron 2026](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3230996-velo_de_route_megamo_raise_03_shimano_ultegra_di2_12v_700_mm_marron_2026), 6 799 € : Au-dessus du budget maximum (6 799 € pour 4 500 €)
+- [Vélo de Route Cannondale Synapse Carbon 2 Shimano Ultegra Di2 12V 700 mm Gris](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3177208-velo_de_route_cannondale_synapse_carbon_2_shimano_ultegra_di2_12v_700_mm_gris), 5 200 € : Au-dessus du budget maximum (5 200 € pour 4 500 €)
+- [Vélo de Route Cannondale SuperSix Evo 4 Sram Rival AXS 12V 700 mm Vert/Gris 2026](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3227393-velo_de_route_cannondale_supersix_evo_4_sram_rival_axs_12v_700_mm_vert_gris_2026), 4 500 € : Taille 44, 48, 50, 54, 58 incompatible
+- [Vélo de Route Cannondale Synapse Carbon 2 SmartSense Sram Force AXS 12V 700 mm Marron](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3128114-velo_de_route_cannondale_synapse_carbon_2_smartsense_sram_force_axs_12v_700_mm_marron), 6 499 € : Au-dessus du budget maximum (6 499 € pour 4 500 €)
+- [Vélo de Route Cannondale Synapse Carbon 5 Shimano 105 12V 700 mm Jaune](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3139893-velo_de_route_cannondale_synapse_carbon_5_shimano_105_12v_700_mm_jaune), 2 699 € : Groupe non retenu (105 mécanique)
+- [Vélo de Route Cannondale Synapse Carbon 5 Shimano 105 12V 700 mm Noir](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3116416-velo_de_route_cannondale_synapse_carbon_5_shimano_105_12v_700_mm_noir), 2 100 € : Groupe non retenu (105 mécanique)
+- [Vélo de Route Cervélo Soloist Sram Force AXS 12V 700 mm Gris/Bleu Cloud 2027](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3347525-velo_de_route_cervelo_soloist_sram_force_axs_12v_700_mm_gris_bleu_cloud_2027), 7 499 € : Au-dessus du budget maximum (7 499 € pour 4 500 €)
+- [Vélo de Route Orbea Orca M30 Shimano 105 12V 700 mm Noir/Gris 2027](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3344363-velo_de_route_orbea_orca_m30_shimano_105_12v_700_mm_noir_gris_2027), 2 599 € : Groupe non retenu (105 mécanique)
+- [Vélo de Gravel Cannondale Topstone Carbon 2 Shimano GRX 12V 700mm Vert](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3059959-velo_de_gravel_cannondale_topstone_carbon_2_shimano_grx_12v_700mm_vert), 3 391 € : Type hors critères (Gravel)
+
+## Lundi 23 novembre 2026
+
 - Crédit Apify consommé ce mois-ci avant la collecte : 3,33 $ sur 5,00 $.
 - Leboncoin : 60 annonces lues sur toute la France, les plus récentes (60 au plus).
 - buycycle : 120 annonces lues (route, carbone, disques, tailles M et L, 120 au plus).
