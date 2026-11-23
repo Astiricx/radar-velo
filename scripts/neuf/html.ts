@@ -18,8 +18,8 @@ const BLOCKED = /<title>\s*(?:just a moment|attention required|access denied|acc
 export const pause = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 /** Lit une page. Lève une erreur claire si le site refuse ou renvoie une page anti-robot. */
-export async function getPage(url: string): Promise<{ html: string; url: string }> {
-  const res = await fetch(url, { headers: HEADERS, redirect: 'follow', signal: AbortSignal.timeout(25_000) })
+export async function getPage(url: string, extraHeaders: Record<string, string> = {}): Promise<{ html: string; url: string }> {
+  const res = await fetch(url, { headers: { ...HEADERS, ...extraHeaders }, redirect: 'follow', signal: AbortSignal.timeout(25_000) })
   const html = await res.text()
   if (!res.ok) throw new Error(`HTTP ${res.status} sur ${url}`)
   if (BLOCKED.test(html.slice(0, 8000))) throw new Error(`page anti-robot sur ${url}`)

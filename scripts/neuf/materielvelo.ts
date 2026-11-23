@@ -11,7 +11,7 @@
 import { DEFAULT_CRITERIA, DEFAULT_NEW_BIKES } from '../../src/lib/criteria'
 import { isAeroText } from '../apify/parse'
 import { NEUF } from './config'
-import { decode, getPage, jsonLd, pause, productGroup } from './html'
+import { attr, blocks, decode, euros, getPage, jsonLd, pause, productGroup, textByClass } from './html'
 import { pickSize } from './sizes'
 import type { NewBike, RetailerResult } from './types'
 
@@ -59,6 +59,28 @@ export function parseMvList(body: string): { items: MvItem[]; pages: number | nu
   }
   const list = jsonLd(body).find((d) => isObj(d) && d['@type'] === 'CollectionPage') as Obj | undefined
   const elements = ((list?.mainEntity as Obj | undefined)?.itemListElement ?? []) as Obj[]
+  const pages = Math.max(0, ...[...body.matchAll(/[?&]page=(\d+)/g)].map((m) => Number(m[1])))
+  // Sans liste JSON-LD : les vignettes HTML de PrestaShop.
+  if (elements.length === 0) {
+    const items = blocks(body, /<article[^>]*js-product-miniature/).flatMap((tile): MvItem[] => {
+      const id = attr(tile.slice(0, 400), 'data-id-product')
+      const url = tile.match(/c-pdt-mini__heading">\s*<a href="([^"]+)"/)?.[1]
+      const price = euros(textByClass(tile, 'c-price--current') ?? textByClass(tile, 'c-price--discount'))
+      if (!id || !url || !price) return []
+      const old = euros(textByClass(tile, 'c-price--old'))
+      return [
+        {
+          id,
+          name: textByClass(tile, 'c-pdt-mini__name') ?? '',
+          url: decode(url),
+          price,
+          originalPrice: old && old > price ? old : undefined,
+          image: tile.match(/<img src="(https:\/\/www\.materiel-velo\.com\/[^"]+)"/)?.[1],
+        },
+      ]
+    })
+    return { items, pages: pages || null }
+  }
   const items = elements.flatMap((e): MvItem[] => {
     const p = (e.item ?? e) as Obj
     const offer = (p.offers ?? {}) as Obj
@@ -67,7 +89,6 @@ export function parseMvList(body: string): { items: MvItem[]; pages: number | nu
     if (!url || !price) return []
     return [{ id: url.match(/\/(?:gb\/)?(\d+)-/)?.[1] ?? url, name: decode(String(p.name ?? '')), url, price: Math.round(price), image: typeof p.image === 'string' ? p.image : undefined }]
   })
-  const pages = Math.max(0, ...[...body.matchAll(/[?&]page=(\d+)/g)].map((m) => Number(m[1])))
   return { items, pages: pages || null }
 }
 
@@ -82,7 +103,8 @@ export async function fetchMaterielVelo(): Promise<RetailerResult> {
   let read = 0
   for (let page = 1; page <= Math.min(pages, NEUF.mvMaxPages); page++) {
     try {
-      const { html } = await getPage(`${MV_LIST}?page=${page}`)
+      // Demande « AJAX » de PrestaShop : la liste revient en JSON, avec prix barré et nombre de pages.
+      const { html } = await getPage(`${MV_LIST}?page=${page}&from-xhr`, { Accept: 'application/json, text/javascript, */*; q=0.01', 'X-Requested-With': 'XMLHttpRequest' })
       const { items, pages: count } = parseMvList(html)
       read++
       if (count) pages = count

@@ -140,6 +140,11 @@ test('Materiel-velo.com : liste (JSON) et fiche, stock par taille et freins', ()
   assert.equal(bmc.price, 4899)
   assert.equal(bmc.originalPrice, 6499)
   assert.ok(isDirectAdUrl(bmc.url), bmc.url)
+  // Même liste servie en HTML : vignettes PrestaShop, prix remisé et prix barré.
+  const html = parseMvList(page('materielvelo-list.html'))
+  assert.equal(html.items.length, 3)
+  assert.equal(html.pages, 3)
+  assert.ok(html.items.filter((i) => i.originalPrice && i.originalPrice > i.price).length === 2)
   const product = productGroup(page('materielvelo-product.html'))!
   const fiftySix = product.offers.find((o) => o.label === '56')!
   assert.equal(fiftySix.inStock, true)
