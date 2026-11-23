@@ -13,8 +13,8 @@
       "Saint-Nazaire et Loire-Atlantique (120 km autour de Saint-Nazaire)"
     ]
   },
-  "count": 1788,
-  "retained": 461,
+  "count": 1794,
+  "retained": 463,
   "listings": [
     {
       "id": "tv-4317275",
@@ -6046,6 +6046,121 @@
           "label": "État et âge",
           "detail": "Très bon état, modèle 2025",
           "points": 7,
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
+      "id": "mv-1888249",
+      "source": "materiel-velo",
+      "url": "https://www.materiel-velo.com/1888249-velo-route-trek-madone-sl-7-8e-gen-ultegra-di2-12v-aeolus-pro-51-gloss-dark-star-matte-deep-smoke-2026.html",
+      "image": "https://www.materiel-velo.com/127055-large_default/velo-route-trek-madone-sl-7-8e-gen-ultegra-di2-12v-aeolus-pro-51-gloss-dark-star-matte-deep-smoke-2026.jpg",
+      "fallbackImage": "https://www.materiel-velo.com/127055-large_default/velo-route-trek-madone-sl-7-8e-gen-ultegra-di2-12v-aeolus-pro-51-gloss-dark-star-matte-deep-smoke-2026.jpg",
+      "imageKind": "annonce",
+      "title": "Trek Madone SL 7 8e Gen Ultegra Di2 12v Aeolus Pro 51 Gloss Dark Star Matte Deep Smoke 2026",
+      "brand": "Trek",
+      "model": "Madone SL 7 8e Gen Ultegra Di2 12v Aeolus Pro 51 Gloss Dark ",
+      "year": 2026,
+      "type": "route",
+      "size": "M",
+      "price": 4299,
+      "description": "Vélo de route Trek Madone SL 7 Gen 8 carbone OCLV 900, Shimano Ultegra Di2 12 vitesses, roues carbone Aeolus Pro 51, aérodynamisme avancé, confort IsoFlow, performance course ultime dans son coloris Gloss Dark Star Matte Deep Smoke .",
+      "city": "Livraison Materiel-velo.com",
+      "shipping": true,
+      "publishedAt": "2026-11-23T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": true,
+      "powerMeter": false,
+      "wheelDepth": 51,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "toVerify": [
+        "Type de freins non précisé"
+      ],
+      "firstSeen": "2026-11-23",
+      "market": "neuf",
+      "originalPrice": 5999,
+      "sizesInStock": [
+        "L",
+        "XS",
+        "S",
+        "M",
+        "M-L"
+      ],
+      "priceHistory": [
+        {
+          "d": "2026-11-23",
+          "p": 4299
+        }
+      ],
+      "lastSeen": "2026-11-23",
+      "parser": 5,
+      "score": 71,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Entre l'idéal et le maximum de 4 500 €",
+          "points": 13,
+          "max": 25
+        },
+        {
+          "label": "Remise",
+          "detail": "28 % de remise (prix barré 5 999 €)",
+          "points": 9.3,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 51 mm",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Expédié par le vendeur",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Neuf, garantie constructeur, modèle 2026",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Garantie et tranquillité",
+          "points": 8,
+          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
           "max": 8
         }
       ],
@@ -41758,6 +41873,117 @@
       "rejection": null
     },
     {
+      "id": "mv-1884879",
+      "source": "materiel-velo",
+      "url": "https://www.materiel-velo.com/1884879-velo-route-ridley-falcn-shimano-ultegra-di2-12v-zipp-303s-fal01cs-aqualand-silver-glossy.html",
+      "image": "https://www.materiel-velo.com/115862-large_default/velo-route-ridley-falcn-shimano-ultegra-di2-12v-zipp-303s-fal01cs-aqualand-silver-glossy.jpg",
+      "fallbackImage": "https://www.materiel-velo.com/115862-large_default/velo-route-ridley-falcn-shimano-ultegra-di2-12v-zipp-303s-fal01cs-aqualand-silver-glossy.jpg",
+      "imageKind": "annonce",
+      "title": "Ridley Falcn Shimano Ultegra Di2 12v Zipp 303S FAL01Cs Aqualand Silver Glossy",
+      "brand": "Ridley",
+      "model": "Falcn Shimano Ultegra Di2 12v Zipp 303S FAL01Cs Aqualand Sil",
+      "year": 0,
+      "type": "route",
+      "size": "M",
+      "price": 4890,
+      "description": "Prêt à tout affronter pour vous rendre le meilleur possible sur la route, le Ridley Falcn FAL01Cs Aqualand Silver Glossy est un vélo tourné vers la performance. Cadre en carbone de bonne qualité. Excellentes caractéristiques aéro. Groupe Shimano Ultegra Di2 12v. Roues Zipp 303S.",
+      "city": "Livraison Materiel-velo.com",
+      "shipping": true,
+      "publishedAt": "2026-11-23T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": true,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "toVerify": [
+        "Type de freins non précisé"
+      ],
+      "firstSeen": "2026-11-23",
+      "market": "neuf",
+      "originalPrice": 5790,
+      "sizesInStock": [
+        "M"
+      ],
+      "priceHistory": [
+        {
+          "d": "2026-11-23",
+          "p": 4890
+        }
+      ],
+      "lastSeen": "2026-11-23",
+      "parser": 5,
+      "score": 53,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "390 € au-dessus de ton maximum, accepté pour du neuf",
+          "points": 5.7,
+          "max": 25
+        },
+        {
+          "label": "Remise",
+          "detail": "16 % de remise (prix barré 5 790 €)",
+          "points": 5.3,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Expédié par le vendeur",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Neuf, garantie constructeur",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Garantie et tranquillité",
+          "points": 8,
+          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
       "id": "bc-11702",
       "source": "buycycle",
       "url": "https://buycycle.com/fr-fr/product/aerospace-11702",
@@ -57561,6 +57787,118 @@
       "rejection": "Taille 53 incompatible"
     },
     {
+      "id": "mv-1888246",
+      "source": "materiel-velo",
+      "url": "https://www.materiel-velo.com/1888246-velo-route-trek-madone-sl-6-8e-gen-105-di2-12v-aeolus-elite-50-gloss-crystal-whitematte-deep-smoke-2026.html",
+      "image": "https://www.materiel-velo.com/127063-large_default/velo-route-trek-madone-sl-6-8e-gen-105-di2-12v-aeolus-elite-50-gloss-crystal-whitematte-deep-smoke-2026.jpg",
+      "fallbackImage": "https://www.materiel-velo.com/127063-large_default/velo-route-trek-madone-sl-6-8e-gen-105-di2-12v-aeolus-elite-50-gloss-crystal-whitematte-deep-smoke-2026.jpg",
+      "imageKind": "annonce",
+      "title": "Trek Madone SL 6 8e Gen 105 Di2 12v Aeolus Elite 50 Gloss Crystal White/Matte Deep Smoke 2026",
+      "brand": "Trek",
+      "model": "Madone SL 6 8e Gen 105 Di2 12v Aeolus Elite 50 Gloss Crystal",
+      "year": 2026,
+      "type": "route",
+      "size": "XL",
+      "price": 3849,
+      "description": "Trek Madone SL 6 Gen 8 2026 – Shimano 105 Di2 12v, roues Aeolus Elite 50 carbone, cadre OCLV 500 aero IsoFlow, poids 8,1 kg, vélo route performance",
+      "city": "Livraison Materiel-velo.com",
+      "shipping": true,
+      "publishedAt": "2026-11-23T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": true,
+      "powerMeter": false,
+      "wheelDepth": 50,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "toVerify": [
+        "Matériau du cadre non précisé",
+        "Type de freins non précisé"
+      ],
+      "firstSeen": "2026-11-23",
+      "market": "neuf",
+      "originalPrice": 4299,
+      "sizesInStock": [
+        "XL"
+      ],
+      "priceHistory": [
+        {
+          "d": "2026-11-23",
+          "p": 3849
+        }
+      ],
+      "lastSeen": "2026-11-23",
+      "parser": 5,
+      "score": 68,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Entre l'idéal et le maximum de 4 500 €",
+          "points": 19.8,
+          "max": 25
+        },
+        {
+          "label": "Remise",
+          "detail": "10 % de remise (prix barré 4 299 €)",
+          "points": 3.3,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Carbone, jantes de 50 mm",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Expédié par le vendeur",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Neuf, garantie constructeur, modèle 2026",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Garantie et tranquillité",
+          "points": 8,
+          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
+          "max": 8
+        }
+      ],
+      "rejection": "Taille XL incompatible"
+    },
+    {
       "id": "bc-52857",
       "source": "buycycle",
       "url": "https://buycycle.com/fr-fr/product/tarmac-sl8-pro-shimano-ultegra-di2-2024-52857",
@@ -58889,6 +59227,117 @@
         }
       ],
       "rejection": "Taille 55 incompatible"
+    },
+    {
+      "id": "mv-1882904",
+      "source": "materiel-velo",
+      "url": "https://www.materiel-velo.com/1882904-velo-route-ridley-falcn-shimano-105-di2-12v-fal01bs-blackred-2025.html",
+      "image": "https://www.materiel-velo.com/111646-large_default/velo-route-ridley-falcn-shimano-105-di2-12v-fal01bs-blackred-2025.jpg",
+      "fallbackImage": "https://www.materiel-velo.com/111646-large_default/velo-route-ridley-falcn-shimano-105-di2-12v-fal01bs-blackred-2025.jpg",
+      "imageKind": "annonce",
+      "title": "Ridley Falcn Shimano 105 Di2 12v Fal01Bs Black/Red 2025",
+      "brand": "Ridley",
+      "model": "Falcn Shimano 105 Di2 12v Fal01Bs Black/Red",
+      "year": 2025,
+      "type": "route",
+      "size": "XS",
+      "price": 3490,
+      "description": "Prêt à tout affronter pour vous rendre le meilleur possible sur la route, le Ridley Falcn Fal01Bs Black/Red est un vélo tourné vers la performance. Cadre en carbone de bonne qualité. Excellentes caractéristiques aéro. Groupe Shimano 105 Di2 12v. Roues Forza Levanto DB.",
+      "city": "Livraison Materiel-velo.com",
+      "shipping": true,
+      "publishedAt": "2026-11-23T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": true,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "toVerify": [
+        "Type de freins non précisé"
+      ],
+      "firstSeen": "2026-11-23",
+      "market": "neuf",
+      "originalPrice": 4099,
+      "sizesInStock": [
+        "XS"
+      ],
+      "priceHistory": [
+        {
+          "d": "2026-11-23",
+          "p": 3490
+        }
+      ],
+      "lastSeen": "2026-11-23",
+      "parser": 5,
+      "score": 67,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Remise",
+          "detail": "15 % de remise (prix barré 4 099 €)",
+          "points": 5,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Expédié par le vendeur",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Neuf, garantie constructeur, modèle 2025",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Garantie et tranquillité",
+          "points": 8,
+          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
+          "max": 8
+        }
+      ],
+      "rejection": "Taille XS incompatible"
     },
     {
       "id": "cy-4414",
@@ -85637,6 +86086,118 @@
         }
       ],
       "rejection": "Taille 52 incompatible"
+    },
+    {
+      "id": "mv-1893224",
+      "source": "materiel-velo",
+      "url": "https://www.materiel-velo.com/1893224-velo-route-wilier-triestina-filante-sl-shimano-ultegra-di2-12v-miche-s50-f20-white-red-glossy.html",
+      "image": "https://www.materiel-velo.com/138926-large_default/velo-route-wilier-triestina-filante-sl-shimano-ultegra-di2-12v-miche-s50-f20-white-red-glossy.jpg",
+      "fallbackImage": "https://www.materiel-velo.com/138926-large_default/velo-route-wilier-triestina-filante-sl-shimano-ultegra-di2-12v-miche-s50-f20-white-red-glossy.jpg",
+      "imageKind": "annonce",
+      "title": "Wilier Triestina Filante SL Shimano Ultegra Di2 12v Miche S50 F20 White Red Glossy",
+      "brand": "Wilier",
+      "model": "Triestina Filante SL Shimano Ultegra Di2 12v Miche S50 F20 W",
+      "year": 0,
+      "type": "route",
+      "size": "S, L",
+      "price": 4490,
+      "description": "Vélo route Wilier Triestina Filante SL Shimano Ultegra Di2 12v Miche S50 F20 White Red Glossy, cadre carbone léger et réactif, cockpit intégré, Transmission Ultegra Di2 électrique, pour la pratique du cyclisme sur route et la performance en compétition et à l’entraînement.",
+      "city": "Livraison Materiel-velo.com",
+      "shipping": true,
+      "publishedAt": "2026-11-23T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": true,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "toVerify": [
+        "Type de freins non précisé"
+      ],
+      "firstSeen": "2026-11-23",
+      "market": "neuf",
+      "originalPrice": 5990,
+      "sizesInStock": [
+        "S",
+        "L"
+      ],
+      "priceHistory": [
+        {
+          "d": "2026-11-23",
+          "p": 4490
+        }
+      ],
+      "lastSeen": "2026-11-23",
+      "parser": 5,
+      "score": 60,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Entre l'idéal et le maximum de 4 500 €",
+          "points": 10.2,
+          "max": 25
+        },
+        {
+          "label": "Remise",
+          "detail": "25 % de remise (prix barré 5 990 €)",
+          "points": 8.3,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Expédié par le vendeur",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Neuf, garantie constructeur",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Garantie et tranquillité",
+          "points": 8,
+          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
+          "max": 8
+        }
+      ],
+      "rejection": "Taille S, L incompatible"
     },
     {
       "id": "bc-56243",
@@ -124894,6 +125455,117 @@
         }
       ],
       "rejection": "Au-dessus du budget maximum (4 515 € pour 4 500 €)"
+    },
+    {
+      "id": "mv-1884881",
+      "source": "materiel-velo",
+      "url": "https://www.materiel-velo.com/1884881-velo-route-ridley-falcn-shimano-ultegra-di2-12v-zipp-303s-fal01as-pearl-white-silver.html",
+      "image": "https://www.materiel-velo.com/115866-large_default/velo-route-ridley-falcn-shimano-ultegra-di2-12v-zipp-303s-fal01as-pearl-white-silver.jpg",
+      "fallbackImage": "https://www.materiel-velo.com/115866-large_default/velo-route-ridley-falcn-shimano-ultegra-di2-12v-zipp-303s-fal01as-pearl-white-silver.jpg",
+      "imageKind": "annonce",
+      "title": "Ridley Falcn Shimano Ultegra Di2 12v Zipp 303S FAL01As Pearl White Silver",
+      "brand": "Ridley",
+      "model": "Falcn Shimano Ultegra Di2 12v Zipp 303S FAL01As Pearl White ",
+      "year": 0,
+      "type": "route",
+      "size": "S",
+      "price": 4782,
+      "description": "Prêt à tout affronter pour vous rendre le meilleur possible sur la route, le Ridley Falcn FAL01As Pearl White Silver est un vélo tourné vers la performance. Cadre en carbone de bonne qualité. Excellentes caractéristiques aéro. Groupe Shimano Ultegra Di2 12v. Roues Zipp 303S.",
+      "city": "Livraison Materiel-velo.com",
+      "shipping": true,
+      "publishedAt": "2026-11-23T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": true,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "toVerify": [
+        "Type de freins non précisé"
+      ],
+      "firstSeen": "2026-11-23",
+      "market": "neuf",
+      "originalPrice": 5790,
+      "sizesInStock": [
+        "S"
+      ],
+      "priceHistory": [
+        {
+          "d": "2026-11-23",
+          "p": 4782
+        }
+      ],
+      "lastSeen": "2026-11-23",
+      "parser": 5,
+      "score": 54,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "282 € au-dessus de ton maximum, accepté pour du neuf",
+          "points": 6.9,
+          "max": 25
+        },
+        {
+          "label": "Remise",
+          "detail": "17 % de remise (prix barré 5 790 €)",
+          "points": 5.7,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Expédié par le vendeur",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Neuf, garantie constructeur",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Garantie et tranquillité",
+          "points": 8,
+          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
+          "max": 8
+        }
+      ],
+      "rejection": "Taille S incompatible"
     },
     {
       "id": "bc-58403",

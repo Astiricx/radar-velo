@@ -6,6 +6,34 @@
 - Canyon (neuf, lecture directe) : 44 vélos retenus pour analyse, dont 8 avec un prix barré. 188 vélos sur 3 pages de liste, 51 hors sujet (gravel, cadre seul, neuf non aéro…), 92 hors budget, 2 fiches ouvertes pour le stock par taille.
 - Alltricks (neuf, lecture directe) : 27 vélos retenus pour analyse, dont 7 avec un prix barré. 32 vélos neufs sur 4 listes (Di2, Ultegra, carbone), dont 9 en promotion.
 - Rose (neuf, lecture directe) : 1 vélo retenu pour analyse, dont 1 avec un prix barré. 12 vélos en promotion, 3 de route, 1 dans le budget, 1 fiche ouverte.
+- Materiel-velo.com (neuf, lecture directe) : 8 vélos retenus pour analyse, dont 8 avec un prix barré. 359 vélos de route sur 6 pages, 242 en Shimano Di2 ou Ultegra, 83 dans le budget, 20 au cadre aéro, 15 fiches ouvertes pour le stock par taille.
+- Vélo Brival (neuf, lecture directe) : 3 vélos retenus pour analyse, dont 2 avec un prix barré. 454 vélos de route course et aéro, 251 en Shimano Di2 ou Ultegra, 19 en stock dans le budget, 4 au cadre aéro, 19 vérifications de stock par taille.
+
+6 nouvelles annonces analysées : 2 pertinentes, 4 écartées.
+
+| Score | Annonce | Prix | Taille | Transmission | Zone | Lieu | Source |
+| ---: | --- | ---: | --- | --- | --- | --- | --- |
+| **71** | [Trek Madone SL 7 8e Gen Ultegra Di2 12v Aeolus Pro 51 Gloss Dark Star Matte Deep Smoke 2026](https://www.materiel-velo.com/1888249-velo-route-trek-madone-sl-7-8e-gen-ultegra-di2-12v-aeolus-pro-51-gloss-dark-star-matte-deep-smoke-2026.html) | 4 299 € | M | Ultegra Di2 | Hors zone | Livraison Materiel-velo.com | Materiel-velo.com |
+| **53** | [Ridley Falcn Shimano Ultegra Di2 12v Zipp 303S FAL01Cs Aqualand Silver Glossy](https://www.materiel-velo.com/1884879-velo-route-ridley-falcn-shimano-ultegra-di2-12v-zipp-303s-fal01cs-aqualand-silver-glossy.html) | 4 890 € | M | Ultegra Di2 | Hors zone | Livraison Materiel-velo.com | Materiel-velo.com |
+
+À vérifier avant de contacter le vendeur :
+
+- Trek Madone SL 7 8e Gen Ultegra Di2 12v Aeolus Pro 51 Gloss Dark Star Matte Deep Smoke 2026 : type de freins non précisé
+- Ridley Falcn Shimano Ultegra Di2 12v Zipp 303S FAL01Cs Aqualand Silver Glossy : type de freins non précisé
+
+Écartées :
+
+- [Ridley Falcn Shimano 105 Di2 12v Fal01Bs Black/Red 2025](https://www.materiel-velo.com/1882904-velo-route-ridley-falcn-shimano-105-di2-12v-fal01bs-blackred-2025.html), 3 490 € : Taille XS incompatible
+- [Trek Madone SL 6 8e Gen 105 Di2 12v Aeolus Elite 50 Gloss Crystal White/Matte Deep Smoke 2026](https://www.materiel-velo.com/1888246-velo-route-trek-madone-sl-6-8e-gen-105-di2-12v-aeolus-elite-50-gloss-crystal-whitematte-deep-smoke-2026.html), 3 849 € : Taille XL incompatible
+- [Wilier Triestina Filante SL Shimano Ultegra Di2 12v Miche S50 F20 White Red Glossy](https://www.materiel-velo.com/1893224-velo-route-wilier-triestina-filante-sl-shimano-ultegra-di2-12v-miche-s50-f20-white-red-glossy.html), 4 490 € : Taille S, L incompatible
+- [Ridley Falcn Shimano Ultegra Di2 12v Zipp 303S FAL01As Pearl White Silver](https://www.materiel-velo.com/1884881-velo-route-ridley-falcn-shimano-ultegra-di2-12v-zipp-303s-fal01as-pearl-white-silver.html), 4 782 € : Taille S incompatible
+
+## Lundi 23 novembre 2026
+
+- Collecte Apify sautée : exécution « vélos neufs seulement », aucun crédit consommé.
+- Canyon (neuf, lecture directe) : 44 vélos retenus pour analyse, dont 8 avec un prix barré. 188 vélos sur 3 pages de liste, 51 hors sujet (gravel, cadre seul, neuf non aéro…), 92 hors budget, 2 fiches ouvertes pour le stock par taille.
+- Alltricks (neuf, lecture directe) : 27 vélos retenus pour analyse, dont 7 avec un prix barré. 32 vélos neufs sur 4 listes (Di2, Ultegra, carbone), dont 9 en promotion.
+- Rose (neuf, lecture directe) : 1 vélo retenu pour analyse, dont 1 avec un prix barré. 12 vélos en promotion, 3 de route, 1 dans le budget, 1 fiche ouverte.
 - Materiel-velo.com (neuf, lecture directe) : 2 vélos retenus pour analyse, dont 2 avec un prix barré. 60 vélos de route sur 2 pages, 27 en Shimano Di2 ou Ultegra, 27 dans le budget, 5 au cadre aéro, 5 fiches ouvertes pour le stock par taille.
 - Vélo Brival (neuf, lecture directe) : 3 vélos retenus pour analyse, dont 2 avec un prix barré. 454 vélos de route course et aéro, 251 en Shimano Di2 ou Ultegra, 19 en stock dans le budget, 4 au cadre aéro, 19 vérifications de stock par taille.
 
