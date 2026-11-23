@@ -27,6 +27,10 @@ on:
         description: Journal détaillé (extraits bruts des fiches, décision par vignette)
         type: boolean
         default: false
+      neuf_only:
+        description: Vélos neufs seulement (magasins), sans Apify ni crédit consommé
+        type: boolean
+        default: false
       max_items:
         description: Annonces Leboncoin lues par zone pour cette exécution (vide = réglage habituel)
         type: string
@@ -60,7 +64,8 @@ jobs:
         run: npm run daily-check
         env:
           # Clé d'API Apify : secret de dépôt APIFY_TOKEN. Sans elle, la collecte est sautée.
-          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          # « Vélos neufs seulement » : pas de clé, donc aucune collecte Apify.
+          APIFY_TOKEN: ${{ inputs.neuf_only != true && secrets.APIFY_TOKEN || '' }}
           # Réglages facultatifs (variables de dépôt), valeurs par défaut dans scripts/apify/config.ts.
           APIFY_BUDGET_USD: ${{ vars.APIFY_BUDGET_USD }}
           APIFY_MAX_ITEMS: ${{ inputs.max_items || (inputs.backfill && '150') || vars.APIFY_MAX_ITEMS }}
