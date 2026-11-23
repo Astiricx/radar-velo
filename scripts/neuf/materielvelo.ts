@@ -148,7 +148,7 @@ export async function fetchMaterielVelo(): Promise<RetailerResult> {
         price: it.price,
         originalPrice: it.originalPrice,
         // Le site refuse l'affichage de ses photos sur d'autres sites : relais d'images public en secours.
-        images: [it.image, ...(it.image ? [`https://images.weserv.nl/?url=${encodeURIComponent(it.image.replace(/^https?:\/\//, ''))}&w=800`] : [])],
+        images: it.image ? [it.image, `https://images.weserv.nl/?url=${encodeURIComponent(it.image.replace(/^https?:\/\//, ''))}&w=800`] : [],
         seller: 'Materiel-velo.com',
         market: 'neuf',
         size: pick.size,
