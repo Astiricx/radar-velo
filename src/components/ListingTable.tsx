@@ -75,15 +75,12 @@ export function ListingTable({ rows, criteria, sort, onSort, onOpen, onStatus }:
               <td className="tnum px-3 py-2 text-right">
                 <div className="font-display text-xl font-bold">{eur(l.price)}</div>
                 {isNewBike(l) && l.originalPrice && promoPct(l) !== null && (
-                  <div className="text-xs text-muted">
+                  <div className="whitespace-nowrap text-xs text-muted">
                     <s>{eur(l.originalPrice)}</s> <span className="font-semibold text-good">−{promoPct(l)} %</span>
                   </div>
                 )}
               </td>
-              <td className="px-3 py-2">
-                {l.size}
-                {isNewBike(l) && l.sizesInStock?.length ? <div className="text-xs text-muted">Dispo : {l.sizesInStock.join(', ')}</div> : null}
-              </td>
+              <td className="px-3 py-2">{l.size}</td>
               <td className="px-3 py-2">
                 <div>{l.city}</div>
                 <div className="text-xs text-muted first-letter:uppercase">
