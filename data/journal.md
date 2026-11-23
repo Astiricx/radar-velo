@@ -2,6 +2,41 @@
 
 ## Lundi 23 novembre 2026
 
+- Collecte Apify sautée : exécution « vélos neufs seulement », aucun crédit consommé.
+- Canyon (neuf, lecture directe) : 44 vélos retenus pour analyse, dont 8 avec un prix barré. 188 vélos sur 3 pages de liste, 51 hors sujet (gravel, cadre seul, neuf non aéro…), 92 hors budget, 2 fiches ouvertes pour le stock par taille.
+- Alltricks (neuf, lecture directe) : 27 vélos retenus pour analyse, dont 7 avec un prix barré. 32 vélos neufs sur 4 listes (Di2, Ultegra, carbone), dont 9 en promotion.
+- Rose (neuf, lecture directe) : 1 vélo retenu pour analyse, dont 1 avec un prix barré. 12 vélos en promotion, 3 de route, 1 dans le budget, 1 fiche ouverte.
+- Materiel-velo.com (neuf, lecture directe) : 2 vélos retenus pour analyse, dont 2 avec un prix barré. 60 vélos de route sur 2 pages, 27 en Shimano Di2 ou Ultegra, 27 dans le budget, 5 au cadre aéro, 5 fiches ouvertes pour le stock par taille.
+- Vélo Brival (neuf, lecture directe) : 3 vélos retenus pour analyse, dont 2 avec un prix barré. 454 vélos de route course et aéro, 251 en Shimano Di2 ou Ultegra, 19 en stock dans le budget, 4 au cadre aéro, 19 vérifications de stock par taille.
+
+11 nouvelles annonces analysées : 4 pertinentes, 7 écartées.
+
+| Score | Annonce | Prix | Taille | Transmission | Zone | Lieu | Source |
+| ---: | --- | ---: | --- | --- | --- | --- | --- |
+| **76** | [ORCA AERO M35iLTD PWR](https://www.velobrival.com/catalogue/velos/route/route-triathlon-aero/orca-aero-m35iltd-pwr-2026/) | 3 849 € | 57 | 105 Di2, capteur | Hors zone | Livraison Vélo Brival | Vélo Brival |
+| **62** | [Madone SL 6 8e gén.](https://www.velobrival.com/catalogue/velos/route/route-course/madone-sl-6-8e-gen/) | 3 999 € | M/L | 105 Di2 | Hors zone | Livraison Vélo Brival | Vélo Brival |
+| **61** | [Madone SL 6 8e gén.](https://www.velobrival.com/catalogue/velos/route/route-course/madone-sl-6-8e-gen-2/) | 4 299 € | M | 105 Di2 | Hors zone | Livraison Vélo Brival | Vélo Brival |
+| **59** | [BMC Teammachine R 01 Five Shimano 105 Di2 12v Metallic Red Carbon 2027](https://www.materiel-velo.com/1891884-velo-route-bmc-teammachine-r-01-five-shimano-105-di2-12v-metallic-red-carbon-2027.html) | 4 899 € | 56 | 105 Di2 | Hors zone | Livraison Materiel-velo.com | Materiel-velo.com |
+
+À vérifier avant de contacter le vendeur :
+
+- ORCA AERO M35iLTD PWR : livraison ou retrait au magasin de brive à confirmer
+- Madone SL 6 8e gén. : livraison ou retrait au magasin de brive à confirmer
+- Madone SL 6 8e gén. : livraison ou retrait au magasin de brive à confirmer
+- BMC Teammachine R 01 Five Shimano 105 Di2 12v Metallic Red Carbon 2027 : type de freins non précisé
+
+Écartées :
+
+- [Canyon Endurace CF SLX 8 AXS Aero](https://www.canyon.com/fr-fr/velos-de-route/velos-endurance/endurace/cf-slx/endurace-cf-slx-8-axs-aero/3712.html), 4 699 € : Taille 3XS, S incompatible
+- [Canyon Aeroad CF SLX 7 Di2](https://www.canyon.com/fr-fr/promo-velos/route/aeroad-cf-slx-7-di2/50053862.html), 4 649 € : Au-dessus du budget maximum (4 649 € pour 4 500 €)
+- [Canyon Aeroad CF SLX 7 Di2](https://www.canyon.com/fr-fr/promo-velos/route/aeroad-cf-slx-7-di2/50054091.html), 4 549 € : Au-dessus du budget maximum (4 549 € pour 4 500 €)
+- [Canyon Ultimate CFR Team CSR](https://www.canyon.com/fr-fr/promo-velos/professionnels/ultimate-cfr-team-csr/50051036.html), 4 699 € : Au-dessus du budget maximum (4 699 € pour 4 500 €)
+- [Canyon Aeroad CF SLX 8 Di2](https://www.canyon.com/fr-fr/promo-velos/route/aeroad-cf-slx-8-di2/50045250.html), 4 899 € : Au-dessus du budget maximum (4 899 € pour 4 500 €)
+- [Canyon Aeroad CF SLX 7 AXS](https://www.canyon.com/fr-fr/velos-de-route/velos-aero/aeroad/aeroad-cf-slx/aeroad-cf-slx-7-axs/4530.html), 4 799 € : Groupe non retenu (SRAM AXS)
+- [Focus Izalco Max 8.8 Shimano 105 Di2 12v DT Swiss E1800 Black 2026](https://www.materiel-velo.com/1892722-velo-route-focus-izalco-max-88-shimano-105-di2-12v-dt-swiss-e1800-black-2026.html), 2 699 € : Taille XS incompatible
+
+## Lundi 23 novembre 2026
+
 - Exécution « vélos neufs seulement » : collecte Apify sautée, aucun crédit consommé (la veille d’occasion du matin reste valable).
 - Canyon (neuf, lecture directe) : 39 vélos retenus pour analyse, dont 8 en promotion. 188 vélos sur 3 pages de liste, 50 hors sujet (gravel, cadre seul…), 99 hors budget, 1 fiche ouverte pour le stock par taille.
 - Alltricks (neuf, lecture directe) : 32 vélos retenus pour analyse, dont 9 en promotion. 32 vélos neufs sur 4 listes (Di2, Ultegra, carbone), dont 9 en promotion.
