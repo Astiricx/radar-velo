@@ -13,7 +13,7 @@ import { isAeroText } from '../apify/parse'
 import { NEUF } from './config'
 import { attr, blocks, euros, getPage, pause, productGroup, textByClass } from './html'
 import type { NewBike, RetailerResult } from './types'
-import { pickSize, riderRange, type SizeOffer } from './sizes'
+import { normalizeSize, pickSize, riderRange, type SizeOffer } from './sizes'
 
 const BASE = 'https://www.canyon.com'
 
@@ -164,7 +164,7 @@ export async function fetchCanyon(): Promise<RetailerResult> {
       opened++
       const product = parseCanyonProduct(html)
       if (!product || product.offers.length === 0) continue
-      const pick = pickSize(product.offers)
+      const pick = pickSize(product.offers.map((o) => ({ ...o, label: normalizeSize(o.label) })))
       if (!pick) continue // épuisé dans toutes les tailles
       const sizeOffer = product.offers.filter((o) => o.inStock && o.label === pick.size).sort((a, b) => a.price - b.price)[0]
       const price = sizeOffer?.price ?? t.price

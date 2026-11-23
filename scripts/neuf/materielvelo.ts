@@ -12,7 +12,7 @@ import { DEFAULT_CRITERIA, DEFAULT_NEW_BIKES } from '../../src/lib/criteria'
 import { isAeroText } from '../apify/parse'
 import { NEUF } from './config'
 import { attr, blocks, decode, euros, getPage, jsonLd, pause, productGroup, textByClass } from './html'
-import { pickSize } from './sizes'
+import { normalizeSize, pickSize } from './sizes'
 import type { NewBike, RetailerResult } from './types'
 
 const BASE = 'https://www.materiel-velo.com'
@@ -136,9 +136,9 @@ export async function fetchMaterielVelo(): Promise<RetailerResult> {
       const product = productGroup((await getPage(it.url)).html)
       opened++
       if (!product || product.offers.length === 0) continue
-      const pick = pickSize(product.offers)
+      const pick = pickSize(product.offers.map((o) => ({ ...o, label: normalizeSize(o.label) })))
       if (!pick) continue // épuisé
-      const brakes = product.offers.map((o) => o.props['braking type'] ?? o.props['type de freinage'] ?? '').find(Boolean) ?? ''
+      const brakes = product.offers.flatMap((o) => Object.entries(o.props).filter(([k]) => /frein|brak/.test(k)).map(([, v]) => v)).find(Boolean) ?? ''
       bikes.push({
         source: 'materiel-velo',
         id: `mv-${it.id}`,
@@ -147,7 +147,8 @@ export async function fetchMaterielVelo(): Promise<RetailerResult> {
         description: product.description,
         price: it.price,
         originalPrice: it.originalPrice,
-        images: [it.image, product.image].filter((s): s is string => !!s),
+        // Le site refuse l'affichage de ses photos sur d'autres sites : relais d'images public en secours.
+        images: [it.image, ...(it.image ? [`https://images.weserv.nl/?url=${encodeURIComponent(it.image.replace(/^https?:\/\//, ''))}&w=800`] : [])],
         seller: 'Materiel-velo.com',
         market: 'neuf',
         size: pick.size,
