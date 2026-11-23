@@ -309,6 +309,20 @@ async function main() {
     byId.set(listing.id, toSaved(analyse({ ...listing, firstSeen: saved.firstSeen }, false), saved.firstSeen, saved))
     refreshed++
   }
+  // Les autres annonces gardées sont re-notées avec les règles du jour (critères ou barème modifiés).
+  const touched = new Set([...analysed.map((a) => a.listing.id), ...real.map((r) => r.listing.id)])
+  for (const [id, saved] of byId) {
+    if (touched.has(id)) continue
+    const a = analyse(saved, false)
+    byId.set(id, {
+      ...saved,
+      score: a.score.total,
+      scoreDetail: a.score.parts,
+      rejection: a.rejection,
+      zone: a.zone.inside && a.zone.nearest ? a.zone.nearest.label : null,
+      distanceKm: Number.isFinite(a.zone.distance) ? a.zone.distance : null,
+    })
+  }
   const kept = [...byId.values()]
     .filter((s) => daysBetween(s.lastSeen ?? s.firstSeen, date) <= (s.market === 'neuf' ? MAX_AGE_DAYS_NEW : MAX_AGE_DAYS))
     .sort((a, b) => Number(!!a.rejection) - Number(!!b.rejection) || b.score - a.score || a.price - b.price)

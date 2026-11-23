@@ -127,7 +127,11 @@ export async function fetchMaterielVelo(): Promise<RetailerResult> {
 
   const bikes: NewBike[] = []
   let opened = 0
-  for (const it of candidates.slice(0, NEUF.maxProductPages)) {
+  // Au-delà du plafond de fiches, on en ouvre chaque jour une autre partie (rotation).
+  const day = Math.floor(Date.now() / 86_400_000)
+  const start = candidates.length > NEUF.maxProductPages ? (day * NEUF.maxProductPages) % candidates.length : 0
+  const batch = [...candidates.slice(start), ...candidates.slice(0, start)].slice(0, NEUF.maxProductPages)
+  for (const it of batch) {
     try {
       const product = productGroup((await getPage(it.url)).html)
       opened++
