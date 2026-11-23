@@ -2,7 +2,7 @@
 
 ## Lundi 23 novembre 2026
 
-- Collecte Apify désactivée : le secret APIFY_TOKEN n’est pas renseigné.
+- Exécution « vélos neufs seulement » : collecte Apify sautée, aucun crédit consommé (la veille d’occasion du matin reste valable).
 - Canyon (neuf, lecture directe) : 39 vélos retenus pour analyse, dont 8 en promotion. 188 vélos sur 3 pages de liste, 50 hors sujet (gravel, cadre seul…), 99 hors budget, 1 fiche ouverte pour le stock par taille.
 - Alltricks (neuf, lecture directe) : 32 vélos retenus pour analyse, dont 9 en promotion. 32 vélos neufs sur 4 listes (Di2, Ultegra, carbone), dont 9 en promotion.
 - Rose (neuf, lecture directe) : 1 vélo retenu pour analyse, dont 1 en promotion. 12 vélos en promotion, 3 de route, 1 dans le budget, 1 fiche ouverte.
