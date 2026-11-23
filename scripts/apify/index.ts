@@ -46,7 +46,11 @@ export async function collectFromApify(today: string, warnings: string[], seenId
   const fixtures = process.env.APIFY_FIXTURES
 
   if (!APIFY.token && !fixtures) {
-    notes.push('Collecte Apify désactivée : le secret APIFY_TOKEN n’est pas renseigné.')
+    notes.push(
+      process.env.VEILLE_NEUF_ONLY === 'true'
+        ? 'Collecte Apify sautée : exécution « vélos neufs seulement », aucun crédit consommé.'
+        : 'Collecte Apify désactivée : le secret APIFY_TOKEN n’est pas renseigné.',
+    )
     return { listings, notes }
   }
   const run = fixtures ? fixtureRunner(fixtures) : apifyRunner(APIFY.token)

@@ -73,6 +73,7 @@ jobs:
           BUYCYCLE_ENABLED: ${{ vars.BUYCYCLE_ENABLED }}
           LEBONCOIN_SCOPE: ${{ vars.LEBONCOIN_SCOPE }}
           VEILLE_RESCAN: ${{ inputs.rescan && 'true' || 'false' }}
+          VEILLE_NEUF_ONLY: ${{ inputs.neuf_only && 'true' || 'false' }}
           VEILLE_DEBUG: ${{ inputs.debug && 'true' || 'false' }}
           TROCVELO_LIST_PAGES: ${{ (inputs.backfill && '3') || vars.TROCVELO_LIST_PAGES }}
           TROCVELO_API_PAGES: ${{ vars.TROCVELO_API_PAGES }}
