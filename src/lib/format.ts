@@ -55,3 +55,9 @@ export function priceDrop(l: { price: number; priceHistory?: { d: string; p: num
   if (!first || first.p <= l.price) return null
   return { amount: first.p - l.price, since: first.d }
 }
+
+/** Vélo neuf vendu par une marque ou un magasin (promotion, déstockage). */
+export const isNewBike = (l: { market?: string }) => l.market === 'neuf'
+
+/** Remise d'un vélo neuf par rapport au prix barré du magasin, en %, ou null. */
+export const promoPct = (l: { price: number; originalPrice?: number }) => discountPct(l.price, l.originalPrice)

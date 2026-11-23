@@ -1,5 +1,7 @@
 export type BikeType = 'route' | 'gravel' | 'urbain' | 'vae' | 'clm'
-export type SourceId = 'leboncoin' | 'troc-velo' | 'buycycle' | 'decathlon'
+export type SourceId = 'leboncoin' | 'troc-velo' | 'buycycle' | 'decathlon' | 'canyon' | 'alltricks' | 'rose'
+/** « neuf » : vélo neuf vendu par une marque ou un magasin (promotion, déstockage). Absent : occasion. */
+export type Market = 'neuf' | 'occasion'
 export type Groupset =
   | 'dura-ace-di2'
   | 'ultegra-di2'
@@ -67,6 +69,12 @@ export interface Listing {
   firstSeen?: string
   /** Prix relevés par la veille, du plus ancien au plus récent. */
   priceHistory?: { d: string; p: number }[]
+  /** Neuf (magasin ou marque) ou occasion. Absent : occasion. */
+  market?: Market
+  /** Vélo neuf : prix barré affiché par le magasin (prix avant remise). */
+  originalPrice?: number
+  /** Vélo neuf : tailles en stock relevées sur la fiche du magasin. */
+  sizesInStock?: string[]
 }
 
 /** Une zone de recherche : une ville centre et un rayon. */
@@ -169,6 +177,8 @@ export interface Filters {
   type: BikeType | 'all'
   source: SourceId | 'all'
   status: Status | 'all'
+  /** Neuf, occasion ou les deux (absent des filtres enregistrés avant son ajout). */
+  market?: Market | 'all'
   priceMin: string
   priceMax: string
 }

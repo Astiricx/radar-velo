@@ -1,6 +1,6 @@
 import { Ban, MapPin, TrainFront } from 'lucide-react'
 import { GROUPSET_LABELS, TYPE_LABELS } from '../lib/criteria'
-import { eur, plural } from '../lib/format'
+import { eur, isNewBike, plural } from '../lib/format'
 import { DEFAULT_TRAIN, TRAIN_TONE, TRAIN_ZONE_ID, ZONE_TONES } from '../lib/zones'
 import type { Criteria, Row, ZoneFilter } from '../types'
 import { BikeThumb } from './BikeThumb'
@@ -21,6 +21,7 @@ export function Summary({ criteria: c, kept, rejected, zoneFilter, onZone, onOpe
   const countIn = (id: string) => kept.filter((r) => r.zone.inside && r.zone.nearest?.id === id).length
   const shippedOnly = kept.filter((r) => !r.zone.inside).length
   const byTrain = kept.filter((r) => r.zone.train).length
+  const brandNew = kept.filter((r) => isNewBike(r.listing)).length
   const train = { ...DEFAULT_TRAIN, ...c.train }
   const lines = [
     c.types.map((t) => TYPE_LABELS[t]).join(', ') || 'Aucun type',
@@ -38,6 +39,11 @@ export function Summary({ criteria: c, kept, rejected, zoneFilter, onZone, onOpe
         <p className="font-display text-2xl font-bold leading-tight">
           <span className="tnum">{kept.length}</span> {kept.length > 1 ? 'annonces retenues' : 'annonce retenue'},{' '}
           <span className="tnum text-muted">{rejected.length} {rejected.length > 1 ? 'écartées' : 'écartée'}</span>
+          {brandNew > 0 && (
+            <span className="mt-1 block font-sans text-sm font-medium text-good">
+              dont {plural(brandNew, 'vélo neuf en vente', 'vélos neufs en vente')}, {plural(kept.length - brandNew, 'occasion', 'occasions')}
+            </span>
+          )}
         </p>
         <ul className="flex min-w-0 flex-1 flex-wrap gap-1.5">
           {lines.map((line) => (

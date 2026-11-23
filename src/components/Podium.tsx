@@ -1,8 +1,9 @@
 import { Trophy } from 'lucide-react'
 import { SOURCES } from '../data/sources'
-import { distanceLabel, eur, priceDrop } from '../lib/format'
+import { distanceLabel, eur, isNewBike, priceDrop, promoPct } from '../lib/format'
 import type { Row, ScorePart } from '../types'
 import { BikeThumb } from './BikeThumb'
+import { MarketBadge } from './MarketBadge'
 import { ScoreBib } from './ScoreBib'
 
 interface Props {
@@ -26,7 +27,7 @@ function strengths(parts: ScorePart[]) {
 
 /**
  * Podium : les trois meilleures annonces selon le score, avec ce qui leur vaut leurs points
- * et ce qui leur en fait perdre. Il suit les filtres (zone, type, plateforme, prix).
+ * et ce qui leur en fait perdre. Il suit les filtres (zone, type, neuf ou occasion, plateforme, prix).
  */
 export function Podium({ rows, onOpen }: Props) {
   const top = [...rows].sort((a, b) => b.score.total - a.score.total || a.listing.price - b.listing.price).slice(0, 3)
@@ -55,8 +56,10 @@ export function Podium({ rows, onOpen }: Props) {
                   <p className="line-clamp-2 font-semibold leading-snug">{l.title}</p>
                   <p className="mt-1 flex flex-wrap items-baseline gap-x-2 text-sm">
                     <span className="tnum font-display text-lg font-bold">{eur(l.price)}</span>
+                    {isNewBike(l) && l.originalPrice && promoPct(l) !== null && <s className="text-muted">{eur(l.originalPrice)}</s>}
                     {drop && <span className="text-good">−{eur(drop.amount)}</span>}
                     <span className={`rounded px-1.5 py-px text-[11px] font-medium ${SOURCES[l.source].badge}`}>{SOURCES[l.source].label}</span>
+                    <MarketBadge listing={l} />
                   </p>
                   <p className="mt-1 truncate text-xs text-muted">
                     {l.shipping && !zone.inside ? `${l.city}, livraison` : `${l.city}, ${distanceLabel(zone.distance, zone.nearest?.center, zone.train)}`}

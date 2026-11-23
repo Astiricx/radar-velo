@@ -1,9 +1,10 @@
-# Radar vélo d'occasion
+# Radar vélo
 
-Tableau de bord pour centraliser une recherche de vélo de route d'occasion entre
-**deux zones** : la région parisienne et Saint-Nazaire / Loire-Atlantique.
-Annonces agrégées (Leboncoin, Troc-Vélo, Decathlon Occasion), filtre automatique
-selon tes critères, score de pertinence, et suivi de chaque annonce jusqu'à l'achat.
+Tableau de bord pour centraliser une recherche de vélo de route, d'occasion entre
+**deux zones** (la région parisienne et Saint-Nazaire / Loire-Atlantique) ou neuf en
+promotion et livré. Annonces agrégées (Leboncoin, buycycle, Troc-Vélo), vélos neufs
+en promotion ou en déstockage (Canyon, Rose, Alltricks), filtre automatique selon
+tes critères, score de pertinence, et suivi de chaque annonce jusqu'à l'achat.
 
 React 19, TypeScript, Vite 6, Tailwind CSS 4, icônes Lucide. Aucune base de données :
 tout est enregistré dans le `localStorage` du navigateur.
@@ -98,8 +99,10 @@ dossier `dist`). Aucune variable d'environnement n'est nécessaire : sans
 Tous les jours à 8 h UTC (9 h à Paris en hiver, 10 h en été), le workflow
 `.github/workflows/daily-analysis.yml` lance `scripts/daily-check.ts` :
 
-1. il collecte les annonces récentes sur **Leboncoin** et **Troc-Vélo** via
-   Apify (voir plus bas), plus celles déposées dans `data/inbox.json` ;
+1. il collecte les annonces récentes sur **Leboncoin**, **buycycle** et
+   **Troc-Vélo** via Apify (voir plus bas), les **vélos neufs en promotion** chez
+   Canyon, Rose et Alltricks (voir « Vélos neufs en promotion »), plus les annonces
+   déposées dans `data/inbox.json` ;
 2. il ignore celles déjà analysées (`data/state.json`) ;
 3. il lit dans le titre et la description le groupe, le cadre, les freins, la
    taille, l'année, les roues et le capteur de puissance. Ce que l'annonce ne
@@ -223,6 +226,42 @@ complète sans appeler Apify.
 > contrôle seul (`COMMIT_RESULTS=false`), réactive-la depuis l'onglet Actions si
 > GitHub te prévient.
 
+### Vélos neufs en promotion (Canyon, Rose, Alltricks)
+
+`scripts/neuf` lit chaque jour, directement depuis GitHub et **sans Apify** (donc
+sans toucher au crédit) :
+
+- **Canyon** : les vélos de route de l'Outlet (promotions, fins de série, et
+  reconditionnés par Canyon, classés en occasion) et la gamme aéro Aeroad. La
+  vignette donne le prix barré et souvent les seules tailles restantes ; sinon la
+  fiche est ouverte (12 au plus par jour) pour lire le stock **taille par taille**
+  et la taille de cycliste conseillée ;
+- **Alltricks** : les listes « vélo route Di2 », « Ultegra », « Ultegra Di2 » et
+  « vélo carbone route » (toutes marques : BMC, Trek, Scott, Lapierre, Orbea…), avec
+  le prix barré pendant les promotions et les tailles proposées à l'achat. Le
+  reconditionné est laissé de côté ;
+- **Rose** : la page « Vélos en promotion », puis la fiche des vélos de route dans le
+  budget (description, tailles proposées). Rose n'affiche pas le stock par taille :
+  il est marqué « à confirmer ».
+
+Chaque vélo passe par le **même filtre strict** (carbone, disques, Shimano Di2 ou
+Ultegra, taille M / M-L / 56 / 57 **en stock**, 4 500 € au plus) et le même score.
+Entre plusieurs tailles de tes critères, celle dont la plage de taille de cycliste
+du magasin couvre 1,80 m est préférée ; un écart est signalé « À vérifier ». Un
+vélo neuf est toujours livré. S'il n'apparaît plus deux jours de suite (promotion
+terminée, épuisé), il quitte le site pour ne pas afficher un prix périmé.
+
+| Variable                 | Défaut | Rôle |
+| ------------------------ | -----: | ---- |
+| `NEUF_ENABLED`           | `true` | `false` : plus aucun vélo neuf |
+| `CANYON_ENABLED`, `ALLTRICKS_ENABLED`, `ROSE_ENABLED` | `true` | `false` : ne plus lire ce magasin |
+| `NEUF_MAX_PRODUCT_PAGES` | `12`   | Fiches produit ouvertes par magasin et par jour |
+
+`npm run test:apify` vérifie aussi la lecture des magasins sur des extraits de leurs
+vraies pages (`scripts/neuf/fixtures`). Si un site change sa mise en page, le
+workflow manuel « Sonde des sources » relit des adresses depuis GitHub et dépose les
+pages sur la branche `probe-output` pour étude.
+
 ## Ce que fait l'application
 
 - **Deux zones de recherche.** Région parisienne (220 km autour de Paris) et
@@ -232,10 +271,14 @@ complète sans appeler Apify.
   « Critères », et chaque zone peut être désactivée.
 - **Vraies annonces.** Leboncoin, buycycle et Troc-Vélo, avec leur lien direct et
   la photo du vendeur ; les écartées restent consultables avec leur motif.
+- **Neuf ou occasion.** Les vélos neufs en promotion (Canyon, Rose, Alltricks) portent
+  un badge « Neuf », avec la remise et le prix barré du magasin, et les tailles en
+  stock. Le sélecteur « Tous / Neuf uniquement / Occasion uniquement » filtre la
+  liste, le tableau et le podium.
 - **Podium.** Les trois meilleures annonces selon les filtres en cours, avec les
   critères qui leur rapportent des points et ceux qui leur en coûtent.
 - **Baisses de prix.** Chaque prix relevé par la veille est gardé ; une baisse
-  s'affiche sur la carte et le podium. Les nouvelles du jour sont marquées « Nouveau » ;
+  s'affiche sur la carte et le podium. Les nouvelles du jour sont marquées « Ajoutée aujourd'hui » ;
   « Actualiser » recharge le dernier résultat.
 - **Filtre automatique.** Toute annonce hors budget maximum, hors type, hors taille,
   sans cadre carbone ou freins à disque, avec une transmission non retenue, ou hors
@@ -248,8 +291,8 @@ complète sans appeler Apify.
 - **Score sur 100**, expliqué ligne par ligne dans la fiche de l'annonce.
 - **Suivi.** Statut, vendeur, contact, lieu et date de rendez-vous, prix négocié,
   rappel daté, notes. Les rappels remontent en haut du tableau de bord.
-- **Filtres et tris.** Zone, recherche libre, type, tranche de prix, statut,
-  plateforme ; tri par score, prix ou date. Les compteurs par zone en haut de page
+- **Filtres et tris.** Neuf ou occasion, zone, recherche libre, type, tranche de prix,
+  statut, plateforme ; tri par score, prix ou date. Les compteurs par zone en haut de page
   servent aussi de filtre rapide.
 - **Ajout manuel.** « Ajouter une annonce » enregistre une vraie annonce avec le lien
   de sa photo. Elle est filtrée, rattachée à une zone et notée comme les autres.
@@ -343,14 +386,14 @@ typographie : aucune illustration dessinée.
 | Critère              | Points | Règle                                                                    |
 | -------------------- | -----: | ------------------------------------------------------------------------ |
 | Prix                 |     25 | 25 jusqu'au budget idéal, puis dégressif jusqu'à 10 au maximum            |
-| Décote               |     10 | 10 à partir de 45 % sous le prix neuf                                     |
+| Décote ou remise     |     10 | Occasion : 10 à partir de 45 % sous le prix neuf. Neuf : 10 à partir de 30 % de remise sur le prix barré, 3 sans remise |
 | Transmission         |     15 | Dura-Ace Di2 15, Ultegra Di2 13, 105 Di2 9, Ultegra mécanique 6           |
 | Cadre aéro           |      8 | Aéro 8, polyvalent 2                                                      |
 | Capteur de puissance |     10 | Présent 10                                                                |
 | Roues                |      8 | Carbone ≥ 45 mm 8, ≥ 30 mm 5, carbone bas 3                               |
 | Prolongateurs        |      6 | Montage prévu 6, kit tiers 4, à vérifier 2                                |
 | Distance             |     10 | Depuis le centre de la zone la plus proche : ≤ 30 km 10, ≤ 80 km 8, ≤ 150 km 6, dans le rayon 4 ; livraison au moins 7 |
-| État et âge          |      8 | État (1 à 4) + âge du modèle (1 à 4)                                      |
+| État et âge          |      8 | Occasion : état (1 à 4) + âge du modèle (1 à 4). Neuf : 8 (jamais roulé, garantie complète) |
 
 Un bonus décoché dans les critères sort du calcul ; le total est ramené sur 100.
 

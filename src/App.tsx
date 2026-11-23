@@ -13,7 +13,7 @@ import { Toolbar } from './components/Toolbar'
 import { useTheme } from './hooks/useTheme'
 import { LAST_BATCH, listingsUpTo, runSearch } from './lib/aggregator'
 import { DEFAULT_CRITERIA, rejectionReason } from './lib/criteria'
-import { plural, relativeDay, shortDate } from './lib/format'
+import { isNewBike, plural, relativeDay, shortDate } from './lib/format'
 import { useLiveListings } from './lib/live'
 import { EMPTY_TRACKING } from './lib/pipeline'
 import { scoreListing } from './lib/scoring'
@@ -21,7 +21,7 @@ import { clearAllStorage, useLocalStorage } from './lib/storage'
 import { locate } from './lib/zones'
 import type { Criteria, Filters, Listing, Row, SortKey, Status, SyncState, Tracking, ViewMode } from './types'
 
-const NO_FILTERS: Filters = { query: '', zone: 'all', type: 'all', source: 'all', status: 'all', priceMin: '', priceMax: '' }
+const NO_FILTERS: Filters = { query: '', zone: 'all', type: 'all', source: 'all', status: 'all', market: 'all', priceMin: '', priceMax: '' }
 const FIRST_SYNC: SyncState = { batch: 1, lastRun: null, newIds: [] }
 const NO_TRACKING: Record<string, Tracking> = {}
 const NO_CUSTOM: Listing[] = []
@@ -39,7 +39,9 @@ export default function App() {
   const [tracking, setTracking] = useLocalStorage<Record<string, Tracking>>('tracking', NO_TRACKING)
   const [custom, setCustom] = useLocalStorage<Listing[]>('custom', NO_CUSTOM)
   const [sync, setSync] = useLocalStorage<SyncState>('sync', FIRST_SYNC)
-  const [filters, setFilters] = useLocalStorage<Filters>('filters', NO_FILTERS)
+  const [storedFilters, setFilters] = useLocalStorage<Filters>('filters', NO_FILTERS)
+  // Filtres enregistrés avant l'ajout d'un nouveau filtre : les valeurs manquantes reprennent leur défaut.
+  const filters = useMemo(() => ({ ...NO_FILTERS, ...storedFilters }), [storedFilters])
   const [sort, setSort] = useLocalStorage<SortKey>('sort', 'score')
   const [view, setView] = useLocalStorage<ViewMode>('view', 'cards')
 
@@ -69,6 +71,10 @@ export default function App() {
   }, [custom, sync, criteria, tracking, demoMode, live])
 
   const kept = useMemo(() => rows.filter((r) => !r.rejection), [rows])
+  const marketCounts = useMemo(() => {
+    const neuf = kept.filter((r) => isNewBike(r.listing)).length
+    return { all: kept.length, neuf, occasion: kept.length - neuf }
+  }, [kept])
   const rejected = useMemo(() => rows.filter((r) => r.rejection), [rows])
 
   const visible = useMemo(() => {
@@ -81,6 +87,8 @@ export default function App() {
         if (filters.zone !== 'all' && filters.zone !== 'livraison' && !(zone.inside && zone.nearest?.id === filters.zone)) return false
         if (filters.type !== 'all' && l.type !== filters.type) return false
         if (filters.source !== 'all' && l.source !== filters.source) return false
+        if (filters.market === 'neuf' && !isNewBike(l)) return false
+        if (filters.market === 'occasion' && isNewBike(l)) return false
         if (filters.status !== 'all' && t.status !== filters.status) return false
         if (l.price < min || l.price > max) return false
         return q === '' || `${l.title} ${l.brand} ${l.model} ${l.city}`.toLowerCase().includes(q)
@@ -139,7 +147,7 @@ export default function App() {
   const status =
     message ||
     (!demoMode
-      ? `Veille du ${live.updatedAt ? shortDate(`${live.updatedAt}T12:00:00Z`) : '?'}, Leboncoin, buycycle et Troc-Vélo, ${zoneNames}${criteria.train?.enabled === false ? '' : `, ${String(criteria.train?.maxHours ?? 3).replace('.', ',')} h de train`}`
+      ? `Veille du ${live.updatedAt ? shortDate(`${live.updatedAt}T12:00:00Z`) : '?'}, occasion (Leboncoin, buycycle, Troc-Vélo) et neuf en promotion (Canyon, Rose, Alltricks), ${zoneNames}${criteria.train?.enabled === false ? '' : `, ${String(criteria.train?.maxHours ?? 3).replace('.', ',')} h de train`}`
       : sync.lastRun
         ? `Démonstration, dernière recherche ${relativeDay(sync.lastRun)}, ${zoneNames}`
         : `Démonstration, ${zoneNames}`)
@@ -187,6 +195,7 @@ export default function App() {
           onView={setView}
           shown={visible.length}
           total={kept.length}
+          marketCounts={marketCounts}
         />
 
         {view !== 'pipeline' && <Podium rows={visible} onOpen={setOpenId} />}
@@ -212,7 +221,7 @@ export default function App() {
         <footer className="border-t border-line pt-4 text-xs text-muted">
           {demoMode
             ? "Les annonces de démonstration sont inventées : elles n'ont pas de lien et leur photo montre un vélo comparable (Unsplash). "
-            : "Les annonces viennent de la veille quotidienne (Leboncoin, buycycle et Troc-Vélo, via Apify) : chaque lien ouvre l'annonce elle-même, avec la photo du vendeur. Les écartées restent consultables avec leur motif. "}
+            : "Les annonces d'occasion viennent de la veille quotidienne (Leboncoin, buycycle et Troc-Vélo, via Apify), les vélos neufs en promotion des sites de Canyon, Rose et Alltricks, relus chaque jour : chaque lien ouvre l'annonce ou la fiche du vélo elle-même. Un prix barré est celui affiché par le magasin. Les écartées restent consultables avec leur motif. "}
           Tes statuts, notes, critères et annonces ajoutées restent dans ce navigateur.
         </footer>
       </main>

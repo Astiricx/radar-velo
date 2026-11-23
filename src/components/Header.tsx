@@ -28,7 +28,7 @@ export function Header({ searching, searchLabel, status, onSearch, onAdd, onCrit
             <Bike size={22} aria-hidden />
           </span>
           <div>
-            <h1 className="font-display text-2xl font-bold leading-none">Radar vélo d'occasion</h1>
+            <h1 className="font-display text-2xl font-bold leading-none">Radar vélo</h1>
             <p className="mt-1 text-xs text-muted" aria-live="polite">{status}</p>
           </div>
         </div>

@@ -2,7 +2,7 @@
   "name": "radar-velo",
   "private": true,
   "version": "1.0.0",
-  "description": "Veille de vélos de route d'occasion : annonces filtrées et notées, suivi jusqu'à l'achat. Zones : région parisienne et Saint-Nazaire.",
+  "description": "Veille de vélos de route d'occasion et neufs en promotion : annonces filtrées et notées, suivi jusqu'à l'achat. Zones : région parisienne et Saint-Nazaire.",
   "type": "module",
   "engines": {
     "node": ">=20"
@@ -13,7 +13,7 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "daily-check": "tsx scripts/daily-check.ts",
-    "test:apify": "tsx scripts/apify/selftest.ts"
+    "test:apify": "tsx scripts/apify/selftest.ts && tsx scripts/neuf/selftest.ts"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

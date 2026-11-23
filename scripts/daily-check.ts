@@ -5,7 +5,8 @@
  * .github/workflows/daily-analysis.yml).
  *
  * 1. Rassemble les annonces candidates :
- *    - Leboncoin et Troc-Vélo via Apify (scripts/apify), si le secret APIFY_TOKEN existe ;
+ *    - Leboncoin, buycycle et Troc-Vélo via Apify (scripts/apify), si le secret APIFY_TOKEN existe ;
+ *    - vélos neufs en promotion chez Canyon, Rose et Alltricks (scripts/neuf), lecture directe ;
  *    - data/inbox.json : annonces déposées à la main ;
  *    - la simulation du jour (scripts/simulation.ts), seulement si VEILLE_SIMULATION=true.
  * 2. Ignore celles déjà vues (data/state.json).
@@ -33,6 +34,7 @@ import { locate } from '../src/lib/zones'
 import type { Listing, ScoreResult, ZoneMatch } from '../src/types'
 import { collectFromApify } from './apify'
 import { PARSER_VERSION } from './apify/parse'
+import { collectNewBikes } from './neuf'
 import { simulateDay } from './simulation'
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
@@ -46,6 +48,8 @@ const FILES = {
 const JOURNAL_TITLE = '# Journal de la veille quotidienne'
 /** Une annonce qui n'a pas été revue depuis ce nombre de jours est retirée du site (vendue ou retirée). */
 const MAX_AGE_DAYS = 45
+/** Vélo neuf : une promotion qui n'est plus affichée a pris fin, on ne garde pas un prix périmé. */
+const MAX_AGE_DAYS_NEW = 2
 
 const date = process.env.VEILLE_DATE?.match(/^\d{4}-\d{2}-\d{2}$/) ? process.env.VEILLE_DATE : new Date().toISOString().slice(0, 10)
 const simulation = (process.env.VEILLE_SIMULATION ?? 'false').toLowerCase() === 'true'
@@ -223,6 +227,8 @@ function toSaved(a: Analysed, firstSeen: string, previous?: SavedListing): Saved
   if (history[history.length - 1].p !== a.listing.price) history.push({ d: date, p: a.listing.price })
   return {
     ...a.listing,
+    // Neuf : la date de « publication » est celle où la veille a vu la promotion pour la première fois.
+    publishedAt: a.listing.market === 'neuf' && previous?.publishedAt ? previous.publishedAt : a.listing.publishedAt,
     priceHistory: history.slice(-12),
     firstSeen,
     lastSeen: date,
@@ -257,6 +263,10 @@ async function main() {
 
   // En réanalyse complète, on rouvre aussi les fiches déjà vues.
   const collected = await collectFromApify(date, warnings, rescan ? [] : Object.keys(state.seen))
+  // Neuf : lecture directe des magasins, indépendante d'Apify et de son crédit.
+  const newBikes = await collectNewBikes(date, warnings)
+  collected.listings.push(...newBikes.listings)
+  collected.notes.push(...newBikes.notes)
   const inbox = readInbox(warnings)
   const real = [...collected.listings, ...inbox].map((listing) => ({ listing, simulated: false }))
   const simulated = simulation ? simulateDay(date).map((listing) => ({ listing, simulated: true })) : []
@@ -300,7 +310,7 @@ async function main() {
     refreshed++
   }
   const kept = [...byId.values()]
-    .filter((s) => daysBetween(s.lastSeen ?? s.firstSeen, date) <= MAX_AGE_DAYS)
+    .filter((s) => daysBetween(s.lastSeen ?? s.firstSeen, date) <= (s.market === 'neuf' ? MAX_AGE_DAYS_NEW : MAX_AGE_DAYS))
     .sort((a, b) => Number(!!a.rejection) - Number(!!b.rejection) || b.score - a.score || a.price - b.price)
   writeJson(FILES.listings, {
     updatedAt: date,

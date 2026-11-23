@@ -7,7 +7,7 @@
  * l'application affiche (« À vérifier auprès du vendeur »).
  */
 import { DEFAULT_CRITERIA } from '../../src/lib/criteria'
-import type { BikeType, Brakes, Condition, ExtensionFit, Frame, Groupset, Listing, SourceId } from '../../src/types'
+import type { BikeType, Brakes, Condition, ExtensionFit, Frame, Groupset, Listing, Market, SourceId } from '../../src/types'
 
 /**
  * Version des règles de lecture. À augmenter quand elles changent : les fiches Troc-Vélo et
@@ -40,6 +40,14 @@ export interface RawAd {
   debug?: string
   /** Points déjà connus comme incertains (lieu approximatif…). */
   toVerify?: string[]
+  /** Vélo neuf d'un magasin ou d'une marque (voir scripts/neuf). Absent : occasion. */
+  market?: Market
+  /** Prix barré du magasin. */
+  originalPrice?: number
+  /** Tailles en stock chez le magasin. */
+  sizesInStock?: string[]
+  /** Taille déjà choisie d'après le stock du magasin : elle remplace la lecture du texte. */
+  fixedSize?: string
 }
 
 /** Minuscules, sans accents, espaces normalisés : le texte sur lequel on cherche. */
@@ -306,12 +314,15 @@ export function toListing(raw: RawAd, today: string): Listing {
   const braking = fold(attrs['type de freinage'] ?? attrs.freinage ?? '')
   const { frame, doubt: f } = material ? detectFrame(`cadre ${material}`) : detectFrame(t)
   const { brakes, doubt: b } = braking ? detectBrakes(braking) : detectBrakes(t)
-  const { size, doubt: sz } = detectSize(raw.title, t, attrs.bicycle_size ?? attrs['taille du cadre'] ?? attrs.taille ?? attrs.size ?? '')
+  const read = detectSize(raw.title, t, attrs.bicycle_size ?? attrs['taille du cadre'] ?? attrs.taille ?? attrs.size ?? '')
+  // Magasin : la taille vient du stock affiché, pas du texte.
+  const { size, doubt: sz } = raw.fixedSize ? { size: raw.fixedSize, doubt: undefined } : read
   const declaredYear = Number((attrs.annee ?? attrs.year ?? '').match(/\b(19[89]\d|20[0-3]\d)\b/)?.[1] ?? 0)
   const year = declaredYear || detectYear(t)
   for (const d of [g, f, b, sz]) if (d) doubts.push(d)
   if (!size) doubts.push('Taille non précisée')
-  if (!year) doubts.push('Année non précisée')
+  if (!year && raw.market !== 'neuf') doubts.push('Année non précisée')
+  const isNew = raw.market === 'neuf'
 
   return {
     id: raw.id,
@@ -327,7 +338,7 @@ export function toListing(raw: RawAd, today: string): Listing {
     type: detectType(t, attrs.bicycle_type ?? attrs['type de velo'] ?? attrs.pratique ?? attrs.type ?? ''),
     size: size ?? '?',
     price: Math.round(raw.price),
-    newPrice: raw.newPrice ?? newPrice(t, raw.price),
+    newPrice: isNew ? undefined : raw.newPrice ?? newPrice(t, raw.price),
     description: clean(raw.description, 1500),
     city: raw.city || 'Lieu inconnu',
     coords: raw.coords,
@@ -340,10 +351,13 @@ export function toListing(raw: RawAd, today: string): Listing {
     powerMeter: POWER.test(t),
     wheelDepth: wheelDepth(t),
     extensions: extensionsFit(t),
-    condition: condition(t, attrs.condition ?? attrs.etat ?? attrs['etat'] ?? ''),
+    condition: isNew ? 'neuf' : condition(t, attrs.condition ?? attrs.etat ?? attrs['etat'] ?? ''),
     km: kilometres(t),
     batch: 0,
     toVerify: doubts.length > 0 ? doubts : undefined,
     firstSeen: today,
+    ...(raw.market ? { market: raw.market } : {}),
+    ...(raw.originalPrice ? { originalPrice: Math.round(raw.originalPrice) } : {}),
+    ...(raw.sizesInStock?.length ? { sizesInStock: raw.sizesInStock } : {}),
   }
 }

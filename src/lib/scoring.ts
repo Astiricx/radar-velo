@@ -1,15 +1,18 @@
 import { durationLabel } from '../data/stations'
 import type { Criteria, Listing, ScorePart, ScoreResult, ZoneMatch } from '../types'
 import { CONDITION_LABELS, EXTENSION_LABELS, GROUPSET_LABELS } from './criteria'
-import { discountPct, eur } from './format'
+import { discountPct, eur, isNewBike, promoPct } from './format'
 
 const clamp = (n: number, min: number, max: number) => Math.min(max, Math.max(min, n))
 
 /**
  * Score de pertinence sur 100.
- * Deux familles : le rapport qualité/prix (prix, décote, état) et la conformité
+ * Deux familles : le rapport qualité/prix (prix, décote ou remise, état) et la conformité
  * aux critères (groupe, bonus cochés, distance). Les bonus décochés dans les
  * critères sortent du calcul, et le total est ramené sur 100.
+ *
+ * Vélo neuf : la décote devient la remise sur le prix barré du magasin, et l'état et l'âge
+ * prennent tous leurs points (jamais roulé, garantie complète).
  */
 export function scoreListing(l: Listing, c: Criteria, zone: ZoneMatch): ScoreResult {
   const parts: ScorePart[] = []
@@ -23,13 +26,24 @@ export function scoreListing(l: Listing, c: Criteria, zone: ZoneMatch): ScoreRes
     max: 25,
   })
 
-  const discount = discountPct(l.price, l.newPrice)
-  parts.push({
-    label: 'Décote',
-    detail: discount === null ? 'Prix neuf inconnu' : `${discount} % sous le prix neuf (${eur(l.newPrice!)})`,
-    points: discount === null ? 4 : clamp(discount / 45, 0, 1) * 10,
-    max: 10,
-  })
+  if (isNewBike(l)) {
+    // Neuf : la remise du magasin sur son prix barré. 30 % de remise ou plus = plein score.
+    const promo = promoPct(l)
+    parts.push({
+      label: 'Remise',
+      detail: promo === null ? 'Prix catalogue, sans remise affichée' : `${promo} % de remise (prix barré ${eur(l.originalPrice!)})`,
+      points: promo === null ? 3 : clamp(promo / 30, 0, 1) * 10,
+      max: 10,
+    })
+  } else {
+    const discount = discountPct(l.price, l.newPrice)
+    parts.push({
+      label: 'Décote',
+      detail: discount === null ? 'Prix neuf inconnu' : `${discount} % sous le prix neuf (${eur(l.newPrice!)})`,
+      points: discount === null ? 4 : clamp(discount / 45, 0, 1) * 10,
+      max: 10,
+    })
+  }
 
   const groupPoints: Partial<Record<Listing['groupset'], number>> = {
     'dura-ace-di2': 15,
@@ -80,12 +94,17 @@ export function scoreListing(l: Listing, c: Criteria, zone: ZoneMatch): ScoreRes
     max: 10,
   })
 
-  // Année inconnue : note moyenne, ni bonus ni pénalité.
-  const age = l.year > 0 ? new Date().getFullYear() - l.year : 4
-  const agePts = age <= 1 ? 4 : age <= 3 ? 3 : age <= 5 ? 2 : 1
-  const condPts = { neuf: 4, 'tres-bon': 3, bon: 2, correct: 1 }[l.condition]
-  const model = l.year > 0 ? `modèle ${l.year}` : 'année non précisée'
-  parts.push({ label: 'État et âge', detail: `${CONDITION_LABELS[l.condition]}, ${model}`, points: agePts + condPts, max: 8 })
+  if (isNewBike(l)) {
+    // Neuf : jamais roulé, garantie constructeur complète, modèle de la saison ou de la précédente.
+    parts.push({ label: 'État et âge', detail: `Neuf, garantie constructeur${l.year > 0 ? `, modèle ${l.year}` : ''}`, points: 8, max: 8 })
+  } else {
+    // Année inconnue : note moyenne, ni bonus ni pénalité.
+    const age = l.year > 0 ? new Date().getFullYear() - l.year : 4
+    const agePts = age <= 1 ? 4 : age <= 3 ? 3 : age <= 5 ? 2 : 1
+    const condPts = { neuf: 4, 'tres-bon': 3, bon: 2, correct: 1 }[l.condition]
+    const model = l.year > 0 ? `modèle ${l.year}` : 'année non précisée'
+    parts.push({ label: 'État et âge', detail: `${CONDITION_LABELS[l.condition]}, ${model}`, points: agePts + condPts, max: 8 })
+  }
 
   const got = parts.reduce((sum, p) => sum + p.points, 0)
   const max = parts.reduce((sum, p) => sum + p.max, 0)

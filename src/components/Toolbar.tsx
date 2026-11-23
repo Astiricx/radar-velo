@@ -2,7 +2,7 @@ import { Kanban, LayoutGrid, RotateCcw, Search, Table2 } from 'lucide-react'
 import { SOURCE_LIST } from '../data/sources'
 import { TYPE_LABELS } from '../lib/criteria'
 import { STATUSES } from '../lib/pipeline'
-import type { BikeType, Filters, SortKey, ViewMode, Zone } from '../types'
+import type { BikeType, Filters, Market, SortKey, ViewMode, Zone } from '../types'
 
 interface Props {
   filters: Filters
@@ -17,7 +17,15 @@ interface Props {
   onView: (view: ViewMode) => void
   shown: number
   total: number
+  /** Annonces retenues par marché, pour le sélecteur « Tous / Neuf / Occasion ». */
+  marketCounts: Record<Market | 'all', number>
 }
+
+const MARKETS: { id: Market | 'all'; label: string }[] = [
+  { id: 'all', label: 'Tous' },
+  { id: 'neuf', label: 'Neuf uniquement' },
+  { id: 'occasion', label: 'Occasion uniquement' },
+]
 
 const VIEWS: { id: ViewMode; label: string; icon: typeof LayoutGrid }[] = [
   { id: 'cards', label: 'Cartes', icon: LayoutGrid },
@@ -95,6 +103,22 @@ export function Toolbar(p: Props) {
       </div>
 
       <div className="flex flex-wrap items-center gap-3">
+        <div className="inline-flex overflow-hidden rounded-md border border-line bg-surface" role="group" aria-label="Neuf ou occasion">
+          {MARKETS.map(({ id, label }) => {
+            const active = (f.market ?? 'all') === id
+            return (
+              <button
+                key={id}
+                type="button"
+                aria-pressed={active}
+                onClick={() => onFilters({ market: id })}
+                className={`inline-flex items-center gap-1.5 border-l border-line px-3 py-2 text-sm font-medium first:border-l-0 ${active ? 'bg-ink text-surface' : 'hover:bg-raised'}`}
+              >
+                {label} <span className={`tnum text-xs ${active ? 'opacity-80' : 'text-muted'}`}>{p.marketCounts[id]}</span>
+              </button>
+            )
+          })}
+        </div>
         <div className="inline-flex overflow-hidden rounded-md border border-line bg-surface" role="group" aria-label="Affichage">
           {VIEWS.map(({ id, label, icon: Icon }) => (
             <button

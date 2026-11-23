@@ -2,11 +2,12 @@ import { ExternalLink, Trash2, X } from 'lucide-react'
 import { useEffect } from 'react'
 import { SOURCES } from '../data/sources'
 import { CONDITION_LABELS, TYPE_LABELS } from '../lib/criteria'
-import { discountPct, distanceLabel, eur, relativeDay, shortDate } from '../lib/format'
+import { discountPct, distanceLabel, eur, isNewBike, promoPct, relativeDay, shortDate } from '../lib/format'
 import { directUrl } from '../lib/links'
 import type { Criteria, Row, Status, Tracking } from '../types'
 import { AttributeChips } from './AttributeChips'
 import { BikeThumb } from './BikeThumb'
+import { MarketBadge } from './MarketBadge'
 import { ScoreBib } from './ScoreBib'
 import { StatusSelect } from './StatusSelect'
 import { ZoneBadge } from './ZoneBadge'
@@ -24,6 +25,8 @@ interface Props {
 export function DetailDrawer({ row, criteria, onClose, onStatus, onPatch, onDelete }: Props) {
   const { listing: l, score, zone, tracking: t, rejection } = row
   const discount = discountPct(l.price, l.newPrice)
+  const brandNew = isNewBike(l)
+  const promo = promoPct(l)
   const patch = (p: Partial<Tracking>) => onPatch(l.id, p)
   const href = directUrl(l)
 
@@ -37,12 +40,14 @@ export function DetailDrawer({ row, criteria, onClose, onStatus, onPatch, onDele
     ['Type', TYPE_LABELS[l.type]],
     ['Taille', l.size],
     ['Année', l.year > 0 ? String(l.year) : 'Non précisée'],
+    ['Marché', brandNew ? `Neuf, vendu par ${SOURCES[l.source].label}` : 'Occasion'],
+    ...(brandNew && l.sizesInStock?.length ? [['Tailles en stock', l.sizesInStock.join(', ')] as [string, string]] : []),
     ['État', CONDITION_LABELS[l.condition]],
-    ['Kilométrage', l.km ? `${l.km.toLocaleString('fr-FR')} km` : 'Non précisé'],
+    ['Kilométrage', l.km ? `${l.km.toLocaleString('fr-FR')} km` : brandNew ? 'Neuf, jamais roulé' : 'Non précisé'],
     ['Cadre', `${l.frame}, freins à ${l.brakes}`],
     ['Lieu', `${l.city}, ${distanceLabel(zone.distance, zone.nearest?.center, zone.train)}`],
     ['Livraison', l.shipping ? 'Possible' : 'Remise en main propre'],
-    ['Publiée', `${shortDate(l.publishedAt)} (${relativeDay(l.publishedAt)})`],
+    [brandNew ? 'Promotion vue le' : 'Publiée', `${shortDate(l.publishedAt)} (${relativeDay(l.publishedAt)})`],
     ['Source', SOURCES[l.source].label],
   ]
 
@@ -63,7 +68,12 @@ export function DetailDrawer({ row, criteria, onClose, onStatus, onPatch, onDele
               <h2 className="text-xl font-semibold leading-snug">{l.title}</h2>
               <div className="mt-2 flex flex-wrap items-baseline gap-x-3">
                 <span className="tnum font-display text-4xl font-bold leading-none">{eur(l.price)}</span>
-                {discount !== null && <span className="text-sm text-muted">neuf {eur(l.newPrice!)}, soit {discount} % de décote</span>}
+                {brandNew && promo !== null && (
+                  <span className="text-sm text-muted">
+                    au lieu de <s>{eur(l.originalPrice!)}</s>, soit <span className="font-semibold text-good">{promo} % de remise</span>
+                  </span>
+                )}
+                {!brandNew && discount !== null && <span className="text-sm text-muted">neuf {eur(l.newPrice!)}, soit {discount} % de décote</span>}
               </div>
             </div>
             <ScoreBib score={score.total} />
@@ -75,7 +85,7 @@ export function DetailDrawer({ row, criteria, onClose, onStatus, onPatch, onDele
             <StatusSelect id="drawer-status" value={t.status} onChange={(s) => onStatus(l.id, s)} className="py-1.5 text-sm" />
             {href ? (
               <a href={href} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                Voir l'annonce sur {SOURCES[l.source].label} <ExternalLink size={15} aria-hidden />
+                {brandNew ? 'Voir le vélo' : "Voir l'annonce"} sur {SOURCES[l.source].label} <ExternalLink size={15} aria-hidden />
               </a>
             ) : (
               <span className="text-sm text-muted">
@@ -86,6 +96,7 @@ export function DetailDrawer({ row, criteria, onClose, onStatus, onPatch, onDele
 
           <section className="flex flex-col gap-3">
             <div className="flex flex-wrap gap-1.5">
+              <MarketBadge listing={l} />
               <ZoneBadge zone={zone} criteria={criteria} shipping={l.shipping} />
             </div>
             <AttributeChips listing={l} />

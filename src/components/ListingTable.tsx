@@ -1,9 +1,10 @@
 import { ArrowUpDown, ExternalLink } from 'lucide-react'
 import { SOURCES } from '../data/sources'
-import { distanceLabel, eur, relativeDay } from '../lib/format'
+import { distanceLabel, eur, isNewBike, promoPct, relativeDay } from '../lib/format'
 import { directUrl } from '../lib/links'
 import type { Criteria, Row, SortKey, Status } from '../types'
 import { BikeThumb } from './BikeThumb'
+import { MarketBadge } from './MarketBadge'
 import { ScoreBib } from './ScoreBib'
 import { StatusSelect } from './StatusSelect'
 import { ZoneBadge } from './ZoneBadge'
@@ -62,14 +63,27 @@ export function ListingTable({ rows, criteria, sort, onSort, onOpen, onStatus }:
                         {l.brand} {l.model}{' '}
                         <span className={`ml-1 inline-block rounded px-1.5 py-px text-[11px] font-medium ${SOURCES[l.source].badge}`}>{SOURCES[l.source].label}</span>
                       </span>
-                      {isNew && <span className="chip bg-gold-soft text-gold">Nouveau</span>}
+                      {isNew && <span className="chip bg-gold-soft text-gold">Ajoutée aujourd'hui</span>}
+                    </div>
+                    <div className="mt-1">
+                      <MarketBadge listing={l} />
                     </div>
                   </div>
                 </div>
               </td>
               <td className="px-3 py-2"><ScoreBib score={score.total} size="sm" /></td>
-              <td className="tnum px-3 py-2 text-right font-display text-xl font-bold">{eur(l.price)}</td>
-              <td className="px-3 py-2">{l.size}</td>
+              <td className="tnum px-3 py-2 text-right">
+                <div className="font-display text-xl font-bold">{eur(l.price)}</div>
+                {isNewBike(l) && l.originalPrice && promoPct(l) !== null && (
+                  <div className="text-xs text-muted">
+                    <s>{eur(l.originalPrice)}</s> <span className="font-semibold text-good">−{promoPct(l)} %</span>
+                  </div>
+                )}
+              </td>
+              <td className="px-3 py-2">
+                {l.size}
+                {isNewBike(l) && l.sizesInStock?.length ? <div className="text-xs text-muted">Stock : {l.sizesInStock.join(', ')}</div> : null}
+              </td>
               <td className="px-3 py-2">
                 <div>{l.city}</div>
                 <div className="text-xs text-muted first-letter:uppercase">

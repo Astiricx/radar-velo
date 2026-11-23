@@ -16,6 +16,10 @@ export const SOURCES: Record<SourceId, SourceMeta> = {
   'troc-velo': { id: 'troc-velo', label: 'Troc-Vélo', badge: 'bg-[#15803d] text-white' },
   buycycle: { id: 'buycycle', label: 'buycycle', badge: 'bg-[#334155] text-white' },
   decathlon: { id: 'decathlon', label: 'Decathlon Occasion', badge: 'bg-[#1d4ed8] text-white' },
+  // Magasins et marques : vélos neufs en promotion (et reconditionnés Canyon).
+  canyon: { id: 'canyon', label: 'Canyon', badge: 'bg-[#111827] text-white' },
+  alltricks: { id: 'alltricks', label: 'Alltricks', badge: 'bg-[#b91c1c] text-white' },
+  rose: { id: 'rose', label: 'Rose', badge: 'bg-[#9d174d] text-white' },
 }
 
 export const SOURCE_LIST = Object.values(SOURCES)

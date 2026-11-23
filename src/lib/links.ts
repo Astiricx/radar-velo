@@ -20,6 +20,10 @@ const AD_PAGES: Record<string, RegExp> = {
   'troc-velo.com': /\/annonce\/.+-\d+\/?$/i,
   'decathlon.fr': /^\/p\//i,
   'buycycle.com': /^\/[a-z]{2}-[a-z]{2}\/product\/.+-\d+\/?$/i,
+  // Fiches produit des magasins (vélos neufs).
+  'canyon.com': /^\/[a-z]{2}-[a-z]{2}\/.+\/\d+\.html$/i,
+  'alltricks.fr': /\/P-\d+-/,
+  'rosebikes.fr': /^\/fr\/p\/.+-\d+\/?$/i,
 }
 
 /** Vrai si `url` ouvre une annonce précise. */

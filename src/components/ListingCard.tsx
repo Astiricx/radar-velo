@@ -1,10 +1,11 @@
 import { Calendar, ExternalLink, MapPin, Ruler, TrendingDown, Truck } from 'lucide-react'
 import { SOURCES } from '../data/sources'
-import { discountPct, distanceLabel, eur, priceDrop, relativeDay, shortDate, yearLabel } from '../lib/format'
+import { discountPct, distanceLabel, eur, isNewBike, priceDrop, promoPct, relativeDay, shortDate, yearLabel } from '../lib/format'
 import { directUrl } from '../lib/links'
 import type { Criteria, Row, Status } from '../types'
 import { AttributeChips } from './AttributeChips'
 import { BikeThumb } from './BikeThumb'
+import { MarketBadge } from './MarketBadge'
 import { ScoreBib } from './ScoreBib'
 import { StatusSelect } from './StatusSelect'
 import { ZoneBadge } from './ZoneBadge'
@@ -17,8 +18,10 @@ interface Props {
 }
 
 export function ListingCard({ row, criteria, onOpen, onStatus }: Props) {
-  const { listing: l, score, zone, tracking, isNew } = row
+  const { listing: l, score, zone, tracking } = row
+  const brandNew = isNewBike(l)
   const discount = discountPct(l.price, l.newPrice)
+  const promo = promoPct(l)
   const href = directUrl(l)
   const drop = priceDrop(l)
 
@@ -28,7 +31,8 @@ export function ListingCard({ row, criteria, onOpen, onStatus }: Props) {
         <BikeThumb listing={l} width={420} showKind className="aspect-[16/10] w-full" />
         <span className="absolute left-2 top-2 flex flex-wrap gap-1">
           <span className={`chip border-0 ${SOURCES[l.source].badge}`}>{SOURCES[l.source].label}</span>
-          {isNew && <span className="chip bg-gold-soft text-gold">Nouveau</span>}
+          <MarketBadge listing={l} onImage />
+          {row.isNew && <span className="chip bg-gold-soft text-gold">Ajoutée aujourd'hui</span>}
         </span>
         <span className="absolute -bottom-5 right-3">
           <ScoreBib score={score.total} />
@@ -46,7 +50,12 @@ export function ListingCard({ row, criteria, onOpen, onStatus }: Props) {
 
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <span className="tnum font-display text-3xl font-bold leading-none">{eur(l.price)}</span>
-          {discount !== null && <span className="text-sm text-muted">{discount} % sous le prix neuf</span>}
+          {brandNew && l.originalPrice && promo !== null && (
+            <span className="text-sm text-muted">
+              <s className="tnum">{eur(l.originalPrice)}</s> <span className="font-semibold text-good">−{promo} %</span>
+            </span>
+          )}
+          {!brandNew && discount !== null && <span className="text-sm text-muted">{discount} % sous le prix neuf</span>}
           {drop && (
             <span className="inline-flex items-center gap-1 text-sm font-medium text-good" title={`Prix relevé le ${shortDate(`${drop.since}T12:00:00Z`)}`}>
               <TrendingDown size={14} aria-hidden /> −{eur(drop.amount)}
@@ -59,13 +68,13 @@ export function ListingCard({ row, criteria, onOpen, onStatus }: Props) {
             <Ruler size={14} aria-hidden />
             <dt className="sr-only">Taille</dt>
             <dd>
-              Taille {l.size}, {yearLabel(l.year)}
+              Taille {l.size}, {brandNew && l.year === 0 ? 'neuf' : yearLabel(l.year)}
             </dd>
           </div>
           <div className="flex items-center gap-1.5">
             <Calendar size={14} aria-hidden />
-            <dt className="sr-only">Publiée</dt>
-            <dd>Publiée {relativeDay(l.publishedAt)}</dd>
+            <dt className="sr-only">{brandNew ? 'Repérée' : 'Publiée'}</dt>
+            <dd>{brandNew ? `En vente, vue ${relativeDay(l.publishedAt)}` : `Publiée ${relativeDay(l.publishedAt)}`}</dd>
           </div>
           <div className="col-span-2 flex min-w-0 items-center gap-1.5">
             <MapPin size={14} aria-hidden className="shrink-0" />
@@ -87,6 +96,9 @@ export function ListingCard({ row, criteria, onOpen, onStatus }: Props) {
           </div>
         </dl>
 
+        {brandNew && l.sizesInStock && l.sizesInStock.length > 0 && (
+          <p className="text-xs text-muted">En stock : {l.sizesInStock.join(', ')}</p>
+        )}
         <AttributeChips listing={l} />
         {l.toVerify && l.toVerify.length > 0 && (
           <p className="text-xs text-warn">À vérifier : {l.toVerify.join(', ').toLowerCase()}.</p>
@@ -96,7 +108,7 @@ export function ListingCard({ row, criteria, onOpen, onStatus }: Props) {
           <StatusSelect id={`card-status-${l.id}`} value={tracking.status} onChange={(s) => onStatus(l.id, s)} />
           {href ? (
             <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline">
-              Voir l'annonce <ExternalLink size={14} aria-hidden />
+              {brandNew ? 'Voir le vélo' : "Voir l'annonce"} <ExternalLink size={14} aria-hidden />
             </a>
           ) : (
             <span className="text-sm text-muted">{l.demo ? 'Annonce fictive' : 'Lien manquant'}</span>
