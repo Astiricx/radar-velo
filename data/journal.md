@@ -1,5 +1,234 @@
 # Journal de la veille quotidienne
 
+## Mardi 24 novembre 2026
+
+- Crédit Apify consommé ce mois-ci avant la collecte : 3,54 $ sur 5,00 $.
+- Leboncoin : 60 annonces lues sur toute la France, les plus récentes (60 au plus).
+- buycycle : 120 annonces lues (route, carbone, disques, tailles M et L, 120 au plus).
+- Troc-Vélo : appels JSON relevés sur la page de liste (piste d'API interne) : https://api.troc-velo.com/api/category_product_counters (200), https://collector.appconsent.io/hello (200), https://api.btloader.com/country?o=5094764668518400 (200), https://api.troc-velo.com/api/category_product_counters, https://www.troc-velo.com/fr-fr?_rsc=eOPycq5ES9Tk-Ef7.
+- Troc-Vélo (navigateur Puppeteer Scraper d’Apify) : 59 annonces sur la liste (2 pages), 10 fiches ouvertes. Tri de la liste : 7 déjà analysées, 32 hors budget, 12 d'une autre taille, 2 sans taille ni groupe cité, 0 trop loin sans livraison, 6 à ouvrir (1 annonces « à la une » répétées d'une page à l'autre, comptées une fois). API de recherche : 300 annonces récentes lues, 25 déjà sur la page, 12 déjà analysées, 111 hors budget, 83 d'une autre taille, 19 sans groupe retenu cité, 50 candidates.
+- Decathlon Occasion (Cheerio Scraper d’Apify) : 42 annonces sur la liste, 0 fiche ouverte.
+- Canyon (neuf, lecture directe) : 45 vélos retenus pour analyse, dont 9 avec un prix barré. 191 vélos sur 3 pages de liste, 52 hors sujet (gravel, cadre seul, neuf non aéro…), 93 hors budget, 2 fiches ouvertes pour le stock par taille.
+- Alltricks (neuf, lecture directe) : 27 vélos retenus pour analyse, dont 7 avec un prix barré. 32 vélos neufs sur 4 listes (Di2, Ultegra, carbone), dont 9 en promotion.
+- Rose (neuf, lecture directe) : 1 vélo retenu pour analyse, dont 1 avec un prix barré. 12 vélos en promotion, 3 de route, 1 dans le budget, 1 fiche ouverte.
+- Materiel-velo.com (neuf, lecture directe) : 5 vélos retenus pour analyse, dont 4 avec un prix barré. 360 vélos de route sur 6 pages, 243 en Shimano Di2 ou Ultegra, 85 dans le budget, 21 au cadre aéro, 15 fiches ouvertes pour le stock par taille.
+- Vélo Brival (neuf, lecture directe) : 3 vélos retenus pour analyse, dont 2 avec un prix barré. 454 vélos de route course et aéro, 251 en Shimano Di2 ou Ultegra, 19 en stock dans le budget, 4 au cadre aéro, 19 vérifications de stock par taille.
+
+161 nouvelles annonces analysées : 48 pertinentes, 113 écartées.
+
+| Score | Annonce | Prix | Taille | Transmission | Zone | Lieu | Source |
+| ---: | --- | ---: | --- | --- | --- | --- | --- |
+| **81** | [Giant tcr advanced pro 0 ultegra di2](https://www.troc-velo.com/fr-fr/annonce/giant-tcr-advanced-pro-0-ultegra-di2-4318411) | 2 300 € | M | Ultegra Di2, capteur | À moins de 3 h de train | Balzac (16430) (sur place à Angoulême, livraison) | Troc-Vélo |
+| **77** | [Van rysel Road Bike FCR Ultegra Di2 2023](https://buycycle.com/fr-fr/product/road-bike-fcr-ultegra-di2-2023-31706) | 3 075 € | M | Ultegra Di2 | Hors zone | Bruxelles, Belgium (livraison buycycle) | buycycle |
+| **76** | [Specialized Roubaix Comp Disc Ultegra Di2 + Carbon Wheels + Powermeter 2021](https://buycycle.com/fr-fr/product/roubaix-comp-disc-ultegra-di2-carbon-wheels-powermeter6b043eafba590-80168) | 2 503 € | 56 | Ultegra Di2, capteur | Hors zone | Duffel, Belgium (livraison buycycle) | buycycle |
+| **75** | [Specialized Tarmac S-WORKS SL6 Disc](https://www.troc-velo.com/fr-fr/annonce/specialized-tarmac-s-works-sl6-disc-4318176) | 2 850 € | M | Dura-Ace Di2, capteur | Région parisienne | PARIS (75020) (sur place à Paris, livraison) | Troc-Vélo |
+| **74** | [Giant tcr advanced pro 0 ultegra di2](https://www.leboncoin.fr/ad/velos/3316586045) | 2 300 € | M | Ultegra Di2, capteur | À moins de 3 h de train | Balzac (7 km de Angoulême) | Leboncoin |
+| **72** | [Adris Performance S2 2025](https://buycycle.com/fr-fr/product/performance-s26b046541e506c-78510) | 3 280 € | M | Ultegra Di2, capteur | Hors zone | Thenelles, France (livraison buycycle) | buycycle |
+| **68** | [Trek Domane SLR 9 Disc 2019](https://buycycle.com/fr-fr/product/domane-slr-9-disc-2019-32043) | 2 255 € | 56 | Dura-Ace Di2 | Hors zone | Beveren-Kruibeke-Zwijndrecht, Belgium (livraison buycycle) | buycycle |
+| **68** | [giant defy advanced pro 1 ultegra di2](https://www.troc-velo.com/fr-fr/annonce/giant-defy-advanced-pro-1-ultegra-di2-4318192) | 2 350 € | M/L | Ultegra Di2, capteur | Hors zone | bayonne (64100) (465 km de Saint-Nazaire, livraison) | Troc-Vélo |
+| **67** | [BH Bikes RS1 2025](https://buycycle.com/fr-fr/product/rs16b042d22b1ee9-20791) | 3 537 € | M | Ultegra Di2 | Hors zone | Zelaieta, Spain (livraison buycycle) | buycycle |
+| **65** | [Orbea orca](https://www.troc-velo.com/fr-fr/annonce/orbea-orca-4318289) | 3 000 € | 57 | Ultegra Di2 | Hors zone | ASCAIN (64310) (440 km de Saint-Nazaire, livraison) | Troc-Vélo |
+| **65** | [Canyon Aeroad CF SLX 7 Di2](https://www.canyon.com/fr-fr/velos-de-route/velos-aero/aeroad/aeroad-cf-slx/aeroad-cf-slx-7-di2/4531.html) | 4 799 € | M | 105 Di2, capteur | Hors zone | Livraison Canyon | Canyon |
+| **64** | [Giant Defy Shimano 105 Di2 2026](https://buycycle.com/fr-fr/product/defy-98517) | 2 869 € | M | 105 Di2, capteur | Hors zone | Bosund, Finland (livraison buycycle) | buycycle |
+| **63** | [Focus IZALCO MAX 8.9 2024](https://buycycle.com/fr-fr/product/izalco-max-89-2024-50107) | 2 972 € | M | 105 Di2 | Hors zone | S.Ermete di Santarcangelo, Italy (livraison buycycle) | buycycle |
+| **63** | [Megamo PULSE ELITE 10 2021](https://buycycle.com/fr-fr/product/pulse-elite-10-2021-33109) | 2 153 € | M | Ultegra mécanique | Hors zone | Cassà de la Selva, Spain (livraison buycycle) | buycycle |
+| **63** | [Trek Émonda SLR 6 Di2 2023](https://buycycle.com/fr-fr/product/emonda-slr-6-di2-2023-77410) | 3 178 € | 56 | Ultegra Di2 | Hors zone | Peer, Belgium (livraison buycycle) | buycycle |
+| **62** | [Merida REACTO 5000 2027](https://buycycle.com/fr-fr/product/reacto-5000-2027-66824) | 2 767 € | M | 105 Di2 | Hors zone | Valladolid, Spain (livraison buycycle) | buycycle |
+| **61** | [Specialized Tarmac SL6 Expert 2020](https://buycycle.com/fr-fr/product/specialized-tarmac-sl6-expert6b04a203229bc-26057) | 2 562 € | M | Ultegra Di2 | Hors zone | oudon, France (livraison buycycle) | buycycle |
+| **61** | [BMC Teammachine SLR01 DISC FOUR 2020](https://buycycle.com/fr-fr/product/teammachine-slr01-disc-four-2020-16364) | 2 278 € | 56 | Ultegra Di2 | Hors zone | Nürnberg, Germany (livraison buycycle) | buycycle |
+| **61** | [Trek Madone SL 6 8e Gen 105 Di2 12v Aeolus Elite 50 Gloss Dark Star Matte Deep Smoke 2026](https://www.materiel-velo.com/1888242-velo-route-trek-madone-sl-6-8e-gen-105-di2-12v-aeolus-elite-50-gloss-dark-star-matte-deep-smoke-2026.html) | 4 299 € | M | 105 Di2 | Hors zone | Livraison Materiel-velo.com | Materiel-velo.com |
+| **60** | [BMC Roadmachine Shimano Ultegra Di2 2018](https://buycycle.com/fr-fr/product/roadmachine-01-ltd-2018-73312) | 1 948 € | 56 | Ultegra Di2 | Hors zone | Morciano di Romagna, Italy (livraison buycycle) | buycycle |
+| **60** | [Cannondale Supersix Shimano 105 Di2 2025](https://buycycle.com/fr-fr/product/supersix-39274) | 3 383 € | 56 | 105 Di2 | Hors zone | Huy, Belgium (livraison buycycle) | buycycle |
+| **60** | [Trek Madone SL 7 8e Gen Ultegra Di2 12v Aeolus Pro 51 Matte Lavender Haze/Deep Smoke 2026](https://www.materiel-velo.com/1888250-velo-route-trek-madone-sl-7-8e-gen-ultegra-di2-12v-aeolus-pro-51-matte-lavender-hazedeep-smoke-2026.html) | 4 899 € | M/L | Ultegra Di2 | Hors zone | Livraison Materiel-velo.com | Materiel-velo.com |
+| **59** | [Focus IZALCO MAX 9.8 2024](https://buycycle.com/fr-fr/product/izalco-max-98-2024-33369) | 4 099 € | M | Ultegra Di2 | Hors zone | S.Ermete di Santarcangelo, Italy (livraison buycycle) | buycycle |
+| **59** | [Trek Émonda SLR 7 2024](https://buycycle.com/fr-fr/product/emonda-slr-7-2024-13203) | 3 793 € | 56 | Ultegra Di2 | Hors zone | Warszawa, Poland (livraison buycycle) | buycycle |
+| **59** | [Lapierre Xélius DRS 6.0 2026](https://buycycle.com/fr-fr/product/xelius-drs-60-2026-72069) | 2 459 € | M | 105 Di2 | Hors zone | Valladolid, Spain (livraison buycycle) | buycycle |
+| **58** | [Ridley Noah Disc 105 Di2 + Carbon Wheels 2025](https://buycycle.com/fr-fr/product/noah-disc-105-di2-carbon-wheels6b044c9295cc6-94608) | 3 998 € | M | 105 Di2 | Hors zone | Duffel, Belgium (livraison buycycle) | buycycle |
+| **58** | [Specialized Tarmac SL7 Pro - SRAM Force eTap AXS 1x 2021](https://buycycle.com/fr-fr/product/tarmac-sl7-pro-sram-force-etap-axs-1x-2021-40050) | 3 434 € | 56 | 105 Di2 | Hors zone | Castro Daire, Portugal (livraison buycycle) | buycycle |
+| **58** | [KTM revelator alto élite](https://www.troc-velo.com/fr-fr/annonce/ktm-revelator-alto-elite-4318352) | 3 500 € | M | 105 Di2 | Hors zone | Brest (29200) (212 km de Saint-Nazaire, livraison) | Troc-Vélo |
+| **57** | [Lapierre Aircode Drs 5.0 - Vélo de route / course - Occasion - Promotion - BLACK FRIDAY](https://www.leboncoin.fr/ad/velos/3316738994:50e3694c-6dfd-42b9-8973-0093d0b678fb) | 1 999 € | M | 105 Di2 | Hors zone | Annecy (435 km de Paris, livraison) | Leboncoin |
+| **57** | [Canyon Ultimate CF SLX 8 Di2 2025](https://www.leboncoin.fr/ad/velos/3288317974) | 3 400 € | M | Ultegra Di2 | À moins de 3 h de train | Strasbourg (sur place à Strasbourg, livraison) | Leboncoin |
+| **57** | [Scott Foil RC 10 2024](https://buycycle.com/fr-fr/product/foil-rc-10-2024-30460) | 4 075 € | M | Ultegra Di2 | Hors zone | Bilzen-Hoeselt, Belgium (livraison buycycle) | buycycle |
+| **57** | [Lapierre Xelius DRS 6.0 2027](https://buycycle.com/fr-fr/product/xelius-drs-60-2027-75018) | 2 459 € | M | 105 Di2 | Hors zone | Valladolid, Spain (livraison buycycle) | buycycle |
+| **56** | [Giant TCR Advanced Disc 1+ AR 2023](https://buycycle.com/fr-fr/product/tcr-advanced-disc-1-ar-2023-62001) | 1 640 € | M | Ultegra mécanique | Hors zone | Comiso, Italy (livraison buycycle) | buycycle |
+| **56** | [Scott Addict eRIDE Shimano Ultegra 2022](https://buycycle.com/fr-fr/product/addict-eride-30-2022-11103) | 2 255 € | M | Ultegra mécanique | Hors zone | Sansepolcro, Italy (livraison buycycle) | buycycle |
+| **55** | [Trek Emonda Shimano Ultegra Di2 2022](https://buycycle.com/fr-fr/product/emonda-shimano-ultegra-di2-80030) | 3 588 € | M | Ultegra Di2 | Hors zone | Varese, Italy (livraison buycycle) | buycycle |
+| **55** | [CUBE AGREE C:62 2023](https://buycycle.com/fr-fr/product/agree-c62-2023-33554) | 2 512 € | 56 | Ultegra Di2 | Hors zone | Linselles, France (livraison buycycle) | buycycle |
+| **54** | [KTM REVELATOR ALTO ELITE 2026](https://buycycle.com/fr-fr/product/revelator-alto-elite-2026-41652) | 2 153 € | M | 105 Di2 | Hors zone | Duffel, Belgium (livraison buycycle) | buycycle |
+| **53** | [Ridley Noah Shimano Ultegra 2022](https://buycycle.com/fr-fr/product/noah-shimano-dura-ace-34584) | 2 460 € | M | Ultegra mécanique | Hors zone | Saint-Jean-de-Monts, France (livraison buycycle) | buycycle |
+| **53** | [Canyon Ultimate CF SL Disc 8.0 2019](https://buycycle.com/fr-fr/product/ultimate-cf-sl-disc-80-2019-81595) | 1 538 € | M | Ultegra mécanique | Hors zone | Hesperange, Luxembourg (livraison buycycle) | buycycle |
+| **52** | [Sworks tarmac sl7 complet](https://www.leboncoin.fr/ad/velos/3316645629) | 4 099 € | M | Dura-Ace Di2 | Région parisienne | Saint-Éloi (219 km de Paris) | Leboncoin |
+| **52** | [Canyon Endurace CF 8 Disc 2023](https://buycycle.com/fr-fr/product/endurace-cf-8-disc-2023-32511) | 1 620 € | M | Ultegra mécanique | Hors zone | Vantaa, Finland (livraison buycycle) | buycycle |
+| **51** | [Roadmachine 01 AMP Three Carbon metallic grey 54](https://www.leboncoin.fr/ad/velos/3301763059) | 3 450 € | M | 105 Di2 | Région parisienne | La Riche (207 km de Paris) | Leboncoin |
+| **51** | [Lapierre pulsium 6.0 Shimano Ultegra 2023](https://buycycle.com/fr-fr/product/lapierre-pulsium-60-custom-66936) | 1 845 € | M | Ultegra mécanique | Hors zone | Geel, Belgium (livraison buycycle) | buycycle |
+| **50** | [CUBE LITENING AIR C:68X, RACE 2026](https://buycycle.com/fr-fr/product/litening-air-c68x-race-2026-74352) | 4 156 € | 56 | Ultegra Di2 | Hors zone | Gosau, Austria (livraison buycycle) | buycycle |
+| **50** | [CUBE LITENING AIR C:68X, RACE 2026](https://buycycle.com/fr-fr/product/litening-air-c68x-race-2026-82683) | 4 156 € | 56 | Ultegra Di2 | Hors zone | Gosau, Austria (livraison buycycle) | buycycle |
+| **49** | [Cinelli PRESSURE 2 - ULTEGRA DISC DI2 2025](https://buycycle.com/fr-fr/product/pressure-2-ultegra-disc-di2-2025-13536) | 4 407 € | M | Ultegra Di2 | Hors zone | Amsterdam, Netherlands (livraison buycycle) | buycycle |
+| **47** | [Wilier Rapida SHIMANO 105 Di2 2x12 R7150 2026](https://buycycle.com/fr-fr/product/rapida-shimano-105-di2-2x12-r7150-2026-41261) | 4 099 € | M | 105 Di2 | Hors zone | forli, Italy (livraison buycycle) | buycycle |
+| **47** | [Scott addict 20L](https://www.troc-velo.com/fr-fr/annonce/scott-addict-20l-4299346) | 4 400 € | M | Ultegra Di2 | Hors zone | NICE (06000) (685 km de Paris, livraison) | Troc-Vélo |
+
+À vérifier avant de contacter le vendeur :
+
+- Giant tcr advanced pro 0 ultegra di2 : lieu approximatif : distance calculée depuis le chef-lieu du département
+- Van rysel Road Bike FCR Ultegra Di2 2023 : frais de port buycycle à vérifier
+- Specialized Roubaix Comp Disc Ultegra Di2 + Carbon Wheels + Powermeter 2021 : frais de port buycycle à vérifier
+- Specialized Tarmac S-WORKS SL6 Disc : taille à confirmer : m déclarée, 54 dans la description ; année non précisée
+- Adris Performance S2 2025 : frais de port buycycle à vérifier
+- Trek Domane SLR 9 Disc 2019 : frais de port buycycle à vérifier
+- giant defy advanced pro 1 ultegra di2 : lieu approximatif : distance calculée depuis le chef-lieu du département
+- BH Bikes RS1 2025 : frais de port buycycle à vérifier
+- Orbea orca : année non précisée
+- Canyon Aeroad CF SLX 7 Di2 : type de freins non précisé
+- Giant Defy Shimano 105 Di2 2026 : frais de port buycycle à vérifier
+- Focus IZALCO MAX 8.9 2024 : frais de port buycycle à vérifier
+- Megamo PULSE ELITE 10 2021 : frais de port buycycle à vérifier
+- Trek Émonda SLR 6 Di2 2023 : frais de port buycycle à vérifier
+- Merida REACTO 5000 2027 : frais de port buycycle à vérifier
+- Specialized Tarmac SL6 Expert 2020 : frais de port buycycle à vérifier ; taille à confirmer : m déclarée, 54 dans la description
+- BMC Teammachine SLR01 DISC FOUR 2020 : frais de port buycycle à vérifier
+- BMC Roadmachine Shimano Ultegra Di2 2018 : frais de port buycycle à vérifier
+- Cannondale Supersix Shimano 105 Di2 2025 : frais de port buycycle à vérifier
+- Focus IZALCO MAX 9.8 2024 : frais de port buycycle à vérifier
+- Trek Émonda SLR 7 2024 : frais de port buycycle à vérifier
+- Lapierre Xélius DRS 6.0 2026 : frais de port buycycle à vérifier
+- Ridley Noah Disc 105 Di2 + Carbon Wheels 2025 : frais de port buycycle à vérifier
+- Specialized Tarmac SL7 Pro - SRAM Force eTap AXS 1x 2021 : frais de port buycycle à vérifier
+- KTM revelator alto élite : année non précisée
+- Lapierre Aircode Drs 5.0 - Vélo de route / course - Occasion - Promotion - BLACK FRIDAY : taille à confirmer : m déclarée, 58 dans la description
+- Scott Foil RC 10 2024 : frais de port buycycle à vérifier
+- Lapierre Xelius DRS 6.0 2027 : frais de port buycycle à vérifier
+- Giant TCR Advanced Disc 1+ AR 2023 : frais de port buycycle à vérifier
+- Scott Addict eRIDE Shimano Ultegra 2022 : frais de port buycycle à vérifier
+- Trek Emonda Shimano Ultegra Di2 2022 : frais de port buycycle à vérifier
+- CUBE AGREE C:62 2023 : frais de port buycycle à vérifier
+- KTM REVELATOR ALTO ELITE 2026 : frais de port buycycle à vérifier
+- Ridley Noah Shimano Ultegra 2022 : frais de port buycycle à vérifier
+- Canyon Ultimate CF SL Disc 8.0 2019 : frais de port buycycle à vérifier
+- Sworks tarmac sl7 complet : matériau du cadre non précisé ; type de freins non précisé ; taille à confirmer : m déclarée, 54 dans la description ; année non précisée
+- Canyon Endurace CF 8 Disc 2023 : frais de port buycycle à vérifier
+- Roadmachine 01 AMP Three Carbon metallic grey 54 : type de freins non précisé ; taille à confirmer : m déclarée, 54 dans la description
+- Lapierre pulsium 6.0 Shimano Ultegra 2023 : frais de port buycycle à vérifier
+- CUBE LITENING AIR C:68X, RACE 2026 : frais de port buycycle à vérifier
+- CUBE LITENING AIR C:68X, RACE 2026 : frais de port buycycle à vérifier
+- Cinelli PRESSURE 2 - ULTEGRA DISC DI2 2025 : frais de port buycycle à vérifier
+- Wilier Rapida SHIMANO 105 Di2 2x12 R7150 2026 : frais de port buycycle à vérifier
+
+Écartées :
+
+- [Velo cipollini bond carbone](https://www.leboncoin.fr/ad/velos/3316788689), 2 799 € : Groupe non retenu (Autre groupe)
+- [Giant tcr advanced sl 2 (2020)](https://www.leboncoin.fr/ad/velos/3316786419), 1 750 € : Freins à patins
+- [Vélo Specialized](https://www.leboncoin.fr/ad/velos/3316786375), 1 600 € : Groupe non retenu (Autre groupe)
+- [TREK Checkpoint SL 5 AXS 3e gén](https://www.leboncoin.fr/ad/velos/3258414611), 2 999 € : Groupe non retenu (SRAM AXS)
+- [Vélo de Gravel FOCUS Atlas 8.9 Taille L 2025 AXS](https://www.leboncoin.fr/ad/velos/3001395475), 2 799 € : Groupe non retenu (SRAM AXS)
+- [Trek Émonda SL 5 Disc](https://www.leboncoin.fr/ad/velos/3316769679), 1 600 € : Taille 47 incompatible
+- [Cannondale Supersix Evo HM](https://www.leboncoin.fr/ad/velos/3316767096), 1 650 € : Groupe non retenu (Autre groupe)
+- [Cervélo Aspero GRX 610 – Taille M (54) – Neuf](https://www.leboncoin.fr/ad/velos/2966016683), 2 999 € : Groupe non retenu (Shimano GRX)
+- [Vélo route Scott carbone](https://www.leboncoin.fr/ad/velos/3316759461), 2 400 € : Hors de tes zones et à plus de 3 h de train (305 km de Saint-Nazaire), sans livraison
+- [Vélo ORBEA ORACO M20TEAM-D 53 de 2017 (acheté 4129 )](https://www.leboncoin.fr/ad/velos/3316753063), 1 600 € : Taille 53 incompatible
+- [Specialized Diverge Comp Carbon 2022 54](https://www.leboncoin.fr/ad/velos/3175316716), 2 400 € : Groupe non retenu (SRAM AXS)
+- [Giant TCR Advanced 0 AXS - Vélo de route / course - Neuf - BLACK FRIDAY](https://www.leboncoin.fr/ad/velos/3316741040:479656c6-2632-4618-b2f4-70a25abd58ee), 2 490 € : Groupe non retenu (SRAM AXS)
+- [Trek emonda sl5 disc](https://www.leboncoin.fr/ad/velos/3316739911), 1 500 € : Groupe non retenu (Autre groupe)
+- [Vélo de route carbone Wilier Triestina Granturismo SL - taille M – SRAM Rival AXS – Roues Mavic Cosmic SL 32](https://www.leboncoin.fr/ad/velos/3316739182), 2 500 € : Groupe non retenu (SRAM AXS)
+- [Vends kit cadre tarmac sl8 S-Works RTP 54](https://www.leboncoin.fr/ad/velos/3316733975), 3 300 € : Groupe non retenu (Autre groupe)
+- [Lapierre Aerostorm – Taille M – Ultegra Di2 12 vitesses](https://www.leboncoin.fr/ad/velos/3316725747), 4 500 € : Type hors critères (Contre-la-montre / triathlon)
+- [Vélo VAN RYSEL ULTRA RCR CF DURA ACE](https://www.leboncoin.fr/ad/velos/3011823033), 1 600 € : Hors de tes zones et à plus de 3 h de train (435 km de Paris), sans livraison
+- [Gravel rondo ruut carbone cf1](https://www.leboncoin.fr/ad/velos/3316677370), 2 350 € : Groupe non retenu (Autre groupe)
+- [Canyon Slx](https://www.leboncoin.fr/ad/velos/3316672961), 3 000 € : Groupe non retenu (SRAM AXS)
+- [Scott addict Gravel GR 30 AXS ZIPP](https://www.leboncoin.fr/ad/velos/3316639583), 3 150 € : Groupe non retenu (SRAM AXS)
+- [Vélo route Cannondale](https://www.leboncoin.fr/ad/velos/3316637215), 2 500 € : Groupe non retenu (SRAM AXS)
+- [Kit cadre Scott Foil dsm](https://www.leboncoin.fr/ad/velos/3316632667), 3 600 € : Groupe non retenu (Autre groupe)
+- [Vélo Gravel race _ Orbea Terra Race](https://www.leboncoin.fr/ad/velos/3167039194), 4 500 € : Groupe non retenu (Shimano GRX)
+- [Vélo de route full Carbon _ SRAM Force AXS _ Giant](https://www.leboncoin.fr/ad/velos/3272192605), 2 600 € : Groupe non retenu (SRAM AXS)
+- [Spécialized Tarmac sl6 sport 2022](https://www.leboncoin.fr/ad/velos/3308443093), 1 750 € : Groupe non retenu (Autre groupe)
+- [Vélo route carbone giant défy](https://www.leboncoin.fr/ad/velos/3309570317), 1 590 € : Groupe non retenu (Autre groupe)
+- [Canyon Ultimate CF SL 8.0 –Taille M](https://www.leboncoin.fr/ad/velos/3305733616), 1 600 € : Freins à patins
+- [Vélo Cervélo Calédonia 105](https://www.leboncoin.fr/ad/velos/3316610526:df1644f7-6674-4680-9be6-086d355d12ee), 1 899 € : Groupe non retenu (105 mécanique)
+- [Giant Defy Advanced roues carbone taille M](https://www.leboncoin.fr/ad/velos/3303734602), 1 800 € : Groupe non retenu (Autre groupe)
+- [Trek Émonda Sl 7 AXS](https://www.leboncoin.fr/ad/velos/3285754734), 2 750 € : Groupe non retenu (SRAM AXS)
+- [Velo look](https://www.leboncoin.fr/ad/velos/3280072249), 1 600 € : Taille 53 incompatible
+- [Stevens superprestige 1x11 taille 54](https://www.leboncoin.fr/ad/velos/3316599402), 1 900 € : Groupe non retenu (Shimano GRX)
+- [Vend velo cannondale topstone gravel carbone + jeu de roues + pompe](https://www.leboncoin.fr/ad/velos/3316593227), 1 700 € : Groupe non retenu (Autre groupe)
+- [Van Rysel RCR F Pro SRAM AXS](https://www.leboncoin.fr/ad/velos/3316590401), 3 700 € : Groupe non retenu (SRAM AXS)
+- [Pinarello Dogma F10](https://www.leboncoin.fr/ad/velos/3316589269), 2 690 € : Taille 53 incompatible
+- [Vélo de course en carbone Trek](https://www.leboncoin.fr/ad/velos/3306626678), 3 000 € : Groupe non retenu (Autre groupe)
+- [Specialized TARMAC SL6 Di2](https://www.leboncoin.fr/ad/velos/3279149406), 2 700 € : Hors de tes zones et à plus de 3 h de train (326 km de Paris), sans livraison
+- [Vélo carbone Lapierre](https://www.leboncoin.fr/ad/velos/3316580723), 1 500 € : Freins à patins
+- [Vélo TREK MADONE SL 7 - 8e G](https://www.leboncoin.fr/ad/velos/3310617109), 3 200 € : Hors de tes zones et à plus de 3 h de train (494 km de Saint-Nazaire), sans livraison
+- [Kit cadre specialized Tarmac SL8 pro taille 56](https://www.leboncoin.fr/ad/velos/3316568987), 1 850 € : Groupe non retenu (Autre groupe)
+- [Trek Émonda SL 6 Disc Pro 2022](https://buycycle.com/fr-fr/product/emonda-sl-6-disc-pro-2022-51316), 1 574 € : Taille 58 incompatible
+- [Focus IZALCO MAX 9.8 2024](https://buycycle.com/fr-fr/product/izalco-max-98-2024-78801), 4 099 € : Taille L incompatible
+- [Scott Addict RC 20 2021](https://buycycle.com/fr-fr/product/addict-rc-20-2021-69041), 2 460 € : Groupe non retenu (SRAM AXS)
+- [Bianchi Infinito 105 2025](https://buycycle.com/fr-fr/product/infinito-105-2025-45882), 1 897 € : Groupe non retenu (105 mécanique)
+- [Cannondale Supersix EVO 2026](https://buycycle.com/fr-fr/product/cannondale-supersix-evo6b0523c6a6b06-77014), 4 408 € : Taille 54 incompatible
+- [Bianchi Infinito Pro 105 DI2 2026](https://buycycle.com/fr-fr/product/infinito-pro-105-di2-2026-80425), 2 768 € : Taille 55 incompatible
+- [Colnago V3 2023](https://buycycle.com/fr-fr/product/v369206597d945d-82483), 4 613 € : Au-dessus du budget maximum (4 613 € pour 4 500 €)
+- [Orbea Orca M35i 2026](https://buycycle.com/fr-fr/product/orca-m35i-2026-55924), 2 460 € : Taille 53 incompatible
+- [Trek Émonda SL 7 AXS 2023](https://buycycle.com/fr-fr/product/emonda-sl-7-axs-2023-23024), 3 588 € : Groupe non retenu (SRAM AXS)
+- [BMC Teammachine SLR 01 ONE 2023](https://buycycle.com/fr-fr/product/teammachine-slr-01-one-2023-78930), 4 509 € : Au-dessus du budget maximum (4 509 € pour 4 500 €)
+- [Stevens Izoard Pro Disc 2025](https://buycycle.com/fr-fr/product/izoard-pro-disc-2025-45517), 2 255 € : Taille 54 incompatible
+- [Trek Madone SL 7 Gen 8 2025](https://buycycle.com/fr-fr/product/madone-sl-7-gen-8-2025-14136), 4 459 € : Taille ? incompatible
+- [Specialized Tarmac Shimano Ultegra Di2 2024](https://buycycle.com/fr-fr/product/tarmac-shimano-dura-ace-di2-92789), 4 613 € : Au-dessus du budget maximum (4 613 € pour 4 500 €)
+- [Airstreeem Triple EEE SRAM Force eTap AXS Powermeter 2019](https://buycycle.com/fr-fr/product/triple-eee-95463), 2 972 € : Groupe non retenu (SRAM AXS)
+- [BMC Roadmachine 01 FIVE 2022](https://buycycle.com/fr-fr/product/roadmachine-01-five-2022-33785), 2 325 € : Groupe non retenu (SRAM AXS)
+- [Trek Domane SL 6 Gen 4 2024](https://buycycle.com/fr-fr/product/domane-sl-6-gen-4-2024-73381), 2 307 € : Taille 54 incompatible
+- [Giant TCR Advanced Pro 0 Di2 2025](https://buycycle.com/fr-fr/product/tcr-advanced-pro-0-di2-2025-25924), 3 177 € : Taille ? incompatible
+- [Look 795 Campagnolo Super Record 2025](https://buycycle.com/fr-fr/product/795-campagnolo-super-record-eps-44417), 4 100 € : Groupe non retenu (Autre groupe)
+- [Canyon Aeroad CF SLX 7 eTap 2023](https://buycycle.com/fr-fr/product/aeroad-cf-slx-7-etap-2023-45406), 3 280 € : Groupe non retenu (SRAM AXS)
+- [Canyon Aeroad CF SLX 7 eTap 2023](https://buycycle.com/fr-fr/product/aeroad-cf-slx-7-etap-2023-99693), 3 485 € : Taille L incompatible
+- [Bianchi Specialissima Dura Ace Di2 2021](https://buycycle.com/fr-fr/product/specialissima-dura-ace-di2-2021-95037), 2 307 € : Taille 55 incompatible
+- [CUBE AGREE C:62, PRO 2022](https://buycycle.com/fr-fr/product/agree-c62-pro-2022-98464), 2 870 € : Groupe non retenu (SRAM AXS)
+- [Canyon Ultimate CF 7 2026](https://buycycle.com/fr-fr/product/ultimate-cf-7-2026-67241), 2 097 € : Groupe non retenu (105 mécanique)
+- [Enve Melee Pro Team Total Energies 2025](https://buycycle.com/fr-fr/product/enve-melee-pro-team-total-energies6b04768fd6c69-16681), 2 768 € : Taille 54 incompatible
+- [Cannondale SystemSix Carbon Ultegra 2023](https://buycycle.com/fr-fr/product/systemsix-carbon-ultegra-2023-89492), 2 870 € : Taille 54 incompatible
+- [Merida REACTO 8000 2027](https://buycycle.com/fr-fr/product/reacto-8000-2027-95413), 4 553 € : Au-dessus du budget maximum (4 553 € pour 4 500 €)
+- [BMC Roadmachine FIVE 2023](https://buycycle.com/fr-fr/product/roadmachine-five-2023-89409), 2 050 € : Taille 54 incompatible
+- [CUBE AGREE C:62, PRO 2025](https://buycycle.com/fr-fr/product/agree-c62-pro-2025-89969), 2 819 € : Taille 53 incompatible
+- [Trek Emonda Slr6 Segafredo Project One 2021](https://buycycle.com/fr-fr/product/emonda-slr6-segafredo-project-one-20216b046de63806f-52258), 4 408 € : Groupe non retenu (SRAM AXS)
+- [Scott Foil RC Pro 2024](https://buycycle.com/fr-fr/product/foil-rc-pro-2024-33441), 3 998 € : Taille L incompatible
+- [CUBE AGREE C:62, SLT 2025](https://buycycle.com/fr-fr/product/agree-c62-slt-2025-52537), 3 379 € : Taille 53 incompatible
+- [Ridley Noah Disc - Shimano Ultegra 2x11sp 2023](https://buycycle.com/fr-fr/product/noah-disc-shimano-ultegra-2x11sp-2023-54306), 2 972 € : Taille L incompatible
+- [Specialized Tarmac SL7 Expert 2021](https://buycycle.com/fr-fr/product/tarmac-sl7-expert-2021-85130), 2 563 € : Taille 54 incompatible
+- [Sensa Giulia GF Dark Brush 105 Di2 2x12 2024](https://buycycle.com/fr-fr/product/giulia-gf-dark-brush-105-di2-2x12-2024-48890), 2 307 € : Taille 53 incompatible
+- [Bianchi Infinito Disc 105 2025](https://buycycle.com/fr-fr/product/infinito-disc-1056b0457f0c3b52-76614), 2 049 € : Taille 53 incompatible
+- [Orbea Orca Shimano Ultegra Di2 2022](https://buycycle.com/fr-fr/product/orca-m21eltd-2022-49672), 2 563 € : Taille 55 incompatible
+- [CUBE Attain Shimano 105 Di2 2026](https://buycycle.com/fr-fr/product/attain-shimano-105-di2-40271), 2 153 € : Taille L incompatible
+- [Giant Defy Advanced 1 2024](https://buycycle.com/fr-fr/product/defy-advanced-1-2024-17557), 3 075 € : Taille L incompatible
+- [Giant TCR Advanced SL Disc 1 2022](https://buycycle.com/fr-fr/product/tcr-advanced-sl-disc-1-2022-40811), 2 563 € : Taille L incompatible
+- [Bianchi Specialissima COMP Ultegra Di2 2025](https://buycycle.com/fr-fr/product/specialissima-comp-ultegra-di2-2025-23311), 3 288 € : Taille 53 incompatible
+- [Cannondale Synapse SRAM Red eTap 2019](https://buycycle.com/fr-fr/product/synapse-13989), 2 563 € : Groupe non retenu (SRAM AXS)
+- [Merida SCULTURA ENDURANCE 4000 2024](https://buycycle.com/fr-fr/product/scultura-endurance-4000-2024-17140), 1 897 € : Groupe non retenu (SRAM AXS)
+- [MMR Grand Tour 10 Disc 105 Di2 2025](https://buycycle.com/fr-fr/product/grand-tour-10-disc-105-di26b044b8bd5913-56806), 2 460 € : Taille L incompatible
+- [Colnago V3 Disc Rival AXS Bike 2023](https://buycycle.com/fr-fr/product/v3-disc-rival-axs-bike-2023-19674), 2 235 € : Groupe non retenu (SRAM AXS)
+- [Giant TCR Advanced, Disc 1 2023](https://buycycle.com/fr-fr/product/tcr-advanced-disc-1-2023-14773), 1 743 € : Taille ? incompatible
+- [Giant Propel Advanced 2 2024](https://buycycle.com/fr-fr/product/propel-advanced-2-2024-38472), 1 989 € : Groupe non retenu (105 mécanique)
+- [Orbea ORCA AERO M20iLTD 2024](https://buycycle.com/fr-fr/product/orca-aero-m20iltd-2024-35746), 3 844 € : Taille 55 incompatible
+- [Bianchi Oltre PRO Ultegra Di2 2023](https://buycycle.com/fr-fr/product/oltre-pro-ultegra-di2-2023-83196), 4 203 € : Taille 53 incompatible
+- [Isaac Boson Shimano Ultegra Di2 2023](https://buycycle.com/fr-fr/product/boson-shimano-ultegra-43738), 2 594 € : Taille L incompatible
+- [BMC Roadmachine 01 three Shimano Ultegra Di2 2019](https://buycycle.com/fr-fr/product/roadmachine-01-four-2020-46205), 1 948 € : Taille 54 incompatible
+- [Scott Addict 10 2024](https://buycycle.com/fr-fr/product/addict-10-2024-59016), 2 153 € : Taille L incompatible
+- [Lapierre Pulsium 7.0 2025](https://buycycle.com/fr-fr/product/pulsium-70-2025-57831), 2 972 € : Taille 54 incompatible
+- [Lapierre Xelius SL 5.0 2023](https://buycycle.com/fr-fr/product/xelius-sl-50-2023-82386), 2 102 € : Taille 54 incompatible
+- [ICAN A9 AERO DISC FULL CARBON *PROMO* 2026](https://buycycle.com/fr-fr/product/a9-aero-disc-full-carbon-promo6b04352fa85ac-28337), 2 255 € : Taille L incompatible
+- [Orbea ORCA M21eTEAM PWR 2023](https://buycycle.com/fr-fr/product/orca-m21eteam-pwr-2023-26870), 3 583 € : Taille 53 incompatible
+- [Scott Addict Shimano Ultegra Di2 2023](https://buycycle.com/fr-fr/product/addict-73452), 3 331 € : Taille L incompatible
+- [Adris Le Sous Bois 2025](https://buycycle.com/fr-fr/product/le-sous-bois6b04232d5844c-39499), 2 563 € : Taille L incompatible
+- [Wilier Garda SRAM RIVAL AXS D1 2X12S 2024](https://buycycle.com/fr-fr/product/garda-sram-rival-axs-d1-2x12s-2024-95068), 2 455 € : Groupe non retenu (SRAM AXS)
+- [Trek Émonda SL 5 2024](https://buycycle.com/fr-fr/product/emonda-sl-5-2024-93399), 2 040 € : Groupe non retenu (105 mécanique)
+- [Bianchi Specialissima COMP 2026](https://buycycle.com/fr-fr/product/specialissima-comp-2026-40732), 3 690 € : Taille S incompatible
+- [Orbea ORCA M20iLTD 2024](https://buycycle.com/fr-fr/product/orca-m20iltd-2024-65767), 3 690 € : Taille 55 incompatible
+- [Bianchi Specialissima COMP Ultegra Di2 2025](https://buycycle.com/fr-fr/product/specialissima-comp-ultegra-di2-2025-55878), 3 383 € : Taille 47 incompatible
+- [Cannondale SuperSix EVO SRAM Red 2021](https://buycycle.com/fr-fr/product/supersix-evo-29546), 3 075 € : Groupe non retenu (SRAM AXS)
+- [Canyon Aeroad CF SLX 8 Di2 2023](https://buycycle.com/fr-fr/product/aeroad-cf-slx-8-di2-2023-13866), 3 997 € : Taille L incompatible
+- [Megamo PULSE 03 2026](https://buycycle.com/fr-fr/product/pulse-03-2026-59272), 4 612 € : Au-dessus du budget maximum (4 612 € pour 4 500 €)
+- [Basso Astra Astra 2022 Campagnolo Chorus 12s Nieuw!](https://buycycle.com/fr-fr/product/astra-2022-campagnolo-chorus-12s-nieuw6b040364c38ee-14956), 2 794 € : Taille 58 incompatible
+- [BMC Teammachine SLR TWO 2023](https://buycycle.com/fr-fr/product/teammachine-slr-two-2023-18170), 2 845 € : Taille 58 incompatible
+- [Trek Émonda SL 6 Disc 2022](https://buycycle.com/fr-fr/product/emonda-sl-6-disc-2022-22603), 1 948 € : Taille 54 incompatible
+- [🔥réservé🔥Specialized S-Works Tarmac SL6 Ultegra Di2 56🔥trek pinarello scott canyon giant](https://www.troc-velo.com/fr-fr/annonce/specialized-s-works-tarmac-sl6-ultegra-di2-56-trek-pinarello-scott-canyon-giant-colnago-ridley-4315230), 1 799 € : Lieu inconnu ou trop éloigné, sans livraison
+- [Produit Reconditionne Cannondale Supersix Evo 3 Di2 12v Noir Velo De Route Tres Bon Etat](https://www.troc-velo.com/fr-fr/annonce/produit-reconditionne-cannondale-supersix-evo-3-di2-12v-noir-velo-de-route-tres-bon-etat3810223-4318472), 2 841 € : Lieu inconnu ou trop éloigné, sans livraison
+- [BTWIN Ultra 940CF](https://www.troc-velo.com/fr-fr/annonce/btwin-ultra-940cf-4318444), 1 590 € : Freins à patins
+- [tres beau vélo trek madone série segafredo](https://www.troc-velo.com/fr-fr/annonce/tres-beau-velo-trek-madone-serie-segafredo-4318140), 4 450 € : Freins à patins
+- [Canyon Endurace CF 7](https://www.canyon.com/fr-fr/promo-velos/route/endurace-cf-7/2735.html), 1 599 € : Taille XL incompatible
+
 ## Lundi 23 novembre 2026
 
 - Collecte Apify sautée : exécution « vélos neufs seulement », aucun crédit consommé.
