@@ -1,5 +1,30 @@
 # Journal de la veille quotidienne
 
+## Samedi 28 novembre 2026
+
+- Canyon (neuf, lecture directe) : 20 vélos retenus pour analyse, dont 5 avec un prix barré. 130 vélos sur 3 pages de liste, 41 hors sujet (gravel, cadre seul, neuf non aéro…), 68 hors budget, 2 fiches ouvertes pour le stock par taille.
+- Alltricks (neuf, lecture directe) : 27 vélos retenus pour analyse, dont 10 avec un prix barré. 34 vélos neufs sur 4 listes (Di2, Ultegra, carbone), dont 13 en promotion.
+- Rose (neuf, lecture directe) : 1 vélo retenu pour analyse, dont 1 avec un prix barré. 12 vélos en promotion, 3 de route, 1 dans le budget, 1 fiche ouverte.
+- Materiel-velo.com (neuf, lecture directe) : 6 vélos retenus pour analyse, dont 5 avec un prix barré. 358 vélos de route sur 6 pages, 240 en Shimano Di2 ou Ultegra, 84 dans le budget, 20 au cadre aéro, 15 fiches ouvertes pour le stock par taille.
+- Vélo Brival (neuf, lecture directe) : 2 vélos retenus pour analyse, dont 1 avec un prix barré. 454 vélos de route course et aéro, 251 en Shimano Di2 ou Ultegra, 19 en stock dans le budget, 3 au cadre aéro, 13 vérifications de stock par taille.
+
+5 nouvelles annonces analysées : 1 pertinente, 4 écartées.
+
+| Score | Annonce | Prix | Taille | Transmission | Zone | Lieu | Source |
+| ---: | --- | ---: | --- | --- | --- | --- | --- |
+| **67** | [Ridley Falcn Shimano 105 Di2 12v Shimano RX180 Fal01Bs Black/Candy Red 2026](https://www.materiel-velo.com/1891549-velo-route-ridley-falcn-shimano-105-di2-12v-shimano-rx180-fal01bs-blackcandy-red-2026.html) | 2 959 € | M | 105 Di2 | Hors zone | Livraison Materiel-velo.com | Materiel-velo.com |
+
+Écartées :
+
+- [Velo de route Sava Vegir 1.0](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3215125-velo_de_route_sava_vegir_1_0), 3 899 € : Taille 49, 54 incompatible
+- [Vélo de Route BMC Teammachine SLR Two Shimano Ultegra Di2 12V 700 mm Gris 2026](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3089747-velo_de_route_bmc_teammachine_slr_two_shimano_ultegra_di2_12v_700_mm_gris_2026), 3 400 € : Vélo neuf au cadre non aéro (tu exiges un cadre aéro pour le neuf)
+- [Ridley Falcn Shimano 105 Di2 12v Shimano RX180 Fal01As Pearl White Silver 2026](https://www.materiel-velo.com/1891575-velo-route-ridley-falcn-shimano-105-di2-12v-shimano-rx180-fal01as-pearl-white-silver-2026.html), 2 959 € : Taille S, L incompatible
+- [Ridley Falcn Shimano 105 Di2 12v Fal01As Pearl White Silver](https://www.materiel-velo.com/1884928-velo-route-ridley-falcn-shimano-105-di2-12v-fal01as-pearl-white-silver.html), 3 490 € : Taille S incompatible
+
+Avertissements :
+
+- Collecte Apify sautée : 4,15 $ déjà consommés ce mois-ci, pour un plafond fixé à 4,00 $ (crédit du compte : 5,00 $).
+
 ## Vendredi 27 novembre 2026
 
 - Crédit Apify consommé ce mois-ci avant la collecte : 4,00 $ sur 5,00 $.

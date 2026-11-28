@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27",
+  "updatedAt": "2026-11-28",
   "criteria": {
     "budgetMax": 4500,
     "sizes": [
@@ -14,7 +14,7 @@
     ]
   },
   "count": 2401,
-  "retained": 611,
+  "retained": 612,
   "listings": [
     {
       "id": "bc-78489",
@@ -823,7 +823,7 @@
           "p": 3299
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 81,
       "zone": null,
@@ -9003,6 +9003,115 @@
       "rejection": null
     },
     {
+      "id": "mv-1891549",
+      "source": "materiel-velo",
+      "url": "https://www.materiel-velo.com/1891549-velo-route-ridley-falcn-shimano-105-di2-12v-shimano-rx180-fal01bs-blackcandy-red-2026.html",
+      "image": "https://www.materiel-velo.com/135636-large_default/velo-route-ridley-falcn-shimano-105-di2-12v-shimano-rx180-fal01bs-blackcandy-red-2026.jpg",
+      "fallbackImage": "https://images.weserv.nl/?url=www.materiel-velo.com%2F135636-large_default%2Fvelo-route-ridley-falcn-shimano-105-di2-12v-shimano-rx180-fal01bs-blackcandy-red-2026.jpg&w=800",
+      "imageKind": "annonce",
+      "title": "Ridley Falcn Shimano 105 Di2 12v Shimano RX180 Fal01Bs Black/Candy Red 2026",
+      "brand": "Ridley",
+      "model": "Falcn Shimano 105 Di2 12v Shimano RX180 Fal01Bs Black/Candy ",
+      "year": 2026,
+      "type": "route",
+      "size": "M",
+      "price": 2959,
+      "description": "Le Ridley Falcn Black/Candy Red allie légèreté, performance et contrôle avec un cadre carbone de 990 g, groupe Shimano 105 Di2 et pneus jusqu’à 34 mm. Roues Shimano RX180.",
+      "city": "Livraison Materiel-velo.com",
+      "shipping": true,
+      "publishedAt": "2026-11-28T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": true,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "firstSeen": "2026-11-28",
+      "market": "neuf",
+      "originalPrice": 3499,
+      "sizesInStock": [
+        "M",
+        "L"
+      ],
+      "priceHistory": [
+        {
+          "d": "2026-11-28",
+          "p": 2959
+        }
+      ],
+      "lastSeen": "2026-11-28",
+      "parser": 5,
+      "score": 67,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Remise",
+          "detail": "15 % de remise (prix barré 3 499 €)",
+          "points": 5,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Expédié par le vendeur",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Neuf, garantie constructeur, modèle 2026",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Garantie et tranquillité",
+          "points": 8,
+          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
+          "max": 8
+        }
+      ],
+      "rejection": null
+    },
+    {
       "id": "tv-4316052",
       "source": "troc-velo",
       "url": "https://www.troc-velo.com/fr-fr/annonce/giant-propel-advanced-1-4316052",
@@ -11699,7 +11808,7 @@
       "id": "ro-2726129",
       "source": "rose",
       "url": "https://www.rosebikes.fr/fr/p/rose-shave-ultegra-di2-2726129",
-      "image": "https://cdn.rosebikes.de/images/2CD320B6CA1671A1AB5C72788762C542.png?im=Resize=(600%2C600);BackgroundColor=ffffff",
+      "image": "https://cdn.rosebikes.de/images/246E3AA3C1BD0C75495A17A8B25499E1.png?im=Resize=(600%2C600);BackgroundColor=ffffff",
       "imageKind": "annonce",
       "title": "Rose Shave Ultegra Di2",
       "brand": "Vélo de route",
@@ -11742,7 +11851,7 @@
           "p": 4440
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 66,
       "zone": null,
@@ -12717,7 +12826,7 @@
           "p": 2700
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 65,
       "zone": null,
@@ -13897,10 +14006,10 @@
       "firstSeen": "2026-11-24",
       "market": "neuf",
       "sizesInStock": [
+        "2XS",
         "S",
         "M",
         "XL",
-        "XS",
         "L",
         "2XL"
       ],
@@ -13910,7 +14019,7 @@
           "p": 4799
         }
       ],
-      "lastSeen": "2026-11-25",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 65,
       "zone": null,
@@ -15957,7 +16066,7 @@
           "p": 3500
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 64,
       "zone": null,
@@ -27464,7 +27573,7 @@
           "p": 4299
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 61,
       "zone": null,
@@ -65796,7 +65905,7 @@
       "description": "Shimano 105 Di2, DT Swiss ARC 1600",
       "city": "Livraison Canyon",
       "shipping": true,
-      "publishedAt": "2026-11-27T08:00:00.000Z",
+      "publishedAt": "2026-11-28T08:00:00.000Z",
       "frame": "carbone",
       "brakes": "disque",
       "groupset": "105-di2",
@@ -65821,7 +65930,7 @@
           "p": 4299
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 41,
       "zone": null,
@@ -77075,6 +77184,115 @@
       "rejection": "Taille 58 incompatible"
     },
     {
+      "id": "mv-1891575",
+      "source": "materiel-velo",
+      "url": "https://www.materiel-velo.com/1891575-velo-route-ridley-falcn-shimano-105-di2-12v-shimano-rx180-fal01as-pearl-white-silver-2026.html",
+      "image": "https://www.materiel-velo.com/135645-large_default/velo-route-ridley-falcn-shimano-105-di2-12v-shimano-rx180-fal01as-pearl-white-silver-2026.jpg",
+      "fallbackImage": "https://images.weserv.nl/?url=www.materiel-velo.com%2F135645-large_default%2Fvelo-route-ridley-falcn-shimano-105-di2-12v-shimano-rx180-fal01as-pearl-white-silver-2026.jpg&w=800",
+      "imageKind": "annonce",
+      "title": "Ridley Falcn Shimano 105 Di2 12v Shimano RX180 Fal01As Pearl White Silver 2026",
+      "brand": "Ridley",
+      "model": "Falcn Shimano 105 Di2 12v Shimano RX180 Fal01As Pearl White ",
+      "year": 2026,
+      "type": "route",
+      "size": "S, L",
+      "price": 2959,
+      "description": "Le Ridley Falcn Fal01As Pearl White Silver allie légèreté, performance et contrôle avec un cadre carbone de 990 g, groupe Shimano 105 Di2 et pneus jusqu’à 34 mm. Roues Shimano RX180.",
+      "city": "Livraison Materiel-velo.com",
+      "shipping": true,
+      "publishedAt": "2026-11-28T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": true,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "firstSeen": "2026-11-28",
+      "market": "neuf",
+      "originalPrice": 3499,
+      "sizesInStock": [
+        "S",
+        "L"
+      ],
+      "priceHistory": [
+        {
+          "d": "2026-11-28",
+          "p": 2959
+        }
+      ],
+      "lastSeen": "2026-11-28",
+      "parser": 5,
+      "score": 67,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Remise",
+          "detail": "15 % de remise (prix barré 3 499 €)",
+          "points": 5,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Expédié par le vendeur",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Neuf, garantie constructeur, modèle 2026",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Garantie et tranquillité",
+          "points": 8,
+          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
+          "max": 8
+        }
+      ],
+      "rejection": "Taille S, L incompatible"
+    },
+    {
       "id": "bc-61820",
       "source": "buycycle",
       "url": "https://buycycle.com/fr-fr/product/propel-advanced-pro-disc-1-2022-61820",
@@ -77615,6 +77833,114 @@
       "rejection": "Taille L incompatible"
     },
     {
+      "id": "mv-1884928",
+      "source": "materiel-velo",
+      "url": "https://www.materiel-velo.com/1884928-velo-route-ridley-falcn-shimano-105-di2-12v-fal01as-pearl-white-silver.html",
+      "image": "https://www.materiel-velo.com/115979-large_default/velo-route-ridley-falcn-shimano-105-di2-12v-fal01as-pearl-white-silver.jpg",
+      "fallbackImage": "https://images.weserv.nl/?url=www.materiel-velo.com%2F115979-large_default%2Fvelo-route-ridley-falcn-shimano-105-di2-12v-fal01as-pearl-white-silver.jpg&w=800",
+      "imageKind": "annonce",
+      "title": "Ridley Falcn Shimano 105 Di2 12v Fal01As Pearl White Silver",
+      "brand": "Ridley",
+      "model": "Falcn Shimano 105 Di2 12v Fal01As Pearl White Silver",
+      "year": 0,
+      "type": "route",
+      "size": "S",
+      "price": 3490,
+      "description": "Prêt à tout affronter pour vous rendre le meilleur possible sur la route, le Ridley Falcn Fal01As Pearl White Silver est un vélo tourné vers la performance. Cadre en carbone de bonne qualité. Excellentes caractéristiques aéro. Groupe Shimano 105 Di2 12v. Roues 4ZA Skiron.\n\nAutres coloris au même prix chez Materiel-velo.com.",
+      "city": "Livraison Materiel-velo.com",
+      "shipping": true,
+      "publishedAt": "2026-11-28T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": true,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "firstSeen": "2026-11-28",
+      "market": "neuf",
+      "originalPrice": 4099,
+      "sizesInStock": [
+        "S"
+      ],
+      "priceHistory": [
+        {
+          "d": "2026-11-28",
+          "p": 3490
+        }
+      ],
+      "lastSeen": "2026-11-28",
+      "parser": 5,
+      "score": 67,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Remise",
+          "detail": "15 % de remise (prix barré 4 099 €)",
+          "points": 5,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre et cintre profilés",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Expédié par le vendeur",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Neuf, garantie constructeur",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Garantie et tranquillité",
+          "points": 8,
+          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
+          "max": 8
+        }
+      ],
+      "rejection": "Taille S incompatible"
+    },
+    {
       "id": "cy-4414",
       "source": "canyon",
       "url": "https://www.canyon.com/fr-fr/promo-velos/route/aeroad-cf-slx-7-axs-se/4414.html",
@@ -77625,7 +77951,7 @@
       "model": "Aeroad CF SLX 7 AXS SE",
       "year": 0,
       "type": "route",
-      "size": "XS, 2XL",
+      "size": "2XL",
       "price": 3499,
       "description": "SRAM Rival AXS., Paire de roues carbone.",
       "city": "Livraison Canyon",
@@ -77647,7 +77973,6 @@
       "market": "neuf",
       "originalPrice": 4299,
       "sizesInStock": [
-        "XS",
         "2XL"
       ],
       "priceHistory": [
@@ -77656,7 +77981,7 @@
           "p": 3499
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 67,
       "zone": null,
@@ -77723,7 +78048,7 @@
           "max": 8
         }
       ],
-      "rejection": "Taille XS, 2XL incompatible"
+      "rejection": "Taille 2XL incompatible"
     },
     {
       "id": "bc-98354",
@@ -79591,7 +79916,7 @@
           "p": 3500
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 66,
       "zone": null,
@@ -82998,7 +83323,7 @@
       "model": "Ultimate CF SL 7 Di2 SE WMN",
       "year": 0,
       "type": "route",
-      "size": "3XS, XS",
+      "size": "3XS",
       "price": 2499,
       "description": "Shimano 105 Di2, Roues en carbone",
       "city": "Livraison Canyon",
@@ -83019,8 +83344,7 @@
       "firstSeen": "2026-11-27",
       "market": "neuf",
       "sizesInStock": [
-        "3XS",
-        "XS"
+        "3XS"
       ],
       "priceHistory": [
         {
@@ -83028,7 +83352,7 @@
           "p": 2499
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 64,
       "zone": null,
@@ -83095,7 +83419,7 @@
           "max": 8
         }
       ],
-      "rejection": "Taille 3XS, XS incompatible"
+      "rejection": "Taille 3XS incompatible"
     },
     {
       "id": "bc-74436",
@@ -88163,6 +88487,114 @@
         }
       ],
       "rejection": "Taille 53 incompatible"
+    },
+    {
+      "id": "at-3089747",
+      "source": "alltricks",
+      "url": "https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3089747-velo_de_route_bmc_teammachine_slr_two_shimano_ultegra_di2_12v_700_mm_gris_2026",
+      "image": "https://product-cdn.alltricks.com/merch/695/926695/2926695/6260940.jpg",
+      "imageKind": "annonce",
+      "title": "Vélo de Route BMC Teammachine SLR Two Shimano Ultegra Di2 12V 700 mm Gris 2026",
+      "brand": "BMC",
+      "model": "Teammachine SLR Two Shimano Ultegra Di2 12V 700 mm Gris",
+      "year": 2026,
+      "type": "route",
+      "size": "56",
+      "price": 3400,
+      "description": "Vélo neuf vendu par Alltricks. Tailles proposées : 54 (172-180 cm), 56 (178-186 cm), 61 (190-200 cm).",
+      "city": "Livraison Alltricks",
+      "shipping": true,
+      "publishedAt": "2026-11-28T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "firstSeen": "2026-11-28",
+      "market": "neuf",
+      "sizesInStock": [
+        "54",
+        "56",
+        "61"
+      ],
+      "priceHistory": [
+        {
+          "d": "2026-11-28",
+          "p": 3400
+        }
+      ],
+      "lastSeen": "2026-11-28",
+      "parser": 5,
+      "score": 63,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Remise",
+          "detail": "Prix catalogue, sans remise affichée",
+          "points": 3,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Expédié par le vendeur",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Neuf, garantie constructeur, modèle 2026",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Garantie et tranquillité",
+          "points": 8,
+          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
+          "max": 8
+        }
+      ],
+      "rejection": "Vélo neuf au cadre non aéro (tu exiges un cadre aéro pour le neuf)"
     },
     {
       "id": "bc-74776",
@@ -97091,6 +97523,121 @@
       "rejection": "Taille L incompatible"
     },
     {
+      "id": "at-3139833",
+      "source": "alltricks",
+      "url": "https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3139833-velo_de_route_cannondale_synapse_carbon_4_shimano_105_di2_12v_700_mm_rouge",
+      "image": "https://product-cdn.alltricks.com/merch/898/961898/2961898/6503062.jpg",
+      "imageKind": "annonce",
+      "title": "Vélo de Route Cannondale Synapse Carbon 4 Shimano 105 Di2 12V 700 mm Rouge",
+      "brand": "Cannondale",
+      "model": "Synapse Carbon 4 Shimano 105 Di2 12V 700 mm Rouge",
+      "year": 0,
+      "type": "route",
+      "size": "56",
+      "price": 3000,
+      "description": "Vélo neuf vendu par Alltricks (Black Week). Tailles proposées : 48 (157-167 cm), 51 (165-175 cm), 54 (170-180 cm), 56 (175-185 cm), 61 (190-203 cm).\n\nAutres coloris au même prix chez Alltricks.",
+      "city": "Livraison Alltricks",
+      "shipping": true,
+      "publishedAt": "2026-11-23T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "firstSeen": "2026-11-23",
+      "market": "neuf",
+      "originalPrice": 3499,
+      "sizesInStock": [
+        "48",
+        "51",
+        "54",
+        "56",
+        "61"
+      ],
+      "priceHistory": [
+        {
+          "d": "2026-11-23",
+          "p": 3499
+        },
+        {
+          "d": "2026-11-28",
+          "p": 3000
+        }
+      ],
+      "lastSeen": "2026-11-28",
+      "parser": 5,
+      "score": 61,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Remise",
+          "detail": "14 % de remise (prix barré 3 499 €)",
+          "points": 4.7,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 Di2",
+          "points": 9,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Expédié par le vendeur",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Neuf, garantie constructeur",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Garantie et tranquillité",
+          "points": 8,
+          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
+          "max": 8
+        }
+      ],
+      "rejection": "Vélo neuf au cadre non aéro (tu exiges un cadre aéro pour le neuf)"
+    },
+    {
       "id": "bc-51495",
       "source": "buycycle",
       "url": "https://buycycle.com/fr-fr/product/raise-05-2025-51495",
@@ -101739,7 +102286,7 @@
           "p": 2500
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 60,
       "zone": null,
@@ -104116,7 +104663,7 @@
           "p": 3700
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 60,
       "zone": null,
@@ -108839,7 +109386,7 @@
           "p": 2799
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 59,
       "zone": null,
@@ -108951,7 +109498,7 @@
           "p": 2800
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 59,
       "zone": null,
@@ -109019,116 +109566,6 @@
         }
       ],
       "rejection": "Vélo neuf au cadre non aéro (tu exiges un cadre aéro pour le neuf)"
-    },
-    {
-      "id": "at-3370987",
-      "source": "alltricks",
-      "url": "https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3370987-velo_de_route_bmc_teammachine_slr_two_shimano_105_di2_12v_700_mm_noir_2027_t_54_172_180cm___velo_d_exposition",
-      "image": "https://product-cdn.alltricks.com/merch/629/777629/3777629/7061830.jpg",
-      "imageKind": "annonce",
-      "title": "Vélo de Route BMC Teammachine SLR Two Shimano 105 Di2 12V 700 mm Noir 2027 T.54 172/180cm - Vélo d'Exposition",
-      "brand": "BMC",
-      "model": "Teammachine SLR Two Shimano 105 Di2 12V 700 mm Noir 172/180c",
-      "year": 2027,
-      "type": "route",
-      "size": "54",
-      "price": 2800,
-      "description": "Vélo neuf vendu par Alltricks.",
-      "city": "Livraison Alltricks",
-      "shipping": true,
-      "publishedAt": "2026-11-23T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "105-di2",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "neuf",
-      "batch": 0,
-      "toVerify": [
-        "Taille lue dans le titre : stock à confirmer",
-        "Matériau du cadre non précisé"
-      ],
-      "firstSeen": "2026-11-23",
-      "market": "neuf",
-      "sizesInStock": [
-        "54"
-      ],
-      "priceHistory": [
-        {
-          "d": "2026-11-23",
-          "p": 2800
-        }
-      ],
-      "lastSeen": "2026-11-25",
-      "parser": 5,
-      "score": 59,
-      "zone": null,
-      "distanceKm": null,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Remise",
-          "detail": "Prix catalogue, sans remise affichée",
-          "points": 3,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "105 Di2",
-          "points": 9,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "Expédié par le vendeur",
-          "points": 7,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Neuf, garantie constructeur, modèle 2027",
-          "points": 8,
-          "max": 8
-        },
-        {
-          "label": "Garantie et tranquillité",
-          "points": 8,
-          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
-          "max": 8
-        }
-      ],
-      "rejection": "Taille 54 incompatible"
     },
     {
       "id": "bc-34489",
@@ -110031,7 +110468,7 @@
           "p": 2999
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 59,
       "zone": null,
@@ -110685,7 +111122,7 @@
           "p": 3200
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 59,
       "zone": null,
@@ -110798,7 +111235,7 @@
           "p": 3200
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 59,
       "zone": null,
@@ -110884,7 +111321,7 @@
       "description": "Shimano 105 Di2, DT Swiss ARC 1600",
       "city": "Livraison Canyon",
       "shipping": true,
-      "publishedAt": "2026-11-27T08:00:00.000Z",
+      "publishedAt": "2026-11-28T08:00:00.000Z",
       "frame": "carbone",
       "brakes": "disque",
       "groupset": "105-di2",
@@ -110909,7 +111346,7 @@
           "p": 3299
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 59,
       "zone": null,
@@ -111084,116 +111521,6 @@
         }
       ],
       "rejection": "Taille 54 incompatible"
-    },
-    {
-      "id": "at-3139833",
-      "source": "alltricks",
-      "url": "https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3139833-velo_de_route_cannondale_synapse_carbon_4_shimano_105_di2_12v_700_mm_rouge",
-      "image": "https://product-cdn.alltricks.com/merch/898/961898/2961898/6503062.jpg",
-      "imageKind": "annonce",
-      "title": "Vélo de Route Cannondale Synapse Carbon 4 Shimano 105 Di2 12V 700 mm Rouge",
-      "brand": "Cannondale",
-      "model": "Synapse Carbon 4 Shimano 105 Di2 12V 700 mm Rouge",
-      "year": 0,
-      "type": "route",
-      "size": "56",
-      "price": 3499,
-      "description": "Vélo neuf vendu par Alltricks. Tailles proposées : 48 (157-167 cm), 51 (165-175 cm), 54 (170-180 cm), 56 (175-185 cm), 61 (190-203 cm).",
-      "city": "Livraison Alltricks",
-      "shipping": true,
-      "publishedAt": "2026-11-23T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "105-di2",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "neuf",
-      "batch": 0,
-      "firstSeen": "2026-11-23",
-      "market": "neuf",
-      "sizesInStock": [
-        "48",
-        "51",
-        "54",
-        "56",
-        "61"
-      ],
-      "priceHistory": [
-        {
-          "d": "2026-11-23",
-          "p": 3499
-        }
-      ],
-      "lastSeen": "2026-11-27",
-      "parser": 5,
-      "score": 59,
-      "zone": null,
-      "distanceKm": null,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Remise",
-          "detail": "Prix catalogue, sans remise affichée",
-          "points": 3,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "105 Di2",
-          "points": 9,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "Expédié par le vendeur",
-          "points": 7,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Neuf, garantie constructeur",
-          "points": 8,
-          "max": 8
-        },
-        {
-          "label": "Garantie et tranquillité",
-          "points": 8,
-          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
-          "max": 8
-        }
-      ],
-      "rejection": "Vélo neuf au cadre non aéro (tu exiges un cadre aéro pour le neuf)"
     },
     {
       "id": "lbc-3305935982",
@@ -120248,6 +120575,123 @@
         }
       ],
       "rejection": "Taille 54 incompatible"
+    },
+    {
+      "id": "at-3274252",
+      "source": "alltricks",
+      "url": "https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3274252-velo_de_route_bmc_teammachine_slr_one_shimano_ultegra_di2_12v_700_mm_noir_blanc_2027",
+      "image": "https://product-cdn.alltricks.com/merch/353/562353/3562353/6795043.jpg",
+      "imageKind": "annonce",
+      "title": "Vélo de Route BMC Teammachine SLR One Shimano Ultegra Di2 12V 700 mm Noir/Blanc 2027",
+      "brand": "BMC",
+      "model": "Teammachine SLR One Shimano Ultegra Di2 12V 700 mm Noir/Blan",
+      "year": 2027,
+      "type": "route",
+      "size": "56",
+      "price": 3800,
+      "description": "Vélo neuf vendu par Alltricks (Black Week). Tailles proposées : 51 (166-174 cm), 54 (172-180 cm), 56 (178-186 cm), 58 (184-192 cm).\n\nAutres coloris au même prix chez Alltricks.",
+      "city": "Livraison Alltricks",
+      "shipping": true,
+      "publishedAt": "2026-11-23T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "ultegra-di2",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "toVerify": [
+        "Matériau du cadre non précisé"
+      ],
+      "firstSeen": "2026-11-23",
+      "market": "neuf",
+      "originalPrice": 3999,
+      "sizesInStock": [
+        "51",
+        "54",
+        "56",
+        "58"
+      ],
+      "priceHistory": [
+        {
+          "d": "2026-11-23",
+          "p": 3999
+        },
+        {
+          "d": "2026-11-28",
+          "p": 3800
+        }
+      ],
+      "lastSeen": "2026-11-28",
+      "parser": 5,
+      "score": 58,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Entre l'idéal et le maximum de 4 500 €",
+          "points": 20.5,
+          "max": 25
+        },
+        {
+          "label": "Remise",
+          "detail": "5 % de remise (prix barré 3 999 €)",
+          "points": 1.7,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Ultegra Di2",
+          "points": 13,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Expédié par le vendeur",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Neuf, garantie constructeur, modèle 2027",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Garantie et tranquillité",
+          "points": 8,
+          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
+          "max": 8
+        }
+      ],
+      "rejection": "Vélo neuf au cadre non aéro (tu exiges un cadre aéro pour le neuf)"
     },
     {
       "id": "lbc-3287526333",
@@ -132943,121 +133387,6 @@
       "rejection": "Taille 58 incompatible"
     },
     {
-      "id": "at-3059959",
-      "source": "alltricks",
-      "url": "https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3059959-velo_de_gravel_cannondale_topstone_carbon_2_shimano_grx_12v_700mm_vert",
-      "image": "https://product-cdn.alltricks.com/merch/859/890859/2890859/6181512.jpg",
-      "imageKind": "annonce",
-      "title": "Vélo de Gravel Cannondale Topstone Carbon 2 Shimano GRX 12V 700mm Vert",
-      "brand": "Cannondale",
-      "model": "Gravel Topstone Carbon 2 Shimano GRX 12V 700mm Vert",
-      "year": 0,
-      "type": "gravel",
-      "size": "M",
-      "price": 3049,
-      "description": "Vélo neuf vendu par Vendeurs Partenaires (Black Week). Tailles proposées : S (165-175 cm), M (172-180 cm).",
-      "city": "Livraison Alltricks (Vendeurs Partenaires)",
-      "shipping": true,
-      "publishedAt": "2026-11-23T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "grx",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "neuf",
-      "batch": 0,
-      "toVerify": [
-        "Type de freins non précisé"
-      ],
-      "firstSeen": "2026-11-23",
-      "market": "neuf",
-      "originalPrice": 3669,
-      "sizesInStock": [
-        "S",
-        "M"
-      ],
-      "priceHistory": [
-        {
-          "d": "2026-11-23",
-          "p": 3391
-        },
-        {
-          "d": "2026-11-25",
-          "p": 3049
-        }
-      ],
-      "lastSeen": "2026-11-25",
-      "parser": 5,
-      "score": 56,
-      "zone": null,
-      "distanceKm": null,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Remise",
-          "detail": "17 % de remise (prix barré 3 669 €)",
-          "points": 5.7,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "Shimano GRX",
-          "points": 3,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "Expédié par le vendeur",
-          "points": 7,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Neuf, garantie constructeur",
-          "points": 8,
-          "max": 8
-        },
-        {
-          "label": "Garantie et tranquillité",
-          "points": 8,
-          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
-          "max": 8
-        }
-      ],
-      "rejection": "Type hors critères (Gravel)"
-    },
-    {
       "id": "bc-52552",
       "source": "buycycle",
       "url": "https://buycycle.com/fr-fr/product/orca-aero-m30ltd-2024-52552",
@@ -134813,7 +135142,7 @@
       "description": "SRAM Rival AXS Groupset, DT Swiss ARC 1100 Wheel",
       "city": "Livraison Canyon",
       "shipping": true,
-      "publishedAt": "2026-11-27T08:00:00.000Z",
+      "publishedAt": "2026-11-28T08:00:00.000Z",
       "frame": "carbone",
       "brakes": "disque",
       "groupset": "sram-axs",
@@ -134838,7 +135167,7 @@
           "p": 3299
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 56,
       "zone": null,
@@ -136001,118 +136330,6 @@
       "rejection": "Taille 58 incompatible"
     },
     {
-      "id": "at-3274252",
-      "source": "alltricks",
-      "url": "https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3274252-velo_de_route_bmc_teammachine_slr_one_shimano_ultegra_di2_12v_700_mm_noir_blanc_2027",
-      "image": "https://product-cdn.alltricks.com/merch/353/562353/3562353/6795043.jpg",
-      "imageKind": "annonce",
-      "title": "Vélo de Route BMC Teammachine SLR One Shimano Ultegra Di2 12V 700 mm Noir/Blanc 2027",
-      "brand": "BMC",
-      "model": "Teammachine SLR One Shimano Ultegra Di2 12V 700 mm Noir/Blan",
-      "year": 2027,
-      "type": "route",
-      "size": "56",
-      "price": 3999,
-      "description": "Vélo neuf vendu par Alltricks. Tailles proposées : 51 (166-174 cm), 54 (172-180 cm), 56 (178-186 cm), 58 (184-192 cm).\n\nAutres coloris au même prix chez Alltricks.",
-      "city": "Livraison Alltricks",
-      "shipping": true,
-      "publishedAt": "2026-11-23T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "ultegra-di2",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "neuf",
-      "batch": 0,
-      "toVerify": [
-        "Matériau du cadre non précisé"
-      ],
-      "firstSeen": "2026-11-23",
-      "market": "neuf",
-      "sizesInStock": [
-        "51",
-        "54",
-        "56",
-        "58"
-      ],
-      "priceHistory": [
-        {
-          "d": "2026-11-23",
-          "p": 3999
-        }
-      ],
-      "lastSeen": "2026-11-27",
-      "parser": 5,
-      "score": 56,
-      "zone": null,
-      "distanceKm": null,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Entre l'idéal et le maximum de 4 500 €",
-          "points": 17.5,
-          "max": 25
-        },
-        {
-          "label": "Remise",
-          "detail": "Prix catalogue, sans remise affichée",
-          "points": 3,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "Ultegra Di2",
-          "points": 13,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "Expédié par le vendeur",
-          "points": 7,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Neuf, garantie constructeur, modèle 2027",
-          "points": 8,
-          "max": 8
-        },
-        {
-          "label": "Garantie et tranquillité",
-          "points": 8,
-          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
-          "max": 8
-        }
-      ],
-      "rejection": "Vélo neuf au cadre non aéro (tu exiges un cadre aéro pour le neuf)"
-    },
-    {
       "id": "cy-4476",
       "source": "canyon",
       "url": "https://www.canyon.com/fr-fr/promo-velos/route/aeroad-cf-slx-7-axs-se3/4476.html",
@@ -136153,7 +136370,7 @@
           "p": 3999
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 56,
       "zone": null,
@@ -142376,7 +142593,7 @@
       "description": "Shimano Ultegra Di2, Newmen Advanced A.50",
       "city": "Livraison Canyon",
       "shipping": true,
-      "publishedAt": "2026-11-27T08:00:00.000Z",
+      "publishedAt": "2026-11-28T08:00:00.000Z",
       "frame": "carbone",
       "brakes": "disque",
       "groupset": "ultegra-di2",
@@ -142401,7 +142618,7 @@
           "p": 3599
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 55,
       "zone": null,
@@ -142737,7 +142954,7 @@
           "p": 3600
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 55,
       "zone": null,
@@ -148431,7 +148648,7 @@
           "p": 2100
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 54,
       "zone": null,
@@ -148865,7 +149082,7 @@
           "p": 2200
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 54,
       "zone": null,
@@ -149689,6 +149906,122 @@
       "rejection": "Taille 54 incompatible"
     },
     {
+      "id": "at-3139893",
+      "source": "alltricks",
+      "url": "https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3139893-velo_de_route_cannondale_synapse_carbon_5_shimano_105_12v_700_mm_jaune",
+      "image": "https://product-cdn.alltricks.com/merch/9/962009/2962009/6503655.jpg",
+      "imageKind": "annonce",
+      "title": "Vélo de Route Cannondale Synapse Carbon 5 Shimano 105 12V 700 mm Jaune",
+      "brand": "Cannondale",
+      "model": "Synapse Carbon 5 Shimano 105 12V 700 mm Jaune",
+      "year": 0,
+      "type": "route",
+      "size": "56",
+      "price": 2400,
+      "description": "Vélo neuf vendu par Alltricks (Black Week). Tailles proposées : 54 (170-180 cm), 56 (175-185 cm), 58 (182-193 cm).",
+      "city": "Livraison Alltricks",
+      "shipping": true,
+      "publishedAt": "2026-11-23T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "105",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "toVerify": [
+        "Type de freins non précisé"
+      ],
+      "firstSeen": "2026-11-23",
+      "market": "neuf",
+      "originalPrice": 2699,
+      "sizesInStock": [
+        "54",
+        "56",
+        "58"
+      ],
+      "priceHistory": [
+        {
+          "d": "2026-11-23",
+          "p": 2699
+        },
+        {
+          "d": "2026-11-28",
+          "p": 2400
+        }
+      ],
+      "lastSeen": "2026-11-28",
+      "parser": 5,
+      "score": 54,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Sous ton budget idéal de 3 500 €",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Remise",
+          "detail": "11 % de remise (prix barré 2 699 €)",
+          "points": 3.7,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "105 mécanique",
+          "points": 3,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Expédié par le vendeur",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Neuf, garantie constructeur",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Garantie et tranquillité",
+          "points": 8,
+          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
+          "max": 8
+        }
+      ],
+      "rejection": "Groupe non retenu (105 mécanique)"
+    },
+    {
       "id": "bc-21094",
       "source": "buycycle",
       "url": "https://buycycle.com/fr-fr/product/e-gravel6afc1dcdb656b-21094",
@@ -150116,118 +150449,6 @@
       "rejection": "Groupe non retenu (SRAM AXS)"
     },
     {
-      "id": "at-3342354",
-      "source": "alltricks",
-      "url": "https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3342354-velo_de_route_trek_domane_sl_5_shimano_105_12v_700_mm_beige_gen_5",
-      "image": "https://product-cdn.alltricks.com/merch/969/724969/3724969/6982029.jpg",
-      "imageKind": "annonce",
-      "title": "Vélo de Route Trek Domane SL 5 Shimano 105 12V 700 mm Beige Gen.5",
-      "brand": "Trek",
-      "model": "Domane SL 5 Shimano 105 12V 700 mm Beige Gen.5",
-      "year": 0,
-      "type": "route",
-      "size": "M/L",
-      "price": 2499,
-      "description": "Vélo neuf vendu par Alltricks (Nouveauté). Tailles proposées : S (158-162 cm), M/L (173-179 cm).",
-      "city": "Livraison Alltricks",
-      "shipping": true,
-      "publishedAt": "2026-11-23T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "105",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "neuf",
-      "batch": 0,
-      "toVerify": [
-        "Taille M/L prévue pour 173 à 179 cm selon le magasin",
-        "Matériau du cadre non précisé",
-        "Type de freins non précisé"
-      ],
-      "firstSeen": "2026-11-23",
-      "market": "neuf",
-      "sizesInStock": [
-        "S",
-        "M/L"
-      ],
-      "priceHistory": [
-        {
-          "d": "2026-11-23",
-          "p": 2499
-        }
-      ],
-      "lastSeen": "2026-11-25",
-      "parser": 5,
-      "score": 54,
-      "zone": null,
-      "distanceKm": null,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Remise",
-          "detail": "Prix catalogue, sans remise affichée",
-          "points": 3,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "105 mécanique",
-          "points": 3,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "Expédié par le vendeur",
-          "points": 7,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Neuf, garantie constructeur",
-          "points": 8,
-          "max": 8
-        },
-        {
-          "label": "Garantie et tranquillité",
-          "points": 8,
-          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
-          "max": 8
-        }
-      ],
-      "rejection": "Groupe non retenu (105 mécanique)"
-    },
-    {
       "id": "bc-75034",
       "source": "buycycle",
       "url": "https://buycycle.com/fr-fr/product/synapse-carbon-3-smartsense-2026-75034",
@@ -150593,7 +150814,7 @@
           "p": 2599
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 54,
       "zone": null,
@@ -150875,117 +151096,6 @@
         }
       ],
       "rejection": "Groupe non retenu (SRAM AXS)"
-    },
-    {
-      "id": "at-3139893",
-      "source": "alltricks",
-      "url": "https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3139893-velo_de_route_cannondale_synapse_carbon_5_shimano_105_12v_700_mm_jaune",
-      "image": "https://product-cdn.alltricks.com/merch/9/962009/2962009/6503655.jpg",
-      "imageKind": "annonce",
-      "title": "Vélo de Route Cannondale Synapse Carbon 5 Shimano 105 12V 700 mm Jaune",
-      "brand": "Cannondale",
-      "model": "Synapse Carbon 5 Shimano 105 12V 700 mm Jaune",
-      "year": 0,
-      "type": "route",
-      "size": "56",
-      "price": 2699,
-      "description": "Vélo neuf vendu par Alltricks. Tailles proposées : 54 (170-180 cm), 56 (175-185 cm), 58 (182-193 cm).",
-      "city": "Livraison Alltricks",
-      "shipping": true,
-      "publishedAt": "2026-11-23T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "105",
-      "aero": false,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "neuf",
-      "batch": 0,
-      "toVerify": [
-        "Type de freins non précisé"
-      ],
-      "firstSeen": "2026-11-23",
-      "market": "neuf",
-      "sizesInStock": [
-        "54",
-        "56",
-        "58"
-      ],
-      "priceHistory": [
-        {
-          "d": "2026-11-23",
-          "p": 2699
-        }
-      ],
-      "lastSeen": "2026-11-27",
-      "parser": 5,
-      "score": 54,
-      "zone": null,
-      "distanceKm": null,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Sous ton budget idéal de 3 500 €",
-          "points": 25,
-          "max": 25
-        },
-        {
-          "label": "Remise",
-          "detail": "Prix catalogue, sans remise affichée",
-          "points": 3,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "105 mécanique",
-          "points": 3,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre polyvalent",
-          "points": 2,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "Expédié par le vendeur",
-          "points": 7,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Neuf, garantie constructeur",
-          "points": 8,
-          "max": 8
-        },
-        {
-          "label": "Garantie et tranquillité",
-          "points": 8,
-          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
-          "max": 8
-        }
-      ],
-      "rejection": "Groupe non retenu (105 mécanique)"
     },
     {
       "id": "cy-50044476",
@@ -151869,7 +151979,7 @@
       "description": "Shimano 105 Di2, DT Swiss P1800",
       "city": "Livraison Canyon",
       "shipping": true,
-      "publishedAt": "2026-11-27T08:00:00.000Z",
+      "publishedAt": "2026-11-28T08:00:00.000Z",
       "frame": "carbone",
       "brakes": "disque",
       "groupset": "105-di2",
@@ -151894,7 +152004,7 @@
           "p": 2949
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 54,
       "zone": null,
@@ -152091,7 +152201,7 @@
       "description": "Shimano 105 Di2, DT Swiss P1800",
       "city": "Livraison Canyon",
       "shipping": true,
-      "publishedAt": "2026-11-27T08:00:00.000Z",
+      "publishedAt": "2026-11-28T08:00:00.000Z",
       "frame": "carbone",
       "brakes": "disque",
       "groupset": "105-di2",
@@ -152116,7 +152226,7 @@
           "p": 3049
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 54,
       "zone": null,
@@ -154248,7 +154358,7 @@
       "description": "Shimano Ultegra Di2, Newmen Advanced A.50",
       "city": "Livraison Canyon",
       "shipping": true,
-      "publishedAt": "2026-11-27T08:00:00.000Z",
+      "publishedAt": "2026-11-28T08:00:00.000Z",
       "frame": "carbone",
       "brakes": "disque",
       "groupset": "ultegra-di2",
@@ -154273,7 +154383,7 @@
           "p": 3699
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 54,
       "zone": null,
@@ -155199,116 +155309,6 @@
       "rejection": "Taille 53 incompatible"
     },
     {
-      "id": "cy-4034",
-      "source": "canyon",
-      "url": "https://www.canyon.com/fr-fr/promo-velos/route/aeroad-cf-slx-7-di2/4034.html",
-      "image": "https://dma.canyon.com/image/upload/w_511,h_288,c_fit/b_rgb:F2F2F2/f_auto/q_auto/v1749041421/2026_FULL_aeroad_cf-slx-7-di2_4034_R107_P07_tnfs77",
-      "imageKind": "annonce",
-      "title": "Canyon Aeroad CF SLX 7 Di2",
-      "brand": "Canyon",
-      "model": "Aeroad CF SLX 7 Di2",
-      "year": 0,
-      "type": "route",
-      "size": "XL",
-      "price": 4199,
-      "description": "Shimano 105 Di2, DT Swiss ARC 1600",
-      "city": "Livraison Canyon",
-      "shipping": true,
-      "publishedAt": "2026-11-23T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "105-di2",
-      "aero": true,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "neuf",
-      "batch": 0,
-      "toVerify": [
-        "Type de freins non précisé"
-      ],
-      "firstSeen": "2026-11-23",
-      "market": "neuf",
-      "originalPrice": 4499,
-      "sizesInStock": [
-        "XL"
-      ],
-      "priceHistory": [
-        {
-          "d": "2026-11-23",
-          "p": 4199
-        }
-      ],
-      "lastSeen": "2026-11-25",
-      "parser": 5,
-      "score": 54,
-      "zone": null,
-      "distanceKm": null,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "Entre l'idéal et le maximum de 4 500 €",
-          "points": 14.5,
-          "max": 25
-        },
-        {
-          "label": "Remise",
-          "detail": "7 % de remise (prix barré 4 499 €)",
-          "points": 2.3,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "105 Di2",
-          "points": 9,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre et cintre profilés",
-          "points": 8,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "Expédié par le vendeur",
-          "points": 7,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Neuf, garantie constructeur",
-          "points": 8,
-          "max": 8
-        },
-        {
-          "label": "Garantie et tranquillité",
-          "points": 8,
-          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
-          "max": 8
-        }
-      ],
-      "rejection": "Taille XL incompatible"
-    },
-    {
       "id": "bc-59721",
       "source": "buycycle",
       "url": "https://buycycle.com/fr-fr/product/aethos-pro-shimano-ultegra-di2-2025-59721",
@@ -155628,114 +155628,6 @@
         }
       ],
       "rejection": "Au-dessus du budget maximum (4 613 € pour 4 500 €)"
-    },
-    {
-      "id": "mv-1884881",
-      "source": "materiel-velo",
-      "url": "https://www.materiel-velo.com/1884881-velo-route-ridley-falcn-shimano-ultegra-di2-12v-zipp-303s-fal01as-pearl-white-silver.html",
-      "image": "https://www.materiel-velo.com/115866-large_default/velo-route-ridley-falcn-shimano-ultegra-di2-12v-zipp-303s-fal01as-pearl-white-silver.jpg",
-      "fallbackImage": "https://images.weserv.nl/?url=www.materiel-velo.com%2F115866-large_default%2Fvelo-route-ridley-falcn-shimano-ultegra-di2-12v-zipp-303s-fal01as-pearl-white-silver.jpg&w=800",
-      "imageKind": "annonce",
-      "title": "Ridley Falcn Shimano Ultegra Di2 12v Zipp 303S FAL01As Pearl White Silver",
-      "brand": "Ridley",
-      "model": "Falcn Shimano Ultegra Di2 12v Zipp 303S FAL01As Pearl White ",
-      "year": 0,
-      "type": "route",
-      "size": "S",
-      "price": 4782,
-      "description": "Prêt à tout affronter pour vous rendre le meilleur possible sur la route, le Ridley Falcn FAL01As Pearl White Silver est un vélo tourné vers la performance. Cadre en carbone de bonne qualité. Excellentes caractéristiques aéro. Groupe Shimano Ultegra Di2 12v. Roues Zipp 303S.",
-      "city": "Livraison Materiel-velo.com",
-      "shipping": true,
-      "publishedAt": "2026-11-23T08:00:00.000Z",
-      "frame": "carbone",
-      "brakes": "disque",
-      "groupset": "ultegra-di2",
-      "aero": true,
-      "powerMeter": false,
-      "wheelDepth": 0,
-      "extensions": "inconnu",
-      "condition": "neuf",
-      "batch": 0,
-      "firstSeen": "2026-11-23",
-      "market": "neuf",
-      "originalPrice": 5790,
-      "sizesInStock": [
-        "S"
-      ],
-      "priceHistory": [
-        {
-          "d": "2026-11-23",
-          "p": 4782
-        }
-      ],
-      "lastSeen": "2026-11-25",
-      "parser": 5,
-      "score": 54,
-      "zone": null,
-      "distanceKm": null,
-      "scoreDetail": [
-        {
-          "label": "Prix",
-          "detail": "282 € au-dessus de ton maximum, accepté pour du neuf",
-          "points": 6.9,
-          "max": 25
-        },
-        {
-          "label": "Remise",
-          "detail": "17 % de remise (prix barré 5 790 €)",
-          "points": 5.7,
-          "max": 10
-        },
-        {
-          "label": "Transmission",
-          "detail": "Ultegra Di2",
-          "points": 13,
-          "max": 15
-        },
-        {
-          "label": "Cadre aéro",
-          "detail": "Cadre et cintre profilés",
-          "points": 8,
-          "max": 8
-        },
-        {
-          "label": "Capteur de puissance",
-          "detail": "Absent",
-          "points": 0,
-          "max": 10
-        },
-        {
-          "label": "Roues",
-          "detail": "Aluminium",
-          "points": 0,
-          "max": 8
-        },
-        {
-          "label": "Prolongateurs",
-          "detail": "Prolongateurs : à vérifier",
-          "points": 2,
-          "max": 6
-        },
-        {
-          "label": "Distance",
-          "detail": "Expédié par le vendeur",
-          "points": 7,
-          "max": 10
-        },
-        {
-          "label": "État et âge",
-          "detail": "Neuf, garantie constructeur",
-          "points": 8,
-          "max": 8
-        },
-        {
-          "label": "Garantie et tranquillité",
-          "points": 8,
-          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
-          "max": 8
-        }
-      ],
-      "rejection": "Taille S incompatible"
     },
     {
       "id": "bc-76594",
@@ -166979,7 +166871,7 @@
           "p": 4199
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 53,
       "zone": null,
@@ -184800,7 +184692,7 @@
           "p": 4499
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 51,
       "zone": null,
@@ -205884,6 +205776,116 @@
       "rejection": "Taille L incompatible"
     },
     {
+      "id": "at-3215125",
+      "source": "alltricks",
+      "url": "https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-3215125-velo_de_route_sava_vegir_1_0",
+      "image": "https://product-cdn.alltricks.com/merch/548/27548/3027548/7111477.jpg",
+      "imageKind": "annonce",
+      "title": "Velo de route Sava Vegir 1.0",
+      "brand": "Vélo de route",
+      "model": "Sava Vegir 1.0",
+      "year": 0,
+      "type": "route",
+      "size": "49, 54",
+      "price": 3899,
+      "description": "Vélo neuf vendu par Vendeurs Partenaires. Tailles proposées : 49 (145-155 cm), 54 (166-175 cm).",
+      "city": "Livraison Alltricks (Vendeurs Partenaires)",
+      "shipping": true,
+      "publishedAt": "2026-11-28T08:00:00.000Z",
+      "frame": "carbone",
+      "brakes": "disque",
+      "groupset": "autre",
+      "aero": false,
+      "powerMeter": false,
+      "wheelDepth": 0,
+      "extensions": "inconnu",
+      "condition": "neuf",
+      "batch": 0,
+      "toVerify": [
+        "Type de freins non précisé"
+      ],
+      "firstSeen": "2026-11-28",
+      "market": "neuf",
+      "sizesInStock": [
+        "49",
+        "54"
+      ],
+      "priceHistory": [
+        {
+          "d": "2026-11-28",
+          "p": 3899
+        }
+      ],
+      "lastSeen": "2026-11-28",
+      "parser": 5,
+      "score": 48,
+      "zone": null,
+      "distanceKm": null,
+      "scoreDetail": [
+        {
+          "label": "Prix",
+          "detail": "Entre l'idéal et le maximum de 4 500 €",
+          "points": 19,
+          "max": 25
+        },
+        {
+          "label": "Remise",
+          "detail": "Prix catalogue, sans remise affichée",
+          "points": 3,
+          "max": 10
+        },
+        {
+          "label": "Transmission",
+          "detail": "Autre groupe",
+          "points": 3,
+          "max": 15
+        },
+        {
+          "label": "Cadre aéro",
+          "detail": "Cadre polyvalent",
+          "points": 2,
+          "max": 8
+        },
+        {
+          "label": "Capteur de puissance",
+          "detail": "Absent",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Roues",
+          "detail": "Aluminium",
+          "points": 0,
+          "max": 8
+        },
+        {
+          "label": "Prolongateurs",
+          "detail": "Prolongateurs : à vérifier",
+          "points": 2,
+          "max": 6
+        },
+        {
+          "label": "Distance",
+          "detail": "Expédié par le vendeur",
+          "points": 7,
+          "max": 10
+        },
+        {
+          "label": "État et âge",
+          "detail": "Neuf, garantie constructeur",
+          "points": 8,
+          "max": 8
+        },
+        {
+          "label": "Garantie et tranquillité",
+          "points": 8,
+          "detail": "Neuf : garantie constructeur complète, facture, aucun historique de chute",
+          "max": 8
+        }
+      ],
+      "rejection": "Taille 49, 54 incompatible"
+    },
+    {
       "id": "bc-37057",
       "source": "buycycle",
       "url": "https://buycycle.com/fr-fr/product/supersix-evo-56afb649ac51d7-37057",
@@ -212382,7 +212384,7 @@
       "description": "SRAM Rival AXS Groupset, Newmen Advanced A.50",
       "city": "Livraison Canyon",
       "shipping": true,
-      "publishedAt": "2026-11-27T08:00:00.000Z",
+      "publishedAt": "2026-11-28T08:00:00.000Z",
       "frame": "carbone",
       "brakes": "disque",
       "groupset": "sram-axs",
@@ -212407,7 +212409,7 @@
           "p": 3299
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 47,
       "zone": null,
@@ -212493,7 +212495,7 @@
       "description": "SRAM Rival AXS Groupset, Newmen Advanced A.50",
       "city": "Livraison Canyon",
       "shipping": true,
-      "publishedAt": "2026-11-27T08:00:00.000Z",
+      "publishedAt": "2026-11-28T08:00:00.000Z",
       "frame": "carbone",
       "brakes": "disque",
       "groupset": "sram-axs",
@@ -212518,7 +212520,7 @@
           "p": 3299
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 47,
       "zone": null,
@@ -230242,7 +230244,7 @@
           "p": 4699
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 45,
       "zone": null,
@@ -237930,7 +237932,7 @@
           "p": 5200
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 44,
       "zone": null,
@@ -238045,7 +238047,7 @@
           "p": 5700
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 44,
       "zone": null,
@@ -238155,7 +238157,7 @@
           "p": 6799
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 44,
       "zone": null,
@@ -243295,7 +243297,7 @@
       "description": "SRAM Rival AXS Groupset, WH ZIP 303 S 28 12X100 CL",
       "city": "Livraison Canyon",
       "shipping": true,
-      "publishedAt": "2026-11-27T08:00:00.000Z",
+      "publishedAt": "2026-11-28T08:00:00.000Z",
       "frame": "carbone",
       "brakes": "disque",
       "groupset": "sram-axs",
@@ -243320,7 +243322,7 @@
           "p": 3799
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 42,
       "zone": null,
@@ -244168,7 +244170,7 @@
       "description": "",
       "city": "Livraison Canyon",
       "shipping": true,
-      "publishedAt": "2026-11-27T08:00:00.000Z",
+      "publishedAt": "2026-11-28T08:00:00.000Z",
       "frame": "carbone",
       "brakes": "disque",
       "groupset": "autre",
@@ -244193,7 +244195,7 @@
           "p": 4399
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 42,
       "zone": null,
@@ -249040,7 +249042,7 @@
           "p": 4500
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 40,
       "zone": null,
@@ -257176,7 +257178,7 @@
       "description": "",
       "city": "Livraison Canyon",
       "shipping": true,
-      "publishedAt": "2026-11-27T08:00:00.000Z",
+      "publishedAt": "2026-11-28T08:00:00.000Z",
       "frame": "carbone",
       "brakes": "disque",
       "groupset": "autre",
@@ -257202,7 +257204,7 @@
           "p": 4699
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 36,
       "zone": null,
@@ -257507,7 +257509,7 @@
       "description": "SRAM Rival AXS Groupset, Newmen Advanced A.50",
       "city": "Livraison Canyon",
       "shipping": true,
-      "publishedAt": "2026-11-27T08:00:00.000Z",
+      "publishedAt": "2026-11-28T08:00:00.000Z",
       "frame": "carbone",
       "brakes": "disque",
       "groupset": "sram-axs",
@@ -257532,7 +257534,7 @@
           "p": 4299
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 35,
       "zone": null,
@@ -258181,7 +258183,7 @@
           "p": 5700
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 35,
       "zone": null,
@@ -258292,7 +258294,7 @@
           "p": 5996
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 35,
       "zone": null,
@@ -258373,8 +258375,8 @@
       "year": 0,
       "type": "route",
       "size": "54, 58",
-      "price": 6499,
-      "description": "Vélo neuf vendu par Alltricks. Tailles proposées : 54 (170-180 cm), 58 (182-193 cm).",
+      "price": 6000,
+      "description": "Vélo neuf vendu par Alltricks (Black Week). Tailles proposées : 54 (170-180 cm), 58 (182-193 cm).",
       "city": "Livraison Alltricks",
       "shipping": true,
       "publishedAt": "2026-11-23T08:00:00.000Z",
@@ -258392,6 +258394,7 @@
       ],
       "firstSeen": "2026-11-23",
       "market": "neuf",
+      "originalPrice": 6499,
       "sizesInStock": [
         "54",
         "58"
@@ -258400,9 +258403,13 @@
         {
           "d": "2026-11-23",
           "p": 6499
+        },
+        {
+          "d": "2026-11-28",
+          "p": 6000
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 35,
       "zone": null,
@@ -258410,14 +258417,14 @@
       "scoreDetail": [
         {
           "label": "Prix",
-          "detail": "1 999 € au-dessus de ton maximum, accepté pour du neuf",
+          "detail": "1 500 € au-dessus de ton maximum, accepté pour du neuf",
           "points": 5,
           "max": 25
         },
         {
           "label": "Remise",
-          "detail": "Prix catalogue, sans remise affichée",
-          "points": 3,
+          "detail": "8 % de remise (prix barré 6 499 €)",
+          "points": 2.7,
           "max": 10
         },
         {
@@ -258469,7 +258476,7 @@
           "max": 8
         }
       ],
-      "rejection": "Au-dessus du budget, même avec la marge acceptée pour le neuf (6 499 € pour 4 950 €)"
+      "rejection": "Au-dessus du budget, même avec la marge acceptée pour le neuf (6 000 € pour 4 950 €)"
     },
     {
       "id": "at-3347525",
@@ -258512,7 +258519,7 @@
           "p": 7499
         }
       ],
-      "lastSeen": "2026-11-27",
+      "lastSeen": "2026-11-28",
       "parser": 5,
       "score": 35,
       "zone": null,
